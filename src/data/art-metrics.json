@@ -1,0 +1,114 @@
+{
+  "textbook": {
+    "width": 348,
+    "height": 440
+  },
+  "backpack": {
+    "width": 345,
+    "height": 466
+  },
+  "rabbit": {
+    "width": 236,
+    "height": 474
+  },
+  "notebook": {
+    "width": 362,
+    "height": 451
+  },
+  "pencil-case": {
+    "width": 491,
+    "height": 137
+  },
+  "pencil": {
+    "width": 462,
+    "height": 32
+  },
+  "homework-diary": {
+    "width": 320,
+    "height": 408
+  },
+  "eraser": {
+    "width": 356,
+    "height": 132
+  },
+  "paper-scrap": {
+    "width": 323,
+    "height": 321
+  },
+  "water-bottle": {
+    "width": 168,
+    "height": 441
+  },
+  "ruler": {
+    "width": 481,
+    "height": 55
+  },
+  "pencil-sharpener": {
+    "width": 313,
+    "height": 207
+  },
+  "document-folder": {
+    "width": 352,
+    "height": 452
+  },
+  "glue-stick": {
+    "width": 96,
+    "height": 397
+  },
+  "scissors": {
+    "width": 217,
+    "height": 467
+  },
+  "bear": {
+    "width": 254,
+    "height": 492
+  },
+  "cat": {
+    "width": 349,
+    "height": 486
+  },
+  "bird": {
+    "width": 342,
+    "height": 424
+  },
+  "duster": {
+    "width": 415,
+    "height": 396
+  },
+  "broom": {
+    "width": 438,
+    "height": 466
+  },
+  "cloth": {
+    "width": 468,
+    "height": 264
+  },
+  "dust": {
+    "width": 200,
+    "height": 103
+  },
+  "stain": {
+    "width": 162,
+    "height": 165
+  },
+  "colored-pencils": {
+    "width": 421,
+    "height": 246
+  },
+  "board-game": {
+    "width": 444,
+    "height": 325
+  },
+  "puzzle-box": {
+    "width": 430,
+    "height": 392
+  },
+  "felt-pens": {
+    "width": 437,
+    "height": 393
+  },
+  "origami-paper": {
+    "width": 424,
+    "height": 424
+  }
+}
