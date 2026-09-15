@@ -22,6 +22,11 @@ for(const p of docs){
 }
 const graph=JSON.parse(fs.readFileSync(path.join(root,'docs/wiki/work-tree.json'),'utf8'));
 const ids=new Set(graph.tasks.map(t=>t.id));
+for(const t of graph.tasks)if(!fs.existsSync(path.join(root,t.guide)))errors.push(`Missing task guide: ${t.id}`);
+const prompts=JSON.parse(fs.readFileSync(path.join(root,'docs/ASSET_PROMPTS.json'),'utf8'));
+for(const pending of prompts.pending){
+  if(state.assets.some(a=>a.id===pending.id && a.sourcePresent))errors.push(`Duplicate generation request: ${pending.id}`);
+}
 for(const t of graph.tasks)for(const id of t.dependsOn)if(!ids.has(id))errors.push(`Unknown dependency ${t.id} -> ${id}`);
 const visiting=new Set(),visited=new Set();
 function visit(id){if(visiting.has(id)){errors.push(`Dependency cycle: ${id}`);return;}if(visited.has(id))return;visiting.add(id);for(const d of graph.tasks.find(t=>t.id===id).dependsOn)visit(d);visiting.delete(id);visited.add(id);}

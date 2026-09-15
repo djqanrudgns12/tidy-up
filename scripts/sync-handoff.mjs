@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { catalog } from '../src/data/catalog.ts';
 import { maps } from '../src/data/maps.ts';
 import { assetViews } from '../src/data/asset-views.ts';
+import { physicalMaps } from '../src/data/physical.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = p => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8').replace(/^\uFEFF/, ''));
@@ -42,6 +43,7 @@ const assets = required.map(a => {
     sha256:sourcePresent ? crypto.createHash('sha256').update(fs.readFileSync(path.join(root,source))).digest('hex') : null};
 });
 const summary = {
+  implementedMapIds: Object.keys(physicalMaps),
   requiredDeliveryFiles:assets.length,
   deliveredFiles:assets.filter(a=>a.delivered).length,
   missingDeliveryFiles:assets.filter(a=>!a.delivered).length,
@@ -55,5 +57,6 @@ const summary = {
 };
 fs.mkdirSync(path.join(root,'docs/wiki'),{recursive:true});
 fs.writeFileSync(path.join(root,'docs/wiki/asset-state.json'),JSON.stringify({schemaVersion:1,generatedAt:new Date().toISOString(),summary,assets},null,2)+'\n');
-fs.writeFileSync(path.join(root,'docs/wiki/STATUS.md'),`# 現在の状態 / 현재 구현 상태\n\n이 파일은 \`npm run handoff:sync\`로 생성한다. 에셋 수량은 파일 검사 결과이며 시각 품질 승인을 뜻하지 않는다.\n\n## 구현\n\n- 전체 프로젝트 미완료. 목표: 9개 공간, 물건 72종, 추가 시점 22개, 배포 이미지 121개.\n- 학생이 사용할 수 있는 공간: 내 책상 1개. 나머지 8개는 준비 중.\n- 수납장은 배경과 바구니 구멍 가림 시험만 준비됨. 실제 지지면·시점 연결·수납 경로·42조합 검수가 필요하다.\n- 책상: 분류 → 추가 물건 0~3개 → 정리 → 청소 → 퀴즈 → PNG 흐름 구현. 작은 밀림, 두 겹 포개기, 가림, 접촉 그림자, 복원 구현.\n\n## 실제 파일 수\n\n| 항목 | 수 |\n|---|---:|\n| 원본 PNG | ${summary.localOriginals} / ${summary.requiredOriginals} |\n| 아직 생성하지 않은 원화 | ${summary.notGeneratedOriginals} |\n| 생성 후 검수·수정·통합 대기 | ${summary.generatedAwaitingReviewOrIntegration} |\n| 알려진 원화 수정 건 | ${summary.knownRevisions} |\n| public 배포 이미지 존재 | ${summary.deliveredFiles} / ${summary.requiredDeliveryFiles} |\n| public 누락 | ${summary.missingDeliveryFiles} |\n| 새로 합성할 썸네일 | ${summary.missingThumbnails} |\n| 교체할 임시 썸네일 | ${summary.draftThumbnailsToReplace} |\n\n## 읽을 곳\n\n- [재개 절차](../../handoff.md)\n- [다음 작업과 완료 조건](WORK.md)\n- [에셋 작업 절차](ASSETS.md)\n- [기계 판독용 파일 목록](asset-state.json)\n- [검수 근거와 한계](VERIFICATION.md)\n\n이전 이미지 생성 429 오류 뒤 정상 생성이 재개되었다. 9월 21일까지 기다려야 한다는 과거 안내는 폐기한다. 사용자 요청으로 인계를 위해 제작을 멈췄으며 한도 때문에 멈춘 상태가 아니다. 다음 생성 요청이 실제로 실패하면 그 응답을 새로 기록한다.\n`);
+fs.writeFileSync(path.join(root,'docs/wiki/STATUS.md'),`# 현재 구현 상태\n\n이 파일은 \`npm run handoff:sync\`로 생성한다. 에셋 수량은 파일 검사 결과이며 시각 품질 승인을 뜻하지 않는다.\n\n## 구현\n\n- 전체 프로젝트 미완료. 목표: 9개 공간, 물건 72종, 추가 시점 22개, 배포 이미지 121개.\n- 실측 데이터가 연결된 공간: ${summary.implementedMapIds.length}개 (${summary.implementedMapIds.join(", ")}). 실제 활동 승인 범위는 검수 기록과 대조한다.\n- 수납장은 배경과 바구니 구멍 가림 시험만 준비됨. 실제 지지면·시점 연결·수납 경로·42조합 검수가 필요하다.\n- 책상: 분류 → 추가 물건 0~3개 → 정리 → 청소 → 퀴즈 → PNG 흐름 구현. 작은 밀림, 두 겹 포개기, 가림, 접촉 그림자, 복원 구현.\n\n## 실제 파일 수\n\n| 항목 | 수 |\n|---|---:|\n| 원본 PNG | ${summary.localOriginals} / ${summary.requiredOriginals} |\n| 아직 생성하지 않은 원화 | ${summary.notGeneratedOriginals} |\n| 생성 후 검수·수정·통합 대기 | ${summary.generatedAwaitingReviewOrIntegration} |\n| 알려진 원화 수정 건 | ${summary.knownRevisions} |\n| public 배포 이미지 존재 | ${summary.deliveredFiles} / ${summary.requiredDeliveryFiles} |\n| public 누락 | ${summary.missingDeliveryFiles} |\n| 새로 합성할 썸네일 | ${summary.missingThumbnails} |\n| 교체할 임시 썸네일 | ${summary.draftThumbnailsToReplace} |\n\n## 읽을 곳\n\n- [재개 절차](../../handoff.md)\n- [다음 작업과 완료 조건](WORK.md)\n- [에셋 작업 절차](ASSETS.md)\n- [기계 판독용 파일 목록](asset-state.json)\n- [검수 근거와 한계](VERIFICATION.md)\n\n이전 이미지 생성 429 오류 뒤 정상 생성이 재개되었다. 9월 21일까지 기다려야 한다는 과거 안내는 폐기한다. 사용자 요청으로 인계를 위해 제작을 멈췄으며 한도 때문에 멈춘 상태가 아니다. 다음 생성 요청이 실제로 실패하면 그 응답을 새로 기록한다.\n`);
 console.log(JSON.stringify(summary,null,2));
+

@@ -50,6 +50,8 @@ npm.cmd run dev -- --port 5173
 
 **프로젝트 폴더 전체를 복사**한다. 특히 `artwork`, `public`, `src`, `sample`, `scripts`, `docs`, 루트 Markdown, `package.json`, `package-lock.json`, 설정 파일을 포함한다. `node_modules`는 생략해도 되며 새 컴퓨터에서 `npm ci`로 복원한다. `dist`는 현재 한 공간의 시연 빌드일 뿐이며 구현 원본을 대신하지 않는다. `output/qa`는 검수 근거라 함께 옮긴다.
 
+전달용 ZIP은 `output/transfer/Cleaning-handoff.zip`이다. 압축을 풀고 안의 `Cleaning` 폴더를 프로젝트로 연다. 이 ZIP은 node_modules와 과거 전달 ZIP을 제외하고 소스·원화·PDF·검수 자료·현재 dist를 포함한다. 새 변경 뒤 다시 묶으려면 먼저 상태/검사를 갱신하고 `python scripts/package-handoff.py`를 실행한다.
+
 원화 원본57개는 `artwork/*.png`에 있고 출처/프롬프트는 `artwork/receipts/*.json`에 있다. `originPath`는 과거 생성 위치 기록일 뿐, 실행에 필요한 경로가 아니다. 새 컴퓨터에서는 경로를 현재 프로젝트 루트 기준으로 해석한다.
 
 ## 6. 다시 인계할 때
