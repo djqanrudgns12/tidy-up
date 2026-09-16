@@ -1,0 +1,11 @@
+{
+  "id": "pillow--shelf-front",
+  "source": "artwork/pillow--shelf-front.png",
+  "target": "items/views/pillow--shelf-front.webp",
+  "reference": "artwork/pillow.png",
+  "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-d8437a26-e47b-4383-a033-774e2666c6cf.png",
+  "status": "integrated-source",
+  "date": "2026-09-17",
+  "review": "True RGBA verified; review at actual scene size in all-placement QA."
+}

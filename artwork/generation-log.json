@@ -1179,5 +1179,49 @@
     "status": "integrated-source",
     "date": "2026-09-16",
     "review": "Native transparent image, open drawstring loop and empty hanging sleeve inspected on light/dark backgrounds. Actual hook scene separately verified."
+  },
+  {
+    "id": "cap--shelf-front",
+    "source": "artwork/cap--shelf-front.png",
+    "target": "items/views/cap--shelf-front.webp",
+    "reference": "artwork/cap.png",
+    "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-ae4997ec-7490-4f73-9c82-3377b4a1796b.png",
+    "status": "integrated-source",
+    "date": "2026-09-17",
+    "review": "True RGBA verified; review at actual scene size in all-placement QA."
+  },
+  {
+    "id": "sun-hat--shelf-front",
+    "source": "artwork/sun-hat--shelf-front.png",
+    "target": "items/views/sun-hat--shelf-front.webp",
+    "reference": "artwork/sun-hat.png",
+    "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-879a1909-8796-4140-8237-5590d0b1abae.png",
+    "status": "integrated-source",
+    "date": "2026-09-17",
+    "review": "True RGBA verified; review at actual scene size in all-placement QA."
+  },
+  {
+    "id": "pillow--shelf-front",
+    "source": "artwork/pillow--shelf-front.png",
+    "target": "items/views/pillow--shelf-front.webp",
+    "reference": "artwork/pillow.png",
+    "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-d8437a26-e47b-4383-a033-774e2666c6cf.png",
+    "status": "integrated-source",
+    "date": "2026-09-17",
+    "review": "True RGBA verified; review at actual scene size in all-placement QA."
+  },
+  {
+    "id": "cushion--shelf-front",
+    "source": "artwork/cushion--shelf-front.png",
+    "target": "items/views/cushion--shelf-front.webp",
+    "reference": "artwork/cushion.png",
+    "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-6f8a311c-72d8-4ce5-84ef-3ee3b07d5d0d.png",
+    "status": "integrated-source",
+    "date": "2026-09-17",
+    "review": "True RGBA verified; review at actual scene size in all-placement QA."
   }
 ]

@@ -1,5 +1,9 @@
 /** Required additional drawings. They are counted separately from the 72 kinds of object. */
 export const assetViews = [
+  ...["cap", "sun-hat", "pillow", "cushion"].map((asset) => ({
+    asset, view: "shelf-front", purpose: "선반 높이에서 보이는 모자의 높이와 베개·쿠션의 두께",
+    direction: "Resting on its base, low frontal view with real thickness and a shallow top, matching the primary object's colour and material. True transparent background.",
+  })),
   ...["t-shirt", "long-sleeve", "trousers", "shorts", "blanket"].map((asset) => ({
     asset, view: "folded-front", purpose: "높은 선반에 접어 둔 옷의 두께와 앞면",
     direction: "Same garment folded on its base, low frontal shelf camera, visible fabric thickness and shallow top. Preserve colour and material; transparent background.",

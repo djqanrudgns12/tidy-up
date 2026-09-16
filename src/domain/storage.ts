@@ -1,5 +1,7 @@
 import { mapsById } from "../data/maps";
 import { physicalMaps } from "../data/physical";
+import { assetsById } from "../data/catalog";
+import { poseOf } from "./placement";
 
 import {
   activeItems,
@@ -146,6 +148,24 @@ export function readSaved(
     } catch {
       storage.removeItem(key);
       return { notice: "저장된 활동을 이어 갈 수 없어 새로 시작해요." };
+    }
+    // The new front drawings rest on their bases. Preserve old positions/progress;
+    // only migrate their old in-plane rotation, then run every normal validation.
+    if (parsed && typeof parsed === "object") {
+      const candidate = parsed as Session;
+      if (typeof candidate.mapId === "string" && physicalMaps[candidate.mapId] &&
+        Array.isArray(candidate.extras) && candidate.placements && typeof candidate.placements === "object") {
+        const placements = { ...candidate.placements };
+        for (const item of activeItems(candidate.mapId, candidate.extras)) {
+          const p = placements[item.id];
+          const surface = physicalMaps[candidate.mapId].surfaces.find(s => s.id === p?.surface);
+          if (p && surface && ["cap", "sun-hat", "pillow", "cushion", "glue-stick"].includes(item.asset) &&
+            Number.isFinite(p.angle) && p.angle >= -180 && p.angle <= 180 &&
+            poseOf(assetsById[item.asset], surface, candidate.mapId, p) === "upright")
+            placements[item.id] = { ...p, angle: 0 };
+        }
+        parsed = { ...candidate, placements };
+      }
     }
     if (validateSession(parsed)) {
       const restored = {

@@ -1723,5 +1723,65 @@
       294,
       481
     ]
+  },
+  {
+    "id": "cap--shelf-front",
+    "path": "public\\assets\\items\\views\\cap--shelf-front.webp",
+    "bytes": 24796,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      15,
+      64,
+      497,
+      453
+    ]
+  },
+  {
+    "id": "sun-hat--shelf-front",
+    "path": "public\\assets\\items\\views\\sun-hat--shelf-front.webp",
+    "bytes": 28324,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      14,
+      123,
+      502,
+      416
+    ]
+  },
+  {
+    "id": "pillow--shelf-front",
+    "path": "public\\assets\\items\\views\\pillow--shelf-front.webp",
+    "bytes": 10346,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      15,
+      215,
+      498,
+      305
+    ]
+  },
+  {
+    "id": "cushion--shelf-front",
+    "path": "public\\assets\\items\\views\\cushion--shelf-front.webp",
+    "bytes": 29138,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      8,
+      126,
+      505,
+      436
+    ]
   }
 ]

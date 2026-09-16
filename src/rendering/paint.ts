@@ -4,6 +4,7 @@ import { coveredByPanel } from "../domain/occlusion";
 import {
   footprint,
   planeSkew,
+  placementSurface,
   pointInPolygon,
   poseOf,
   sizeOf,
@@ -49,9 +50,17 @@ export function surfaceItems(
 export function paintOrder(
   model: Pick<SceneModel, "items" | "placements" | "geometry">,
 ) {
-  return model.geometry.surfaces.flatMap((surface) =>
-    surfaceItems(model, surface),
+  return supportGroups(model.geometry).flatMap((group) =>
+    group.flatMap(surface => surfaceItems(model, surface)).sort((a,b)=>itemDepth(model,a.id)-itemDepth(model,b.id)),
   );
+}
+function supportGroups(geometry: PhysicalMap) {
+  const groups=new Map<string,Surface[]>();
+  for(const surface of geometry.surfaces) {
+    const key=surface.supportKey ?? surface.id;
+    groups.set(key,[...(groups.get(key)??[]),surface]);
+  }
+  return [...groups.values()];
 }
 function tracePolygon(ctx: Context, points: number[]) {
   ctx.moveTo(points[0], points[1]);
@@ -72,6 +81,7 @@ export function drawObject(
   elevation = 0,
   shadowStrength = 1,
 ) {
+  surface = placementSurface(surface, p);
   const asset = assetsById[item.asset],
     primary = model.art.items[item.asset],
     art = surface.bookSpines && hasShelfView(asset, model.mapId) ? primary?.shelf : surface.pose==="hanging" && hasHangingView(asset,model.mapId) ? primary?.hanging : primary;
@@ -144,6 +154,7 @@ export function drawObject(
     ctx.drawImage(art.image, -w / 2, pose === "upright" ? -h : -h * hangingContact(asset,model.mapId), w, h);
   ctx.restore();
 }
+let furnitureLayer: HTMLCanvasElement | undefined;
 export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
   ctx.clearRect(0, 0, 960, 720);
   ctx.drawImage(model.art.background, 0, 0, 960, 720);
@@ -170,10 +181,12 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
         movingFrame.shadowStrength,
       );
   };
-  for (const surface of model.geometry.surfaces) {
-    if (overlays && model.highlight === surface.id) {
+  for (const group of supportGroups(model.geometry)) {
+    const surface=group[0];
+    const highlighted=group.find(s=>s.id===model.highlight);
+    if (overlays && highlighted) {
       ctx.save();
-      polygonPath(ctx, surface.entryPolygon ?? surface.polygon);
+      polygonPath(ctx, highlighted.entryPolygon ?? highlighted.polygon);
       ctx.fillStyle = "#36735825";
       ctx.fill();
       ctx.strokeStyle = "#2b7056";
@@ -184,7 +197,7 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
     }
     if (model.showDirt)
       model.geometry.dirt.forEach((spot, i) => {
-        if (spot.surface !== surface.id || model.clean?.includes(String(i)))
+        if (!group.some(s=>s.id===spot.surface) || model.clean?.includes(String(i)))
           return;
         ctx.save();
         ctx.translate(spot.x, spot.y);
@@ -209,15 +222,22 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
         }
         ctx.restore();
       });
+    // Mask only this support's objects. Restoring a background strip on the final
+    // canvas cuts through unrelated tall objects standing on a different support.
+    const mainContext=ctx;
+    furnitureLayer ??= document.createElement("canvas");
+    if(furnitureLayer.width!==960||furnitureLayer.height!==720){furnitureLayer.width=960;furnitureLayer.height=720;}
+    ctx=furnitureLayer.getContext("2d")!;
+    ctx.clearRect(0,0,960,720);
     const restore = (polygon: number[]) => {
       ctx.save();
       polygonPath(ctx, polygon);
       ctx.clip();
-      ctx.drawImage(model.art.background, 0, 0, 960, 720);
+      ctx.clearRect(0, 0, 960, 720);
       ctx.restore();
     };
     const layers = [
-      ...surfaceItems(model, surface)
+      ...group.flatMap(s=>surfaceItems(model, s))
         .filter(
           (item) => item.id !== movingItem?.id && item.id !== model.carried?.id,
         )
@@ -228,7 +248,7 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
         })),
       ...(movingItem &&
       movingFrame?.inside &&
-      movingFrame.surface.id === surface.id
+      group.some(s=>s.id===movingFrame.surface.id)
         ? [
             {
               depth: movingFrame.placement.stackOn
@@ -239,7 +259,7 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
             },
           ]
         : []),
-      ...(surface.depthOccluders ?? []).map((o) => ({
+      ...group.flatMap(s=>s.depthOccluders ?? []).map((o) => ({
         ...o,
         item: undefined as ItemDefinition | undefined,
       })),
@@ -253,23 +273,25 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
           model,
           layer.item,
           model.placements[layer.item.id],
-          surface,
+          model.geometry.surfaces.find(s=>s.id===model.placements[layer.item!.id].surface)!,
         );
       else if (layer.polygon) restore(layer.polygon);
     }
     // Restore only the furniture front edge: objects sit behind the lip, not over it.
-    for (const polygon of surface.occluders ?? []) {
+    for (const polygon of group.flatMap(s=>s.occluders ?? [])) {
       restore(polygon);
     }
-    for (const panel of surface.perforatedOccluders ?? []) {
+    for (const panel of group.flatMap(s=>s.perforatedOccluders ?? [])) {
       ctx.save();
       ctx.beginPath();
       tracePolygon(ctx, panel.polygon);
       for (const opening of panel.openings) tracePolygon(ctx, opening);
       ctx.clip("evenodd");
-      ctx.drawImage(model.art.background, 0, 0, 960, 720);
+      ctx.clearRect(0, 0, 960, 720);
       ctx.restore();
     }
+    mainContext.drawImage(furnitureLayer,0,0);
+    ctx=mainContext;
   }
   if (movingFrame && !movingFrame.inside) drawMoving();
   if (model.carried) {
@@ -358,7 +380,7 @@ export function hitObject(
   point: Point,
 ) {
   const p = model.placements[item.id],
-    surface = model.geometry.surfaces.find((s) => s.id === p.surface)!;
+    surface = placementSurface(model.geometry.surfaces.find((s) => s.id === p.surface)!, p);
   if (
     (surface.occluders ?? []).some((poly) => pointInPolygon(point, poly)) ||
     (surface.perforatedOccluders ?? []).some((panel) =>
@@ -409,6 +431,7 @@ export function visualBounds(
   surface: Surface,
   mapId: string,
 ) {
+  surface = placementSurface(surface, p);
   const asset = assetsById[item.asset],
     [w, h] = sizeOf(asset, mapId, surface),
     pose = poseOf(asset, surface, mapId);

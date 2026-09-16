@@ -434,5 +434,21 @@
   "umbrella-cover--alternate-support": {
     "width": 71,
     "height": 467
+  },
+  "cap--shelf-front": {
+    "width": 482,
+    "height": 389
+  },
+  "sun-hat--shelf-front": {
+    "width": 488,
+    "height": 293
+  },
+  "pillow--shelf-front": {
+    "width": 483,
+    "height": 90
+  },
+  "cushion--shelf-front": {
+    "width": 497,
+    "height": 310
   }
 }

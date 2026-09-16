@@ -5,7 +5,7 @@ export default defineConfig({
   base: "./",
   plugins: [react()],
   build: { target: ["es2022", "safari16.4"], sourcemap: false },
-  test: { environment: "node", include: ["src/**/*.test.ts"] },
+  test: { environment: "node", include: ["src/**/*.test.ts", "scripts/audit-placements.test.mjs"] },
   server: {
     fs: { deny: ["**/.env*", "**/.git/**", "**/sample/**", "**/artwork/**"] },
   },

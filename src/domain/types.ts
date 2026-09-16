@@ -46,6 +46,8 @@ export type Placement = Point & {
   surface: string;
   angle: number;
   stackOn?: string;
+  /** A shelf book can lie on its cover or use its separately drawn spine view. */
+  bookPose?: "flat" | "shelf";
 };
 export type PerforatedPanel = { polygon: number[]; openings: number[][] };
 export type Surface = {

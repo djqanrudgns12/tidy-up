@@ -1,6 +1,7 @@
 import { assetsById } from "../data/catalog";
 import { mapsById } from "../data/maps";
 import { physicalMaps } from "../data/physical";
+import { hasShelfView } from "../data/scene-art";
 import {
   acceptsAsset,
   distanceToPolygon,
@@ -13,6 +14,7 @@ import {
   poseOf,
   settleOnSurface,
   separationVectors,
+  stableBookSupport,
   sizeOf,
 } from "./placement";
 import type { ItemDefinition, Placement, Point, Surface } from "./types";
@@ -130,7 +132,7 @@ export function placementIssues(state: Session): Set<string> {
       ![p.x, p.y, p.angle].every(Number.isFinite) ||
       p.angle < -180 ||
       p.angle > 180 ||
-      (poseOf(asset, surface, state.mapId!) !== "flat" && p.angle !== 0) ||
+      (poseOf(asset, surface, state.mapId!, p) !== "flat" && p.angle !== 0) ||
       !fitsSurface(asset, p, surface, mapId)
     ) {
       invalid.add(item.id);
@@ -144,8 +146,9 @@ export function placementIssues(state: Session): Set<string> {
         !lower ||
         lowerItem.id === item.id ||
         lower.stackOn ||
-        lower.surface !== p.surface ||
-        poseOf(asset, surface, state.mapId!) !== "flat" ||
+        (surfaces.get(lower.surface)?.supportKey ?? lower.surface) !== (surface.supportKey ?? surface.id) ||
+        poseOf(asset, surface, state.mapId!, p) !== "flat" ||
+        poseOf(assetsById[lowerItem.asset], surfaces.get(lower.surface)!, mapId, lower) !== "flat" ||
         !(asset.book || asset.id === "document-folder") ||
         !(
           assetsById[lowerItem.asset].book ||
@@ -160,13 +163,11 @@ export function placementIssues(state: Session): Set<string> {
       const polygon = footprint(
         assetsById[lowerItem.asset],
         lower,
-        surface,
+        surfaces.get(lower.surface)!,
         mapId,
-      ).flatMap((v) => [v.x, v.y]);
+      );
       if (
-        !footprint(asset, p, surface, mapId).every((v) =>
-          pointInPolygon(v, polygon),
-        )
+        !stableBookSupport(footprint(asset, p, surface, mapId), polygon)
       )
         invalid.add(item.id);
     }
@@ -230,6 +231,7 @@ export function tryPlacement(
   point: Point,
   surfaceId?: string,
   angle?: number,
+  bookPose?: Placement["bookPose"],
 ): { placement?: Placement; message: string } {
   if (state.step !== "organize" || !state.mapId)
     return { message: "지금은 물건을 옮길 수 없어요." };
@@ -246,7 +248,7 @@ export function tryPlacement(
   const handle = {
     x: point.x,
     y:
-      poseOf(asset, oldSurface, state.mapId) === "upright"
+      poseOf(asset, oldSurface, state.mapId, old) === "upright"
         ? point.y - sizeOf(asset, state.mapId)[1] * 0.94
         : point.y,
   };
@@ -288,11 +290,16 @@ export function tryPlacement(
         : "이 물건은 이곳에 놓기 어려워요. 다른 받침면을 골라 주세요.";
       continue;
     }
-    const angles = rotating ? [angle] : placementAngles(asset, surface, state.mapId, angle ?? old.angle);
-    const origin = normalizePlacement(asset, supportPointFor(point, surface), surface, angles[0], state.mapId);
+    const modes: Placement["bookPose"][] = bookPose !== undefined ? [bookPose] : rotating ? [surface.id === old.surface ? old.bookPose : undefined] :
+      surface.bookSpines && hasShelfView(asset, state.mapId)
+        ? [...new Set([surface.id === old.surface ? old.bookPose : undefined, "flat" as const, "shelf" as const])]
+        : [undefined];
+    for (const mode of modes) {
+    const angles = rotating ? [angle] : placementAngles(asset, surface, state.mapId, angle ?? old.angle, {...old, bookPose:mode});
+    const origin = normalizePlacement(asset, supportPointFor(point, surface), surface, angles[0], state.mapId, mode);
     const maxShift = rotating ? 40 : 48;
     for (const a of angles) {
-      const exact = placeAt(state, item, point, surface, a);
+      const exact = placeAt(state, item, point, surface, a, mode);
       if (exact.placement && Math.hypot(exact.placement.x-origin.x, exact.placement.y-origin.y) <= maxShift)
         return done(exact.placement, surface,
           a !== angles[0] ? "선반에 맞게 방향을 돌려 놓았어요. " :
@@ -301,8 +308,9 @@ export function tryPlacement(
     }
     if (surface.anchor) continue;
     for (const a of angles) {
-      const p = freeSpot(state, item, origin, surface, a, maxShift);
+      const p = freeSpot(state, item, origin, surface, a, maxShift, mode);
       if (p) return done(p, surface, "가까운 빈자리에 맞춰 놓았어요. ");
+    }
     }
   }
   return {
@@ -328,6 +336,7 @@ function placeAt(
   point: Point,
   surface: Surface,
   angle: number,
+  bookPose?: Placement["bookPose"],
 ): { placement?: Placement; nudged?: boolean; message: string } {
   const mapId = state.mapId!,
     asset = assetsById[item.asset],
@@ -335,7 +344,7 @@ function placeAt(
   const supportPoint = supportPointFor(point, surface);
   let p = settleOnSurface(
     asset,
-    normalizePlacement(asset, supportPoint, surface, angle, mapId),
+    normalizePlacement(asset, supportPoint, surface, angle, mapId, bookPose),
     surface,
     mapId,
   );
@@ -349,19 +358,17 @@ function placeAt(
     if (
       (asset.book || asset.id === "document-folder") &&
       (lowerAsset.book || lowerAsset.id === "document-folder") &&
-      poseOf(asset, surface, mapId) === "flat" &&
+      poseOf(asset, surface, mapId, p) === "flat" &&
+      poseOf(lowerAsset, physicalMaps[mapId].surfaces.find(s => s.id === lower.surface)!, mapId, lower) === "flat" &&
       !lower.stackOn &&
       !Object.values(state.placements).some(
         (v) => v.stackOn === collision.id && v !== state.placements[id],
       )
     ) {
-      const lowerPoly = footprint(lowerAsset, lower, surface, mapId).flatMap(
-        (v) => [v.x, v.y],
-      );
+      const lowerSurface = physicalMaps[mapId].surfaces.find(s=>s.id===lower.surface)!;
+      const lowerPoly = footprint(lowerAsset, lower, lowerSurface, mapId);
       if (
-        footprint(asset, p, surface, mapId).every((v) =>
-          pointInPolygon(v, lowerPoly),
-        )
+        stableBookSupport(footprint(asset, p, surface, mapId), lowerPoly)
       )
         p.stackOn = collision.id;
     }
@@ -394,6 +401,7 @@ function freeSpot(
   surface: Surface,
   angle: number,
   maxShift: number,
+  bookPose?: Placement["bookPose"],
 ): Placement | undefined {
   const mapId = state.mapId!,
     asset = assetsById[item.asset],
@@ -417,7 +425,7 @@ function freeSpot(
         if (pointInPolygon({ x, y }, surface.polygon)) spots.push({ x, y });
   const distance = (s: Point) => Math.hypot(s.x - point.x, s.y - point.y);
   for (const spot of spots.sort((a, b) => distance(a) - distance(b))) {
-    const p = normalizePlacement(asset, spot, surface, angle, mapId);
+    const p = normalizePlacement(asset, spot, surface, angle, mapId, bookPose);
     if (Math.hypot(p.x - point.x, p.y - point.y) > maxShift) break;
     if (
       !fitsSurface(asset, p, surface, mapId) ||
@@ -609,6 +617,7 @@ export function reducer(state: Session, action: Action): Session {
         action.placement,
         action.placement.surface,
         action.placement.angle,
+        action.placement.bookPose,
       );
       if (checked.placement)
         next = {

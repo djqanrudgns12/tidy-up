@@ -13,34 +13,45 @@ export function acceptsAsset(asset: AssetDefinition, surface: Surface) {
   return true;
 }
 
-export function placementAngles(asset: AssetDefinition, surface: Surface, mapId: string, angle: number) {
-  return poseOf(asset, surface, mapId) === "flat"
+export function placementSurface(surface: Surface, placement?: Pick<Placement, "bookPose">): Surface {
+  return placement?.bookPose === "flat" && surface.bookSpines ? { ...surface, bookSpines: false } : surface;
+}
+
+export function placementAngles(asset: AssetDefinition, surface: Surface, mapId: string, angle: number, placement?: Placement) {
+  return poseOf(asset, surface, mapId, placement) === "flat"
     ? [...new Set([angle, 0, 90, -90])]
     : [angle];
 }
 
 /** Static geometry only: an occupied place stays discoverable in the place picker. */
-const supportCache = new WeakMap<Surface, Map<string, boolean>>();
-export function canPlaceOnSurface(asset: AssetDefinition, surface: Surface, mapId: string) {
-  if (!acceptsAsset(asset, surface)) return false;
-  const key = `${mapId}:${asset.id}`;
-  const cache = supportCache.get(surface) ?? new Map<string, boolean>();
+const supportCache = new WeakMap<Surface, Map<string, Placement | undefined>>();
+export function findSurfacePlacement(asset: AssetDefinition, surface: Surface, mapId: string, requestedPose?: Placement["bookPose"]) {
+  if (!acceptsAsset(asset, surface)) return undefined;
+  const key = `${mapId}:${asset.id}:${requestedPose ?? "auto"}`;
+  const cache = supportCache.get(surface) ?? new Map<string, Placement | undefined>();
   supportCache.set(surface, cache);
-  if (cache.has(key)) return cache.get(key)!;
+  if (cache.has(key)) { const p=cache.get(key); return p ? {...p} : undefined; }
   const xs = surface.polygon.filter((_, i) => i % 2 === 0);
   const ys = surface.polygon.filter((_, i) => i % 2 === 1);
   const left = Math.min(...xs), right = Math.max(...xs), top = Math.min(...ys), bottom = Math.max(...ys);
-  for (const angle of placementAngles(asset, surface, mapId, 0))
+  for (const bookPose of requestedPose ? [requestedPose] : surface.bookSpines && hasShelfView(asset, mapId) ? [undefined, "flat" as const] : [undefined])
+  for (const angle of placementAngles(asset, placementSurface(surface, {bookPose}), mapId, 0)) {
+    const center=normalizePlacement(asset,{x:(left+right)/2,y:(top+bottom)/2},surface,angle,mapId,bookPose);
+    if(fitsSurface(asset,center,surface,mapId)){cache.set(key,center);return {...center};}
     for (let x = left; x <= right; x += 3)
       for (let y = top; y <= bottom; y += 2) {
-        const p = normalizePlacement(asset, {x, y}, surface, angle, mapId);
+        const p = normalizePlacement(asset, {x, y}, surface, angle, mapId, bookPose);
         if (fitsSurface(asset, p, surface, mapId)) {
-          cache.set(key, true);
-          return true;
+          cache.set(key, p);
+          return {...p};
         }
       }
-  cache.set(key, false);
-  return false;
+  }
+  cache.set(key, undefined);
+  return undefined;
+}
+export function canPlaceOnSurface(asset: AssetDefinition, surface: Surface, mapId: string) {
+  return findSurfacePlacement(asset, surface, mapId) !== undefined;
 }
 export const schoolSizes: Record<string, [number, number]> = {
   textbook: [146, 184],
@@ -105,7 +116,9 @@ export function sizeOf(
   asset: AssetDefinition,
   mapId: string,
   surface?: Surface,
+  placement?: Pick<Placement, "bookPose">,
 ): [number, number] {
+  if (surface) surface = placementSurface(surface, placement);
   const box = (mapId === "living-room" ? livingRoomSizes[asset.id] : mapId === "shoe-cabinet" ? shoeCabinetSizes[asset.id] : mapId === "wardrobe" ? wardrobeSizes[asset.id] : mapId === "school-desk" ? schoolSizes[asset.id] : mapId === "classroom-cabinet" ? cabinetSizes[asset.id] : mapId === "locker" ? lockerSizes[asset.id] : mapId === "library" ? librarySizes[asset.id] : mapId === "home-desk" ? homeDeskSizes[asset.id] : mapId === "bedroom" ? bedroomSizes[asset.id] : undefined) ?? [
     asset.width,
     asset.height,
@@ -122,7 +135,8 @@ export function sizeOf(
   const scale = Math.min(box[0] / metric.width, box[1] / metric.height);
   return [metric.width * scale, metric.height * scale];
 }
-export function poseOf(asset: AssetDefinition, surface: Surface, mapId: string): Pose {
+export function poseOf(asset: AssetDefinition, surface: Surface, mapId: string, placement?: Pick<Placement, "bookPose">): Pose {
+  surface = placementSurface(surface, placement);
   return surface.pose ?? (sceneArtwork(asset, mapId, surface).standing ? "upright" : "flat");
 }
 export function planeSkew(surface: Surface, point: Point) {
@@ -176,6 +190,53 @@ export function distanceToPolygon(p: Point, polygon: number[]) {
   }
   return distance;
 }
+
+/** Corners alone are insufficient on an L-shaped floor: inspect every edge interval. */
+export function supportedPolygon(points: Point[], polygon: number[]) {
+  if (!points.every(p => pointInPolygon(p, polygon))) return false;
+  for (let i = 0; i < points.length; i++) {
+    const a = points[i], b = points[(i + 1) % points.length];
+    const dx = b.x-a.x, dy = b.y-a.y, cuts = [0,1];
+    for (let j=0; j<polygon.length; j+=2) {
+      const k=(j+2)%polygon.length, ex=polygon[k]-polygon[j], ey=polygon[k+1]-polygon[j+1];
+      const px=polygon[j]-a.x, py=polygon[j+1]-a.y, cross=dx*ey-dy*ex;
+      if (Math.abs(cross)>1e-8) {
+        const t=(px*ey-py*ex)/cross, u=(px*dy-py*dx)/cross;
+        if(t>0&&t<1&&u>=0&&u<=1) cuts.push(t);
+      } else if(Math.abs(px*dy-py*dx)<1e-8) {
+        const t=(px*dx+py*dy)/(dx*dx+dy*dy);
+        if(t>0&&t<1)cuts.push(t);
+      }
+    }
+    cuts.sort((a,b)=>a-b);
+    for(let j=1;j<cuts.length;j++) {
+      const t=(cuts[j-1]+cuts[j])/2;
+      if(!pointInPolygon({x:a.x+dx*t,y:a.y+dy*t},polygon))return false;
+    }
+  }
+  return true;
+}
+
+/** Allow a small real overhang, while at least 90% of the upper cover remains supported. */
+export function stableBookSupport(upper: Point[], lower: Point[]) {
+  const origin=lower[0], x={x:lower[1].x-origin.x,y:lower[1].y-origin.y}, y={x:lower[3].x-origin.x,y:lower[3].y-origin.y};
+  const determinant=x.x*y.y-x.y*y.x;
+  if(Math.abs(determinant)<1e-8)return false;
+  const local=upper.map(p=>({x:((p.x-origin.x)*y.y-(p.y-origin.y)*y.x)/determinant,y:(x.x*(p.y-origin.y)-x.y*(p.x-origin.x))/determinant}));
+  if(local.some(p=>p.x<-.06||p.x>1.06||p.y<-.06||p.y>1.06))return false;
+  const area=(points:Point[])=>Math.abs(points.reduce((sum,p,i)=>{const q=points[(i+1)%points.length];return sum+p.x*q.y-q.x*p.y;},0))/2;
+  let clipped=local;
+  for(const [axis,bound,sign] of [["x",0,1],["x",1,-1],["y",0,1],["y",1,-1]] as const) {
+    const output:Point[]=[];
+    for(let i=0;i<clipped.length;i++) {
+      const a=clipped[i],b=clipped[(i+1)%clipped.length],ain=(a[axis]-bound)*sign>=0,bin=(b[axis]-bound)*sign>=0;
+      if(ain)output.push(a);
+      if(ain!==bin){const t=(bound-a[axis])/(b[axis]-a[axis]);output.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});}
+    }
+    clipped=output;
+  }
+  return area(local)>0 && area(clipped)/area(local)>=.9;
+}
 /** Settle a near-edge drop onto its support, without changing the angle or arranging other objects. */
 export function settleOnSurface(
   asset: AssetDefinition,
@@ -201,6 +262,7 @@ export function footprint(
   surface: Surface,
   mapId: string,
 ): Point[] {
+  surface = placementSurface(surface, placement);
   const [w, h] = sizeOf(asset, mapId, surface),
     pose = poseOf(asset, surface, mapId);
   const angle = pose === "flat" ? (placement.angle * Math.PI) / 180 : 0;
@@ -229,6 +291,9 @@ export function fitsSurface(
   mapId: string,
 ) {
   if (!acceptsAsset(asset, surface)) return false;
+  if (placement.bookPose !== undefined &&
+    (!["flat", "shelf"].includes(placement.bookPose) || !surface.bookSpines || !hasShelfView(asset, mapId))) return false;
+  surface = placementSurface(surface, placement);
   if (surface.hangingBounds && poseOf(asset,surface,mapId)==="hanging") {
     const [w,h]=sizeOf(asset,mapId,surface),top=placement.y-h*hangingContact(asset,mapId);
     if(![{x:placement.x-w/2,y:top},{x:placement.x+w/2,y:top},{x:placement.x+w/2,y:top+h},{x:placement.x-w/2,y:top+h}].every(p=>pointInPolygon(p,surface.hangingBounds!)))return false;
@@ -236,7 +301,8 @@ export function fitsSurface(
     return pointInPolygon(placement,surface.polygon) &&
       (surface.baseline === undefined || Math.abs(placement.y-surface.baseline)<.01);
   }
-  if (surface.tiltedPanel && poseOf(asset,surface,mapId)!=="flat") return false;
+  if (surface.tiltedPanel && (poseOf(asset,surface,mapId)!=="flat" ||
+    !(asset.book || ["document-folder", "clipboard"].includes(asset.id)))) return false;
   if (surface.anchor)
     return (
       Math.hypot(
@@ -265,11 +331,11 @@ export function fitsSurface(
     ? (Math.abs(width * Math.sin(angle)) + Math.abs(height * Math.cos(angle))) * surface.depth / 2
     : height;
   if (surface.ceilingY !== undefined &&
-    placement.y - aboveSupport - (surface.insertion?.lift ?? 0) < surface.ceilingY)
+    placement.y - aboveSupport - (placement.stackOn ? 4 : 0) - (surface.insertion?.lift ?? 0) < surface.ceilingY)
     return false;
   const points = footprint(asset, placement, surface, mapId);
   return (
-    points.every((p) => pointInPolygon(p, surface.polygon)) &&
+    supportedPolygon(points, surface.polygon) &&
     !(surface.obstacles ?? []).some((polygon) =>
       footprintsOverlap(
         points,
@@ -288,9 +354,11 @@ export function normalizePlacement(
   surface: Surface,
   angle: number,
   mapId: string,
+  bookPose?: Placement["bookPose"],
 ): Placement {
-  const pose = poseOf(asset, surface, mapId);
+  const pose = poseOf(asset, surface, mapId, {bookPose});
   return {
+    ...(bookPose !== undefined ? {bookPose} : {}),
     surface: surface.id,
     x: surface.anchor?.x ?? point.x,
     y: surface.anchor?.y ?? surface.baseline ?? point.y,

@@ -1,0 +1,11 @@
+{
+  "id": "cushion--shelf-front",
+  "source": "artwork/cushion--shelf-front.png",
+  "target": "items/views/cushion--shelf-front.webp",
+  "reference": "artwork/cushion.png",
+  "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-6f8a311c-72d8-4ce5-84ef-3ee3b07d5d0d.png",
+  "status": "integrated-source",
+  "date": "2026-09-17",
+  "review": "True RGBA verified; review at actual scene size in all-placement QA."
+}

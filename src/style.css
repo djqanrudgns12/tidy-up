@@ -3370,6 +3370,7 @@ h1:focus {
 }
 .scene-action-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
@@ -3428,6 +3429,11 @@ h1:focus {
 .scene-rotate-buttons button:hover {
   border-color: #397052;
   background: #e9f3e5;
+}
+.scene-rotate-buttons button[aria-pressed="true"] {
+  background: #e3f0dc;
+  border-color: #397052;
+  box-shadow: inset 0 0 0 1px #397052;
 }
 .scene-rotate-buttons button:active {
   background: #dfeedd;

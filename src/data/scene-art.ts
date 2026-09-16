@@ -14,6 +14,10 @@ export function hangingContact(asset:AssetDefinition,mapId:string) {
 
 /** One fixed camera per scene. Keep the same drawing while carrying an object. */
 export function sceneArtwork(asset: AssetDefinition, mapId: string, surface?: Surface) {
+  if (["cap", "sun-hat", "pillow", "cushion"].includes(asset.id)) return {
+    metricId: `${asset.id}--shelf-front`, path: `assets/items/views/${asset.id}--shelf-front.webp`, standing: true,
+    footprintDepth: asset.id === "pillow" ? 50 : asset.id === "cushion" ? 55 : asset.id === "sun-hat" ? 38 : 28,
+  };
   if(mapId==="living-room" && asset.id==="blanket") return {
     metricId:"blanket--folded-front",path:"assets/items/views/blanket--folded-front.webp",standing:true,footprintDepth:65,
   };
@@ -38,7 +42,7 @@ export function sceneArtwork(asset: AssetDefinition, mapId: string, surface?: Su
   return {
     metricId: lowFront ? `${asset.id}--low-front` : asset.id,
     path: lowFront ? `assets/items/views/${asset.id}--low-front.webp` : asset.path,
-    standing: lowFront || asset.standing || (mapId==="living-room" && ["book-stand","cushion"].includes(asset.id)),
+    standing: lowFront || asset.standing || asset.id === "glue-stick" || (mapId==="living-room" && ["book-stand","cushion"].includes(asset.id)),
     // Box floor depth comes from the primary top view, not the front sprite height.
     footprintDepth: lowFront ? (mapId==="living-room"?38:asset.height) : mapId==="living-room" && ["book-stand","cushion"].includes(asset.id) ? 35 : mapId==="library" && asset.id==="bookend" ? 38 : undefined,
   };

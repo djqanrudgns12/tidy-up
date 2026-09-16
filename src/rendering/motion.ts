@@ -1,6 +1,6 @@
 import { assetsById } from "../data/catalog";
 import { hasShelfView,hasHangingView,hangingContact } from "../data/scene-art";
-import { poseOf, sizeOf } from "../domain/placement";
+import { placementSurface, poseOf, sizeOf } from "../domain/placement";
 import type {
   ItemDefinition,
   PhysicalMap,
@@ -26,8 +26,8 @@ export function motionFrame(
   geometry: PhysicalMap,
   mapId: string,
 ) {
-  const a = geometry.surfaces.find((s) => s.id === motion.from.surface)!;
-  const b = geometry.surfaces.find((s) => s.id === motion.to.surface)!;
+  const a = placementSurface(geometry.surfaces.find((s) => s.id === motion.from.surface)!, motion.from);
+  const b = placementSurface(geometry.surfaces.find((s) => s.id === motion.to.surface)!, motion.to);
   const asset = assetsById[item.asset];
   const centerOffset = (s: Surface) => {
     const [,h] = sizeOf(asset,mapId,s);
@@ -43,7 +43,7 @@ export function motionFrame(
   const fromCenter =
       motion.from.y - (motion.from.stackOn ? 4 : 0) + centerOffset(a),
     toCenter = motion.to.y - (motion.to.stackOn ? 4 : 0) + centerOffset(b);
-  const different = motion.from.surface !== b.id;
+  const different = motion.from.surface !== b.id || turning;
   const sourceLift = different ? (a.insertion?.lift ?? (a.anchor ? 24 : 0)) : 0;
   const extractionEnd = sourceLift ? 0.24 : 0;
   if (sourceLift && motion.progress < extractionEnd) {
@@ -86,7 +86,7 @@ export function motionFrame(
     angle: motion.from.angle + angle * t,
   };
   const sliding =
-    motion.from.surface === motion.to.surface && motion.kind !== "return";
+    !different && motion.kind !== "return";
   const elevation = insert
     ? mix(sourceLift, lift, t) * (1 - q)
     : sliding

@@ -1,8 +1,28 @@
 import { expect, it, vi } from "vitest";
-import { makeSession, reducer, type Session } from "./session";
+import { activeItems, makeSession, reducer, type Session } from "./session";
 import { readSaved, saveSession, storageKey } from "./storage";
 
 const href = "https://example.test/Cleaning/index.html";
+
+it("앞면 시점으로 바뀐 물건은 이전 회전만 보정하고 좌표와 활동을 보존한다", () => {
+  const storage = new MemoryStorage();
+  for (const mapId of ["school-desk", "classroom-cabinet", "bedroom", "wardrobe", "living-room", "shoe-cabinet"]) {
+    let s = reducer(makeSession(), { type: "BEGIN" });
+    s = reducer(s, { type: "PROFILE", name: "복원검수", character: "cat" });
+    s = reducer(s, { type: "TUTORIAL_DONE" });
+    s = reducer(s, { type: "MAP", mapId });
+    const changed = activeItems(mapId, s.extras).filter(i => ["cap", "sun-hat", "pillow", "cushion", "glue-stick"].includes(i.asset));
+    const placements = { ...s.placements };
+    for (const item of changed) placements[item.id] = { ...placements[item.id], angle: 15 };
+    saveSession(storage, href, { ...s, placements });
+    expect(readSaved(storage, href).saved).toEqual(s);
+    if (changed.length) {
+      placements[changed[0].id] = { ...placements[changed[0].id], x: -1000 };
+      saveSession(storage, href, { ...s, placements });
+      expect(readSaved(storage, href).saved).toBeUndefined();
+    }
+  }
+});
 class MemoryStorage implements Storage {
   private values = new Map<string, string>();
   get length() {

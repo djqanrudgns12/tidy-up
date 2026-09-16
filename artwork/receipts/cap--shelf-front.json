@@ -1,0 +1,11 @@
+{
+  "id": "cap--shelf-front",
+  "source": "artwork/cap--shelf-front.png",
+  "target": "items/views/cap--shelf-front.webp",
+  "reference": "artwork/cap.png",
+  "prompt": "Low frontal shelf companion view of the original object, matching colour/material, real volume and true transparent alpha. Generated with imagegen.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0aab8-7749-7c92-8e83-8a1300fec882\\exec-ae4997ec-7490-4f73-9c82-3377b4a1796b.png",
+  "status": "integrated-source",
+  "date": "2026-09-17",
+  "review": "True RGBA verified; review at actual scene size in all-placement QA."
+}

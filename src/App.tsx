@@ -3,6 +3,7 @@ import { mapsById } from "./data/maps";
 import { assetsById } from "./data/catalog";
 import { characters, quiz, tools } from "./data/lesson";
 import { physicalMaps } from "./data/physical";
+import { hasShelfView } from "./data/scene-art";
 import {
   activeItems,
   availableTool,
@@ -26,7 +27,7 @@ import {
   recordPage,
   replaceCurrentPage,
 } from "./domain/page-history";
-import type { ArtCollection, Point } from "./domain/types";
+import type { ArtCollection, Placement, Point } from "./domain/types";
 import {
   assetUrl,
   loadSceneItem,
@@ -102,7 +103,7 @@ export function App() {
     chosen &&
       map &&
       selectedSurface &&
-      poseOf(assetsById[chosen.asset], selectedSurface, map.id) === "flat",
+      poseOf(assetsById[chosen.asset], selectedSurface, map.id, selectedPlacement) === "flat",
   );
   const workingPlacements =
     state.step === "setup" && map
@@ -322,8 +323,8 @@ export function App() {
   function confirm(text: string, button: string, action: Action) {
     setConfirmation({ text, button, onConfirm: () => dispatch(action) });
   }
-  function place(id: string, point: Point, surfaceId?: string, angle?: number) {
-    const checked = tryPlacement(state, id, point, surfaceId, angle);
+  function place(id: string, point: Point, surfaceId?: string, angle?: number, bookPose?: Placement["bookPose"]) {
+    const checked = tryPlacement(state, id, point, surfaceId, angle, bookPose);
     setMessage(checked.message);
     if (checked.placement) {
       dispatch({ type: "MOVE", id, placement: checked.placement });
@@ -948,6 +949,20 @@ export function App() {
                     <span>선택한 물건</span>
                     <strong>{chosen.label}</strong>
                   </div>
+                  {selectedSurface?.bookSpines && hasShelfView(assetsById[chosen.asset], map.id) && selectedPlacement && (
+                    <div className="scene-rotate-control">
+                      <span className="scene-action-label">책 놓는 모습</span>
+                      <div className="scene-rotate-buttons">
+                        {(["shelf", "flat"] as const).map(bookPose => (
+                          <button key={bookPose} type="button"
+                            aria-pressed={(selectedPlacement.bookPose ?? "shelf") === bookPose}
+                            onClick={() => place(chosen.id, selectedPlacement, selectedSurface.id, undefined, bookPose)}>
+                            {bookPose === "flat" ? "눕혀 놓기" : "세워 꽂기"}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   {selectedCanRotate ? (
                     <div className="scene-rotate-control">
                       <span className="scene-action-label">방향 바꾸기</span>

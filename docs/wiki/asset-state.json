@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-16T07:27:34.292Z",
+  "generatedAt": "2026-09-16T16:17:33.940Z",
   "summary": {
     "implementedMapIds": [
       "school-desk",
@@ -13,11 +13,11 @@
       "living-room",
       "shoe-cabinet"
     ],
-    "requiredDeliveryFiles": 127,
-    "deliveredFiles": 127,
+    "requiredDeliveryFiles": 131,
+    "deliveredFiles": 131,
     "missingDeliveryFiles": 0,
-    "requiredOriginals": 118,
-    "localOriginals": 118,
+    "requiredOriginals": 122,
+    "localOriginals": 122,
     "notGeneratedOriginals": 0,
     "generatedAwaitingReviewOrIntegration": 0,
     "knownRevisions": 0,
@@ -888,6 +888,54 @@
       "revision": null,
       "receipt": "artwork/receipts/paper-scrap.json",
       "sha256": "d9e14fd330327ed9ab63f19cf7356be64bd413895b7fbb8187a99f397846ed05"
+    },
+    {
+      "id": "cap--shelf-front",
+      "kind": "support-view",
+      "target": "assets/items/views/cap--shelf-front.webp",
+      "source": "artwork/cap--shelf-front.png",
+      "sourcePresent": true,
+      "delivered": true,
+      "status": "integrated-source",
+      "revision": null,
+      "receipt": "artwork/receipts/cap--shelf-front.json",
+      "sha256": "f93fdc8cd0a07fee99d0170449a72128b490713df44af2595a963967d70f32b9"
+    },
+    {
+      "id": "sun-hat--shelf-front",
+      "kind": "support-view",
+      "target": "assets/items/views/sun-hat--shelf-front.webp",
+      "source": "artwork/sun-hat--shelf-front.png",
+      "sourcePresent": true,
+      "delivered": true,
+      "status": "integrated-source",
+      "revision": null,
+      "receipt": "artwork/receipts/sun-hat--shelf-front.json",
+      "sha256": "e23937a0d5fa1f338cd8d8ea6821e475b04dc216314385d0112744692ee91827"
+    },
+    {
+      "id": "pillow--shelf-front",
+      "kind": "support-view",
+      "target": "assets/items/views/pillow--shelf-front.webp",
+      "source": "artwork/pillow--shelf-front.png",
+      "sourcePresent": true,
+      "delivered": true,
+      "status": "integrated-source",
+      "revision": null,
+      "receipt": "artwork/receipts/pillow--shelf-front.json",
+      "sha256": "82e0727f095a546ce691eb3a376526920603e1168b0e1100ffa18f1198ad05ec"
+    },
+    {
+      "id": "cushion--shelf-front",
+      "kind": "support-view",
+      "target": "assets/items/views/cushion--shelf-front.webp",
+      "source": "artwork/cushion--shelf-front.png",
+      "sourcePresent": true,
+      "delivered": true,
+      "status": "integrated-source",
+      "revision": null,
+      "receipt": "artwork/receipts/cushion--shelf-front.json",
+      "sha256": "f24922e653883ad1f0cac1db76bbc7145c10145e53aaf197a22f6b96dec107aa"
     },
     {
       "id": "t-shirt--folded-front",

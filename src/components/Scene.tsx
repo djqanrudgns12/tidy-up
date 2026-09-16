@@ -90,7 +90,7 @@ export function Scene({
     const surface = model.geometry.surfaces.find((s) => s.id === to.surface)!;
     const source = model.geometry.surfaces.find((s) => s.id === from.surface)!;
     const itemAsset=assetsById[model.items.find(i=>i.id===id)!.asset];
-    const turningBook = (hasShelfView(itemAsset,model.mapId) && !!source.bookSpines !== !!surface.bookSpines) ||
+    const turningBook = (hasShelfView(itemAsset,model.mapId) && (!!source.bookSpines && from.bookPose !== "flat") !== (!!surface.bookSpines && to.bookPose !== "flat")) ||
       (hasHangingView(itemAsset,model.mapId) && (source.pose==="hanging")!==(surface.pose==="hanging"));
     const distance = Math.hypot(to.x - from.x, to.y - from.y);
     const duration = Math.min(
