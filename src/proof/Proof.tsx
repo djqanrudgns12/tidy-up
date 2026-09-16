@@ -71,7 +71,7 @@ export function Proof() {
     <main className="app-shell">
       <header className="topbar">
         <a className="brand" href="./">
-          생활을 가꾸는 실과
+          정리 정돈과 청소 성향 알아보기
         </a>
         <span className="eyebrow">배치 검수 · 첫 책상 장면</span>
       </header>

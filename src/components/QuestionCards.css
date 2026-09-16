@@ -1,0 +1,473 @@
+/* 아이젠하워 튜토리얼 · 마무리 퀴즈 카드 */
+.panel.question-card {
+  --qc-line: #dae2d2;
+  --qc-point: #3f7a58;
+  --qc-point-soft: #f3f8ee;
+  --qc-point-line: #8fb59a;
+  --qc-good: #3c7348;
+  --qc-good-bg: #edf5e7;
+  --qc-good-line: #7fae86;
+  --qc-bad: #a33d35;
+  --qc-bad-bg: #fdf0ee;
+  --qc-bad-line: #e8b3ac;
+  max-width: 880px;
+  margin: 34px auto;
+}
+.question-card h1 {
+  font-size: 29px;
+  text-wrap: balance;
+}
+.question-card p,
+.question-card small,
+.qc-question {
+  text-wrap: pretty;
+}
+
+.qc-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #5b7256;
+}
+.qc-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.qc-progress > span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e1e7da;
+}
+.qc-progress > span.done {
+  background: var(--qc-good-line);
+}
+.qc-progress > span.current {
+  width: 24px;
+  border-radius: 5px;
+  background: var(--qc-point);
+}
+.qc-progress b {
+  margin-left: 6px;
+  font-size: 15px;
+}
+
+.qc-intro {
+  margin: 10px 0 20px;
+}
+.qc-question {
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #f4f5eb;
+  font-family: var(--font-ui);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: -0.6px;
+  color: #20352d;
+}
+
+/* 네 칸 분류판 */
+.qc-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.qc-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--qc-line);
+  border-radius: 14px;
+  background: #fff;
+  text-align: left;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.qc-tile > span:not(.qc-icon):not(.qc-mark),
+.qc-steps li > span:last-child {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.qc-tile strong,
+.qc-steps strong {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #20352d;
+}
+.qc-tile small,
+.qc-steps small {
+  font-family: var(--font-reading);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #5d6f64;
+}
+.qc-tile:disabled {
+  opacity: 1;
+}
+.qc-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: var(--qc-icon);
+  background: var(--qc-icon-bg);
+  transition: background-color 0.15s ease;
+}
+.qc-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.qc-icon-discard {
+  --qc-icon: #85664f;
+  --qc-icon-bg: #f4ece4;
+}
+.qc-icon-help {
+  --qc-icon: #3d6b8f;
+  --qc-icon-bg: #e7f0f6;
+}
+.qc-icon-now {
+  --qc-icon: #a5721b;
+  --qc-icon-bg: #fbf0d9;
+}
+.qc-icon-later {
+  --qc-icon: #4b7a58;
+  --qc-icon-bg: #e7f1e6;
+}
+.qc-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.qc-tile.correct {
+  border-color: var(--qc-good-line);
+  background: var(--qc-good-bg);
+  box-shadow: inset 0 0 0 1px var(--qc-good-line);
+}
+.qc-tile.correct .qc-mark {
+  background: var(--qc-good);
+}
+.qc-tile.wrong {
+  border-color: var(--qc-bad-line);
+  background: var(--qc-bad-bg);
+}
+.qc-tile.wrong .qc-mark {
+  background: var(--qc-bad);
+}
+.qc-tile.wrong strong {
+  color: #7d3a33;
+}
+.qc-tile.wrong .qc-icon {
+  filter: grayscale(0.6);
+  opacity: 0.7;
+}
+.qc-board-legend .qc-tile {
+  min-height: 70px;
+  background: #fbfcf8;
+}
+
+/* 퀴즈 보기 */
+.qc-options {
+  display: grid;
+  gap: 10px;
+}
+.qc-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 62px;
+  padding: 13px 18px;
+  border: 1px solid var(--qc-line);
+  border-radius: 12px;
+  background: #fff;
+  font-family: var(--font-reading);
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: left;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.qc-option:disabled {
+  opacity: 1;
+}
+.qc-radio {
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #c9d4c3;
+  border-radius: 50%;
+  background: #fff;
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+.qc-option.correct {
+  border-color: var(--qc-good-line);
+  background: var(--qc-good-bg);
+  box-shadow: inset 0 0 0 1px var(--qc-good-line);
+}
+.qc-option.correct .qc-radio {
+  border-color: var(--qc-good);
+  background: var(--qc-good);
+}
+.qc-option.wrong {
+  border-color: var(--qc-bad-line);
+  background: var(--qc-bad-bg);
+}
+.qc-option.wrong .qc-radio {
+  border-color: var(--qc-bad);
+  background: var(--qc-bad);
+}
+.qc-option.rest {
+  color: #7a887f;
+}
+
+/* 커서를 올리면 은은하게 포인트 색으로 바뀐다. 터치 기기에는 적용하지 않는다. */
+@media (hover: hover) {
+  .qc-tile:not(:disabled):not(li):hover,
+  .qc-option:not(:disabled):hover {
+    border-color: var(--qc-point-line);
+    background: var(--qc-point-soft);
+    box-shadow: 0 4px 14px #2f5b4312;
+  }
+  .qc-tile:not(:disabled):not(li):hover strong,
+  .qc-option:not(:disabled):hover {
+    color: #1f5a41;
+  }
+  .qc-tile:not(:disabled):not(li):hover .qc-icon {
+    background: #fff;
+  }
+  .qc-option:not(:disabled):hover .qc-radio {
+    border-color: var(--qc-point);
+  }
+}
+
+/* 피드백 패널 */
+.qc-feedback {
+  margin-top: 18px;
+  padding: 18px 22px;
+  border: 1px solid var(--qc-good-line);
+  border-radius: 14px;
+  background: var(--qc-good-bg);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.qc-feedback strong {
+  display: block;
+  font-size: 17px;
+  color: var(--qc-good);
+}
+.qc-feedback p {
+  margin-top: 4px;
+  color: #3f5549;
+}
+.qc-feedback.wrong {
+  border-color: var(--qc-bad-line);
+  background: var(--qc-bad-bg);
+}
+.qc-feedback.wrong strong {
+  color: var(--qc-bad);
+}
+.qc-feedback.wrong p {
+  color: #5f4744;
+}
+.qc-feedback:focus-visible {
+  outline: 3px solid #a56b20;
+  outline-offset: 3px;
+}
+.qc-points {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 12px 16px 12px 34px;
+  border-radius: 10px;
+  background: #ffffffb3;
+  font-family: var(--font-reading);
+  line-height: 1.55;
+  color: #3f5549;
+}
+.qc-points li::marker {
+  color: var(--qc-point);
+  font-family: var(--font-ui);
+  font-weight: 700;
+}
+.qc-source {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #7a887f;
+}
+
+/* 아이젠하워 법칙 설명 */
+.qc-story {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 20px 24px;
+  border-left: 4px solid #c9dcc0;
+  border-radius: 4px 14px 14px 4px;
+  background: #f6f8f1;
+}
+.qc-story p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #3a4f45;
+}
+.qc-subheading {
+  margin: 26px 0 12px;
+  font-size: 19px;
+  letter-spacing: -0.4px;
+}
+.qc-steps {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.qc-steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 16px;
+  border: 1px solid var(--qc-line);
+  border-radius: 14px;
+  background: #fff;
+}
+.qc-step-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #25634d;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.qc-steps li > span:last-child {
+  grid-template-columns: 136px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+}
+.qc-closing {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #3a4f45;
+}
+.qc-closing + .qc-source {
+  margin-top: 4px;
+}
+
+.qc-next {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+
+@media (max-width: 760px) {
+  .panel.question-card {
+    margin: 22px auto;
+  }
+  .question-card h1 {
+    font-size: 25px;
+  }
+  .qc-question {
+    padding: 16px 18px;
+    font-size: 19px;
+    letter-spacing: -0.4px;
+  }
+  .qc-story {
+    padding: 16px 18px;
+  }
+  .qc-story p,
+  .qc-closing {
+    font-size: 16px;
+  }
+  .qc-feedback {
+    padding: 16px 18px;
+  }
+}
+@media (max-width: 640px) {
+  .qc-steps li > span:last-child {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+@media (max-width: 560px) {
+  .panel.question-card {
+    padding: 22px 16px;
+  }
+  .qc-question {
+    padding: 14px 16px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .qc-feedback {
+    padding: 14px 16px;
+  }
+  .qc-points {
+    padding: 10px 12px 10px 28px;
+  }
+  .qc-board {
+    grid-template-columns: 1fr;
+  }
+  .qc-tile {
+    min-height: 64px;
+    padding: 11px 14px;
+  }
+  .qc-option {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+  .qc-next .button {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qc-tile,
+  .qc-option,
+  .qc-radio,
+  .qc-icon {
+    transition: none;
+  }
+}
