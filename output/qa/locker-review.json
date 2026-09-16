@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-16",
+  "mapRevision": 4,
+  "combinations": 42,
+  "beforeAfterScenes": 84,
+  "screenExportMaxPixelDifference": 0,
+  "browserExtras": ["e1", "e2", "e6"],
+  "browserPlacedItems": 11,
+  "bookDragOutAndBack": true,
+  "flow": ["tutorial", "map", "extras", "organize", "ventilate", "duster", "broom", "cloth", "store-tools", "quiz", "result"],
+  "resultImageNaturalSize": [1984, 848],
+  "downloadedFileReopened": false,
+  "realDeviceOrClassroomRehearsal": false,
+  "newOriginals": ["small-pouch", "document-folder--shelf"],
+  "newOriginalReview": "output/qa/locker-new-art-contact.png",
+  "motion": "Separate cover/spine artwork, constant physical book height with projected tilt/yaw during free carry; weighted alpha blend; turn completes before insertion; reverse extraction preserves the spine view.",
+  "tests": 53
+}

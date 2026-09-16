@@ -1,0 +1,10 @@
+{
+  "id": "book-stand",
+  "source": "artwork/book-stand.png",
+  "target": "items/catalog/book-stand.webp",
+  "kind": "primary-object",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접이식 독서대. Distinctive construction: 받침턱이 있는 펼친 독서대. Use: 책을 세워 놓고 읽을 때.  One compact wooden folding desktop book stand standing OPEN in its natural usable angled position, near-frontal slightly elevated view, empty reading panel with a small lower ledge and a credible visible rear support. No book, text or decorations.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-eba905d0-8165-4a32-adef-095619d36b4d.png",
+  "status": "pending-review",
+  "date": "2026-09-16"
+}

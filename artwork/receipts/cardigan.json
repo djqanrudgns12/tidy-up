@@ -1,0 +1,10 @@
+{
+  "id": "cardigan",
+  "source": "artwork/cardigan.png",
+  "target": "items/catalog/cardigan.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 카디건. Distinctive construction: 옷걸이에 걸린 단추 카디건. Use: 실내외에서 덧입을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One child's muted mustard button-front knitted cardigan, completely laid flat, sleeves extended naturally downward slightly outward. One wooden hanger correctly inside shoulders with metal hook above collar. Top-down flat lay. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-37d0db1a-226a-4c5a-926f-2337bca2fde0.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+}

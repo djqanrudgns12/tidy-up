@@ -1,0 +1,1086 @@
+[
+  {
+    "id": "textbook",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      59,
+      23,
+      1200,
+      1230
+    ]
+  },
+  {
+    "id": "notebook",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      65,
+      1202,
+      1190
+    ]
+  },
+  {
+    "id": "homework-diary",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      16,
+      1224,
+      1205
+    ]
+  },
+  {
+    "id": "story-book",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      113,
+      20,
+      1214,
+      1172
+    ]
+  },
+  {
+    "id": "science-book",
+    "kind": "primary-object",
+    "status": "needs-revision",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      63,
+      21,
+      1224,
+      1182
+    ]
+  },
+  {
+    "id": "picture-book",
+    "kind": "primary-object",
+    "status": "needs-revision",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      61,
+      107,
+      1192,
+      1196
+    ]
+  },
+  {
+    "id": "science-comic",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      21,
+      1200,
+      1228
+    ]
+  },
+  {
+    "id": "dictionary",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      33,
+      21,
+      1098,
+      1216
+    ]
+  },
+  {
+    "id": "magazine",
+    "kind": "primary-object",
+    "status": "needs-revision",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      41,
+      53,
+      1192,
+      1228
+    ]
+  },
+  {
+    "id": "reading-notebook",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      69,
+      1067,
+      1199
+    ]
+  },
+  {
+    "id": "document-folder",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      4,
+      1222,
+      1252
+    ]
+  },
+  {
+    "id": "clipboard",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      60,
+      1236,
+      1202
+    ]
+  },
+  {
+    "id": "bookmark",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      78,
+      21,
+      1200,
+      1222
+    ]
+  },
+  {
+    "id": "bookend",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      200,
+      92,
+      1170,
+      1175
+    ]
+  },
+  {
+    "id": "pencil-case",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      15,
+      245,
+      1222,
+      1198
+    ]
+  },
+  {
+    "id": "pencil",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      55,
+      358,
+      1195,
+      1198
+    ]
+  },
+  {
+    "id": "eraser",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1635,
+      962
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      75,
+      105,
+      1597,
+      924
+    ]
+  },
+  {
+    "id": "ruler",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      33,
+      53,
+      1223,
+      1197
+    ]
+  },
+  {
+    "id": "pencil-sharpener",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      49,
+      48,
+      1218,
+      1198
+    ]
+  },
+  {
+    "id": "scissors",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      33,
+      21,
+      1200,
+      1230
+    ]
+  },
+  {
+    "id": "glue-stick",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      210,
+      87,
+      1194,
+      1198
+    ]
+  },
+  {
+    "id": "colored-pencils",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      49,
+      1148,
+      1198
+    ]
+  },
+  {
+    "id": "felt-pens",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      1218,
+      1254
+    ]
+  },
+  {
+    "id": "paint-set",
+    "kind": "primary-object",
+    "status": "generated-awaiting-review",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      48,
+      1206,
+      1254
+    ]
+  },
+  {
+    "id": "brush-case",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      21,
+      1200,
+      1227
+    ]
+  },
+  {
+    "id": "palette",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      53,
+      1172,
+      1254
+    ]
+  },
+  {
+    "id": "origami-paper",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      120,
+      100,
+      1165,
+      1222
+    ]
+  },
+  {
+    "id": "tape",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      128,
+      1200,
+      1230
+    ]
+  },
+  {
+    "id": "calculator",
+    "kind": "primary-object",
+    "status": "generated-awaiting-review",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      77,
+      1206,
+      1254
+    ]
+  },
+  {
+    "id": "backpack",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      17,
+      1106,
+      1384
+    ]
+  },
+  {
+    "id": "shoe-bag",
+    "kind": "primary-object",
+    "status": "generated-awaiting-review",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      39,
+      19,
+      1093,
+      1222
+    ]
+  },
+  {
+    "id": "tote-bag",
+    "kind": "primary-object",
+    "status": "generated-awaiting-review",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      89,
+      15,
+      1228,
+      1242
+    ]
+  },
+  {
+    "id": "water-bottle",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      97,
+      21,
+      1198,
+      1228
+    ]
+  },
+  {
+    "id": "umbrella",
+    "kind": "primary-object",
+    "status": "generated-awaiting-review",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      59,
+      48,
+      1198,
+      1206
+    ]
+  },
+  {
+    "id": "towel",
+    "kind": "primary-object",
+    "status": "generated-awaiting-review",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      254
+    ],
+    "bounds": [
+      0,
+      0,
+      1222,
+      1254
+    ]
+  },
+  {
+    "id": "board-game",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      77,
+      10,
+      1177,
+      1200
+    ]
+  },
+  {
+    "id": "puzzle-box",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      4,
+      1200,
+      1254
+    ]
+  },
+  {
+    "id": "card-game",
+    "kind": "primary-object",
+    "status": "needs-revision",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      70,
+      1193,
+      1204
+    ]
+  },
+  {
+    "id": "jump-rope",
+    "kind": "primary-object",
+    "status": "visual-reviewed-awaiting-integration",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      57,
+      51,
+      1200,
+      1254
+    ]
+  },
+  {
+    "id": "ball",
+    "kind": "primary-object",
+    "status": "needs-revision",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      48,
+      1198,
+      1254
+    ]
+  },
+  {
+    "id": "paper-scrap",
+    "kind": "primary-object",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      29,
+      20,
+      1230,
+      1198
+    ]
+  },
+  {
+    "id": "school-desk",
+    "kind": "background",
+    "status": "integrated-source",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "locker",
+    "kind": "background",
+    "status": "generated-awaiting-review",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "library",
+    "kind": "background",
+    "status": "generated-awaiting-review",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "classroom-cabinet",
+    "kind": "background",
+    "status": "integrated-source",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "home-desk",
+    "kind": "background",
+    "status": "generated-awaiting-review",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "bedroom",
+    "kind": "background",
+    "status": "generated-awaiting-review",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "wardrobe",
+    "kind": "background",
+    "status": "generated-awaiting-review",
+    "mode": "RGB",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": null,
+    "bounds": null
+  },
+  {
+    "id": "rabbit",
+    "kind": "character",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      49,
+      21,
+      1202,
+      1228
+    ]
+  },
+  {
+    "id": "bear",
+    "kind": "character",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      15,
+      1232,
+      1228
+    ]
+  },
+  {
+    "id": "cat",
+    "kind": "character",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      15,
+      1230,
+      1230
+    ]
+  },
+  {
+    "id": "bird",
+    "kind": "character",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      49,
+      19,
+      1200,
+      1230
+    ]
+  },
+  {
+    "id": "duster",
+    "kind": "tool",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      1191,
+      1254
+    ]
+  },
+  {
+    "id": "broom",
+    "kind": "tool",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      33,
+      19,
+      1174,
+      1254
+    ]
+  },
+  {
+    "id": "cloth",
+    "kind": "tool",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      20,
+      1224,
+      1227
+    ]
+  },
+  {
+    "id": "dust",
+    "kind": "effect",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      20,
+      1240,
+      1254
+    ]
+  },
+  {
+    "id": "stain",
+    "kind": "effect",
+    "status": "integrated-source",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      0,
+      9,
+      1245,
+      1254
+    ]
+  }
+]

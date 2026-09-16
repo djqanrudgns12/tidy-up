@@ -142,3 +142,17 @@ it("해제한 이전 원화의 늦은 실패가 같은 URL의 새 요청을 지�
   await TestImage.instances[1].onload!();
   await current;
 });
+
+it("수납장 최초 로딩과 추가 물건 로딩은 같은 선반 시점 캐시를 공유한다", async () => {
+  const { loadSceneArt, loadSceneItem, sceneArtPaths, loadArt } = await import("./art");
+  const loading = loadSceneArt("classroom-cabinet", ["card-game"]);
+  const extra = loadSceneItem("classroom-cabinet", "card-game");
+  const paths = sceneArtPaths("classroom-cabinet", ["card-game"]);
+  expect(paths).toContain("assets/items/views/card-game--low-front.webp");
+  expect(TestImage.instances.filter((image) => image.src.includes("card-game"))).toHaveLength(1);
+  await Promise.all(TestImage.instances.map((image) => image.onload!()));
+  expect((await loading).items["card-game"]).toBe(await extra);
+  const primary = loadArt("card-game");
+  await TestImage.instances.at(-1)!.onload!();
+  expect(await primary).not.toBe(await extra);
+});

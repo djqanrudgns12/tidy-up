@@ -1,0 +1,10 @@
+{
+  "id": "remote",
+  "source": "artwork/remote.png",
+  "target": "items/catalog/remote.webp",
+  "kind": "primary-object",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 리모컨. Distinctive construction: 큰 전원 버튼과 방향 버튼. Use: 함께 보는 기기를 조작할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple dark-grey television remote control, flat top-down view, one red power button and a few plain rounded buttons with small unlabelled shapes; no text, numbers or logo.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-eb003368-e90e-42f0-af91-c50c8ef860a8.png",
+  "status": "pending-review",
+  "date": "2026-09-16"
+}

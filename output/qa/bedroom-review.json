@@ -1,0 +1,30 @@
+{
+  "map": "bedroom",
+  "date": "2026-09-16",
+  "combinations": 42,
+  "renderedFrames": 84,
+  "maximumScreenExportPixelDifference": 0,
+  "originalAngleTapCombinations": 42,
+  "browser": {
+    "items": 11,
+    "extras": [
+      "e1",
+      "e2",
+      "e3"
+    ],
+    "clothesExtraction": true,
+    "clothesDragInsertion": true,
+    "cleaning": true,
+    "quiz": true,
+    "resultDimensions": [
+      1984,
+      848
+    ],
+    "resultComplete": true,
+    "resumeAfterReload": true,
+    "downloadedFileReopened": false
+  },
+  "manualVisualReview": "Representative actual scene with all bedding, basket extraction and result. Not detailed manual review of every sheet cell.",
+  "realDevice": false,
+  "classroomRehearsal": false
+}

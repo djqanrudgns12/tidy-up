@@ -1,0 +1,17 @@
+{
+  "id": "socks",
+  "source": "artwork/socks.png",
+  "target": "items/catalog/socks.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 양말 한 켤레. Distinctive construction: 짝이 보이는 두 양말. Use: 두 짝을 함께 보관하는 양말. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One matched pair of cream socks with small muted teal cuff stripes, placed together as ONE compact pair, both complete, child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-ff895a75-9300-47a5-85fb-b845be22aed1.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/socks-local.png",
+  "localFinishing": {
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 100914,
+    "method": "remove tiny edge fringe and jagged alpha only",
+    "status": "awaiting-visual-review"
+  },
+  "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+}

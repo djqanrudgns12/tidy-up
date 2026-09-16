@@ -1,0 +1,30 @@
+[
+  {
+    "id": "comb",
+    "source": "artwork/comb.png",
+    "target": "items/catalog/comb.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 빗. Distinctive construction: 둥근 손잡이와 굵은 빗살. Use: 머리를 빗을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Muted pastel materials, no glow; whole complete familiar object. For pocket tissues show a compact soft rectangular tissue packet with a small opened dispensing flap and one tissue edge, no printing. For comb show one sturdy broad-tooth hair comb with all teeth clearly separated.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4d71489c-929c-456f-a062-559b46177b55.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "pocket-tissue",
+    "source": "artwork/pocket-tissue.png",
+    "target": "items/catalog/pocket-tissue.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 휴대용 휴지. Distinctive construction: 종이 한 장이 보이는 작은 포장. Use: 손이나 물건을 닦을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Muted pastel materials, no glow; whole complete familiar object. For pocket tissues show a compact soft rectangular tissue packet with a small opened dispensing flap and one tissue edge, no printing. For comb show one sturdy broad-tooth hair comb with all teeth clearly separated.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4576560a-257b-479a-8843-d50d0aedbea9.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "bedroom",
+    "source": "artwork/bedroom.png",
+    "target": "maps/bedroom/background.webp",
+    "prompt": "Use case: scientific-educational. Edit the attached bedroom background. Preserve the camera, framing, wood floor, window, low bookcase, clothes basket, right storage shelf, waste bin, all furniture shapes and exact locations. Remove ONLY the movable pillow and blue blanket on the left bed. Replace their covered region with a clean bare flat ivory mattress surface with a fitted plain cream cover, empty and unwrinkled, appropriate to the same wooden bed. No pillow or loose bedding anywhere. Keep the bed support surface perspective anatomically/architecturally coherent, near-frontal slightly elevated. Warm restrained hand-painted classroom illustration, same lighting as reference. Do not add movable objects, people, text, labels, UI or decorations. 4:3 landscape.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-2928c584-4e76-4804-96ad-151f69aeefb4.png",
+    "status": "pending-review",
+    "reference": "artwork/revisions/bedroom-v1.png",
+    "date": "2026-09-16"
+  }
+]

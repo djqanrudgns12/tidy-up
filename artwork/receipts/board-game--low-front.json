@@ -1,0 +1,12 @@
+{
+  "id": "board-game--low-front",
+  "target": "items/views/board-game--low-front.webp",
+  "input": "artwork/revisions/board-game--low-front-v2.png",
+  "method": "scripts/extract-box-alpha.py; RGB unchanged; continuous colored border convex hull; reviewed on cream and dark backgrounds",
+  "source": "artwork/board-game--low-front.png",
+  "tool": "user-authorized local finishing",
+  "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "priorSource": "artwork/revisions/board-game--low-front-v1.png"
+}

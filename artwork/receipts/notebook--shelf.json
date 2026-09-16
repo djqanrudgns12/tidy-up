@@ -1,0 +1,11 @@
+{
+  "id": "notebook--shelf",
+  "source": "artwork/notebook--shelf.png",
+  "target": "items/views/notebook--shelf.webp",
+  "prompt": "Use case: scientific-educational. Create one shelf-view sprite of exactly the mustard-yellow thin school notebook, matching yellow fabric spine, cream pages, and blank cream rounded rectangular label on cover; soft paper cover, not a thick hardback; thickness about 0.7 cm, 18 cm deep, 25 cm tall in the attached reference. Reference is for object identity, colours and painterly style; change the camera and support pose. Stand the CLOSED book upright on its bottom edge as if inserted normally into a bookcase with its SPINE facing the viewer. Show the thin spine nearly frontally, a narrow receding slice of the right cover, and a little cream page block on top. Only slightly elevated near-frontal camera. True three-dimensional new view, not a horizontally squeezed front cover. Entire object, centered, vertical, modest realistic thickness, ample clear padding. Preserve the attached object's distinctive construction. Soft upper-left light, original refined semi-realistic classroom illustration. True RGBA TRANSPARENT background; no checkerboard painted into pixels, no floor, no cast shadow, no external glow, no furniture, no extra objects, no text, no letters, no numbers.",
+  "reference": "artwork/notebook.png",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-6f4c7770-f608-4529-9ff3-3ed83e5b08a5.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Genuine alpha checked on light and dark composited backgrounds; original alpha preserved; new shelf perspective, not a transformed primary cover."
+}

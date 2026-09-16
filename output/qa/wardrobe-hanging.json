@@ -1,0 +1,51 @@
+[
+  {
+    "id": "jacket--alternate-support",
+    "mode": "RGB",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": null,
+    "alphaBounds": null,
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "cardigan--alternate-support",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      134,
+      36,
+      1122,
+      1169
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "hanger--alternate-support",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      32,
+      185,
+      1222,
+      983
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

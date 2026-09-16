@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cushion",
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 82532,
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "pillow",
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 67461,
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "blanket",
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 60560,
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "bed-sheet",
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 83507,
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "headphones",
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 109447,
+    "status": "awaiting-visual-review"
+  }
+]

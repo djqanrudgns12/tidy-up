@@ -1,0 +1,17 @@
+{
+  "id": "long-sleeve",
+  "source": "artwork/long-sleeve.png",
+  "target": "items/catalog/long-sleeve.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 긴팔 옷. Distinctive construction: 긴 소매를 포개어 접은 옷. Use: 소매를 포개어 접는 긴팔 옷. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded sage green long-sleeved cotton shirt, collar visible, sleeves tucked within rectangle, child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-7365036d-25fb-4b38-98c2-15103283ee7f.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/long-sleeve-local.png",
+  "localFinishing": {
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 93522,
+    "method": "remove tiny edge fringe and jagged alpha only",
+    "status": "awaiting-visual-review"
+  },
+  "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+}

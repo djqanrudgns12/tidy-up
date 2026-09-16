@@ -1,8 +1,11 @@
 {
   "id": "ball",
   "source": "artwork/ball.png",
+  "original": "artwork/ball.png",
+  "prompt": "Use case: precise-object-edit. Edit target: attached ball sprite. For a Korean grade-five classroom tidying activity, replace the beach-ball construction with ONE familiar matte rubber playground ball. Preserve the restrained red blue yellow cream palette and semi-realistic hand-painted finish, round volume, upper-left light and entire silhouette with generous transparent padding. Eliminate the large raised valve and inflated vinyl panel seams; use a continuous finely pebbled matte rubber surface with broad printed colour sections and subtle shallow grooves only. No text, logos, floor, cast shadow, accessories or checkerboard. True transparent RGBA background, square image. One ball only.",
+  "tool": "built-in image_gen",
+  "status": "integrated-source",
+  "date": "2026-09-16",
   "target": "items/catalog/ball.webp",
-  "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 공. Distinctive construction: 과장되지 않은 공용 고무공. Use: 친구들과 공놀이를 할 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines and restrained natural colours. No loose detached components. For spherical objects show round volume, not a flat circle.",
-  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-f987dff1-f130-4dd5-bfb6-ef40e1040483.png",
-  "status": "generated-awaiting-visual-review"
+  "priorSource": "artwork/revisions/ball-v1.png"
 }

@@ -21,11 +21,11 @@
 - `artwork/<id>.png`: 프로젝트 안에 보존한 실제 원본. 다른 컴퓨터에서도 사용한다.
 - `artwork/receipts/<id>.json`: 실제 프롬프트, 원본의 상대 경로, 최초 생성 경로, 배포 목표.
 - `artwork/generation-log.json`: **반영된 원화만** 기록한 ledger. source는 프로젝트 상대 경로. originPath는 출처일 뿐이다.
-- `artwork/resumed-review.json`: 이번 재개분의 첫 시각 검수와 수정5건.
+- `artwork/resumed-review.json`: 이번 재개분의 시각 검수와 수정 상태.
 - `artwork/resumed-generation-receipts.json`, `resumed-generation-batch2.json`: 초기 묶음의 과거 기록. canonical 상태는 개별 receipts와 asset-state다.
 - `output/qa/resumed-batch2.png`, `resumed-current.png`: 초기 검수용 접촉 시트. 이후 생성분을 모두 포함하지 않는다.
 
-## 알려진 수정5건
+## 기존 수정5건 — 반영 완료
 
 1. **picture-book**: 펼쳐진 그림책 → 닫힌 한 권. 곰과 강아지 그림을 표지 특징으로 유지.
 2. **magazine**: 여러 권이 겹친 모습 → 닫힌 한 권. 한 번에 움직이는 물건 수와 맞춤.
@@ -43,7 +43,7 @@
 - 참조 이미지가 없으면 새로 생성하기 전에 로컬 `artwork`를 확인한다. 생성 원본이 외부 폴더에만 남지 않도록 즉시 복사한다.
 - 진짜 RGBA 알파, 전체 실루엣, 배경/바닥/바깥 그림자 없음. 접촉·투영 그림자는 런타임이 담당하고 자체 명암은 원화에 남긴다.
 - 학교와 가정의 흔한 물건을 쓴다. 책은 한 권, 세트 물건은 실제로 같이 움직일 수 있는 닫힌 세트. 뜬 덮개·분리 부품·장식 소품은 피한다.
-- 배경은 현재 5개(locker/library/home-desk/bedroom/wardrobe)가 생성만 된 상태다. 직접 확인해야 하며 측정/승인되지 않았다. living-room/shoe-cabinet은 미생성이다.
+- 배경5개(locker/library/home-desk/bedroom/wardrobe)는 원화 직접 검수와 배포 반영을 마쳤다. 사물함과 도서관의 실제 공간 측정/활동 승인은 완료했고 나머지3개는 아직이다. living-room/shoe-cabinet은 미생성이다.
 - 본 세션의429는 이후 정상 생성으로 해소되었다. 무제한 사용을 보장하는 것으로 해석하지도, 과거 재설정일까지 대기하는 근거로 쓰지도 않는다.
 
 ## 반영 순서
@@ -53,7 +53,7 @@
 3. 승인한 원화만 `generation-log.json`에 넣는다. 검수 대기 원화를 한꺼번에 승인하지 않는다.
 4. Python3+Pillow로 `python scripts/prepare-assets.py`를 실행한다. Pillow가 없다면 새 컴퓨터의 로컬 Python 환경에 설치한다.
 5. **주의:** 기존 스크립트는 배포 이미지가 같은 크기로 존재하면 다시 인코딩하지 않는다. 교체할 때는 해당 public WebP를 버전 백업한 뒤 그 파일만 재생성한다. 전체 public을 지우지 않는다. `artwork/<id>.png` 로컬 원본을 우선하므로 새 버전 승인 시 이 파일의 교체/백업도 명시적으로 수행한다.
-6. `src/data/art-metrics.json`과 `artwork/asset-bounds.json` 갱신을 확인한다. 시점별 metrics 사용은 V1에서 연결해야 한다.
+6. `src/data/art-metrics.json`과 `artwork/asset-bounds.json` 갱신을 확인한다. 수납장 상자3개는 scene-art.ts에서 시점별 metrics를 연결했다. 사물함 책/파일3개는 자세 연결 완료, 알림장 책등은 입고 완료이고 도서관 책등7종도 입고·연결했고 다른8개 시점은 제작·연결이 남았다. 독서 공책은 정상 자리인 탁자에서 표지 원화를 유지한다.
 7. `npm run handoff:sync`, `node scripts/write-asset-queue.mjs`, `npm run check:handoff`, `npm run check:assets`로 상태를 갱신한다.
 8. 실제 브라우저·공통 PNG 렌더러로 배치 검수한다. 원본 입고만으로 공간을 활성화하지 않는다.
 

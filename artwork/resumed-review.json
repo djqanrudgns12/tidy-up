@@ -1,11 +1,36 @@
 {
-  "acceptedPrimaryVisuals": ["board-game", "puzzle-box", "felt-pens", "origami-paper", "jump-rope", "tape", "palette", "brush-case", "bookend", "bookmark", "clipboard", "dictionary", "reading-notebook", "science-comic", "story-book"],
+  "acceptedPrimaryVisuals": [
+    "board-game",
+    "puzzle-box",
+    "felt-pens",
+    "origami-paper",
+    "jump-rope",
+    "tape",
+    "palette",
+    "brush-case",
+    "bookend",
+    "bookmark",
+    "clipboard",
+    "dictionary",
+    "reading-notebook",
+    "science-comic",
+    "story-book",
+    "ball",
+    "card-game",
+    "magazine",
+    "science-book",
+    "picture-book",
+    "calculator",
+    "paint-set",
+    "board-game--low-front",
+    "puzzle-box--low-front",
+    "card-game--low-front",
+    "textbook--shelf",
+    "notebook--shelf",
+    "homework-diary--shelf"
+  ],
   "needsRevision": {
-    "picture-book": "Replace open spread with one closed book, preserve recognizable bear and puppy cover illustration for shelf counterpart.",
-    "magazine": "Replace multiple magazines with one closed magazine. One draggable catalog entry must represent one item.",
-    "science-book": "Remove readable cover title to follow text-free source art requirement; preserve leaf and galaxy motifs.",
-    "ball": "Replace beach ball valve and inflated panels with familiar matte rubber playground ball.",
-    "card-game": "Use a closed box, or a physically attached hinged lid, so no lid appears detached during movement. Match later shelf view."
+    "jacket--alternate-support": "RGB에 격자 배경이 구워져 있음. 사용자 승인된 로컬 배경 제거로 옷과 금속 고리를 보존하고 밝고 어두운 배경에서 재검수. 미수정/미반영."
   },
-  "integrationStatus": "Only first four new originals have entered generation-log; later approved sources still need ingestion and actual support-plane inspection."
+  "integrationStatus": "All 27 restored pending originals source-reviewed and ingested; five original defects corrected plus calculator/paint-set refinements. Three low-front box sources locally alpha-finished after explicit user authorization and ingested. Source integration is not support-plane, animation, or map approval."
 }

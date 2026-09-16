@@ -1,0 +1,10 @@
+{
+  "id": "hanger",
+  "source": "artwork/hanger.png",
+  "target": "items/catalog/hanger.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 옷걸이. Distinctive construction: 모서리가 둥근 삼각 옷걸이. Use: 옷을 걸어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple natural wood triangular clothes hanger with one metal hook, complete hanger laid flat and viewed straight down, visible empty interior, no clothes. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-f24fdf8f-3ee7-432d-9e47-8ffd0975617e.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "scarf",
+  "source": "artwork/scarf.png",
+  "target": "items/catalog/scarf.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 목도리. Distinctive construction: 짧게 접은 뜨개 목도리. Use: 추운 날 목을 따뜻하게 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded muted brick-red soft scarf, short matching tassels together at one end. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-aee0ae13-4882-46cb-a31c-d914a0d807f1.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+}

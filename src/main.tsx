@@ -32,14 +32,44 @@ const CabinetReview = import.meta.env.DEV
       })),
     )
   : () => null;
+const BoxReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/BoxReview").then(module => ({default: module.BoxReview})))
+  : () => null;
+const CabinetLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/CabinetLayoutReview").then(module=>({default:module.CabinetLayoutReview})))
+  : () => null;
+const LockerLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/LockerLayoutReview").then(module=>({default:module.LockerLayoutReview})))
+  : () => null;
+const LibraryLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/LibraryLayoutReview").then(module=>({default:module.LibraryLayoutReview})))
+  : () => null;
+const HomeDeskLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/HomeDeskLayoutReview").then(module=>({default:module.HomeDeskLayoutReview})))
+  : () => null;
+const BedroomLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/BedroomLayoutReview").then(module=>({default:module.BedroomLayoutReview})))
+  : () => null;
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ErrorBoundary>
       <React.Suspense
         fallback={<p className="loading">공간을 준비하고 있어요.</p>}
       >
-        {import.meta.env.DEV &&
-        new URLSearchParams(location.search).has("cabinet-review") ? (
+        {import.meta.env.DEV && new URLSearchParams(location.search).has("bedroom-layout") ? (
+          <BedroomLayoutReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("home-desk-layout") ? (
+          <HomeDeskLayoutReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("library-layout") ? (
+          <LibraryLayoutReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("locker-layout") ? (
+          <LockerLayoutReview />
+        ) : import.meta.env.DEV &&
+        new URLSearchParams(location.search).has("cabinet-layout") ? (
+          <CabinetLayoutReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("box-review") ? (
+          <BoxReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("cabinet-review") ? (
           <CabinetReview />
         ) : import.meta.env.DEV &&
           new URLSearchParams(location.search).has("responsive") ? (

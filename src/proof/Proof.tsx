@@ -53,6 +53,7 @@ export function Proof() {
       point,
       surface,
       placements[id].angle,
+      "school-desk",
     );
     if (!fitsSurface(assetsById[item.asset], next, surface, "school-desk")) {
       setMessage(

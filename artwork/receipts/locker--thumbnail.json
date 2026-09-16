@@ -1,0 +1,8 @@
+{
+  "id": "locker--thumbnail",
+  "source": "output/qa/locker-base-thumbnail-source.png",
+  "target": "maps/locker/thumbnail.webp",
+  "status": "reviewed-composition",
+  "date": "2026-09-16",
+  "review": "Base eight real assets composed by shared scene renderer; 42 combinations and actual browser activity reviewed."
+}

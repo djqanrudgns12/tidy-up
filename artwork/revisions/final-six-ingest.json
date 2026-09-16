@@ -1,0 +1,62 @@
+[
+  {
+    "id": "umbrella-cover",
+    "source": "artwork/umbrella-cover.png",
+    "target": "items/catalog/umbrella-cover.webp",
+    "kind": "primary-object",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 우산 커버. Distinctive construction: 말린 우산을 넣는 긴 주머니. Use: 마른 우산을 넣어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One empty long muted teal nylon umbrella sleeve, no umbrella inside, a small open mouth and short drawstring at one end. Flat top-down, complete silhouette.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-25ba0886-0ff5-4483-ae29-2d3deaaf4740.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "remote",
+    "source": "artwork/remote.png",
+    "target": "items/catalog/remote.webp",
+    "kind": "primary-object",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 리모컨. Distinctive construction: 큰 전원 버튼과 방향 버튼. Use: 함께 보는 기기를 조작할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple dark-grey television remote control, flat top-down view, one red power button and a few plain rounded buttons with small unlabelled shapes; no text, numbers or logo.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-eb003368-e90e-42f0-af91-c50c8ef860a8.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "block-box",
+    "source": "artwork/block-box.png",
+    "target": "items/catalog/block-box.webp",
+    "kind": "primary-object",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 조립 블록 상자. Distinctive construction: 뚜껑 있는 상자와 큰 블록 무늬. Use: 조립 블록으로 만들 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One closed low rectangular storage box for toy building blocks, muted blue plastic base and cream flush-fitting closed lid with a simple illustration of three chunky coloured blocks on top. No loose blocks; one box only.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-e8d2d9b8-aa9c-435c-9e4a-7b8195a87017.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "book-stand",
+    "source": "artwork/book-stand.png",
+    "target": "items/catalog/book-stand.webp",
+    "kind": "primary-object",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접이식 독서대. Distinctive construction: 받침턱이 있는 펼친 독서대. Use: 책을 세워 놓고 읽을 때.  One compact wooden folding desktop book stand standing OPEN in its natural usable angled position, near-frontal slightly elevated view, empty reading panel with a small lower ledge and a credible visible rear support. No book, text or decorations.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-eba905d0-8165-4a32-adef-095619d36b4d.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "living-room",
+    "source": "artwork/living-room.png",
+    "target": "maps/living-room/background.webp",
+    "kind": "background",
+    "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 거실. Scene: 낮은 책장, 공동 놀이 상자 수납함, 작은 소파와 이불 자리, 리모컨을 두는 탁자. Functional furniture: 낮은 책장; 공용 놀이 수납함; 소파·이불 자리; 작은 탁자. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Arrange a low three-seat sofa at back-left with a CLEAR EMPTY seat and no cushions, a large simple low coffee table at centre-left, an open low bookcase at back centre-right, a low open toy-box shelf to its right, and one small waste bin at far right. All furniture against back half of room, broad empty floor in foreground. No television required. Do not include pillows, books, remote controls, toys, tissue packets, plants, rugs or any movable object. Sofa and tables have enough usable support area for real objects. Entire furnishings within frame, no cut-off sofa. Avoid tiny storage holes.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-325d3f9a-fe02-4aec-ad0a-165211ea2574.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "shoe-cabinet",
+    "source": "artwork/shoe-cabinet.png",
+    "target": "maps/shoe-cabinet/background.webp",
+    "kind": "background",
+    "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 신발장. Scene: 낮고 열린 신발 선반, 관리용품 칸, 옆 우산꽂이와 현관 걸이, 문 앞 바닥. Functional furniture: 바깥 신발 선반; 실내화 선반; 관리용품칸; 우산꽂이·현관 걸이. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. A familiar Korean entryway with one large open LOW shoe cabinet occupying rear left/centre; two wide shoe shelves with plenty of height for child rain boots; separate low care-supply shelf and side vertical umbrella holder on right. One small waste bin at far right. Entire room floor level visible without a step blocking movement. Cabinet empty, no shoes, umbrellas, coats or any small movable object, no wall posters, rugs or plants. All furniture in rear half with broad empty tiled foreground floor.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-b565e0e7-ed9d-4f3a-9474-e8b437e42506.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  }
+]

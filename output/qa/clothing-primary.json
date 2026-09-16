@@ -1,0 +1,97 @@
+[
+  {
+    "id": "t-shirt",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      102,
+      133,
+      1154,
+      1118
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "long-sleeve",
+    "mode": "RGBA",
+    "size": [
+      1306,
+      1205
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      191,
+      103,
+      1120,
+      1083
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "trousers",
+    "mode": "RGBA",
+    "size": [
+      1312,
+      1199
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      214,
+      69,
+      1148,
+      1139
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "pajamas",
+    "mode": "RGBA",
+    "size": [
+      1302,
+      1208
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      118,
+      67,
+      1204,
+      1133
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "socks",
+    "mode": "RGBA",
+    "size": [
+      1312,
+      1199
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      193,
+      108,
+      1178,
+      1112
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

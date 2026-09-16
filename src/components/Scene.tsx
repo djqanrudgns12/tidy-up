@@ -14,6 +14,7 @@ import {
   type DragGesture,
 } from "../domain/interaction";
 import { assetsById } from "../data/catalog";
+import { hasShelfView,hasHangingView } from "../data/scene-art";
 import { poseOf } from "../domain/placement";
 import type { Placement, Point } from "../domain/types";
 import type { PlacementMotion } from "../rendering/motion";
@@ -72,10 +73,14 @@ export function Scene({
       return;
     }
     const surface = model.geometry.surfaces.find((s) => s.id === to.surface)!;
+    const source = model.geometry.surfaces.find((s) => s.id === from.surface)!;
+    const itemAsset=assetsById[model.items.find(i=>i.id===id)!.asset];
+    const turningBook = (hasShelfView(itemAsset,model.mapId) && !!source.bookSpines !== !!surface.bookSpines) ||
+      (hasHangingView(itemAsset,model.mapId) && (source.pose==="hanging")!==(surface.pose==="hanging"));
     const distance = Math.hypot(to.x - from.x, to.y - from.y);
     const duration = Math.min(
-      580,
-      (surface.insertion?.duration ?? 220) + distance * 0.35,
+      turningBook ? 900 : 580,
+      (turningBook ? 720 : surface.insertion?.duration ?? 220) + distance * 0.35,
     );
     const start = performance.now();
     const frame = (now: number) => {
@@ -241,7 +246,7 @@ export function Scene({
           const accepted = onDrop(
             current.id,
             p,
-            poseOf(assetsById[item.asset], originalSurface) === "flat"
+            (poseOf(assetsById[item.asset], originalSurface, model.mapId) === "flat" || hasShelfView(assetsById[item.asset],model.mapId) || hasHangingView(assetsById[item.asset],model.mapId))
               ? undefined
               : p.surface,
           );

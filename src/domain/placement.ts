@@ -1,5 +1,6 @@
 import type { AssetDefinition, Placement, Point, Pose, Surface } from "./types";
 import artMetrics from "../data/art-metrics.json";
+import { hasShelfView, hasHangingView, hangingContact, sceneArtwork } from "../data/scene-art";
 
 export const WORLD = { width: 960, height: 720 };
 export const schoolSizes: Record<string, [number, number]> = {
@@ -18,23 +19,59 @@ export const schoolSizes: Record<string, [number, number]> = {
   scissors: [64, 118],
   "paper-scrap": [70, 76],
 };
+// Fixed physical sizes across floor, carrying and storage; never shrink on entry.
+const cabinetSizes: Record<string, [number, number]> = {
+  "board-game": [110,88], "puzzle-box": [110,88], "card-game": [76,76],
+  "colored-pencils": [49,85], "felt-pens": [49,85], "origami-paper": [55,55],
+  palette: [62,62], "brush-case": [37,88], scissors: [64,100],
+  "glue-stick": [26,62], tape: [54,54], "paper-scrap": [48,48],
+};
+const lockerSizes: Record<string, [number, number]> = {
+  textbook:[88,114], notebook:[79,102], "document-folder":[92,120],
+  "homework-diary":[65,84], "colored-pencils":[46,82], "felt-pens":[46,82],
+  "shoe-bag":[84,125], "water-bottle":[40,103], "paper-scrap":[43,48],
+  towel:[75,62], "jump-rope":[78,85], "origami-paper":[56,56],
+  "paint-set":[97,64], "brush-case":[30,82], "small-pouch":[70,54],
+};
+const librarySizes: Record<string,[number,number]> = {
+  "story-book":[59,66],"science-book":[44,54],"picture-book":[61,61],
+  "science-comic":[44,54],dictionary:[48,54],magazine:[46,54],
+  "reading-notebook":[47,60],bookmark:[14,55],clipboard:[48,65],
+  bookend:[36,46],"pencil-case":[52,25],"paper-scrap":[38,40],
+};
+const homeDeskSizes: Record<string,[number,number]> = {
+ textbook:[78,101],notebook:[71,76],"homework-diary":[55,69],"document-folder":[74,77],
+ "pencil-case":[46,23],"colored-pencils":[31,58],headphones:[72,75],"paper-scrap":[43,44],
+ calculator:[33,47],scissors:[25,52],tape:[20,20],eraser:[20,12],clipboard:[62,76],"small-pouch":[40,30],
+};
+const bedroomSizes:Record<string,[number,number]>={
+ pajamas:[35,45],"t-shirt":[35,41],trousers:[33,48],socks:[24,28],
+ pillow:[128,58],blanket:[112,88],"story-book":[43,53],"paper-scrap":[31,33],
+ "bed-sheet":[68,65],cushion:[66,66],backpack:[58,72],comb:[48,16],"small-pouch":[45,32],"pocket-tissue":[46,30],
+};
 export function sizeOf(
   asset: AssetDefinition,
   mapId: string,
+  surface?: Surface,
 ): [number, number] {
-  const box = (mapId === "school-desk" ? schoolSizes[asset.id] : undefined) ?? [
+  const box = (mapId === "school-desk" ? schoolSizes[asset.id] : mapId === "classroom-cabinet" ? cabinetSizes[asset.id] : mapId === "locker" ? lockerSizes[asset.id] : mapId === "library" ? librarySizes[asset.id] : mapId === "home-desk" ? homeDeskSizes[asset.id] : mapId === "bedroom" ? bedroomSizes[asset.id] : undefined) ?? [
     asset.width,
     asset.height,
   ];
   const metric = (
     artMetrics as Record<string, { width: number; height: number }>
-  )[asset.id];
+  )[sceneArtwork(asset, mapId, surface).metricId];
   if (!metric) return box as [number, number];
+  // A book keeps its real height while turning; the new width is the drawn spine perspective.
+  if ((surface?.bookSpines && hasShelfView(asset, mapId)) || (surface?.pose==="hanging" && hasHangingView(asset,mapId))) {
+    const height = sizeOf(asset, mapId)[1];
+    return [height * metric.width / metric.height, height];
+  }
   const scale = Math.min(box[0] / metric.width, box[1] / metric.height);
   return [metric.width * scale, metric.height * scale];
 }
-export function poseOf(asset: AssetDefinition, surface: Surface): Pose {
-  return surface.pose ?? (asset.standing ? "upright" : "flat");
+export function poseOf(asset: AssetDefinition, surface: Surface, mapId: string): Pose {
+  return surface.pose ?? (sceneArtwork(asset, mapId, surface).standing ? "upright" : "flat");
 }
 export function planeSkew(surface: Surface, point: Point) {
   const vanishing = surface.vanishingPoint;
@@ -112,10 +149,11 @@ export function footprint(
   surface: Surface,
   mapId: string,
 ): Point[] {
-  const [w, h] = sizeOf(asset, mapId),
-    pose = poseOf(asset, surface);
+  const [w, h] = sizeOf(asset, mapId, surface),
+    pose = poseOf(asset, surface, mapId);
   const angle = pose === "flat" ? (placement.angle * Math.PI) / 180 : 0;
-  const depth = pose === "flat" ? h : w * 0.3;
+  const depth = pose === "flat" ? h : surface.bookSpines && hasShelfView(asset, mapId)
+    ? sizeOf(asset, mapId)[0] : (sceneArtwork(asset, mapId, surface).footprintDepth ?? w * 0.3);
   const skew = planeSkew(surface, placement);
   return [
     [-w / 2, -depth / 2],
@@ -138,6 +176,12 @@ export function fitsSurface(
   surface: Surface,
   mapId: string,
 ) {
+  if (surface.accepts && !surface.accepts.includes(asset.id)) return false;
+  if (surface.hangingBounds && poseOf(asset,surface,mapId)==="hanging") {
+    const [w,h]=sizeOf(asset,mapId,surface),top=placement.y-h*hangingContact(asset,mapId);
+    if(![{x:placement.x-w/2,y:top},{x:placement.x+w/2,y:top},{x:placement.x+w/2,y:top+h},{x:placement.x-w/2,y:top+h}].every(p=>pointInPolygon(p,surface.hangingBounds!)))return false;
+  }
+  if (surface.tiltedPanel && poseOf(asset,surface,mapId)!=="flat") return false;
   if (surface.anchor)
     return (
       Math.hypot(
@@ -147,9 +191,24 @@ export function fitsSurface(
     );
   if (
     surface.maxHeight &&
-    poseOf(asset, surface) === "upright" &&
-    sizeOf(asset, mapId)[1] > surface.maxHeight
+    poseOf(asset, surface, mapId) === "upright" &&
+    sizeOf(asset, mapId, surface)[1] > surface.maxHeight
   )
+    return false;
+  const [width, height] = sizeOf(asset, mapId, surface);
+  const pose = poseOf(asset, surface, mapId);
+  const angle = placement.angle * Math.PI / 180;
+  const halfSpan = pose === "flat"
+    ? (Math.abs(width * Math.cos(angle)) + Math.abs(height * Math.sin(angle))) / 2
+    : width / 2;
+  if (surface.entryWidth &&
+    (placement.x - halfSpan < surface.entryWidth[0] || placement.x + halfSpan > surface.entryWidth[1]))
+    return false;
+  const aboveSupport = pose === "flat"
+    ? (Math.abs(width * Math.sin(angle)) + Math.abs(height * Math.cos(angle))) * surface.depth / 2
+    : height;
+  if (surface.ceilingY !== undefined &&
+    placement.y - aboveSupport - (surface.insertion?.lift ?? 0) < surface.ceilingY)
     return false;
   const points = footprint(asset, placement, surface, mapId);
   return (
@@ -170,9 +229,10 @@ export function normalizePlacement(
   asset: AssetDefinition,
   point: Point,
   surface: Surface,
-  angle = 0,
+  angle: number,
+  mapId: string,
 ): Placement {
-  const pose = poseOf(asset, surface);
+  const pose = poseOf(asset, surface, mapId);
   return {
     surface: surface.id,
     x: surface.anchor?.x ?? point.x,

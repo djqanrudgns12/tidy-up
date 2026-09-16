@@ -1,0 +1,8 @@
+{
+  "id": "classroom-cabinet--thumbnail",
+  "source": "output/qa/cabinet-base-thumbnail-source.png",
+  "target": "maps/classroom-cabinet/thumbnail.webp",
+  "method": "shared renderLogicalScene; initial base 8 items; no dirt or UI; resize only",
+  "status": "reviewed-composition",
+  "date": "2026-09-16"
+}

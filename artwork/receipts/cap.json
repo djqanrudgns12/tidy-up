@@ -1,0 +1,10 @@
+{
+  "id": "cap",
+  "source": "artwork/cap.png",
+  "target": "items/catalog/cap.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 모자. Distinctive construction: 앞 챙과 둥근 모자 몸통. Use: 밖에서 햇빛을 가릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One muted blue ordinary child baseball cap, closed curved brim at bottom, top-down orthographic view, no letters or logo. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-37be4e0c-ce6a-48e2-838f-c083163ba261.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+}

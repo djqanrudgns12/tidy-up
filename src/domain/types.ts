@@ -54,12 +54,17 @@ export type Surface = {
   zone: number;
   polygon: number[];
   entryPolygon?: number[];
+  /** Project a tap at the visible opening onto a lower resting plane. */
+  entryOffsetY?: number;
   depth: number;
   vanishingPoint?: Point;
   pose?: Pose;
   baseline?: number;
   anchor?: Point;
   maxHeight?: number;
+  /** Lowest underside above the opening; includes the lift needed to cross its lip. */
+  ceilingY?: number;
+  entryWidth?: [number, number];
   shadow: number;
   occluders?: number[][];
   perforatedOccluders?: PerforatedPanel[];
@@ -68,6 +73,14 @@ export type Surface = {
   shadowReceiver?: number[];
   insertion?: { lift: number; duration: number };
   supportKey?: string;
+  /** Books use separately drawn spine views on these supports. */
+  bookSpines?: boolean;
+  /** Inclined display panel: only flat objects can rest against it. */
+  tiltedPanel?: boolean;
+  /** Restrict a physical support that would otherwise invent an impossible pose. */
+  accepts?: string[];
+  /** Full vertical clearance, separate from the narrow rail hit region. */
+  hangingBounds?: number[];
 };
 export type PhysicalMap = {
   surfaces: Surface[];
@@ -85,6 +98,8 @@ export type LoadedArt = {
   silhouette: HTMLCanvasElement;
   width: number;
   height: number;
+  shelf?: LoadedArt;
+  hanging?: LoadedArt;
 };
 export type ArtCollection = {
   background: HTMLImageElement;

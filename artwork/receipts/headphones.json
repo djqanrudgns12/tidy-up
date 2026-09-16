@@ -1,0 +1,11 @@
+{
+  "id": "headphones",
+  "source": "artwork/headphones.png",
+  "target": "items/catalog/headphones.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 헤드폰. Distinctive construction: 양쪽 귀 덮개와 머리띠. Use: 소리를 혼자 들을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One complete muted teal over-ear headphone set lying flat with two matching ear cups connected by ONE padded curved headband; realistic construction, no duplicate headband, no cable. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-1409990e-cea8-49a6-9ec5-442d03b42a9d.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/headphones-local.png",
+  "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+}

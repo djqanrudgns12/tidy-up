@@ -858,7 +858,7 @@ export const catalog = [
   {
     id: "card-game",
     label: "카드 놀이 상자",
-    art: "모양 카드 몇 장이 보이는 상자",
+    art: "동그라미·세모·네모·별 무늬의 닫힌 상자",
     shape: "S",
     purpose: "같은 모양의 카드를 찾을 때",
     group: "놀이·운동·신발",

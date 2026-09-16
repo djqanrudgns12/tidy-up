@@ -3,6 +3,6 @@
   "source": "artwork/bookend.png",
   "target": "items/catalog/bookend.webp",
   "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 북엔드. Distinctive construction: 바닥 받침이 보이는 L자 지지대. Use: 세운 책이 넘어지지 않게 할 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
-  "status": "generated-awaiting-visual-review",
+  "status": "integrated-source",
   "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-bb74e88e-27f4-4136-9fdf-da74c673ee23.png"
 }

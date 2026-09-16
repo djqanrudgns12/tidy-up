@@ -1,0 +1,10 @@
+{
+  "id": "comb",
+  "source": "artwork/comb.png",
+  "target": "items/catalog/comb.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 빗. Distinctive construction: 둥근 손잡이와 굵은 빗살. Use: 머리를 빗을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Muted pastel materials, no glow; whole complete familiar object. For pocket tissues show a compact soft rectangular tissue packet with a small opened dispensing flap and one tissue edge, no printing. For comb show one sturdy broad-tooth hair comb with all teeth clearly separated.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4d71489c-929c-456f-a062-559b46177b55.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Original alpha preserved after cream/dark composite review in output/qa/bedroom-small.png. Comb tooth gaps and tissue packet silhouette clean; apparent raw RGB glow is outside useful alpha."
+}

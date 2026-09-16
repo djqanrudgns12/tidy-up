@@ -235,5 +235,659 @@
     "target": "items/catalog/origami-paper.webp",
     "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 색종이 묶음. Distinctive construction: 네모난 색종이가 겹친 묶음. Use: 종이를 접거나 오릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity.",
     "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-3961e354-41ba-4034-a075-89ca95534aef.png"
+  },
+  {
+    "id": "ball",
+    "source": "artwork/ball.png",
+    "original": "artwork/ball.png",
+    "prompt": "Use case: precise-object-edit. Edit target: attached ball sprite. For a Korean grade-five classroom tidying activity, replace the beach-ball construction with ONE familiar matte rubber playground ball. Preserve the restrained red blue yellow cream palette and semi-realistic hand-painted finish, round volume, upper-left light and entire silhouette with generous transparent padding. Eliminate the large raised valve and inflated vinyl panel seams; use a continuous finely pebbled matte rubber surface with broad printed colour sections and subtle shallow grooves only. No text, logos, floor, cast shadow, accessories or checkerboard. True transparent RGBA background, square image. One ball only.",
+    "tool": "built-in image_gen",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "target": "items/catalog/ball.webp",
+    "priorSource": "artwork/revisions/ball-v1.png"
+  },
+  {
+    "id": "card-game",
+    "source": "artwork/card-game.png",
+    "original": "artwork/revisions/card-game-v2.png",
+    "prompt": "Edit the referenced CLOSED green shape-card box image. Remove the entire gray checkerboard background and any shadow OUTSIDE the box; output genuine transparent RGBA PNG with alpha=0 around the box. DO NOT paint a checkerboard. Keep the actual box completely unchanged: cream lid, green rim, yellow circle, red triangle, blue square, green star, aligned fully closed square box. Entire silhouette remains intact with padding. No ground plane. This is a transparency extraction edit, not a new design.",
+    "tool": "built-in image_gen",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "target": "items/catalog/card-game.webp",
+    "priorSource": "artwork/revisions/card-game-v1.png"
+  },
+  {
+    "id": "magazine",
+    "source": "artwork/magazine.png",
+    "original": "artwork/magazine.png",
+    "prompt": "Use case: precise-object-edit. Reference is a stack of animal magazines. Produce exactly ONE CLOSED thin magazine, removing every magazine behind the foremost one. Preserve foremost cover: golden puppy main image, small kitten rabbit sunflower panels at right, cream header with orange and sage shapes, no readable text. Front cover straight-on with vertical and horizontal edges, narrow bound edge and slim cream page block. Hand-painted finish, soft upper-left light, self shading only. Entire single magazine centered with 12 percent padding, real transparent RGBA background. No checkerboard, floor, cast shadow or extra objects.",
+    "tool": "built-in image_gen",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "target": "items/catalog/magazine.webp",
+    "priorSource": "artwork/revisions/magazine-v1.png"
+  },
+  {
+    "id": "jump-rope",
+    "source": "artwork/jump-rope.png",
+    "target": "items/catalog/jump-rope.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 줄넘기. Distinctive construction: 줄을 감고 두 손잡이를 모은 모습. Use: 줄넘기 운동을 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines and restrained natural colours. No loose detached components. For spherical objects show round volume, not a flat circle.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e9f2655a-a7db-4453-8cae-d63b7cd603fd.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "tape",
+    "source": "artwork/tape.png",
+    "target": "items/catalog/tape.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 테이프. Distinctive construction: 안전 덮개가 있는 소형 받침. Use: 종이를 이어 붙일 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines and restrained natural colours. No loose detached components. For spherical objects show round volume, not a flat circle.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-b5a91108-3146-4a50-a344-4c9f420ea541.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "palette",
+    "source": "artwork/palette.png",
+    "target": "items/catalog/palette.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 팔레트. Distinctive construction: 비어 있고 깨끗한 물감 접시. Use: 물감 색을 섞을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines and restrained natural colours. No loose detached components. For spherical objects show round volume, not a flat circle.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-5d553f87-db3d-4090-8e84-6727073a8c60.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "brush-case",
+    "source": "artwork/brush-case.png",
+    "target": "items/catalog/brush-case.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 붓 보관통. Distinctive construction: 붓 손잡이가 보이는 낮은 보관통. Use: 씻고 말린 붓을 보관할 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines and restrained natural colours. No loose detached components. For spherical objects show round volume, not a flat circle.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-9fa3b121-4c5a-4c66-9b1d-6fc152d746c2.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "science-book",
+    "source": "artwork/science-book.png",
+    "target": "items/catalog/science-book.webp",
+    "prompt": "첨부한 투명 배경 과학책 원화에서 표지 중앙의 ‘과학’ 글자만 지워 주세요. 그 부분은 주변과 같은 크림색 종이로 채웁니다. 나머지 책 그림, 위치, 크기, 색상, 형태는 그대로 유지합니다. 배경은 투명한 PNG로 출력하세요. 책 바깥은 완전히 투명해야 합니다.",
+    "originPath": "C:\\Users\\User\\.codex\\generated_images\\01a0a77c-9319-7642-b878-39b076cd950e\\exec-3906ff31-ac8b-4b1d-8556-1de7efacaf38.png",
+    "status": "integrated-source",
+    "tool": "built-in image_gen",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/science-book-v1.png"
+  },
+  {
+    "id": "picture-book",
+    "source": "artwork/picture-book.png",
+    "target": "items/catalog/picture-book.webp",
+    "prompt": "첨부한 그림책을 닫힌 한 권의 책으로 바꿔 주세요. 앞표지에 같은 곰과 강아지, 풀밭과 나비를 함께 배치하고 연녹색 책등과 얇은 종이 옆면이 보이게 합니다. 책은 정면으로 보며, 글자는 없습니다. 전체 책 주위에 여백을 남깁니다. 배경은 실제로 투명한 PNG로 출력하세요. 책 바깥은 완전히 투명해야 합니다.",
+    "originPath": "C:\\Users\\User\\.codex\\generated_images\\01a0a77c-9319-7642-b878-39b076cd950e\\exec-6520f634-ceea-4870-91bb-ab4c6ac9bc3b.png",
+    "status": "integrated-source",
+    "tool": "built-in image_gen",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/picture-book-v1.png"
+  },
+  {
+    "id": "story-book",
+    "source": "artwork/story-book.png",
+    "target": "items/catalog/story-book.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 동화책. Distinctive construction: 집과 나무가 있는 단순 표지. Use: 이야기를 읽을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-16088161-9b4b-4eb7-a2e6-9b7c067c118f.png"
+  },
+  {
+    "id": "science-comic",
+    "source": "artwork/science-comic.png",
+    "target": "items/catalog/science-comic.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 과학 학습만화. Distinctive construction: 세 칸 그림과 작은 행성 표지. Use: 과학 이야기를 만화로 읽을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-7cc2af7d-8631-4588-9bd3-9b42d1252867.png"
+  },
+  {
+    "id": "dictionary",
+    "source": "artwork/dictionary.png",
+    "target": "items/catalog/dictionary.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 사전. Distinctive construction: 두꺼운 책등과 색인 표시. Use: 낱말의 뜻을 찾을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-92399084-92c8-4289-bd7c-a9ce8d0d6f9d.png"
+  },
+  {
+    "id": "reading-notebook",
+    "source": "artwork/reading-notebook.png",
+    "target": "items/catalog/reading-notebook.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 독서 공책. Distinctive construction: 책 모양 작은 표지 기호. Use: 읽은 책에 대해 적을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-83d061d4-4f24-4b4d-bf89-18aeb2c56385.png"
+  },
+  {
+    "id": "clipboard",
+    "source": "artwork/clipboard.png",
+    "target": "items/catalog/clipboard.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 클립보드. Distinctive construction: 상단 집게가 있는 납작한 판. Use: 종이를 받치고 쓸 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-c301eee7-c3c3-46a8-b07f-7f1cbccdf87d.png"
+  },
+  {
+    "id": "bookmark",
+    "source": "artwork/bookmark.png",
+    "target": "items/catalog/bookmark.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 책갈피. Distinctive construction: 한쪽 끝이 갈라진 넓은 종이 띠. Use: 읽던 쪽을 표시할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-ad1973ef-8ace-4ef8-b792-1a304da1ff17.png"
+  },
+  {
+    "id": "bookend",
+    "source": "artwork/bookend.png",
+    "target": "items/catalog/bookend.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 북엔드. Distinctive construction: 바닥 받침이 보이는 L자 지지대. Use: 세운 책이 넘어지지 않게 할 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-bb74e88e-27f4-4136-9fdf-da74c673ee23.png"
+  },
+  {
+    "id": "shoe-bag",
+    "source": "artwork/shoe-bag.png",
+    "target": "items/catalog/shoe-bag.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 실내화 주머니. Distinctive construction: 손잡이 두 개와 조임끈. Use: 실내화를 따로 담을 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-133f1618-4f79-4b44-aa15-026ecc85e34c.png"
+  },
+  {
+    "id": "tote-bag",
+    "source": "artwork/tote-bag.png",
+    "target": "items/catalog/tote-bag.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 천 가방. Distinctive construction: 넓은 손잡이가 달린 납작한 가방. Use: 가벼운 물건을 담을 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-ec1c0b0e-55d4-4a19-b759-81ef8cee137e.png"
+  },
+  {
+    "id": "umbrella",
+    "source": "artwork/umbrella.png",
+    "target": "items/catalog/umbrella.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 우산. Distinctive construction: 접고 말린 우산과 둥근 손잡이. Use: 비 오는 날 밖에 나갈 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-dcacbe2f-8f60-435e-9c4a-91175a2b5d9f.png"
+  },
+  {
+    "id": "towel",
+    "source": "artwork/towel.png",
+    "target": "items/catalog/towel.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 수건. Distinctive construction: 깨끗하게 접은 수건. Use: 손을 씻은 뒤 물기를 닦을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e829ed59-51b6-41ef-9d41-42cbaaf4cd68.png"
+  },
+  {
+    "id": "locker",
+    "source": "artwork/locker.png",
+    "target": "maps/locker/background.webp",
+    "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 사물함. Scene: 학생 키에서 닿는 낮은 사물함, 책과 공책을 나눈 세로 칸막이, 작은 준비물 선반, 실내화 주머니 칸. Functional furniture: 책칸; 공책·자료칸; 작은 준비물 선반; 주머니 보관칸. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW locker environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-8d79a3df-d767-4958-80af-e2df3fafb7c1.png"
+  },
+  {
+    "id": "library",
+    "source": "artwork/library.png",
+    "target": "maps/library/background.webp",
+    "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 도서관. Scene: 낮은 이야기책 책장과 정보책 책장, 옆 반납 선반, 책갈피를 두는 작은 독서 탁자. Functional furniture: 이야기책 책장; 정보책 책장; 반납 선반; 독서 탁자. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW library environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-81b63f5f-e5be-4d6f-89ca-97b8578026be.png"
+  },
+  {
+    "id": "home-desk",
+    "source": "artwork/home-desk.png",
+    "target": "maps/home-desk/background.webp",
+    "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 공부 책상. Scene: 작은 공부 책상, 한쪽 책꽂이, 앞이 보이는 서랍, 빈 필기 작업면과 뒤쪽 소품 받침. Functional furniture: 책꽂이; 공책·자료 받침; 열린 서랍; 자주 쓰는 물건 자리. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW home-desk environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-52707587-85c4-4ed3-bb7b-85cdc664c2f9.png"
+  },
+  {
+    "id": "wardrobe",
+    "source": "artwork/wardrobe.png",
+    "target": "maps/wardrobe/background.webp",
+    "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 옷장. Scene: 문을 열어 내부가 보이는 옷장, 옷걸이 봉, 접은 상의·하의 선반, 모자와 장갑을 두는 넓은 소품칸. Functional furniture: 옷걸이 봉; 접은 상의 선반; 하의 선반; 작은 의류·소품칸. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW wardrobe environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+    "status": "integrated-source",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-4fee13b3-ed66-48a5-af2d-465e90b195c8.png"
+  },
+  {
+    "id": "calculator",
+    "target": "items/catalog/calculator.webp",
+    "input": "artwork/revisions/calculator-v1.png",
+    "method": "scripts/finish-pending-primary.py; inpaint memory letter labels only; preserve functional digits/operators and original alpha",
+    "source": "artwork/calculator.png",
+    "tool": "user-authorized local finishing",
+    "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/calculator-v1.png"
+  },
+  {
+    "id": "paint-set",
+    "target": "items/catalog/paint-set.webp",
+    "input": "artwork/revisions/paint-set-v2.png",
+    "method": "scripts/finish-pending-primary.py; traced closed-case outline with all latches; RGB unchanged",
+    "source": "artwork/paint-set.png",
+    "tool": "user-authorized local finishing",
+    "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/paint-set-v1.png"
+  },
+  {
+    "id": "board-game--low-front",
+    "target": "items/views/board-game--low-front.webp",
+    "input": "artwork/revisions/board-game--low-front-v2.png",
+    "method": "scripts/extract-box-alpha.py; RGB unchanged; continuous colored border convex hull; reviewed on cream and dark backgrounds",
+    "source": "artwork/board-game--low-front.png",
+    "tool": "user-authorized local finishing",
+    "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/board-game--low-front-v1.png"
+  },
+  {
+    "id": "puzzle-box--low-front",
+    "target": "items/views/puzzle-box--low-front.webp",
+    "input": "artwork/revisions/puzzle-box--low-front-v2.png",
+    "method": "scripts/extract-box-alpha.py; RGB unchanged; continuous colored border convex hull; reviewed on cream and dark backgrounds",
+    "source": "artwork/puzzle-box--low-front.png",
+    "tool": "user-authorized local finishing",
+    "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/puzzle-box--low-front-v1.png"
+  },
+  {
+    "id": "card-game--low-front",
+    "target": "items/views/card-game--low-front.webp",
+    "input": "artwork/revisions/card-game--low-front-v2.png",
+    "method": "scripts/extract-box-alpha.py; RGB unchanged; continuous colored border convex hull; reviewed on cream and dark backgrounds",
+    "source": "artwork/card-game--low-front.png",
+    "tool": "user-authorized local finishing",
+    "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "priorSource": "artwork/revisions/card-game--low-front-v1.png"
+  },
+  {
+    "id": "textbook--shelf",
+    "source": "artwork/textbook--shelf.png",
+    "target": "items/views/textbook--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of exactly the coral textbook in the reference, for the same Korean elementary classroom tidying game. Reference role: object identity and illustration style, NOT camera angle. The book is now standing upright on its bottom edge on an invisible shelf, with its SPINE toward the viewer, as a book inserted normally into a bookcase. Show the rounded coral spine nearly frontally and a narrow receding slice of the right cover and cream page block at the top. Camera only slightly above the shelf. The object must be physically a thin textbook, about 2 cm thick, 21 cm deep and 26 cm tall; no broad frontal cover and no thick box. Preserve muted coral cover, subtle pale diagonal corner geometry, cream paper, soft realistic painterly material and upper-left light. One whole CLOSED book, straight vertical, sole on one horizontal level, centered with ample transparent padding. True RGBA transparent background, no checkerboard pixels, no ground plane, no cast shadow, no external glow, no text, no letters, no numbers, no logos, no furniture, no other objects. Draw the changed 3D viewpoint properly, do not squeeze a front cover.",
+    "reference": "artwork/textbook.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-b7905e36-a475-4575-9bd5-30623a9e18e9.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "postprocess": {
+      "script": "scripts/extract-book-alpha.py",
+      "input": "artwork/revisions/textbook--shelf-v1.png",
+      "output": "artwork/revisions/textbook--shelf-local.png",
+      "authorization": "2026-09-16 user-authorized local background removal",
+      "rgbUnchanged": true
+    }
+  },
+  {
+    "id": "notebook--shelf",
+    "source": "artwork/notebook--shelf.png",
+    "target": "items/views/notebook--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create one shelf-view sprite of exactly the mustard-yellow thin school notebook, matching yellow fabric spine, cream pages, and blank cream rounded rectangular label on cover; soft paper cover, not a thick hardback; thickness about 0.7 cm, 18 cm deep, 25 cm tall in the attached reference. Reference is for object identity, colours and painterly style; change the camera and support pose. Stand the CLOSED book upright on its bottom edge as if inserted normally into a bookcase with its SPINE facing the viewer. Show the thin spine nearly frontally, a narrow receding slice of the right cover, and a little cream page block on top. Only slightly elevated near-frontal camera. True three-dimensional new view, not a horizontally squeezed front cover. Entire object, centered, vertical, modest realistic thickness, ample clear padding. Preserve the attached object's distinctive construction. Soft upper-left light, original refined semi-realistic classroom illustration. True RGBA TRANSPARENT background; no checkerboard painted into pixels, no floor, no cast shadow, no external glow, no furniture, no extra objects, no text, no letters, no numbers.",
+    "reference": "artwork/notebook.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-6f4c7770-f608-4529-9ff3-3ed83e5b08a5.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Genuine alpha checked on light and dark composited backgrounds; original alpha preserved; new shelf perspective, not a transformed primary cover."
+  },
+  {
+    "id": "homework-diary--shelf",
+    "source": "artwork/homework-diary--shelf.png",
+    "target": "items/views/homework-diary--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create one shelf-view sprite of exactly the muted sage-green small school homework diary, matching green binding, cream pages, and cream cover panel containing a simple four-square grid without letters; thickness about 0.8 cm, 15 cm deep, 21 cm tall in the attached reference. Reference is for object identity, colours and painterly style; change the camera and support pose. Stand the CLOSED book upright on its bottom edge as if inserted normally into a bookcase with its SPINE facing the viewer. Show the thin spine nearly frontally, a narrow receding slice of the right cover, and a little cream page block on top. Only slightly elevated near-frontal camera. True three-dimensional new view, not a horizontally squeezed front cover. Entire object, centered, vertical, modest realistic thickness, ample clear padding. Preserve the attached object's distinctive construction. Soft upper-left light, original refined semi-realistic classroom illustration. True RGBA TRANSPARENT background; no checkerboard painted into pixels, no floor, no cast shadow, no external glow, no furniture, no extra objects, no text, no letters, no numbers.",
+    "reference": "artwork/homework-diary.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-3e9363b6-844a-4736-ae4b-abe280258ac0.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Genuine alpha checked on light and dark composited backgrounds; original alpha preserved; new shelf perspective, not a transformed primary cover."
+  },
+  {
+    "id": "small-pouch",
+    "source": "artwork/small-pouch.png",
+    "target": "items/catalog/small-pouch.webp",
+    "prompt": "Use case: scientific-educational. One isolated small everyday zippered fabric pouch for a Korean grade 5 tidying activity. Refined semi-realistic hand-painted illustration, natural proportions, muted dusty terracotta cotton canvas, short closed cream zipper along top edge, simple rounded rectangular flat pouch, no handle and no strap, approximately 16 by 11 cm. Straight-down orthographic view lying flat; whole silhouette centered, square canvas with generous 15 percent empty margin. Soft upper-left light, self shading only. Genuinely transparent RGBA background, no painted checkerboard, no floor, no cast shadow, no outer glow, no text, logos, hands, scene or extra objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-60e8756c-398c-40be-bb4f-5b43ff35cad1.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Light/dark alpha composite visually reviewed. Original RGBA preserved."
+  },
+  {
+    "id": "document-folder--shelf",
+    "source": "artwork/document-folder--shelf.png",
+    "target": "items/views/document-folder--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create one new support-view sprite of EXACTLY the attached thin translucent lavender plastic L-folder containing a few cream-white sheets. Reference defines identity, colour, seam, material; change viewpoint only. Upright on its bottom edge, left sealed thin edge facing viewer, show a narrow receding strip of the right lavender broad face and the enclosed sheets, slightly elevated near-frontal shelf camera. This is a thin flexible A4 document sleeve, NOT a thick ring binder or book. Preserve the welded left edge and translucent lavender cover. Whole silhouette, centered vertically, generous empty margin. Same refined hand-painted semi-realistic classroom illustration. True transparent RGBA background, no painted checkerboard, no ground, no cast shadow, no external glow, no text or letters, no furniture, no extra objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-9670afb6-1546-4e8d-a909-00eb398ec81c.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Light/dark alpha composite visually reviewed. Lavender outline including thumb notch traced locally; source RGB unchanged; checkerboard removed."
+  },
+  {
+    "id": "story-book--shelf",
+    "source": "artwork/story-book--shelf.png",
+    "target": "items/views/story-book--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed green cloth spine, cream cover with orange-roof cottage and leafy tree, medium-thickness story book in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/story-book.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-486a7c92-a588-4574-86a5-88cbdcd90492.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective and cover identity reviewed on light and dark backgrounds in output/qa/library-books-first.png."
+  },
+  {
+    "id": "science-book--shelf",
+    "source": "artwork/science-book--shelf.png",
+    "target": "items/views/science-book--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed green spine and botanical leaves, cream cover with navy space/galaxy motif, medium-thickness science book in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/science-book.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4c9921b6-32d8-436f-afa9-19a4d2de5e14.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective and cover identity reviewed on light and dark backgrounds in output/qa/library-books-first.png."
+  },
+  {
+    "id": "picture-book--shelf",
+    "source": "artwork/picture-book--shelf.png",
+    "target": "items/views/picture-book--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed light sage green spine, illustrated bear and puppy meadow cover, almost square children's picture book, thin hardback in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/picture-book.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-9b058aff-c767-457b-bfe8-de387b58ddc3.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective and cover identity reviewed on light and dark backgrounds in output/qa/library-books-first.png."
+  },
+  {
+    "id": "science-comic--shelf",
+    "source": "artwork/science-comic--shelf.png",
+    "target": "items/views/science-comic--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed thin science comic with yellow spine, dark blue Earth/space upper cover, three illustrated comic panels and icy ocean below in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/science-comic.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-133f3ca0-a9fe-4a80-a26b-11a4652d1433.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective, materials and cover identity reviewed on light and dark backgrounds in output/qa/library-books-second.png."
+  },
+  {
+    "id": "dictionary--shelf",
+    "source": "artwork/dictionary--shelf.png",
+    "target": "items/views/dictionary--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed thicker navy blue hardcover dictionary, blank cream cover label, cream page block and five small coloured index tabs on its fore-edge; tabs stay on the fore-edge, not on the spine in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/dictionary.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-8daf2742-5a70-4d14-9bd9-2d297c4b481f.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective, materials and cover identity reviewed on light and dark backgrounds in output/qa/library-books-second.png."
+  },
+  {
+    "id": "magazine--shelf",
+    "source": "artwork/magazine--shelf.png",
+    "target": "items/views/magazine--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed thin glossy cream magazine with orange/green abstract header, puppy main photo and narrow pet-photo column; NOT a hardback, modest 0.5cm thickness in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/magazine.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-3e30adee-7752-4c77-89e4-75c7c0a94450.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective, materials and cover identity reviewed on light and dark backgrounds in output/qa/library-books-second.png."
+  },
+  {
+    "id": "reading-notebook--shelf",
+    "source": "artwork/reading-notebook--shelf.png",
+    "target": "items/views/reading-notebook--shelf.webp",
+    "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed thin cream reading notebook, muted sage green cloth spine, small open-book emblem and blank label on the cream cover, subtle green sprout border in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+    "reference": "artwork/reading-notebook.png",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-9f27e595-b04a-4cde-8a5d-1d7fb89e3c17.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original genuine alpha preserved. New spine perspective, materials and cover identity reviewed on light and dark backgrounds in output/qa/library-books-second.png."
+  },
+  {
+    "id": "headphones",
+    "source": "artwork/headphones.png",
+    "target": "items/catalog/headphones.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 헤드폰. Distinctive construction: 양쪽 귀 덮개와 머리띠. Use: 소리를 혼자 들을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One complete muted teal over-ear headphone set lying flat with two matching ear cups connected by ONE padded curved headband; realistic construction, no duplicate headband, no cable. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-1409990e-cea8-49a6-9ec5-442d03b42a9d.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/headphones-local.png",
+    "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+  },
+  {
+    "id": "pillow",
+    "source": "artwork/pillow.png",
+    "target": "items/catalog/pillow.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 베개. Distinctive construction: 길쭉하고 낮은 베개. Use: 잠잘 때 머리를 받치는 침구. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One low rectangular sleeping pillow in an ivory cotton pillowcase, slightly rounded corners, horizontal 3:2 proportions. Keep clearly different from a square sofa cushion. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-d4a42cf0-dcbc-4f3d-8f0d-c59255a2c731.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/pillow-local.png",
+    "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+  },
+  {
+    "id": "cushion",
+    "source": "artwork/cushion.png",
+    "target": "items/catalog/cushion.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 쿠션. Distinctive construction: 두툼한 정사각형 방석 모양. Use: 소파에 앉아 등을 받칠 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One plump square sage-green sofa cushion with subtle piping and one recessed centre button; natural soft filling. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-76c1b6ae-ea99-4039-8546-d892ff09881b.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/cushion-local.png",
+    "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+  },
+  {
+    "id": "blanket",
+    "source": "artwork/blanket.png",
+    "target": "items/catalog/blanket.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접은 이불. Distinctive construction: 두께와 접힌 선이 보이는 이불. Use: 몸을 덮을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One thick neatly folded dusty blue cotton quilt, a single connected folded bundle with a few wide stitched quilt channels and visible soft rolled fold edge. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-badd0e9a-3ad0-4a53-a8ba-cf3e75e61197.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/blanket-local.png",
+    "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+  },
+  {
+    "id": "bed-sheet",
+    "source": "artwork/bed-sheet.png",
+    "target": "items/catalog/bed-sheet.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접은 침대 시트. Distinctive construction: 얇은 천이 겹쳐진 큰 사각형. Use: 침대에 깔아 쓸 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One thin neatly folded pale lavender cotton bed sheet, flat rectangular fabric bundle with visible thin layered hem, no plush thickness. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-5a0673ab-38a5-4072-848f-6be7fa9fa60c.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/bed-sheet-local.png",
+    "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+  },
+  {
+    "id": "t-shirt",
+    "source": "artwork/t-shirt.png",
+    "target": "items/catalog/t-shirt.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 티셔츠. Distinctive construction: 소매가 보이게 접은 반소매 옷. Use: 접어 보관하는 반소매 옷. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded muted coral short-sleeved cotton T-shirt, collar visible, sleeves tucked inside, a single realistic folded rectangular garment, child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4d6a2ffc-aa36-436e-a044-d497cc5f2664.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/t-shirt-local.png",
+    "localFinishing": {
+      "rgbUnchanged": true,
+      "changedAlphaPixels": 81454,
+      "method": "remove tiny edge fringe and jagged alpha only",
+      "status": "awaiting-visual-review"
+    },
+    "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+  },
+  {
+    "id": "long-sleeve",
+    "source": "artwork/long-sleeve.png",
+    "target": "items/catalog/long-sleeve.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 긴팔 옷. Distinctive construction: 긴 소매를 포개어 접은 옷. Use: 소매를 포개어 접는 긴팔 옷. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded sage green long-sleeved cotton shirt, collar visible, sleeves tucked within rectangle, child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-7365036d-25fb-4b38-98c2-15103283ee7f.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/long-sleeve-local.png",
+    "localFinishing": {
+      "rgbUnchanged": true,
+      "changedAlphaPixels": 93522,
+      "method": "remove tiny edge fringe and jagged alpha only",
+      "status": "awaiting-visual-review"
+    },
+    "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+  },
+  {
+    "id": "trousers",
+    "source": "artwork/trousers.png",
+    "target": "items/catalog/trousers.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 긴바지. Distinctive construction: 두 다리를 포개어 접은 바지. Use: 두 다리를 포개어 접는 긴바지. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded pair of navy casual trousers, one waistband and visible folded leg seam, child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-d9af7ddd-a389-447b-8c39-84dadf723ed1.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/trousers-local.png",
+    "localFinishing": {
+      "rgbUnchanged": true,
+      "changedAlphaPixels": 57428,
+      "method": "remove tiny edge fringe and jagged alpha only",
+      "status": "awaiting-visual-review"
+    },
+    "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+  },
+  {
+    "id": "pajamas",
+    "source": "artwork/pajamas.png",
+    "target": "items/catalog/pajamas.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 잠옷. Distinctive construction: 윗옷과 바지를 한 벌로 접은 모습. Use: 잠자리에 들 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded matching pajama set, pale blue cotton with tiny moon shapes, trouser fold beneath top, coherent single folded bundle, 5th-grade child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-ebc82905-1a79-4318-a52a-d8fdc2b486db.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/pajamas-local.png",
+    "localFinishing": {
+      "rgbUnchanged": true,
+      "changedAlphaPixels": 115276,
+      "method": "remove tiny edge fringe and jagged alpha only",
+      "status": "awaiting-visual-review"
+    },
+    "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+  },
+  {
+    "id": "socks",
+    "source": "artwork/socks.png",
+    "target": "items/catalog/socks.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 양말 한 켤레. Distinctive construction: 짝이 보이는 두 양말. Use: 두 짝을 함께 보관하는 양말. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One matched pair of cream socks with small muted teal cuff stripes, placed together as ONE compact pair, both complete, child size. Painterly educational illustration matching natural material references, not glossy advertising. True transparent background. No glow or cast shadow.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-ff895a75-9300-47a5-85fb-b845be22aed1.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "revision": "artwork/revisions/socks-local.png",
+    "localFinishing": {
+      "rgbUnchanged": true,
+      "changedAlphaPixels": 100914,
+      "method": "remove tiny edge fringe and jagged alpha only",
+      "status": "awaiting-visual-review"
+    },
+    "review": "Reviewed construction and light/dark alpha composites in output/qa/clothing-primary.png. Alpha fringe cleaned locally, all original RGB preserved. Folded clothing and matched socks accepted."
+  },
+  {
+    "id": "comb",
+    "source": "artwork/comb.png",
+    "target": "items/catalog/comb.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 빗. Distinctive construction: 둥근 손잡이와 굵은 빗살. Use: 머리를 빗을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Muted pastel materials, no glow; whole complete familiar object. For pocket tissues show a compact soft rectangular tissue packet with a small opened dispensing flap and one tissue edge, no printing. For comb show one sturdy broad-tooth hair comb with all teeth clearly separated.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4d71489c-929c-456f-a062-559b46177b55.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original alpha preserved after cream/dark composite review in output/qa/bedroom-small.png. Comb tooth gaps and tissue packet silhouette clean; apparent raw RGB glow is outside useful alpha."
+  },
+  {
+    "id": "pocket-tissue",
+    "source": "artwork/pocket-tissue.png",
+    "target": "items/catalog/pocket-tissue.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 휴대용 휴지. Distinctive construction: 종이 한 장이 보이는 작은 포장. Use: 손이나 물건을 닦을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Muted pastel materials, no glow; whole complete familiar object. For pocket tissues show a compact soft rectangular tissue packet with a small opened dispensing flap and one tissue edge, no printing. For comb show one sturdy broad-tooth hair comb with all teeth clearly separated.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4576560a-257b-479a-8843-d50d0aedbea9.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Original alpha preserved after cream/dark composite review in output/qa/bedroom-small.png. Comb tooth gaps and tissue packet silhouette clean; apparent raw RGB glow is outside useful alpha."
+  },
+  {
+    "id": "bedroom",
+    "source": "artwork/bedroom.png",
+    "target": "maps/bedroom/background.webp",
+    "prompt": "Use case: scientific-educational. Edit the attached bedroom background. Preserve the camera, framing, wood floor, window, low bookcase, clothes basket, right storage shelf, waste bin, all furniture shapes and exact locations. Remove ONLY the movable pillow and blue blanket on the left bed. Replace their covered region with a clean bare flat ivory mattress surface with a fitted plain cream cover, empty and unwrinkled, appropriate to the same wooden bed. No pillow or loose bedding anywhere. Keep the bed support surface perspective anatomically/architecturally coherent, near-frontal slightly elevated. Warm restrained hand-painted classroom illustration, same lighting as reference. Do not add movable objects, people, text, labels, UI or decorations. 4:3 landscape.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-2928c584-4e76-4804-96ad-151f69aeefb4.png",
+    "status": "integrated-source",
+    "reference": "artwork/revisions/bedroom-v1.png",
+    "date": "2026-09-16",
+    "review": "Bedroom v2 removes baked-in pillow and blanket while preserving furniture positions and perspective. Bare mattress now accepts independent bedding sprites; v1 source/delivery preserved."
+  },
+  {
+    "id": "cap",
+    "source": "artwork/cap.png",
+    "target": "items/catalog/cap.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 모자. Distinctive construction: 앞 챙과 둥근 모자 몸통. Use: 밖에서 햇빛을 가릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One muted blue ordinary child baseball cap, closed curved brim at bottom, top-down orthographic view, no letters or logo. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-37be4e0c-ce6a-48e2-838f-c083163ba261.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "sun-hat",
+    "source": "artwork/sun-hat.png",
+    "target": "items/catalog/sun-hat.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 챙이 넓은 모자. Distinctive construction: 둘레 전체에 넓은 챙. Use: 얼굴과 목에 닿는 햇빛을 가릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One cream woven sun hat with wide continuous circular brim and muted sage ribbon, top-down view, no logos. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-15c34561-c15d-431b-8121-6751cb43656c.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "shorts",
+    "source": "artwork/shorts.png",
+    "target": "items/catalog/shorts.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 반바지. Distinctive construction: 짧은 바짓단이 보이는 접은 바지. Use: 짧은 바짓단이 보이는 접은 바지. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded pair of sand-coloured child shorts, both short hems discernible, single compact folded bundle. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-6c5418e8-4420-402a-b58c-8369b88251a2.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "jacket",
+    "source": "artwork/jacket.png",
+    "target": "items/catalog/jacket.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 겉옷. Distinctive construction: 옷걸이에 걸린 지퍼 겉옷. Use: 밖에 나갈 때 덧입는 옷. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One child's muted teal zip-front light jacket, completely laid flat, sleeves extended naturally downward and slightly outward. A single wooden hanger sits correctly inside the shoulders; its metal hook is visible above the collar. Top-down flat lay; not hanging vertically. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-d7c657e7-6cf1-4112-ad3f-1127c2602772.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "cardigan",
+    "source": "artwork/cardigan.png",
+    "target": "items/catalog/cardigan.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 카디건. Distinctive construction: 옷걸이에 걸린 단추 카디건. Use: 실내외에서 덧입을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One child's muted mustard button-front knitted cardigan, completely laid flat, sleeves extended naturally downward slightly outward. One wooden hanger correctly inside shoulders with metal hook above collar. Top-down flat lay. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-37d0db1a-226a-4c5a-926f-2337bca2fde0.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "scarf",
+    "source": "artwork/scarf.png",
+    "target": "items/catalog/scarf.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 목도리. Distinctive construction: 짧게 접은 뜨개 목도리. Use: 추운 날 목을 따뜻하게 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded muted brick-red soft scarf, short matching tassels together at one end. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-aee0ae13-4882-46cb-a31c-d914a0d807f1.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "gloves",
+    "source": "artwork/gloves.png",
+    "target": "items/catalog/gloves.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 장갑 한 켤레. Distinctive construction: 두 장갑의 손목 부분이 함께 보임. Use: 추운 날 손을 따뜻하게 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One matching pair of muted slate knit child gloves, each glove has a thumb and four complete fingers, laid side by side. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-47bcb4fa-14df-4c58-8d89-2efe6a7edf4a.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+  },
+  {
+    "id": "hanger",
+    "source": "artwork/hanger.png",
+    "target": "items/catalog/hanger.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 옷걸이. Distinctive construction: 모서리가 둥근 삼각 옷걸이. Use: 옷을 걸어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple natural wood triangular clothes hanger with one metal hook, complete hanger laid flat and viewed straight down, visible empty interior, no clothes. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-f24fdf8f-3ee7-432d-9e47-8ffd0975617e.png",
+    "status": "integrated-source",
+    "date": "2026-09-16",
+    "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
   }
 ]

@@ -265,7 +265,7 @@ export const maps = [
     risk: "선반 안 물건 이름이 가려질 수 있음. 선택 목록에 같은 이름을 제공.",
     hours: "0.75~1h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "school",
   },
   {
@@ -394,7 +394,7 @@ export const maps = [
     risk: "같은 그림인 일반 책과 반납 책의 상태를 이름으로 구분. 책등만으로 판별하게 하지 않음.",
     hours: "1.5~2h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "school",
   },
   {
@@ -528,7 +528,7 @@ export const maps = [
     risk: "공은 움직이는 물건이지만 물리로 구르지 않음. 상자는 무늬와 형태로 구별.",
     hours: "1.5~2.5h",
     phase: "P3",
-    revision: 3,
+    revision: 4,
     category: "school",
   },
   {
@@ -657,7 +657,7 @@ export const maps = [
     risk: "서랍과 상판의 깊이를 그려야 함. 헤드폰은 걸이로 억지 축소하지 않고 받침 위에 둠.",
     hours: "1~1.5h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "home",
   },
   {
@@ -735,6 +735,7 @@ export const maps = [
         asset: "cushion",
         label: "쿠션",
         zones: [1],
+        purpose: "침대에서 기대어 앉을 때",
       },
       {
         id: "e3",
@@ -791,7 +792,7 @@ export const maps = [
     risk: "독립 침실 보유를 전제하지 않음. 모든 의류는 깨끗한 상태이며 세탁물 판단 활동이 아님.",
     hours: "1~1.5h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "home",
   },
   {
@@ -1192,3 +1193,5 @@ export const maps = [
 export const mapsById = Object.fromEntries(
   maps.map((map) => [map.id, map]),
 ) as Record<string, MapDefinition>;
+
+

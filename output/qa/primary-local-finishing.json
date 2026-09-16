@@ -1,0 +1,16 @@
+{
+  "calculator": {
+    "source": "artwork/revisions/calculator-v1.png",
+    "output": "artwork/revisions/calculator-local.png",
+    "changedPixels": 8163,
+    "alphaPreserved": true,
+    "method": "local memory-label inpainting"
+  },
+  "paint-set": {
+    "source": "artwork/revisions/paint-set-v2.png",
+    "output": "artwork/revisions/paint-set-local.png",
+    "method": "traced outer closed-case silhouette; RGB unchanged"
+  },
+  "authorization": "User explicitly approved local background removal and efficient judgment on 2026-09-16",
+  "status": "visually-reviewed-and-integrated"
+}

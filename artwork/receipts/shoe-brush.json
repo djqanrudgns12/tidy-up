@@ -1,0 +1,9 @@
+{
+  "id": "shoe-brush",
+  "source": "artwork/shoe-brush.png",
+  "target": "items/catalog/shoe-brush.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 신발솔. Distinctive construction: 손잡이와 짧은 솔털. Use: 신발에 묻은 흙을 털 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-7aa9020a-2461-4138-89c0-ad5a1d9538c8.png",
+  "status": "pending-review",
+  "date": "2026-09-16"
+}

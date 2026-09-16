@@ -1,4 +1,5 @@
 import { assetsById } from "../data/catalog";
+import { hasShelfView,hasHangingView } from "../data/scene-art";
 import {
   distanceToPolygon,
   normalizePlacement,
@@ -34,8 +35,10 @@ export function dragPlacement(
 ): Placement {
   const asset = assetsById[item.asset],
     oldSurface = geometry.surfaces.find((s) => s.id === moved.surface)!;
-  const pose = poseOf(asset, oldSurface),
-    [, h] = sizeOf(asset, mapId);
+  // The carried book retains its grabbed view; settling animates the support change.
+  if (hasShelfView(asset,mapId) || hasHangingView(asset,mapId)) return moved;
+  const pose = poseOf(asset, oldSurface, mapId),
+    [, h] = sizeOf(asset, mapId, oldSurface);
   if (pose === "flat") return moved;
   const bottom = {
     x: moved.x,
@@ -57,7 +60,7 @@ export function dragPlacement(
       "umbrella",
     ].includes(asset.id)
   )
-    return normalizePlacement(asset, handle, hook);
+    return normalizePlacement(asset, handle, hook, 0, mapId);
   const support = geometry.surfaces
     .filter((s) => !s.anchor && distanceToPolygon(bottom, s.polygon) <= 24)
     .sort(
@@ -65,5 +68,5 @@ export function dragPlacement(
         distanceToPolygon(bottom, a.polygon) -
         distanceToPolygon(bottom, b.polygon),
     )[0];
-  return support ? normalizePlacement(asset, bottom, support) : moved;
+  return support ? normalizePlacement(asset, bottom, support, 0, mapId) : moved;
 }

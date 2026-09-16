@@ -1,0 +1,10 @@
+{
+  "id": "document-folder--shelf",
+  "source": "artwork/document-folder--shelf.png",
+  "target": "items/views/document-folder--shelf.webp",
+  "prompt": "Use case: scientific-educational. Create one new support-view sprite of EXACTLY the attached thin translucent lavender plastic L-folder containing a few cream-white sheets. Reference defines identity, colour, seam, material; change viewpoint only. Upright on its bottom edge, left sealed thin edge facing viewer, show a narrow receding strip of the right lavender broad face and the enclosed sheets, slightly elevated near-frontal shelf camera. This is a thin flexible A4 document sleeve, NOT a thick ring binder or book. Preserve the welded left edge and translucent lavender cover. Whole silhouette, centered vertically, generous empty margin. Same refined hand-painted semi-realistic classroom illustration. True transparent RGBA background, no painted checkerboard, no ground, no cast shadow, no external glow, no text or letters, no furniture, no extra objects.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-9670afb6-1546-4e8d-a909-00eb398ec81c.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Light/dark alpha composite visually reviewed. Lavender outline including thumb notch traced locally; source RGB unchanged; checkerboard removed."
+}

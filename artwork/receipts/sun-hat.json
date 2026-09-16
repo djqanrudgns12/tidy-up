@@ -1,0 +1,10 @@
+{
+  "id": "sun-hat",
+  "source": "artwork/sun-hat.png",
+  "target": "items/catalog/sun-hat.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 챙이 넓은 모자. Distinctive construction: 둘레 전체에 넓은 챙. Use: 얼굴과 목에 닿는 햇빛을 가릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One cream woven sun hat with wide continuous circular brim and muted sage ribbon, top-down view, no logos. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-15c34561-c15d-431b-8121-6751cb43656c.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+}

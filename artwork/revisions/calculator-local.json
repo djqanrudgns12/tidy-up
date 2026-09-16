@@ -1,0 +1,11 @@
+{
+  "id": "calculator",
+  "target": "items/catalog/calculator.webp",
+  "input": "artwork/revisions/calculator-v1.png",
+  "method": "scripts/finish-pending-primary.py; inpaint memory letter labels only; preserve functional digits/operators and original alpha",
+  "source": "artwork/revisions/calculator-local.png",
+  "tool": "user-authorized local finishing",
+  "authorization": "2026-09-16 user explicitly approved local editing and efficient order without omissions",
+  "status": "visual-and-alpha-reviewed",
+  "date": "2026-09-16"
+}

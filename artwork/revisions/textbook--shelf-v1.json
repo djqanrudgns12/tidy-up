@@ -1,0 +1,10 @@
+{
+  "id": "textbook--shelf",
+  "source": "artwork/textbook--shelf.png",
+  "target": "items/views/textbook--shelf.webp",
+  "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of exactly the coral textbook in the reference, for the same Korean elementary classroom tidying game. Reference role: object identity and illustration style, NOT camera angle. The book is now standing upright on its bottom edge on an invisible shelf, with its SPINE toward the viewer, as a book inserted normally into a bookcase. Show the rounded coral spine nearly frontally and a narrow receding slice of the right cover and cream page block at the top. Camera only slightly above the shelf. The object must be physically a thin textbook, about 2 cm thick, 21 cm deep and 26 cm tall; no broad frontal cover and no thick box. Preserve muted coral cover, subtle pale diagonal corner geometry, cream paper, soft realistic painterly material and upper-left light. One whole CLOSED book, straight vertical, sole on one horizontal level, centered with ample transparent padding. True RGBA transparent background, no checkerboard pixels, no ground plane, no cast shadow, no external glow, no text, no letters, no numbers, no logos, no furniture, no other objects. Draw the changed 3D viewpoint properly, do not squeeze a front cover.",
+  "reference": "artwork/textbook.png",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-b7905e36-a475-4575-9bd5-30623a9e18e9.png",
+  "status": "generated-awaiting-review",
+  "date": "2026-09-16"
+}

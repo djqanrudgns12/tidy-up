@@ -1,0 +1,10 @@
+{
+  "id": "shorts",
+  "source": "artwork/shorts.png",
+  "target": "items/catalog/shorts.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 반바지. Distinctive construction: 짧은 바짓단이 보이는 접은 바지. Use: 짧은 바짓단이 보이는 접은 바지. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded pair of sand-coloured child shorts, both short hems discernible, single compact folded bundle. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-6c5418e8-4420-402a-b58c-8369b88251a2.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Reviewed all eight original RGBA sprites on cream/dark composites output/qa/wardrobe-primary-first.png and wardrobe-primary-second.png. Complete glove pair, clean alpha, matching garments with hanger; no local editing."
+}

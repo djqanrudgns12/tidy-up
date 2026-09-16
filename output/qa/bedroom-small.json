@@ -1,0 +1,40 @@
+[
+  {
+    "id": "comb",
+    "mode": "RGBA",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      88,
+      336,
+      1450,
+      695
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "pocket-tissue",
+    "mode": "RGBA",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      202,
+      208,
+      1328,
+      804
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

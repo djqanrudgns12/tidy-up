@@ -1,0 +1,74 @@
+[
+  {
+    "id": "cap",
+    "source": "artwork/cap.png",
+    "target": "items/catalog/cap.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 모자. Distinctive construction: 앞 챙과 둥근 모자 몸통. Use: 밖에서 햇빛을 가릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One muted blue ordinary child baseball cap, closed curved brim at bottom, top-down orthographic view, no letters or logo. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-37be4e0c-ce6a-48e2-838f-c083163ba261.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "sun-hat",
+    "source": "artwork/sun-hat.png",
+    "target": "items/catalog/sun-hat.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 챙이 넓은 모자. Distinctive construction: 둘레 전체에 넓은 챙. Use: 얼굴과 목에 닿는 햇빛을 가릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One cream woven sun hat with wide continuous circular brim and muted sage ribbon, top-down view, no logos. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-15c34561-c15d-431b-8121-6751cb43656c.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "shorts",
+    "source": "artwork/shorts.png",
+    "target": "items/catalog/shorts.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 반바지. Distinctive construction: 짧은 바짓단이 보이는 접은 바지. Use: 짧은 바짓단이 보이는 접은 바지. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded pair of sand-coloured child shorts, both short hems discernible, single compact folded bundle. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-6c5418e8-4420-402a-b58c-8369b88251a2.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "jacket",
+    "source": "artwork/jacket.png",
+    "target": "items/catalog/jacket.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 겉옷. Distinctive construction: 옷걸이에 걸린 지퍼 겉옷. Use: 밖에 나갈 때 덧입는 옷. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One child's muted teal zip-front light jacket, completely laid flat, sleeves extended naturally downward and slightly outward. A single wooden hanger sits correctly inside the shoulders; its metal hook is visible above the collar. Top-down flat lay; not hanging vertically. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-d7c657e7-6cf1-4112-ad3f-1127c2602772.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "cardigan",
+    "source": "artwork/cardigan.png",
+    "target": "items/catalog/cardigan.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 카디건. Distinctive construction: 옷걸이에 걸린 단추 카디건. Use: 실내외에서 덧입을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One child's muted mustard button-front knitted cardigan, completely laid flat, sleeves extended naturally downward slightly outward. One wooden hanger correctly inside shoulders with metal hook above collar. Top-down flat lay. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-37d0db1a-226a-4c5a-926f-2337bca2fde0.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "scarf",
+    "source": "artwork/scarf.png",
+    "target": "items/catalog/scarf.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 목도리. Distinctive construction: 짧게 접은 뜨개 목도리. Use: 추운 날 목을 따뜻하게 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One neatly folded muted brick-red soft scarf, short matching tassels together at one end. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-aee0ae13-4882-46cb-a31c-d914a0d807f1.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "gloves",
+    "source": "artwork/gloves.png",
+    "target": "items/catalog/gloves.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 장갑 한 켤레. Distinctive construction: 두 장갑의 손목 부분이 함께 보임. Use: 추운 날 손을 따뜻하게 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One matching pair of muted slate knit child gloves, each glove has a thumb and four complete fingers, laid side by side. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-47bcb4fa-14df-4c58-8d89-2efe6a7edf4a.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "hanger",
+    "source": "artwork/hanger.png",
+    "target": "items/catalog/hanger.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 옷걸이. Distinctive construction: 모서리가 둥근 삼각 옷걸이. Use: 옷을 걸어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple natural wood triangular clothes hanger with one metal hook, complete hanger laid flat and viewed straight down, visible empty interior, no clothes. Square canvas. True transparent alpha; no colour glow or stray edge pixels.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-f24fdf8f-3ee7-432d-9e47-8ffd0975617e.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  }
+]

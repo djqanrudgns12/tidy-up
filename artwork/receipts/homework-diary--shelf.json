@@ -1,0 +1,11 @@
+{
+  "id": "homework-diary--shelf",
+  "source": "artwork/homework-diary--shelf.png",
+  "target": "items/views/homework-diary--shelf.webp",
+  "prompt": "Use case: scientific-educational. Create one shelf-view sprite of exactly the muted sage-green small school homework diary, matching green binding, cream pages, and cream cover panel containing a simple four-square grid without letters; thickness about 0.8 cm, 15 cm deep, 21 cm tall in the attached reference. Reference is for object identity, colours and painterly style; change the camera and support pose. Stand the CLOSED book upright on its bottom edge as if inserted normally into a bookcase with its SPINE facing the viewer. Show the thin spine nearly frontally, a narrow receding slice of the right cover, and a little cream page block on top. Only slightly elevated near-frontal camera. True three-dimensional new view, not a horizontally squeezed front cover. Entire object, centered, vertical, modest realistic thickness, ample clear padding. Preserve the attached object's distinctive construction. Soft upper-left light, original refined semi-realistic classroom illustration. True RGBA TRANSPARENT background; no checkerboard painted into pixels, no floor, no cast shadow, no external glow, no furniture, no extra objects, no text, no letters, no numbers.",
+  "reference": "artwork/homework-diary.png",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-3e9363b6-844a-4736-ae4b-abe280258ac0.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Genuine alpha checked on light and dark composited backgrounds; original alpha preserved; new shelf perspective, not a transformed primary cover."
+}

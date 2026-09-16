@@ -1,0 +1,11 @@
+{
+  "id": "science-book--shelf",
+  "source": "artwork/science-book--shelf.png",
+  "target": "items/views/science-book--shelf.webp",
+  "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed green spine and botanical leaves, cream cover with navy space/galaxy motif, medium-thickness science book in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+  "reference": "artwork/science-book.png",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-4c9921b6-32d8-436f-afa9-19a4d2de5e14.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Original genuine alpha preserved. New spine perspective and cover identity reviewed on light and dark backgrounds in output/qa/library-books-first.png."
+}

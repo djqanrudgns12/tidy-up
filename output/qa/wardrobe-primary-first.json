@@ -1,0 +1,78 @@
+[
+  {
+    "id": "jacket",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      14,
+      62,
+      1240,
+      1112
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "cardigan",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      14,
+      39,
+      1240,
+      1147
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "hanger",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      42,
+      227,
+      1212,
+      963
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "shorts",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      97,
+      195,
+      1165,
+      1087
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "id": "small-pouch",
+  "source": "artwork/small-pouch.png",
+  "target": "items/catalog/small-pouch.webp",
+  "prompt": "Use case: scientific-educational. One isolated small everyday zippered fabric pouch for a Korean grade 5 tidying activity. Refined semi-realistic hand-painted illustration, natural proportions, muted dusty terracotta cotton canvas, short closed cream zipper along top edge, simple rounded rectangular flat pouch, no handle and no strap, approximately 16 by 11 cm. Straight-down orthographic view lying flat; whole silhouette centered, square canvas with generous 15 percent empty margin. Soft upper-left light, self shading only. Genuinely transparent RGBA background, no painted checkerboard, no floor, no cast shadow, no outer glow, no text, logos, hands, scene or extra objects.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-60e8756c-398c-40be-bb4f-5b43ff35cad1.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Light/dark alpha composite visually reviewed. Original RGBA preserved."
+}

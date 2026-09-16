@@ -110,5 +110,233 @@
   "origami-paper": {
     "width": 424,
     "height": 424
+  },
+  "ball": {
+    "width": 398,
+    "height": 396
+  },
+  "card-game": {
+    "width": 380,
+    "height": 369
+  },
+  "magazine": {
+    "width": 327,
+    "height": 390
+  },
+  "jump-rope": {
+    "width": 292,
+    "height": 467
+  },
+  "tape": {
+    "width": 418,
+    "height": 324
+  },
+  "palette": {
+    "width": 436,
+    "height": 434
+  },
+  "brush-case": {
+    "width": 333,
+    "height": 471
+  },
+  "science-book": {
+    "width": 311,
+    "height": 390
+  },
+  "picture-book": {
+    "width": 345,
+    "height": 353
+  },
+  "story-book": {
+    "width": 321,
+    "height": 350
+  },
+  "science-comic": {
+    "width": 356,
+    "height": 420
+  },
+  "dictionary": {
+    "width": 371,
+    "height": 417
+  },
+  "reading-notebook": {
+    "width": 356,
+    "height": 438
+  },
+  "clipboard": {
+    "width": 346,
+    "height": 462
+  },
+  "bookmark": {
+    "width": 427,
+    "height": 437
+  },
+  "bookend": {
+    "width": 334,
+    "height": 439
+  },
+  "shoe-bag": {
+    "width": 342,
+    "height": 486
+  },
+  "tote-bag": {
+    "width": 386,
+    "height": 496
+  },
+  "umbrella": {
+    "width": 138,
+    "height": 472
+  },
+  "towel": {
+    "width": 363,
+    "height": 345
+  },
+  "calculator": {
+    "width": 364,
+    "height": 443
+  },
+  "paint-set": {
+    "width": 477,
+    "height": 208
+  },
+  "board-game--low-front": {
+    "width": 458,
+    "height": 124
+  },
+  "puzzle-box--low-front": {
+    "width": 439,
+    "height": 155
+  },
+  "card-game--low-front": {
+    "width": 370,
+    "height": 131
+  },
+  "textbook--shelf": {
+    "width": 80,
+    "height": 474
+  },
+  "notebook--shelf": {
+    "width": 58,
+    "height": 451
+  },
+  "homework-diary--shelf": {
+    "width": 80,
+    "height": 464
+  },
+  "small-pouch": {
+    "width": 400,
+    "height": 260
+  },
+  "document-folder--shelf": {
+    "width": 164,
+    "height": 484
+  },
+  "story-book--shelf": {
+    "width": 111,
+    "height": 427
+  },
+  "science-book--shelf": {
+    "width": 88,
+    "height": 440
+  },
+  "picture-book--shelf": {
+    "width": 78,
+    "height": 451
+  },
+  "science-comic--shelf": {
+    "width": 87,
+    "height": 439
+  },
+  "dictionary--shelf": {
+    "width": 152,
+    "height": 458
+  },
+  "magazine--shelf": {
+    "width": 59,
+    "height": 416
+  },
+  "reading-notebook--shelf": {
+    "width": 74,
+    "height": 450
+  },
+  "headphones": {
+    "width": 436,
+    "height": 452
+  },
+  "pillow": {
+    "width": 484,
+    "height": 214
+  },
+  "cushion": {
+    "width": 457,
+    "height": 438
+  },
+  "blanket": {
+    "width": 470,
+    "height": 368
+  },
+  "bed-sheet": {
+    "width": 394,
+    "height": 362
+  },
+  "t-shirt": {
+    "width": 430,
+    "height": 403
+  },
+  "long-sleeve": {
+    "width": 364,
+    "height": 384
+  },
+  "trousers": {
+    "width": 365,
+    "height": 418
+  },
+  "pajamas": {
+    "width": 428,
+    "height": 420
+  },
+  "socks": {
+    "width": 385,
+    "height": 392
+  },
+  "comb": {
+    "width": 455,
+    "height": 120
+  },
+  "pocket-tissue": {
+    "width": 376,
+    "height": 199
+  },
+  "cap": {
+    "width": 313,
+    "height": 444
+  },
+  "sun-hat": {
+    "width": 448,
+    "height": 438
+  },
+  "shorts": {
+    "width": 436,
+    "height": 365
+  },
+  "jacket": {
+    "width": 500,
+    "height": 429
+  },
+  "cardigan": {
+    "width": 501,
+    "height": 452
+  },
+  "scarf": {
+    "width": 463,
+    "height": 308
+  },
+  "gloves": {
+    "width": 469,
+    "height": 343
+  },
+  "hanger": {
+    "width": 478,
+    "height": 301
   }
 }

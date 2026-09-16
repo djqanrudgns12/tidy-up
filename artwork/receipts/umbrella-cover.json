@@ -1,0 +1,10 @@
+{
+  "id": "umbrella-cover",
+  "source": "artwork/umbrella-cover.png",
+  "target": "items/catalog/umbrella-cover.webp",
+  "kind": "primary-object",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 우산 커버. Distinctive construction: 말린 우산을 넣는 긴 주머니. Use: 마른 우산을 넣어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One empty long muted teal nylon umbrella sleeve, no umbrella inside, a small open mouth and short drawstring at one end. Flat top-down, complete silhouette.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-25ba0886-0ff5-4483-ae29-2d3deaaf4740.png",
+  "status": "pending-review",
+  "date": "2026-09-16"
+}

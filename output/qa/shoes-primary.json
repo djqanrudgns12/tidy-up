@@ -1,0 +1,116 @@
+[
+  {
+    "id": "sneakers",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      150,
+      113,
+      1106,
+      1144
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "indoor-shoes",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      158,
+      85,
+      1093,
+      1167
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "sandals",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      178,
+      151,
+      1077,
+      1105
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "rain-boots",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      248,
+      53,
+      1006,
+      1177
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "shoe-brush",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      468,
+      64,
+      785,
+      1191
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "shoehorn",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      169,
+      118,
+      1204,
+      1148
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

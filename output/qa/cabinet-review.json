@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-16",
+  "map": "classroom-cabinet",
+  "mapRevision": 4,
+  "tests": {
+    "files": 9,
+    "passed": 49,
+    "typecheck": "passed",
+    "build": "passed"
+  },
+  "combinationAudit": {
+    "combinations": 42,
+    "initialAndOrganizedScenes": 84,
+    "screenExportMaxPixelDifference": 0,
+    "supportAndCollisionChecks": "passed",
+    "sessionMoveRestoreCleanQuizTransitions": "passed"
+  },
+  "browser": {
+    "extras": [
+      "e1",
+      "e5",
+      "e6"
+    ],
+    "objectCount": 11,
+    "flow": "profile, four classification questions, cabinet, extras, tap placement, ventilation, cleaning, tool storage, three quiz questions, result",
+    "resultImageDimensions": [
+      1984,
+      848
+    ],
+    "resultScreenshot": "output/qa/cabinet-result-browser.png",
+    "refreshResume": "passed",
+    "ballDragIntoBasketAndBackToFloor": "passed",
+    "downloadLinkInvoked": true,
+    "downloadedFileReopened": false
+  },
+  "limitations": [
+    "Actual mobile devices and classroom projector/rehearsal not verified",
+    "Other seven maps remain disabled",
+    "Additional book views are sources only; shelf pose transitions not connected yet"
+  ],
+  "assetAudit": {
+    "sourceOriginals": 63,
+    "requiredOriginals": 112,
+    "deliveryFiles": 65,
+    "requiredDeliveryFiles": 121,
+    "missingDeliveryFiles": 56,
+    "assetCheckExitCode": 1
+  }
+}

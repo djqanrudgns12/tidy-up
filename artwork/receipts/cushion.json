@@ -1,0 +1,11 @@
+{
+  "id": "cushion",
+  "source": "artwork/cushion.png",
+  "target": "items/catalog/cushion.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 쿠션. Distinctive construction: 두툼한 정사각형 방석 모양. Use: 소파에 앉아 등을 받칠 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One plump square sage-green sofa cushion with subtle piping and one recessed centre button; natural soft filling. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-76c1b6ae-ea99-4039-8546-d892ff09881b.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/cushion-local.png",
+  "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+}

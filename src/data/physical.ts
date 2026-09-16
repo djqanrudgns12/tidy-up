@@ -1,4 +1,9 @@
 import type { PhysicalMap } from "../domain/types";
+import { classroomCabinet } from "./cabinet.ts";
+import { locker } from "./locker.ts";
+import { library } from "./library.ts";
+import { homeDesk } from "./home-desk.ts";
+import { bedroom } from "./bedroom.ts";
 
 // Coordinates measured from the delivered 1920 × 1440 background, divided by two.
 // Surface polygons describe the usable plane, not a bounding box around the furniture.
@@ -140,6 +145,11 @@ export const schoolDesk: PhysicalMap = {
 
 export const physicalMaps: Record<string, PhysicalMap> = {
   "school-desk": schoolDesk,
+  "classroom-cabinet": classroomCabinet,
+  locker,
+  library,
+  "home-desk": homeDesk,
+  bedroom,
 };
 
 // Intersecting the measured left and right tabletop depth edges gives this point.

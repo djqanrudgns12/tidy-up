@@ -1,0 +1,19 @@
+{
+  "date":"2026-09-16",
+  "mapRevision":4,
+  "combinations":42,
+  "beforeAfterScenes":84,
+  "screenExportMaxPixelDifference":0,
+  "browserExtras":["e1","e3","e5"],
+  "browserPlacedItems":11,
+  "bookDragOutAndBack":true,
+  "browserFullFlow":true,
+  "resultImageNaturalSize":[1984,848],
+  "reloadAndResumeResult":true,
+  "downloadedFileReopened":false,
+  "realDeviceOrClassroomRehearsal":false,
+  "newOriginals":["story-book--shelf","science-book--shelf","picture-book--shelf","science-comic--shelf","dictionary--shelf","magazine--shelf","reading-notebook--shelf"],
+  "originalReview":["output/qa/library-books-first.png","output/qa/library-books-second.png"],
+  "supportChoice":"Covers against sloping display panels, spine views on information shelves, flat covers on return shelf/table. Upright objects cannot rest against inclined panels.",
+  "tests":57
+}

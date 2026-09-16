@@ -2,7 +2,10 @@
   "id": "bedroom",
   "source": "artwork/bedroom.png",
   "target": "maps/bedroom/background.webp",
-  "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 침실. Scene: 방 한쪽의 침대, 낮은 책장, 깨끗한 옷 바구니, 가방과 작은 소지품을 두는 낮은 선반. Functional furniture: 침대·침구 자리; 낮은 책장; 깨끗한 옷 바구니; 가방·소지품 선반. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW bedroom environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
-  "status": "generated-awaiting-visual-review",
-  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-3facbff2-c752-4e9c-a689-1939d0b5d185.png"
+  "prompt": "Use case: scientific-educational. Edit the attached bedroom background. Preserve the camera, framing, wood floor, window, low bookcase, clothes basket, right storage shelf, waste bin, all furniture shapes and exact locations. Remove ONLY the movable pillow and blue blanket on the left bed. Replace their covered region with a clean bare flat ivory mattress surface with a fitted plain cream cover, empty and unwrinkled, appropriate to the same wooden bed. No pillow or loose bedding anywhere. Keep the bed support surface perspective anatomically/architecturally coherent, near-frontal slightly elevated. Warm restrained hand-painted classroom illustration, same lighting as reference. Do not add movable objects, people, text, labels, UI or decorations. 4:3 landscape.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-2928c584-4e76-4804-96ad-151f69aeefb4.png",
+  "status": "integrated-source",
+  "reference": "artwork/revisions/bedroom-v1.png",
+  "date": "2026-09-16",
+  "review": "Bedroom v2 removes baked-in pillow and blanket while preserving furniture positions and perspective. Bare mattress now accepts independent bedding sprites; v1 source/delivery preserved."
 }

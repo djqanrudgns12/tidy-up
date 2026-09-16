@@ -1,18 +1,117 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-09-16",
-  "currentTask": "A1",
-  "scope": {"maps": 9, "objectKinds": 72, "additionalViews": 22, "deliveryImages": 121},
+  "currentTask": "A3",
+  "scope": {
+    "maps": 9,
+    "objectKinds": 72,
+    "additionalViews": 22,
+    "deliveryImages": 121
+  },
   "tasks": [
-    {"id":"R0","status":"verified-on-source-desktop","dependsOn":[],"action":"Read handoff, install and verify on destination desktop","guide":"handoff.md"},
-    {"id":"A1","status":"ready","dependsOn":["R0"],"action":"Review existing local originals and revise five identified defects","guide":"docs/wiki/ASSETS.md"},
-    {"id":"A2","status":"pending","dependsOn":["A1"],"action":"Generate three matching low-front box views for classroom cabinet","guide":"docs/ASSET_PROMPTS.json"},
-    {"id":"V1","status":"pending","dependsOn":["A2"],"action":"Connect support-specific artwork to shared render, bounds, hit testing and export","guide":"docs/wiki/ARCHITECTURE.md"},
-    {"id":"M1","status":"pending","dependsOn":["V1"],"action":"Measure and verify classroom cabinet, all 42 combinations and full activity","guide":"docs/PLACEMENT_REVIEW.md"},
-    {"id":"A3","status":"pending","dependsOn":["A1"],"action":"Generate and review remaining originals without duplicating local files","guide":"docs/wiki/asset-state.json"},
-    {"id":"M2","status":"pending","dependsOn":["V1","A3"],"action":"Measure and implement seven remaining spaces, one verified map at a time","guide":"docs/wiki/WORK.md"},
-    {"id":"T1","status":"pending","dependsOn":["M1","M2"],"action":"Compose seven missing thumbnails and replace cabinet draft","guide":"docs/wiki/ASSETS.md"},
-    {"id":"Q1","status":"pending","dependsOn":["T1"],"action":"Verify full scope, devices, export and classroom rehearsal","guide":"docs/wiki/VERIFICATION.md"},
-    {"id":"D1","status":"pending","dependsOn":["Q1"],"action":"Prepare final build and usage handoff within authorized scope","guide":"README.md"}
-  ]
+    {
+      "id": "R0",
+      "status": "verified-on-destination-desktop",
+      "dependsOn": [],
+      "action": "Read handoff, install and verify on destination desktop",
+      "guide": "handoff.md"
+    },
+    {
+      "id": "A1",
+      "status": "completed",
+      "dependsOn": [
+        "R0"
+      ],
+      "action": "Review existing local originals and revise five identified defects",
+      "guide": "docs/wiki/ASSETS.md"
+    },
+    {
+      "id": "A2",
+      "status": "completed",
+      "dependsOn": [
+        "A1"
+      ],
+      "action": "Generate three matching low-front box views for classroom cabinet",
+      "guide": "docs/ASSET_PROMPTS.json"
+    },
+    {
+      "id": "V1",
+      "status": "completed",
+      "dependsOn": [
+        "A2"
+      ],
+      "action": "Connect the three cabinet box views to shared render, bounds, hit testing and export",
+      "guide": "docs/wiki/ARCHITECTURE.md"
+    },
+    {
+      "id": "M1",
+      "status": "completed",
+      "dependsOn": [
+        "V1"
+      ],
+      "action": "Measure and verify classroom cabinet, all 42 combinations and full activity",
+      "guide": "docs/PLACEMENT_REVIEW.md"
+    },
+    {
+      "id": "A3",
+      "status": "in-progress",
+      "dependsOn": [
+        "A1"
+      ],
+      "action": "107 originals preserved; review/integrate 15 existing files before generating 5 missing views",
+      "guide": "docs/wiki/asset-state.json"
+    },
+    {
+      "id": "M2",
+      "status": "in-progress",
+      "dependsOn": [
+        "V1",
+        "A3"
+      ],
+      "action": "Six spaces enabled; implement wardrobe, living-room and shoe-cabinet, wardrobe next",
+      "guide": "docs/wiki/DESKTOP_HANDOFF_2026-09-16.md"
+    },
+    {
+      "id": "T1",
+      "status": "pending",
+      "dependsOn": [
+        "M1",
+        "M2"
+      ],
+      "action": "Compose three remaining thumbnails from verified base-eight scenes",
+      "guide": "docs/wiki/ASSETS.md"
+    },
+    {
+      "id": "Q1",
+      "status": "pending",
+      "dependsOn": [
+        "T1"
+      ],
+      "action": "Verify full scope, devices, export and classroom rehearsal",
+      "guide": "docs/wiki/VERIFICATION.md"
+    },
+    {
+      "id": "D1",
+      "status": "pending",
+      "dependsOn": [
+        "Q1"
+      ],
+      "action": "Prepare final build and usage handoff within authorized scope",
+      "guide": "README.md"
+    }
+  ],
+  "handoff": {
+    "status": "paused-for-desktop-transfer",
+    "date": "2026-09-16",
+    "guide": "docs/wiki/DESKTOP_HANDOFF_2026-09-16.md",
+    "resumeOrder": [
+      "A3: review 15 local pending originals, including jacket alpha fix",
+      "M2: finish wardrobe hanging mechanics and measured map",
+      "A3: generate 5 missing support views",
+      "M2: living-room and shoe-cabinet",
+      "T1",
+      "Q1",
+      "D1"
+    ]
+  }
 }

@@ -81,7 +81,7 @@ export function initialPlacements(
       const surface = geometry.surfaces.find((s) => s.id === p.surface)!;
       return [
         item.id,
-        normalizePlacement(assetsById[item.asset], p, surface, p.angle),
+        normalizePlacement(assetsById[item.asset], p, surface, p.angle, mapId),
       ];
     }),
   );
@@ -126,7 +126,7 @@ export function placementIssues(state: Session): Set<string> {
       ![p.x, p.y, p.angle].every(Number.isFinite) ||
       p.angle < -180 ||
       p.angle > 180 ||
-      (poseOf(asset, surface) !== "flat" && p.angle !== 0) ||
+      (poseOf(asset, surface, state.mapId!) !== "flat" && p.angle !== 0) ||
       !fitsSurface(asset, p, surface, mapId)
     ) {
       invalid.add(item.id);
@@ -141,7 +141,7 @@ export function placementIssues(state: Session): Set<string> {
         lowerItem.id === item.id ||
         lower.stackOn ||
         lower.surface !== p.surface ||
-        poseOf(asset, surface) !== "flat" ||
+        poseOf(asset, surface, state.mapId!) !== "flat" ||
         !(asset.book || asset.id === "document-folder") ||
         !(
           assetsById[lowerItem.asset].book ||
@@ -242,7 +242,7 @@ export function tryPlacement(
   const handle = {
     x: point.x,
     y:
-      poseOf(asset, oldSurface) === "upright"
+      poseOf(asset, oldSurface, state.mapId) === "upright"
         ? point.y - sizeOf(asset, state.mapId)[1] * 0.94
         : point.y,
   };
@@ -288,9 +288,12 @@ export function tryPlacement(
       surface !== hook
     )
       continue;
+    const supportPoint = surface.entryOffsetY && surface.entryPolygon &&
+      pointInPolygon(point,surface.entryPolygon) && !pointInPolygon(point,surface.polygon)
+      ? {...point,y:point.y+surface.entryOffsetY} : point;
     let p = settleOnSurface(
       asset,
-      normalizePlacement(asset, point, surface, angle ?? old.angle),
+      normalizePlacement(asset, supportPoint, surface, angle ?? old.angle, state.mapId),
       surface,
       state.mapId,
     );
@@ -304,7 +307,7 @@ export function tryPlacement(
       if (
         (asset.book || asset.id === "document-folder") &&
         (lowerAsset.book || lowerAsset.id === "document-folder") &&
-        poseOf(asset, surface) === "flat" &&
+        poseOf(asset, surface, state.mapId!) === "flat" &&
         !lower.stackOn &&
         !Object.values(state.placements).some(
           (v) => v.stackOn === collision.id && v !== state.placements[id],

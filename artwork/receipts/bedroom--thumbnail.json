@@ -1,0 +1,8 @@
+{
+  "id": "bedroom--thumbnail",
+  "source": "output/qa/bedroom-base-thumbnail-source.png",
+  "target": "maps/bedroom/thumbnail.webp",
+  "status": "reviewed-composition",
+  "date": "2026-09-16",
+  "review": "Actual base-eight scene with separate bedding, shared renderer;42 combinations and browser activity verified."
+}

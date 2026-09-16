@@ -1,5 +1,6 @@
 import type { ArtCollection, LoadedArt } from "../domain/types";
 import { assetsById } from "../data/catalog";
+import { hasShelfView, hasHangingView, sceneArtwork } from "../data/scene-art";
 
 const imagePromises = new Map<string, Promise<HTMLImageElement>>();
 export function assetUrl(path: string) {
@@ -56,7 +57,9 @@ export function retainArtCache(paths: string[]) {
 export function sceneArtPaths(mapId: string, ids: string[]) {
   return [
     `assets/maps/${mapId}/background.webp`,
-    ...new Set(ids.map((id) => assetsById[id].path)),
+    ...new Set(ids.map((id) => sceneArtwork(assetsById[id], mapId).path)),
+    ...ids.filter(id => hasShelfView(assetsById[id], mapId)).map(id => `assets/items/views/${id}--shelf.webp`),
+    ...ids.filter(id => hasHangingView(assetsById[id], mapId)).map(id => `assets/items/views/${id}--alternate-support.webp`),
     "assets/effects/dust.webp",
     "assets/effects/stain.webp",
   ];
@@ -122,6 +125,14 @@ export function loadArt(id: string, path?: string) {
   }
   return promise;
 }
+export async function loadSceneItem(mapId: string, id: string) {
+  const primary = await loadArt(id, sceneArtwork(assetsById[id], mapId).path);
+  if(hasHangingView(assetsById[id],mapId)) return {...primary,hanging:await loadArt(id,`assets/items/views/${id}--alternate-support.webp`)};
+  if (!hasShelfView(assetsById[id], mapId)) return primary;
+  const shelf = await loadArt(id, `assets/items/views/${id}--shelf.webp`);
+  return { ...primary, shelf };
+}
+
 export async function loadSceneArt(
   mapId: string,
   ids: string[],
@@ -129,7 +140,7 @@ export async function loadSceneArt(
   const [background, entries, dust, stain] = await Promise.all([
     loadImage(`assets/maps/${mapId}/background.webp`),
     Promise.all(
-      [...new Set(ids)].map(async (id) => [id, await loadArt(id)] as const),
+      [...new Set(ids)].map(async (id) => [id, await loadSceneItem(mapId, id)] as const),
     ),
     loadArt("effect:dust", "assets/effects/dust.webp"),
     loadArt("effect:stain", "assets/effects/stain.webp"),

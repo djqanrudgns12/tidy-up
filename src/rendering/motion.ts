@@ -1,4 +1,5 @@
 import { assetsById } from "../data/catalog";
+import { hasShelfView,hasHangingView,hangingContact } from "../data/scene-art";
 import { poseOf, sizeOf } from "../domain/placement";
 import type {
   ItemDefinition,
@@ -14,6 +15,8 @@ export type PlacementMotion = {
   progress: number;
   kind?: "return";
 };
+export type BookTurn = { upright: number; flatSurface: Surface; shelfSurface: Surface; centerY: number; angle: number };
+export type HangingTurn = { hanging:number;flatSurface:Surface;hangingSurface:Surface;centerY:number;angle:number };
 const mix = (a: number, b: number, t: number) => a + (b - a) * t;
 const ease = (t: number) => 1 - (1 - t) ** 3;
 /** Lift out through the old opening, carry above furniture, then lower behind the new lip. */
@@ -25,14 +28,18 @@ export function motionFrame(
 ) {
   const a = geometry.surfaces.find((s) => s.id === motion.from.surface)!;
   const b = geometry.surfaces.find((s) => s.id === motion.to.surface)!;
-  const asset = assetsById[item.asset],
-    [, h] = sizeOf(asset, mapId);
-  const centerOffset = (s: Surface) =>
-    poseOf(asset, s) === "flat"
+  const asset = assetsById[item.asset];
+  const centerOffset = (s: Surface) => {
+    const [,h] = sizeOf(asset,mapId,s);
+    return (
+    poseOf(asset, s, mapId) === "flat"
       ? 0
-      : poseOf(asset, s) === "upright"
+      : poseOf(asset, s, mapId) === "upright"
         ? -h / 2
-        : h * 0.44;
+        : h * (0.5-hangingContact(asset,mapId)));
+  };
+  const turning = hasShelfView(asset,mapId) && !!a.bookSpines !== !!b.bookSpines;
+  const hangingTurnNeeded=hasHangingView(asset,mapId) && (a.pose==="hanging")!==(b.pose==="hanging");
   const fromCenter =
       motion.from.y - (motion.from.stackOn ? 4 : 0) + centerOffset(a),
     toCenter = motion.to.y - (motion.to.stackOn ? 4 : 0) + centerOffset(b);
@@ -47,6 +54,8 @@ export function motionFrame(
       elevation: sourceLift * q,
       inside: true,
       shadowStrength: 1 - 0.75 * q,
+      bookTurn: undefined as BookTurn | undefined,
+      hangingTurn: undefined as HangingTurn | undefined,
     };
   }
   const insert = b.insertion && different;
@@ -83,11 +92,24 @@ export function motionFrame(
     : sliding
       ? 0
       : sourceLift * (1 - t) + 12 * Math.sin(Math.PI * t);
+  // Complete the posture change while clear of the opening. Extraction and insertion
+  // keep the original/final drawing and size; only the free carry phase turns it.
+  const turnProgress = Math.max(0,Math.min(1,(t-.12)/.68));
+  const upright = a.bookSpines ? 1-turnProgress : turnProgress;
+  const bookTurn: BookTurn | undefined = turning && !entry && motion.progress < boundary
+    ? {upright,flatSurface:a.bookSpines?b:a,shelfSurface:a.bookSpines?a:b,
+       centerY:mix(fromCenter,toCenter,t)-elevation,
+       angle:mix(motion.from.angle,motion.to.angle,t)} : undefined;
+  const hangingTurn:HangingTurn|undefined=hangingTurnNeeded && !entry && motion.progress<boundary
+    ? {hanging:a.pose==="hanging"?1-turnProgress:turnProgress,flatSurface:a.pose==="hanging"?b:a,hangingSurface:a.pose==="hanging"?a:b,
+       centerY:mix(fromCenter,toCenter,t)-elevation,angle:mix(motion.from.angle,motion.to.angle,t)}:undefined;
   return {
     placement,
     surface,
     elevation,
-    inside: entry || motion.progress >= 0.9,
+    inside: entry || (!bookTurn && !hangingTurn && motion.progress >= 0.9),
+    bookTurn,
+    hangingTurn,
     shadowStrength: sliding
       ? 1
       : entry

@@ -1,0 +1,11 @@
+{
+  "id": "reading-notebook--shelf",
+  "source": "artwork/reading-notebook--shelf.png",
+  "target": "items/views/reading-notebook--shelf.webp",
+  "prompt": "Use case: scientific-educational. Create ONE new shelf-view sprite of EXACTLY the closed thin cream reading notebook, muted sage green cloth spine, small open-book emblem and blank label on the cream cover, subtle green sprout border in the attached reference. Reference defines identity, artwork, colours and painterly style. Stand the same book upright on its bottom edge, SPINE facing viewer almost frontally, a narrow receding slice of the right cover and a little cream page block visible at the top. Only slightly elevated shelf camera. Natural original proportions and thickness, genuine 3D new viewpoint, never a squeezed cover. Entire book silhouette centered with 12 percent clear margin. Soft upper-left light, self-shading only. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, floor, cast shadow, glow, furniture, extra books, text, letters, numbers or logos.",
+  "reference": "artwork/reading-notebook.png",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-9f27e595-b04a-4cde-8a5d-1d7fb89e3c17.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Original genuine alpha preserved. New spine perspective, materials and cover identity reviewed on light and dark backgrounds in output/qa/library-books-second.png."
+}

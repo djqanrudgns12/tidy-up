@@ -1,0 +1,97 @@
+[
+  {
+    "id": "headphones",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      92,
+      57,
+      1161,
+      1162
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "pillow",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      36,
+      357,
+      1218,
+      881
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "cushion",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      72,
+      95,
+      1190,
+      1169
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "blanket",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      57,
+      186,
+      1206,
+      1088
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "bed-sheet",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      143,
+      181,
+      1108,
+      1069
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

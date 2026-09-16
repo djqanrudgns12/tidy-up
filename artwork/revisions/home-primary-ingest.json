@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cushion",
+    "source": "artwork/cushion.png",
+    "target": "items/catalog/cushion.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 쿠션. Distinctive construction: 두툼한 정사각형 방석 모양. Use: 소파에 앉아 등을 받칠 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One plump square sage-green sofa cushion with subtle piping and one recessed centre button; natural soft filling. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-76c1b6ae-ea99-4039-8546-d892ff09881b.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "pillow",
+    "source": "artwork/pillow.png",
+    "target": "items/catalog/pillow.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 베개. Distinctive construction: 길쭉하고 낮은 베개. Use: 잠잘 때 머리를 받치는 침구. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One low rectangular sleeping pillow in an ivory cotton pillowcase, slightly rounded corners, horizontal 3:2 proportions. Keep clearly different from a square sofa cushion. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-d4a42cf0-dcbc-4f3d-8f0d-c59255a2c731.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "blanket",
+    "source": "artwork/blanket.png",
+    "target": "items/catalog/blanket.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접은 이불. Distinctive construction: 두께와 접힌 선이 보이는 이불. Use: 몸을 덮을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One thick neatly folded dusty blue cotton quilt, a single connected folded bundle with a few wide stitched quilt channels and visible soft rolled fold edge. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-badd0e9a-3ad0-4a53-a8ba-cf3e75e61197.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "bed-sheet",
+    "source": "artwork/bed-sheet.png",
+    "target": "items/catalog/bed-sheet.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접은 침대 시트. Distinctive construction: 얇은 천이 겹쳐진 큰 사각형. Use: 침대에 깔아 쓸 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One thin neatly folded pale lavender cotton bed sheet, flat rectangular fabric bundle with visible thin layered hem, no plush thickness. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-5a0673ab-38a5-4072-848f-6be7fa9fa60c.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  },
+  {
+    "id": "headphones",
+    "source": "artwork/headphones.png",
+    "target": "items/catalog/headphones.webp",
+    "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 헤드폰. Distinctive construction: 양쪽 귀 덮개와 머리띠. Use: 소리를 혼자 들을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One complete muted teal over-ear headphone set lying flat with two matching ear cups connected by ONE padded curved headband; realistic construction, no duplicate headband, no cable. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+    "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-1409990e-cea8-49a6-9ec5-442d03b42a9d.png",
+    "status": "pending-review",
+    "date": "2026-09-16"
+  }
+]

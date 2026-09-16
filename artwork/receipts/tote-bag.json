@@ -3,6 +3,6 @@
   "source": "artwork/tote-bag.png",
   "target": "items/catalog/tote-bag.webp",
   "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 천 가방. Distinctive construction: 넓은 손잡이가 달린 납작한 가방. Use: 가벼운 물건을 담을 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
-  "status": "generated-awaiting-visual-review",
+  "status": "integrated-source",
   "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-ec1c0b0e-55d4-4a19-b759-81ef8cee137e.png"
 }

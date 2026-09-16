@@ -22,7 +22,7 @@ import { poseOf } from "./domain/placement";
 import type { ArtCollection, Point } from "./domain/types";
 import {
   assetUrl,
-  loadArt,
+  loadSceneItem,
   loadImage,
   loadSceneArt,
   retainArtCache,
@@ -189,7 +189,7 @@ export function App() {
         }));
         // A missing optional candidate must not hold the eight base objects in a loading state.
         map.extras.forEach((item) => {
-          loadArt(item.asset)
+          loadSceneItem(map.id, item.asset)
             .then((loaded) => {
               if (!current) return;
               setArt((previous) => ({
@@ -874,6 +874,7 @@ export function App() {
                         geometry.surfaces.find(
                           (s) => s.id === state.placements[selected].surface,
                         )!,
+                        map.id,
                       ) === "flat" ? (
                         <div className="rotate-actions">
                           {[-1, 1].map((direction) => (

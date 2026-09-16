@@ -1,0 +1,8 @@
+{
+  "id": "home-desk--thumbnail",
+  "source": "output/qa/homeDesk-base-thumbnail-source.png",
+  "target": "maps/home-desk/thumbnail.webp",
+  "status": "reviewed-composition",
+  "date": "2026-09-16",
+  "review": "Actual base-eight scene, shared renderer. 42 combinations and full browser activity verified."
+}

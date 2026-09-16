@@ -3,6 +3,6 @@
   "source": "artwork/locker.png",
   "target": "maps/locker/background.webp",
   "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 사물함. Scene: 학생 키에서 닿는 낮은 사물함, 책과 공책을 나눈 세로 칸막이, 작은 준비물 선반, 실내화 주머니 칸. Functional furniture: 책칸; 공책·자료칸; 작은 준비물 선반; 주머니 보관칸. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW locker environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
-  "status": "generated-awaiting-visual-review",
+  "status": "integrated-source",
   "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-8d79a3df-d767-4958-80af-e2df3fafb7c1.png"
 }

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "cap",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      245,
+      85,
+      1011,
+      1173
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "sun-hat",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      85,
+      91,
+      1183,
+      1163
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "scarf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      61,
+      259,
+      1196,
+      1013
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "gloves",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      54,
+      206,
+      1203,
+      1046
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

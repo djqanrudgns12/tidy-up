@@ -1,4 +1,5 @@
 import { assetsById } from "../data/catalog";
+import { hasShelfView,hasHangingView,hangingContact } from "../data/scene-art";
 import { coveredByPanel } from "../domain/occlusion";
 import {
   footprint,
@@ -15,7 +16,7 @@ import type {
   Point,
   Surface,
 } from "../domain/types";
-import { motionFrame, type PlacementMotion } from "./motion";
+import { motionFrame, type BookTurn, type HangingTurn, type PlacementMotion } from "./motion";
 
 type Context = CanvasRenderingContext2D;
 export type SceneModel = {
@@ -70,10 +71,11 @@ export function drawObject(
   shadowStrength = 1,
 ) {
   const asset = assetsById[item.asset],
-    art = model.art.items[item.asset];
+    primary = model.art.items[item.asset],
+    art = surface.bookSpines && hasShelfView(asset, model.mapId) ? primary?.shelf : surface.pose==="hanging" && hasHangingView(asset,model.mapId) ? primary?.hanging : primary;
   if (!art) return;
-  const [w, h] = sizeOf(asset, model.mapId),
-    pose = poseOf(asset, surface);
+  const [w, h] = sizeOf(asset, model.mapId, surface),
+    pose = poseOf(asset, surface, model.mapId);
   const stackLift = p.stackOn ? 4 : 0;
   const y = p.y - stackLift;
   // Cast shadows fall down and right from the common upper-left window light.
@@ -125,7 +127,7 @@ export function drawObject(
     ctx.clip();
     ctx.globalAlpha = 0.16 * shadowStrength;
     ctx.filter = "blur(4px)";
-    ctx.drawImage(art.silhouette, p.x - w / 2 + 6, y - h * 0.06 + 5, w, h);
+    ctx.drawImage(art.silhouette, p.x - w / 2 + 6, y - h * hangingContact(asset,model.mapId) + 5, w, h);
     ctx.restore();
   }
   ctx.restore();
@@ -137,7 +139,7 @@ export function drawObject(
     ctx.rotate((p.angle * Math.PI) / 180);
     ctx.drawImage(art.image, -w / 2, -h / 2, w, h);
   } else
-    ctx.drawImage(art.image, -w / 2, pose === "upright" ? -h : -h * 0.06, w, h);
+    ctx.drawImage(art.image, -w / 2, pose === "upright" ? -h : -h * hangingContact(asset,model.mapId), w, h);
   ctx.restore();
 }
 export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
@@ -151,7 +153,11 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
       ? motionFrame(model.motion, movingItem, model.geometry, model.mapId)
       : undefined;
   const drawMoving = () => {
-    if (movingItem && movingFrame)
+    if (movingItem && movingFrame?.bookTurn) {
+      drawBookTurn(ctx,model,movingItem,movingFrame.placement,movingFrame.bookTurn);
+    } else if(movingItem && movingFrame?.hangingTurn) {
+      drawHangingTurn(ctx,model,movingItem,movingFrame.placement,movingFrame.hangingTurn);
+    } else if (movingItem && movingFrame)
       drawObject(
         ctx,
         model,
@@ -290,6 +296,58 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
   }
 }
 
+/** Project a constant-size book through its carry rotation; both endpoint drawings are real art. */
+let bookBlend: HTMLCanvasElement | undefined;
+function drawBookTurn(ctx: Context, model: SceneModel, item: ItemDefinition, p: Placement, turn: BookTurn) {
+  const art=model.art.items[item.asset];
+  if (!art?.shelf) return;
+  const asset=assetsById[item.asset], [flatW,height]=sizeOf(asset,model.mapId),
+    [spineW]=sizeOf(asset,model.mapId,turn.shelfSurface);
+  const u=turn.upright;
+  // Tilt raises the cover from the horizontal plane; yaw exposes the separately drawn spine.
+  const tilt=u*Math.PI/2;
+  const yaw=u*Math.acos(Math.min(1,spineW/flatW));
+  const width=flatW*Math.cos(yaw);
+  const vertical=Math.sin(tilt)+turn.flatSurface.depth*Math.cos(tilt);
+  const blend=u*u*(3-2*u);
+  ctx.save();ctx.translate(p.x,turn.centerY);
+  ctx.transform(1,0,planeSkew(turn.flatSurface,p)*(1-u),vertical,0,0);
+  ctx.rotate(turn.angle*Math.PI/180*(1-u));
+  if(u===0 || u===1) ctx.drawImage(u===0?art.image:art.shelf.image,-width/2,-height/2,width,height);
+  else {
+    bookBlend ??= document.createElement("canvas");
+    bookBlend.width=512;bookBlend.height=512;
+    const mix=bookBlend.getContext("2d")!;
+    mix.globalAlpha=1-blend;mix.drawImage(art.image,0,0,512,512);
+    // Add premultiplied contributions so opaque overlap remains opaque throughout the turn.
+    mix.globalCompositeOperation="lighter";
+    mix.globalAlpha=blend;mix.drawImage(art.shelf.image,0,0,512,512);
+    ctx.drawImage(bookBlend,-width/2,-height/2,width,height);
+  }
+  ctx.restore();
+}
+
+/** Lift by tilting the garment plane, then let the separately drawn sleeves drape.
+ * Height remains fixed; width changes only to the real hanging silhouette. */
+function drawHangingTurn(ctx:Context,model:SceneModel,item:ItemDefinition,p:Placement,turn:HangingTurn){
+ const art=model.art.items[item.asset];if(!art?.hanging)return;
+ const asset=assetsById[item.asset],[flatW,height]=sizeOf(asset,model.mapId),[hungW]=sizeOf(asset,model.mapId,turn.hangingSurface);
+ const u=turn.hanging,blend=u*u*(3-2*u),width=flatW+(hungW-flatW)*blend;
+ const tilt=u*Math.PI/2,vertical=Math.sin(tilt)+turn.flatSurface.depth*Math.cos(tilt);
+ ctx.save();ctx.translate(p.x,turn.centerY);
+ ctx.transform(1,0,planeSkew(turn.flatSurface,p)*(1-u),vertical,0,0);
+ ctx.rotate(turn.angle*Math.PI/180*(1-u));
+ if(u===0||u===1)ctx.drawImage(u===0?art.image:art.hanging.image,-width/2,-height/2,width,height);
+ else {
+  bookBlend??=document.createElement("canvas");bookBlend.width=512;bookBlend.height=512;
+  const mix=bookBlend.getContext("2d")!;
+  mix.globalAlpha=1-blend;mix.drawImage(art.image,0,0,512,512);
+  mix.globalCompositeOperation="lighter";mix.globalAlpha=blend;mix.drawImage(art.hanging.image,0,0,512,512);
+  ctx.drawImage(bookBlend,-width/2,-height/2,width,height);
+ }
+ ctx.restore();
+}
+
 export function hitObject(
   model: SceneModel,
   item: ItemDefinition,
@@ -308,9 +366,11 @@ export function hitObject(
   )
     return false;
   const asset = assetsById[item.asset],
-    art = model.art.items[item.asset],
-    [w, h] = sizeOf(asset, model.mapId);
-  const pose = poseOf(asset, surface),
+    primary = model.art.items[item.asset],
+    art = surface.bookSpines && hasShelfView(asset, model.mapId) ? primary?.shelf : surface.pose==="hanging" && hasHangingView(asset,model.mapId) ? primary?.hanging : primary,
+    [w, h] = sizeOf(asset, model.mapId, surface);
+  if (!art) return false;
+  const pose = poseOf(asset, surface, model.mapId),
     x = point.x - p.x,
     y = point.y - p.y + (p.stackOn ? 4 : 0);
   const localX = x - (planeSkew(surface, p) * y) / surface.depth;
@@ -325,7 +385,7 @@ export function hitObject(
       ? (-localX * Math.sin(angle) + (y / surface.depth) * Math.cos(angle)) /
           h +
         0.5
-      : y / h + (pose === "upright" ? 1 : 0.06);
+      : y / h + (pose === "upright" ? 1 : hangingContact(asset,model.mapId));
   if (u < 0 || u >= 1 || v < 0 || v >= 1) return false;
   return (
     (art.image
@@ -346,8 +406,8 @@ export function visualBounds(
   mapId: string,
 ) {
   const asset = assetsById[item.asset],
-    [w, h] = sizeOf(asset, mapId),
-    pose = poseOf(asset, surface);
+    [w, h] = sizeOf(asset, mapId, surface),
+    pose = poseOf(asset, surface, mapId);
   if (pose === "flat") {
     const pts = footprint(
       asset,
@@ -362,6 +422,6 @@ export function visualBounds(
       bottom: Math.max(...pts.map((p) => p.y)),
     };
   }
-  const top = p.y - h * (pose === "upright" ? 1 : 0.06);
+  const top = p.y - h * (pose === "upright" ? 1 : hangingContact(asset,mapId));
   return { left: p.x - w / 2, right: p.x + w / 2, top, bottom: top + h };
 }

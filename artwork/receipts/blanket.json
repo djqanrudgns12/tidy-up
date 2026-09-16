@@ -1,0 +1,11 @@
+{
+  "id": "blanket",
+  "source": "artwork/blanket.png",
+  "target": "items/catalog/blanket.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접은 이불. Distinctive construction: 두께와 접힌 선이 보이는 이불. Use: 몸을 덮을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One thick neatly folded dusty blue cotton quilt, a single connected folded bundle with a few wide stitched quilt channels and visible soft rolled fold edge. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-badd0e9a-3ad0-4a53-a8ba-cf3e75e61197.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/blanket-local.png",
+  "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+}

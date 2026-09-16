@@ -1,0 +1,78 @@
+[
+  {
+    "id": "science-comic--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      533,
+      87,
+      745,
+      1160
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "dictionary--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      450,
+      67,
+      823,
+      1188
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "magazine--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      568,
+      101,
+      711,
+      1118
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "reading-notebook--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      536,
+      77,
+      718,
+      1177
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "story-book--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      504,
+      99,
+      777,
+      1144
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "science-book--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      521,
+      70,
+      735,
+      1147
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "picture-book--shelf",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      536,
+      92,
+      723,
+      1196
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

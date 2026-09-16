@@ -1,0 +1,11 @@
+{
+  "id": "bed-sheet",
+  "source": "artwork/bed-sheet.png",
+  "target": "items/catalog/bed-sheet.webp",
+  "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접은 침대 시트. Distinctive construction: 얇은 천이 겹쳐진 큰 사각형. Use: 침대에 깔아 쓸 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One thin neatly folded pale lavender cotton bed sheet, flat rectangular fabric bundle with visible thin layered hem, no plush thickness. Square canvas. Real RGBA transparency, no exterior colour glow. Do not include extra separate objects.",
+  "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-5a0673ab-38a5-4072-848f-6be7fa9fa60c.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/bed-sheet-local.png",
+  "review": "Reviewed all five sprites on light/dark contact sheet output/qa/home-primary.png. Local alpha-only fringe cleanup; source RGB and original v1 preserved. Shape and connected headphone structure accepted."
+}
