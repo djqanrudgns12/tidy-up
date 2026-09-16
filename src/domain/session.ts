@@ -252,112 +252,186 @@ export function tryPlacement(
           (s) => s.anchor && pointInPolygon(handle, s.polygon),
         )
       : undefined;
+  const reach = (s: Surface) =>
+    distanceToPolygon(point, s.entryPolygon ?? s.polygon);
+  // A rough drop counts for any support within reach; the item's own place wins over a nearer wrong one.
   const matches = surfaceId
     ? geometry.surfaces.filter((s) => s.id === surfaceId)
     : hook
       ? [hook]
-      : [...geometry.surfaces]
-          .reverse()
-          .filter(
-            (s) => distanceToPolygon(point, s.entryPolygon ?? s.polygon) <= 24,
-          )
-          .sort(
-            (a, b) =>
-              distanceToPolygon(point, a.entryPolygon ?? a.polygon) -
-              distanceToPolygon(point, b.entryPolygon ?? b.polygon),
-          );
+      : geometry.surfaces
+          .map((s, order) => ({
+            s,
+            order,
+            rank: reach(s) - (item.zones.includes(s.zone) ? OWN_PLACE_BONUS : 0),
+          }))
+          .filter(({ s }) => reach(s) <= SNAP_RADIUS)
+          .sort((a, b) => a.rank - b.rank || b.order - a.order)
+          .map(({ s }) => s);
+  // Rotating keeps the item where it is; only a small shift is allowed to make room.
+  const rotating = surfaceId !== undefined && angle !== undefined;
+  const angles = rotating ? [angle] : [...new Set([angle ?? old.angle, 0])];
+  const done = (p: Placement, surface: Surface, note: string) => ({
+    placement: p,
+    message: item.zones.includes(surface.zone)
+      ? `${note}놓은 곳: ${surface.label}`
+      : `놓을 수 있는 곳: ${item.zones.map((z) => (z === 5 ? "휴지통" : mapsById[state.mapId!].zones[z - 1])).join(", ")}`,
+  });
+  let blocked = "";
   for (const surface of matches) {
-    if (
-      surface.anchor &&
-      ![
-        "backpack",
-        "tote-bag",
-        "shoe-bag",
-        "hanger",
-        "jacket",
-        "cardigan",
-        "umbrella",
-        "umbrella-cover",
-      ].includes(item.asset)
-    )
-      continue;
-    if (
-      Math.min(
-        distanceToPolygon(point, surface.entryPolygon ?? surface.polygon),
-        surfaceId ? distanceToPolygon(point, surface.polygon) : Infinity,
-      ) > 24 &&
-      surface !== hook
-    )
-      continue;
-    const supportPoint = surface.entryOffsetY && surface.entryPolygon &&
-      pointInPolygon(point,surface.entryPolygon) && !pointInPolygon(point,surface.polygon)
-      ? {...point,y:point.y+surface.entryOffsetY} : point;
-    let p = settleOnSurface(
-      asset,
-      normalizePlacement(asset, supportPoint, surface, angle ?? old.angle, state.mapId),
-      surface,
-      state.mapId,
-    );
-    if (!p) continue;
-    const collision = collisionWith(state, item, p, surface);
-    let nudged = false;
-    if (collision) {
-      // Only flat books may form one supported two-book stack. The top book must fit on the lower cover.
-      const lowerAsset = assetsById[collision.asset],
-        lower = state.placements[collision.id];
-      if (
-        (asset.book || asset.id === "document-folder") &&
-        (lowerAsset.book || lowerAsset.id === "document-folder") &&
-        poseOf(asset, surface, state.mapId!) === "flat" &&
-        !lower.stackOn &&
-        !Object.values(state.placements).some(
-          (v) => v.stackOn === collision.id && v !== state.placements[id],
-        )
-      ) {
-        const lowerPoly = footprint(
-          lowerAsset,
-          lower,
-          surface,
-          state.mapId,
-        ).flatMap((v) => [v.x, v.y]);
-        if (
-          footprint(asset, p, surface, state.mapId).every((v) =>
-            pointInPolygon(v, lowerPoly),
-          )
-        )
-          p.stackOn = collision.id;
-      }
-      if (!p.stackOn) {
-        const separated = nudgeApart(state, item, p, surface);
-        if (!separated)
-          return {
-            message:
-              "이 자리는 다른 물건이 차지하고 있어요. 조금 더 떨어진 곳에 놓아 주세요.",
-          };
-        p = separated;
-        nudged = true;
-      }
+    if (surface.anchor && !HANGABLE.includes(item.asset)) continue;
+    const exact = placeAt(state, item, point, surface, angles[0]);
+    if (exact.placement)
+      return done(
+        exact.placement,
+        surface,
+        exact.nudged ? "다른 물건과 닿아서 조금 옆으로 놓았어요. " : "",
+      );
+    blocked ||= exact.message;
+    if (surface.anchor) continue;
+    for (const a of angles) {
+      const p = freeSpot(state, item, point, surface, a, rotating ? 40 : Infinity);
+      if (p) return done(p, surface, "가까운 빈자리에 맞춰 놓았어요. ");
     }
-    if (Object.values(state.placements).some((v) => v.stackOn === id))
-      return { message: "위에 놓인 책을 먼저 옮겨 주세요." };
-    if (
-      placementIssues({
-        ...state,
-        placements: { ...state.placements, [id]: p },
-      }).size
-    )
-      return { message: "다른 물건과 겹치지 않게 조금 옆에 놓아 주세요." };
-    return {
-      placement: p,
-      message: item.zones.includes(surface.zone)
-        ? `${nudged ? "다른 물건과 닿아서 조금 옆으로 놓았어요. " : ""}놓은 곳: ${surface.label}`
-        : `놓을 수 있는 곳: ${item.zones.map((z) => (z === 5 ? "휴지통" : mapsById[state.mapId!].zones[z - 1])).join(", ")}`,
-    };
   }
   return {
     message:
-      "물건을 받칠 수 있는 곳에 놓아 주세요. 가장자리에서는 조금 안쪽으로 옮겨 주세요.",
+      blocked ||
+      "물건을 넣을 칸이나 선반 가까이에 놓아 주세요.",
   };
+}
+
+const HANGABLE = [
+  "backpack",
+  "tote-bag",
+  "shoe-bag",
+  "hanger",
+  "jacket",
+  "cardigan",
+  "umbrella",
+  "umbrella-cover",
+];
+/** World pixels (960 × 720). Students drop roughly; the lesson is choosing the place, not aiming. */
+const SNAP_RADIUS = 120,
+  OWN_PLACE_BONUS = 80;
+
+/** The drop exactly where it was released, with the small edge settle, book stack, and nudge. */
+function placeAt(
+  state: Session,
+  item: ItemDefinition,
+  point: Point,
+  surface: Surface,
+  angle: number,
+): { placement?: Placement; nudged?: boolean; message: string } {
+  const mapId = state.mapId!,
+    asset = assetsById[item.asset],
+    id = item.id;
+  const supportPoint =
+    surface.entryOffsetY &&
+    surface.entryPolygon &&
+    pointInPolygon(point, surface.entryPolygon) &&
+    !pointInPolygon(point, surface.polygon)
+      ? { ...point, y: point.y + surface.entryOffsetY }
+      : point;
+  let p = settleOnSurface(
+    asset,
+    normalizePlacement(asset, supportPoint, surface, angle, mapId),
+    surface,
+    mapId,
+  );
+  if (!p) return { message: "" };
+  const collision = collisionWith(state, item, p, surface);
+  let nudged = false;
+  if (collision) {
+    // Only flat books may form one supported two-book stack. The top book must fit on the lower cover.
+    const lowerAsset = assetsById[collision.asset],
+      lower = state.placements[collision.id];
+    if (
+      (asset.book || asset.id === "document-folder") &&
+      (lowerAsset.book || lowerAsset.id === "document-folder") &&
+      poseOf(asset, surface, mapId) === "flat" &&
+      !lower.stackOn &&
+      !Object.values(state.placements).some(
+        (v) => v.stackOn === collision.id && v !== state.placements[id],
+      )
+    ) {
+      const lowerPoly = footprint(lowerAsset, lower, surface, mapId).flatMap(
+        (v) => [v.x, v.y],
+      );
+      if (
+        footprint(asset, p, surface, mapId).every((v) =>
+          pointInPolygon(v, lowerPoly),
+        )
+      )
+        p.stackOn = collision.id;
+    }
+    if (!p.stackOn) {
+      const separated = nudgeApart(state, item, p, surface);
+      if (!separated)
+        return {
+          message:
+            "이 자리는 다른 물건이 차지하고 있어요. 조금 더 떨어진 곳에 놓아 주세요.",
+        };
+      p = separated;
+      nudged = true;
+    }
+  }
+  if (
+    placementIssues({
+      ...state,
+      placements: { ...state.placements, [id]: p },
+    }).has(id)
+  )
+    return { message: "다른 물건과 겹치지 않게 조금 옆에 놓아 주세요." };
+  return { placement: p, nudged, message: "" };
+}
+
+/** The empty spot on this support closest to a rough drop; other objects never move. */
+function freeSpot(
+  state: Session,
+  item: ItemDefinition,
+  point: Point,
+  surface: Surface,
+  angle: number,
+  maxShift: number,
+): Placement | undefined {
+  const mapId = state.mapId!,
+    asset = assetsById[item.asset],
+    xs = surface.polygon.filter((_, i) => i % 2 === 0),
+    ys = surface.polygon.filter((_, i) => i % 2 === 1);
+  const [left, right, top, bottom] = [
+    Math.min(...xs),
+    Math.max(...xs),
+    Math.min(...ys),
+    Math.max(...ys),
+  ];
+  const step = Math.min(
+    12,
+    Math.max(3, Math.sqrt(((right - left) * (bottom - top)) / 2500)),
+  );
+  const spots: Point[] = [];
+  for (let x = left; x <= right; x += step)
+    if (surface.baseline !== undefined) spots.push({ x, y: surface.baseline });
+    else
+      for (let y = top; y <= bottom; y += step)
+        if (pointInPolygon({ x, y }, surface.polygon)) spots.push({ x, y });
+  const distance = (s: Point) => Math.hypot(s.x - point.x, s.y - point.y);
+  for (const spot of spots.sort((a, b) => distance(a) - distance(b))) {
+    const p = normalizePlacement(asset, spot, surface, angle, mapId);
+    if (Math.hypot(p.x - point.x, p.y - point.y) > maxShift) break;
+    if (
+      !fitsSurface(asset, p, surface, mapId) ||
+      collisionWith(state, item, p, surface)
+    )
+      continue;
+    if (
+      !placementIssues({
+        ...state,
+        placements: { ...state.placements, [item.id]: p },
+      }).has(item.id)
+    )
+      return p;
+  }
 }
 
 function nudgeApart(
@@ -514,8 +588,8 @@ export function reducer(state: Session, action: Action): Session {
       break;
     }
     case "START_CLEAN":
-      if (state.step === "organize" && unfinished(state).length === 0)
-        next = { ...state, step: "clean" };
+      // Students may move on with items left over; the lesson does not block on placement.
+      if (state.step === "organize") next = { ...state, step: "clean" };
       break;
     case "VENTILATE":
       if (state.step === "clean") next = { ...state, ventilated: true };

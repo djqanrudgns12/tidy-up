@@ -61,7 +61,9 @@ it("봉의 자유 가로 위치, 접힌 옷 거부, 문과 옆옷 침범 거부 
   const free=tryPlacement(state,"b5",{x:302,y:89},"rail");
   expect(free.placement?.x).toBe(302);
   state=reducer(state,{type:"MOVE",id:"b5",placement:free.placement!});
-  expect(tryPlacement(state,"e1",{x:302,y:89},"rail").placement).toBeUndefined();
+  // An occupied spot moves the new item to the nearest free spot on the rail; the old one stays.
+  const beside=tryPlacement(state,"e1",{x:302,y:89},"rail").placement;
+  expect(beside).toBeDefined();expect(beside!.x).not.toBe(302);expect(beside!.y).toBe(89);
   const nudged=tryPlacement(state,"e1",{x:382,y:89},"rail").placement;
   expect(nudged).toBeDefined();expect(Math.abs(nudged!.x-382)).toBeLessThanOrEqual(36);
   expect(nudged!.y).toBe(89);expect(state.placements.b5.x).toBe(302);

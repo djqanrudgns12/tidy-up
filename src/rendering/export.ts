@@ -68,9 +68,9 @@ export async function exportResult(
     ctx.fillRect(0, 0, 1984, 848);
     ctx.textBaseline = "top";
     ctx.fillStyle = "#20352d";
-    ctx.font = '600 27px "Malgun Gothic", sans-serif';
+    ctx.font = '600 27px "Hakgyoansim Nadeuri", "Malgun Gothic", sans-serif';
     ctx.fillText(`${state.name} · ${mapsById[state.mapId].name}`, 24, 20);
-    ctx.font = '700 28px "Malgun Gothic", sans-serif';
+    ctx.font = '700 28px "Hakgyoansim Nadeuri", "Malgun Gothic", sans-serif';
     ctx.fillText("정리 전", 24, 64);
     ctx.fillText("청소 후", 1000, 64);
     ctx.drawImage(before, 24, 104, 960, 720);

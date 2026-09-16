@@ -15,7 +15,6 @@ import {
 } from "../domain/interaction";
 import { assetsById } from "../data/catalog";
 import { hasShelfView,hasHangingView } from "../data/scene-art";
-import { poseOf } from "../domain/placement";
 import type { Placement, Point } from "../domain/types";
 import type { PlacementMotion } from "../rendering/motion";
 Konva.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
@@ -240,16 +239,8 @@ export function Scene({
           const item = model.items.find((i) => i.id === current.id)!;
           const p = dragPlacement(item, moved, model.geometry, model.mapId);
           release.current = { id: current.id, placement: p };
-          const originalSurface = model.geometry.surfaces.find(
-            (s) => s.id === current.origin.surface,
-          )!;
-          const accepted = onDrop(
-            current.id,
-            p,
-            (poseOf(assetsById[item.asset], originalSurface, model.mapId) === "flat" || hasShelfView(assetsById[item.asset],model.mapId) || hasHangingView(assetsById[item.asset],model.mapId))
-              ? undefined
-              : p.surface,
-          );
+          // A rough drop may land on any nearby support, not only the one the item left.
+          const accepted = onDrop(current.id, p);
           if (!accepted) {
             release.current = null;
             drag.current = null;

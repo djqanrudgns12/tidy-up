@@ -130,7 +130,7 @@ describe("내 책상: 실제 면과 모든 추가 선택 조합", () => {
       initialPlacements("school-desk", ["e2", "e4", "e6"]),
     );
   });
-  it("가방은 걸이 접점에 고정하고 공중에서는 놓을 수 없다", () => {
+  it("가방은 걸이 접점에 고정하고 공중에 놓은 물건은 가까운 받침면에 내려놓는다", () => {
     const s = start();
     const atHook = tryPlacement(s, "b7", { x: 835, y: 316 }, "hook", 45);
     expect(atHook.placement).toEqual({
@@ -139,7 +139,9 @@ describe("내 책상: 실제 면과 모든 추가 선택 조합", () => {
       angle: 0,
       surface: "hook",
     });
-    expect(tryPlacement(s, "b1", { x: 300, y: 70 }).placement).toBeUndefined();
+    const dropped = tryPlacement(s, "b1", { x: 300, y: 70 }).placement;
+    expect(dropped).toBeDefined();
+    expect(dropped!.surface).not.toBe("hook");
     expect(
       tryPlacement(s, "b1", { x: 842, y: 299 }, "hook").placement,
     ).toBeUndefined();
@@ -275,7 +277,6 @@ describe("활동 전이와 저장", () => {
       };
       expect(validateSession(broken)).toBe(false);
       expect(unfinished(broken).length).toBeGreaterThan(0);
-      expect(reducer(broken, { type: "START_CLEAN" })).toBe(broken);
     }
   });
   it("윗책을 마지막에 그리고 원점으로 돌아온 드래그도 최종 좌표를 반영한다", () => {
@@ -318,9 +319,10 @@ describe("활동 전이와 저장", () => {
       ),
     ).toBe(false);
   });
-  it("정리가 끝나기 전 청소로 넘어갈 수 없다", () => {
+  it("정리를 다 마치지 않아도 청소로 넘어갈 수 있다", () => {
     const s = start();
-    expect(reducer(s, { type: "START_CLEAN" })).toBe(s);
+    expect(unfinished(s).length).toBeGreaterThan(0);
+    expect(reducer(s, { type: "START_CLEAN" }).step).toBe("clean");
   });
   it("환기 → 가구 먼지 → 쓸기 → 닦기 → 도구 정리 순서를 지킨다", () => {
     let s = reducer(finishOrganizing(start()), { type: "START_CLEAN" });

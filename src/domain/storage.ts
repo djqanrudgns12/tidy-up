@@ -4,7 +4,6 @@ import { physicalMaps } from "../data/physical";
 import {
   activeItems,
   placementIssues,
-  unfinished,
   validName,
   type Session,
 } from "./session";
@@ -120,8 +119,6 @@ export function validateSession(
     s.step === "organize" &&
     (s.ventilated || s.cleaned.length || s.toolsStored)
   )
-    return false;
-  if (["clean", "quiz", "result"].includes(s.step) && unfinished(s).length)
     return false;
   if (["quiz", "result"].includes(s.step) && !s.toolsStored) return false;
   return true;

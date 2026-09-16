@@ -84,3 +84,32 @@ it("사물함 42조합 모두 실제 이동 검증·복원·정리·청소·퀴�
 
 
 
+it("칸 근처에 대충 놓아도 가까운 빈자리에 맞춰 정리되고 다른 물건은 움직이지 않는다",()=>{
+  const previous=physicalMaps.locker; physicalMaps.locker=locker;
+  try {
+    for(const extras of [[],["e1","e2","e4"],["e3","e5","e6"]]) {
+      let state=reducer(makeSession(),{type:"BEGIN"});
+      state=reducer(state,{type:"PROFILE",name:"검수",character:"rabbit"});
+      state=reducer(state,{type:"TUTORIAL_DONE"});
+      state=reducer(state,{type:"MAP",mapId:"locker"});
+      for(const id of extras) state=reducer(state,{type:"EXTRA",id});
+      state=reducer(state,{type:"CONFIRM_SET"});
+      for(const [i,item] of activeItems(state.mapId!,extras).entries()) {
+        const target=lockerDestinations[item.id];
+        // Released off to the side and below the opening, as a hurried drag would.
+        const rough={x:target.x+(i%2?28:-28),y:target.y+45};
+        const before=state.placements;
+        const result=tryPlacement(state,item.id,rough);
+        expect(result.placement,`${extras}/${item.id}: ${result.message}`).toBeDefined();
+        const surface=locker.surfaces.find(s=>s.id===result.placement!.surface)!;
+        expect(item.zones,`${extras}/${item.id} → ${surface.id}`).toContain(surface.zone);
+        state=reducer(state,{type:"MOVE",id:item.id,placement:result.placement!});
+        expect(state.placements[item.id]).toEqual(result.placement);
+        for(const other of Object.keys(before).filter(id=>id!==item.id))
+          expect(state.placements[other]).toEqual(before[other]);
+        expect(validateSession(state)).toBe(true);
+      }
+      expect(unfinished(state)).toEqual([]);
+    }
+  } finally {physicalMaps.locker=previous;}
+});

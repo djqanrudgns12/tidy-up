@@ -11,7 +11,6 @@ import {
   makeSession,
   reducer,
   tryPlacement,
-  unfinished,
   validName,
   type Action,
   type Session,
@@ -285,15 +284,7 @@ export function App() {
     return checked.placement;
   }
   function checkOrganizing() {
-    const remaining = unfinished(state);
-    if (remaining.length)
-      setMessage(
-        `아직 제자리에 놓지 않은 물건이 ${remaining.length}개 있어요. 다시 살펴볼 물건: ${remaining
-          .slice(0, 2)
-          .map((i) => i.label)
-          .join(", ")}`,
-      );
-    else dispatch({ type: "START_CLEAN" });
+    dispatch({ type: "START_CLEAN" });
   }
   function beginPlacing() {
     setPlacing(true);
