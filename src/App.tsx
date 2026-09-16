@@ -500,6 +500,54 @@ export function App() {
                 </p>
               </div>
             </div>
+          </div>
+          <section className="lesson-path" aria-labelledby="lesson-path-title">
+            <header className="lesson-path-heading">
+              <span className="section-kicker">활동 순서</span>
+              <div>
+                <h2 id="lesson-path-title">세 단계로 차근차근 완성해요</h2>
+                <p>고른 공간을 직접 정리하고 깨끗하게 마무리해요.</p>
+              </div>
+            </header>
+            <div className="lesson-path-grid">
+              {[
+                ["정리 정돈", "물건을 꺼내고 자리를 정해요."],
+                ["먼지와 얼룩 청소", "남은 먼지와 얼룩을 닦아요."],
+                ["전후 모습 살펴보기", "달라진 공간을 확인해요."],
+              ].map(([title, description], i) => (
+                <div className="lesson-step" key={title}>
+                  <span>0{i + 1}</span>
+                  <div>
+                    <strong>{title}</strong>
+                    <small>{description}</small>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+          <div className="hero-visual">
+            <div className="hero-scene">
+              <img
+                className="hero-background"
+                src={assetUrl("assets/maps/school-desk/thumbnail.webp")}
+                alt="물건을 정리할 교실 책상"
+              />
+            </div>
+            <div className="hero-caption">
+              <span>오늘은 내 손으로</span>
+              <strong>쓰던 물건의 자리를 정해요.</strong>
+            </div>
+            <img
+              className="hero-rabbit"
+              src={assetUrl("assets/characters/rabbit.webp")}
+              alt="토끼 안내 캐릭터"
+            />
+          </div>
+          <div className="hero-action-area">
+            <p className="privacy-note">
+              <span aria-hidden="true">✓</span>
+              이름과 활동 내용은 이 기기에만 저장하고 서버로 보내지 않아요.
+            </p>
             {saved.saved ? (
               <div className="resume-box">
                 <div className="resume-heading">
@@ -543,53 +591,7 @@ export function App() {
                 </button>
               </div>
             )}
-            <p className="privacy-note">
-              <span aria-hidden="true">✓</span>
-              이름과 활동 내용은 이 기기에만 저장하고 서버로 보내지 않아요.
-            </p>
           </div>
-          <div className="hero-visual">
-            <div className="hero-scene">
-              <img
-                className="hero-background"
-                src={assetUrl("assets/maps/school-desk/thumbnail.webp")}
-                alt="물건을 정리할 교실 책상"
-              />
-            </div>
-            <div className="hero-caption">
-              <span>오늘은 내 손으로</span>
-              <strong>쓰던 물건의 자리를 정해요.</strong>
-            </div>
-            <img
-              className="hero-rabbit"
-              src={assetUrl("assets/characters/rabbit.webp")}
-              alt="토끼 안내 캐릭터"
-            />
-          </div>
-          <section className="lesson-path" aria-labelledby="lesson-path-title">
-            <header className="lesson-path-heading">
-              <span className="section-kicker">활동 순서</span>
-              <div>
-                <h2 id="lesson-path-title">세 단계로 차근차근 완성해요</h2>
-                <p>고른 공간을 직접 정리하고 깨끗하게 마무리해요.</p>
-              </div>
-            </header>
-            <div className="lesson-path-grid">
-              {[
-                ["정리 정돈", "물건을 꺼내고 자리를 정해요."],
-                ["먼지와 얼룩 청소", "남은 먼지와 얼룩을 닦아요."],
-                ["전후 모습 살펴보기", "달라진 공간을 확인해요."],
-              ].map(([title, description], i) => (
-                <div className="lesson-step" key={title}>
-                  <span>0{i + 1}</span>
-                  <div>
-                    <strong>{title}</strong>
-                    <small>{description}</small>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
         </section>
       )}
 
