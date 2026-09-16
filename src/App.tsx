@@ -19,6 +19,13 @@ import {
 } from "./domain/session";
 import { readSaved, saveSession, storageKey } from "./domain/storage";
 import { poseOf } from "./domain/placement";
+import {
+  createPageHistory,
+  pageAtOffset,
+  pageLabel,
+  recordPage,
+  replaceCurrentPage,
+} from "./domain/page-history";
 import type { ArtCollection, Point } from "./domain/types";
 import {
   assetUrl,
@@ -75,6 +82,9 @@ export function App() {
   const [result, setResult] = useState<{ url: string; bytes: number }>(),
     [resultError, setResultError] = useState("");
   const [resultPreviewOpen, setResultPreviewOpen] = useState(false);
+  const pageHistory = useRef(createPageHistory(state));
+  const restoringPage = useRef(false);
+  const [, refreshPageNavigation] = useState(0);
   const stateRef = useRef(state);
   stateRef.current = state;
   const map = state.mapId ? mapsById[state.mapId] : null,
@@ -127,6 +137,13 @@ export function App() {
           : "이 기기에서는 이어하기를 저장할 수 없어요. 새로고침하지 말고 활동을 마쳐 주세요.",
       );
     }
+  }, [state]);
+  useEffect(() => {
+    pageHistory.current = restoringPage.current
+      ? replaceCurrentPage(pageHistory.current, state)
+      : recordPage(pageHistory.current, state);
+    restoringPage.current = false;
+    refreshPageNavigation((value) => value + 1);
   }, [state]);
   useEffect(() => {
     setMessage("");
@@ -377,6 +394,16 @@ export function App() {
       </button>
     );
   }
+  function moveBetweenPages(offset: -1 | 1) {
+    const target = pageAtOffset(pageHistory.current, offset);
+    if (!target) return;
+    pageHistory.current = { ...pageHistory.current, index: target.index };
+    restoringPage.current = true;
+    setConfirmation(null);
+    setMessage("");
+    setResultPreviewOpen(false);
+    dispatch({ type: "RESTORE", session: target.session });
+  }
   function activityProfile() {
     return (
       <section className="activity-profile" aria-label="오늘의 정리 주인공">
@@ -428,6 +455,8 @@ export function App() {
     );
   }
   const phaseIndex = state.step === "organize" || state.step === "setup" ? 0 : state.step === "clean" ? 1 : 2;
+  const previousPage = pageAtOffset(pageHistory.current, -1);
+  const nextPage = pageAtOffset(pageHistory.current, 1);
 
   return (
     <main className={`app-shell ${activity || state.step === "quiz" || state.step === "result" ? "in-activity" : ""}`}>
@@ -453,6 +482,46 @@ export function App() {
             <strong className="brand-title">정리 정돈과 청소 성향 알아보기</strong>
           </span>
         </a>
+        <nav className="page-history-nav" aria-label="페이지 이동">
+          <button
+            type="button"
+            disabled={!previousPage}
+            aria-label={
+              previousPage
+                ? `이전 페이지: ${pageLabel(previousPage.session)}`
+                : "이전 페이지 없음"
+            }
+            title={
+              previousPage
+                ? `이전 페이지 · ${pageLabel(previousPage.session)}`
+                : "이전 페이지가 없어요"
+            }
+            onClick={() => moveBetweenPages(-1)}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="m14.5 6-6 6 6 6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            disabled={!nextPage}
+            aria-label={
+              nextPage
+                ? `다음 페이지: ${pageLabel(nextPage.session)}`
+                : "다음 페이지 없음"
+            }
+            title={
+              nextPage
+                ? `다음 페이지 · ${pageLabel(nextPage.session)}`
+                : "다음 페이지가 없어요"
+            }
+            onClick={() => moveBetweenPages(1)}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="m9.5 6 6 6-6 6" />
+            </svg>
+          </button>
+        </nav>
         <div
           className="topbar-lesson"
           aria-label="5학년, 쾌적한 생활 공간 관리"
@@ -808,6 +877,12 @@ export function App() {
                           setPlacing(false);
                         }}
                         onDrop={place}
+                        onClearSelection={() => {
+                          setSelected("");
+                          setHighlight("");
+                          setMessage("");
+                          setPlacing(false);
+                        }}
                         onPoint={(point) => {
                           if (placing && selected) place(selected, point);
                         }}

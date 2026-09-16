@@ -10,8 +10,10 @@ import {
 } from "../rendering/paint";
 import {
   advanceDrag,
+  advanceTapGesture,
   dragPlacement,
   type DragGesture,
+  type TapGesture,
 } from "../domain/interaction";
 import { assetsById } from "../data/catalog";
 import { hasShelfView,hasHangingView } from "../data/scene-art";
@@ -24,6 +26,7 @@ export function Scene({
   onSelect,
   onDrop,
   onPoint,
+  onClearSelection,
   onUnavailablePoint,
   locked = false,
   tapPlacement = false,
@@ -36,6 +39,7 @@ export function Scene({
     surfaceId?: string,
   ) => Placement | undefined | void;
   onPoint?: (point: Point) => void;
+  onClearSelection?: () => void;
   onUnavailablePoint?: (point: Point) => string | undefined;
   locked?: boolean;
   tapPlacement?: boolean;
@@ -43,6 +47,9 @@ export function Scene({
   const host = useRef<HTMLDivElement>(null),
     stage = useRef<Konva.Stage>(null);
   const drag = useRef<DragGesture | null>(null);
+  const backgroundGesture = useRef<
+    (TapGesture & { action: "place" | "clear" | "unavailable" }) | null
+  >(null);
   const previous = useRef(model.placements),
     release = useRef<{ id: string; placement: Placement } | null>(null);
   const [motion, setMotion] = useState<PlacementMotion | null>(null);
@@ -61,6 +68,7 @@ export function Scene({
   const cancel = () => {
     const pointerId = drag.current?.pointerId;
     drag.current = null;
+    backgroundGesture.current = null;
     release.current = null;
     if (pointerId !== undefined && host.current?.hasPointerCapture(pointerId))
       host.current.releasePointerCapture(pointerId);
@@ -200,6 +208,27 @@ export function Scene({
         };
       })()
     : undefined;
+  const interactiveItems = paintOrder(model).map((item) => {
+    const placement = model.placements[item.id];
+    const surface = model.geometry.surfaces.find(
+      (candidate) => candidate.id === placement.surface,
+    )!;
+    const box = visualBounds(item, placement, surface, model.mapId);
+    const halfMin = 22 / scale;
+    const cx = (box.left + box.right) / 2;
+    const cy = (box.top + box.bottom) / 2;
+    return {
+      item,
+      placement,
+      bounds: {
+        left: Math.min(box.left, cx - halfMin),
+        right: Math.max(box.right, cx + halfMin),
+        top: Math.min(box.top, cy - halfMin),
+        bottom: Math.max(box.bottom, cy + halfMin),
+      },
+      center: { x: cx, y: cy },
+    };
+  });
   return (
     <div
       ref={host}
@@ -216,33 +245,37 @@ export function Scene({
           return;
         const p = point(event);
         if (tapPlacement) {
-          onPoint?.(p);
+          backgroundGesture.current = {
+            start: p,
+            pointerId: event.pointerId,
+            moved: false,
+            action: "place",
+          };
           return;
         }
-        const candidates = paintOrder(model)
+        const selectedMarker =
+          event.target instanceof Element &&
+          event.target.closest("[data-scene-selected]");
+        const selectedTarget = selectedMarker
+          ? interactiveItems.find((candidate) => candidate.item.id === model.selected)
+          : undefined;
+        const candidates = interactiveItems
+          .slice()
           .reverse()
-          .map((item) => {
-            const placement = model.placements[item.id],
-              surface = model.geometry.surfaces.find(
-                (s) => s.id === placement.surface,
-              )!;
-            const box = visualBounds(item, placement, surface, model.mapId);
-            const halfMin = 22 / scale;
-            const cx = (box.left + box.right) / 2,
-              cy = (box.top + box.bottom) / 2;
-            return {
-              item,
-              placement,
-              direct: hitObject(model, item, p),
-              hit:
-                p.x >= Math.min(box.left, cx - halfMin) &&
-                p.x <= Math.max(box.right, cx + halfMin) &&
-                p.y >= Math.min(box.top, cy - halfMin) &&
-                p.y <= Math.max(box.bottom, cy + halfMin),
-              distance: Math.hypot(p.x - cx, p.y - cy),
-            };
-          })
-          .filter((c) => c.hit)
+          .map((candidate) => ({
+            ...candidate,
+            direct: hitObject(model, candidate.item, p),
+            hit:
+              p.x >= candidate.bounds.left &&
+              p.x <= candidate.bounds.right &&
+              p.y >= candidate.bounds.top &&
+              p.y <= candidate.bounds.bottom,
+            distance: Math.hypot(
+              p.x - candidate.center.x,
+              p.y - candidate.center.y,
+            ),
+          }))
+          .filter((candidate) => candidate.hit)
           .sort((a, b) =>
             a.direct && b.direct
               ? 0
@@ -252,14 +285,18 @@ export function Scene({
                   ? 1
                   : a.distance - b.distance,
           );
-        if (!candidates.length) {
-          const message = onUnavailablePoint?.(p);
-          if (message)
-            setBlocked({ key: ++blockedKey.current, point: p, message });
-          else onPoint?.(p);
+        const candidate = selectedTarget ?? candidates[0];
+        if (!candidate) {
+          backgroundGesture.current = {
+            start: p,
+            pointerId: event.pointerId,
+            moved: false,
+            action: model.selected ? "clear" : "unavailable",
+          };
           return;
         }
-        const { item, placement } = candidates[0];
+        const { item, placement } = candidate;
+        setBlocked(null);
         onSelect(item.id);
         drag.current = {
           id: item.id,
@@ -271,6 +308,11 @@ export function Scene({
         event.currentTarget.setPointerCapture(event.pointerId);
       }}
       onPointerMove={(event) => {
+        const background = backgroundGesture.current;
+        if (background?.pointerId === event.pointerId) {
+          advanceTapGesture(background, point(event), scale);
+          return;
+        }
         const current = drag.current;
         if (!current || current.pointerId !== event.pointerId) return;
         const moved = advanceDrag(current, point(event), scale);
@@ -282,6 +324,24 @@ export function Scene({
         });
       }}
       onPointerUp={(event) => {
+        const background = backgroundGesture.current;
+        if (background?.pointerId === event.pointerId) {
+          const p = point(event);
+          const isTap = advanceTapGesture(background, p, scale);
+          backgroundGesture.current = null;
+          if (!isTap) return;
+          if (background.action === "place") onPoint?.(p);
+          else if (background.action === "clear") {
+            setBlocked(null);
+            onClearSelection?.();
+          } else {
+            const message = onUnavailablePoint?.(p);
+            if (message)
+              setBlocked({ key: ++blockedKey.current, point: p, message });
+            else onPoint?.(p);
+          }
+          return;
+        }
         const current = drag.current;
         if (!current || current.pointerId !== event.pointerId) return;
         const moved = advanceDrag(current, point(event), scale);
@@ -308,6 +368,8 @@ export function Scene({
         setPreview(null);
       }}
       onPointerCancel={(event) => {
+        if (backgroundGesture.current?.pointerId === event.pointerId)
+          backgroundGesture.current = null;
         if (drag.current?.pointerId === event.pointerId) cancel();
       }}
       onLostPointerCapture={(event) => {
@@ -327,10 +389,27 @@ export function Scene({
           />
         </Layer>
       </Stage>
+      {!locked &&
+        !motion &&
+        interactiveItems.map(({ item, bounds }) => (
+          <div
+            key={item.id}
+            className="scene-item-hit-zone"
+            data-scene-item={item.id}
+            style={{
+              left: `${bounds.left / 9.6}%`,
+              top: `${bounds.top / 7.2}%`,
+              width: `${(bounds.right - bounds.left) / 9.6}%`,
+              height: `${(bounds.bottom - bounds.top) / 7.2}%`,
+            }}
+            aria-hidden="true"
+          />
+        ))}
       {selectionMarker && (
         <div
           key={model.selected}
           className="scene-selection-marker"
+          data-scene-selected={model.selected}
           style={{
             left: `${selectionMarker.left / 9.6}%`,
             top: `${selectionMarker.top / 7.2}%`,

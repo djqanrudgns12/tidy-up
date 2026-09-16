@@ -16,6 +16,24 @@ export type DragGesture = {
   pointerId: number;
   started: boolean;
 };
+export type TapGesture = {
+  start: Point;
+  pointerId: number;
+  moved: boolean;
+};
+
+/** A scroll/swipe must never turn back into a tap just because it ends near its origin. */
+export function advanceTapGesture(
+  gesture: TapGesture,
+  point: Point,
+  scale: number,
+) {
+  gesture.moved ||=
+    Math.hypot(point.x - gesture.start.x, point.y - gesture.start.y) >=
+    5 / scale;
+  return !gesture.moved;
+}
+
 export function advanceDrag(gesture: DragGesture, point: Point, scale: number) {
   gesture.started ||=
     Math.hypot(point.x - gesture.start.x, point.y - gesture.start.y) >=
