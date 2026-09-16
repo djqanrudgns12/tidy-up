@@ -1,0 +1,13 @@
+
+> cleaning-lesson@1.0.0 check:assets
+> node scripts/check-assets.mjs
+
+{
+  "expected": 121,
+  "required": 121,
+  "present": 32,
+  "bytes": 862792,
+  "missing": "89 files; see output/qa/assets.json",
+  "invalid": [],
+  "unused": []
+}

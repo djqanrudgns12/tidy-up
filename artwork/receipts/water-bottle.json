@@ -1,0 +1,8 @@
+{
+  "id": "water-bottle",
+  "source": "artwork/water-bottle.png",
+  "target": "items/catalog/water-bottle.webp",
+  "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One closed reusable elementary school water bottle, pale blue opaque plastic, darker blue screw cap, small integrated carry loop, rounded cylindrical body and stable flat base. Entire bottle upright and vertical, almost frontal orthographic view with a small amount of its top visible. No separate cup. Approximately 1:3 width to height. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-08261e37-c255-4316-9971-069153f24308.png",
+  "status": "integrated-source"
+}

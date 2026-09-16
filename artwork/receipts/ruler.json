@@ -1,0 +1,8 @@
+{
+  "id": "ruler",
+  "source": "artwork/ruler.png",
+  "target": "items/catalog/ruler.webp",
+  "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One plain 15cm transparent pale mint plastic school ruler, horizontal slim rectangle, faint evenly spaced measurement ticks WITHOUT numerals or text. Direct orthographic top view, perfectly straight, long thin 8:1 proportions. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-6a8d1e79-b671-450c-b848-18855f3666e6.png",
+  "status": "integrated-source"
+}

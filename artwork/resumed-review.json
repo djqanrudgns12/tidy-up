@@ -1,0 +1,11 @@
+{
+  "acceptedPrimaryVisuals": ["board-game", "puzzle-box", "felt-pens", "origami-paper", "jump-rope", "tape", "palette", "brush-case", "bookend", "bookmark", "clipboard", "dictionary", "reading-notebook", "science-comic", "story-book"],
+  "needsRevision": {
+    "picture-book": "Replace open spread with one closed book, preserve recognizable bear and puppy cover illustration for shelf counterpart.",
+    "magazine": "Replace multiple magazines with one closed magazine. One draggable catalog entry must represent one item.",
+    "science-book": "Remove readable cover title to follow text-free source art requirement; preserve leaf and galaxy motifs.",
+    "ball": "Replace beach ball valve and inflated panels with familiar matte rubber playground ball.",
+    "card-game": "Use a closed box, or a physically attached hinged lid, so no lid appears detached during movement. Match later shelf view."
+  },
+  "integrationStatus": "Only first four new originals have entered generation-log; later approved sources still need ingestion and actual support-plane inspection."
+}

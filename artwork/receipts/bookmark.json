@@ -1,0 +1,8 @@
+{
+  "id": "bookmark",
+  "source": "artwork/bookmark.png",
+  "target": "items/catalog/bookmark.webp",
+  "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 책갈피. Distinctive construction: 한쪽 끝이 갈라진 넓은 종이 띠. Use: 읽던 쪽을 표시할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+  "status": "generated-awaiting-visual-review",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-ad1973ef-8ace-4ef8-b792-1a304da1ff17.png"
+}

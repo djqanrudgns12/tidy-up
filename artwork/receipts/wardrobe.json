@@ -1,0 +1,8 @@
+{
+  "id": "wardrobe",
+  "source": "artwork/wardrobe.png",
+  "target": "maps/wardrobe/background.webp",
+  "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 옷장. Scene: 문을 열어 내부가 보이는 옷장, 옷걸이 봉, 접은 상의·하의 선반, 모자와 장갑을 두는 넓은 소품칸. Functional furniture: 옷걸이 봉; 접은 상의 선반; 하의 선반; 작은 의류·소품칸. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW wardrobe environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+  "status": "generated-awaiting-visual-review",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-4fee13b3-ed66-48a5-af2d-465e90b195c8.png"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "paper-scrap",
+  "source": "artwork/paper-scrap.png",
+  "target": "items/catalog/paper-scrap.webp",
+  "prompt": "Use case: scientific-educational. ONE isolated everyday Korean elementary school object. One small irregular torn crumpled scrap of used unneeded pale ivory paper, light graphite scribbles without readable text, visibly unusable paper, not a whole usable notebook sheet. Top down view; paper creases and thickness visible. Refined hand-painted semi-realistic illustration with subtle real material texture and realistic proportions, soft upper-left illumination with shading on the object only. Matches muted teal fabric schoolbag and warm pale wood furniture. Genuine transparent alpha background, square canvas1024x1024, full object centered with padding. No room, floor, cast shadow, hands, other objects, text, logos or watermark. Flat art will be projected into the support plane by the application.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-924f5eb2-858b-4ab9-821d-9ce7bf1ed065.png",
+  "status": "integrated-source"
+}

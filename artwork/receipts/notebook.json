@@ -1,0 +1,8 @@
+{
+  "id": "notebook",
+  "source": "artwork/notebook.png",
+  "target": "items/catalog/notebook.webp",
+  "prompt": "Use case: scientific-educational. Single transparent object sprite for a Korean grade 5 practical-arts activity. One closed thin school exercise notebook, muted mustard-yellow cover with a narrow cloth binding along the left edge, pale ruled-paper page edges, a small plain ivory label without writing. Direct orthographic view of the full cover, top down as if lying flat. Vertical rectangle about 4:5. No perspective baked into the cover. Calm refined hand-painted semi-realistic illustration, familiar inexpensive real school object, clear material texture kept subtle, matching warm ivory school furniture and muted teal schoolbag. Consistent soft upper-left illumination with realistic shading ON THE OBJECT ONLY. No cast shadow, ground surface, hands, scene, text, letters, numbers, logos, watermark, border, extra detached objects. Full silhouette centered in square 1024x1024 canvas with generous empty margin, GENUINELY TRANSPARENT BACKGROUND and real alpha. Runtime will project this top-view artwork into the desk plane and add ground/contact shadows; keep object unrotated.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-575a69cb-1eb1-4c49-81b8-5d80a2c7255e.png",
+  "status": "integrated-source"
+}

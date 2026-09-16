@@ -1,0 +1,13 @@
+
+> cleaning-lesson@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.1 C:/Users/rudgn/Desktop/vibecoding/Cleaning
+
+
+ Test Files  7 passed (7)
+      Tests  42 passed (42)
+   Start at  08:21:46
+   Duration  676ms (transform 54%, import 16%, worker 16%, tests 14%)
+

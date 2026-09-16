@@ -1,0 +1,8 @@
+{
+  "id": "backpack",
+  "source": "artwork/backpack.png",
+  "target": "items/catalog/backpack.webp",
+  "prompt": "Use case: scientific-educational. Create ONE isolated object sprite for a Korean elementary school tidying activity. High quality calm 2D illustration, near-frontal with a little top surface visible, soft clean sage-brown outlines, modest realistic proportions, gentle upper-left light, warm natural colours, minimal texture. A recognizable everyday object rather than a toy. Entire silhouette centered with 12% empty padding. Square 1024x1024. GENUINELY TRANSPARENT BACKGROUND with real alpha, no white background, no grey checkerboard drawn into pixels. No text, letters, numbers, logos, brands, watermark, hands, room or ground plane. No other separate objects. A familiar soft fabric elementary school backpack in muted teal with front zip pocket, padded straps, carry handle, simple zipper pulls; complete whole backpack, upright, not on a child. Vertical 4:5 silhouette.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-16fa5f88-285e-48e0-b44d-05d446843244.png",
+  "status": "integrated-source"
+}

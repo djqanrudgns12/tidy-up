@@ -1,0 +1,8 @@
+{
+  "id": "library",
+  "source": "artwork/library.png",
+  "target": "maps/library/background.webp",
+  "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 도서관. Scene: 낮은 이야기책 책장과 정보책 책장, 옆 반납 선반, 책갈피를 두는 작은 독서 탁자. Functional furniture: 이야기책 책장; 정보책 책장; 반납 선반; 독서 탁자. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW library environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+  "status": "generated-awaiting-visual-review",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-81b63f5f-e5be-4d6f-89ca-97b8578026be.png"
+}

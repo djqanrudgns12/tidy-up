@@ -1,0 +1,8 @@
+{
+  "id": "cloth",
+  "source": "artwork/cloth.png",
+  "target": "tools/cloth.webp",
+  "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One folded pale blue cotton floor cleaning rag, wider rectangular folds and slightly worn weave, clean, no handle or bucket. Direct top down view. Clearly distinct blue color from a mustard yellow hand cloth. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-f8b1a82f-7f95-4add-941e-b9822859cf71.png",
+  "status": "integrated-source"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "colored-pencils",
+  "source": "artwork/colored-pencils.png",
+  "target": "items/catalog/colored-pencils.webp",
+  "prompt": "Use case: scientific-educational. Generate ONE clean isolated transparent object sprite of a familiar twelve-color colored-pencil set for Korean elementary school: twelve sharpened colored pencils in one shallow plain cream plastic storage case with a transparent closed lid. View directly from above, no baked perspective. Compact horizontal rectangular case, realistic solid rim, individual colored pencils visible through the clear lid. Refined hand-painted semi-realistic classroom art, soft light only ON THE OBJECT. CRITICAL: actual transparent alpha background everywhere outside the precise case outline. No cast shadow, no golden aura, no glow, no backdrop, no vignette, no painted checkerboard, no ground, no text or brands. Entire case centered inside square canvas with at least 15 percent truly empty transparent padding on all sides. The image will be composited on a desk; exterior must contain no color or shadow.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-01d3014a-469d-436d-b73f-01e06bda6975.png",
+  "status": "integrated-source"
+}

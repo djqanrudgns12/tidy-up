@@ -1,0 +1,8 @@
+{
+  "id": "textbook",
+  "source": "artwork/textbook.png",
+  "target": "items/catalog/textbook.webp",
+  "prompt": "Use case: scientific-educational. Create ONE isolated object sprite for a Korean elementary school tidying activity. High quality calm 2D illustration, near-frontal with a little top surface visible, soft clean sage-brown outlines, modest realistic proportions, gentle upper-left light, warm natural colours, minimal texture. A recognizable everyday object rather than a toy. Entire silhouette centered with 12% empty padding. Square 1024x1024. GENUINELY TRANSPARENT BACKGROUND with real alpha, no white background, no grey checkerboard drawn into pixels. No text, letters, numbers, logos, brands, watermark, hands, room or ground plane. No other separate objects. A closed upright Korean elementary school textbook with a simple muted coral cover, cream pages and visible solid spine on left, no printing on the cover; one small subtle geometric panel to distinguish it from notebooks. Cover faces viewer, vertical aspect approximately 4:5.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-8bf54688-4f93-4bab-b66a-34dd18178c2d.png",
+  "status": "integrated-source"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "broom",
+  "source": "artwork/broom.png",
+  "target": "tools/broom.webp",
+  "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One matching small classroom broom and dustpan cleaning set presented together as ONE tool-set sprite: short wooden handle, pale natural bristles, grey-green plastic dustpan beside the broom, both fully visible and aligned diagonally. They are a familiar practical pair, no detached dust or dirt. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-d38263ba-99f9-4d1e-ad6a-f0b2f66bdc65.png",
+  "status": "integrated-source"
+}

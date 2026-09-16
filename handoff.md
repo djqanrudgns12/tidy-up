@@ -28,8 +28,8 @@ Node **24.x** 권장. 실제 검증 버전은 24.14.1이다. 프로젝트 루트
 
 ```powershell
 npm.cmd ci
-npm.cmd run handoff:sync
 npm.cmd run check:handoff
+npm.cmd run handoff:sync
 npm.cmd test
 npm.cmd run build
 npm.cmd run check:assets
@@ -46,11 +46,13 @@ npm.cmd run dev -- --port 5173
 2. 수납장 우선: 공·카드상자 수정 → 상자 낮은 정면3개 → 시점 선택 연결 → 실제 배경 좌표 측정 → 수납/꺼내기/42조합/PNG 검수.
 3. 나머지 원화 제작과 다른 공간의 측정을 [작업 트리](docs/wiki/work-tree.json)의 의존 순서로 진행한다. 에셋이 존재한다는 이유만으로 맵을 켜지 않는다.
 
-## 5. 옮길 파일
+## 5. Git으로 인계하기
 
-**프로젝트 폴더 전체를 복사**한다. 특히 `artwork`, `public`, `src`, `sample`, `scripts`, `docs`, 루트 Markdown, `package.json`, `package-lock.json`, 설정 파일을 포함한다. `node_modules`는 생략해도 되며 새 컴퓨터에서 `npm ci`로 복원한다. `dist`는 현재 한 공간의 시연 빌드일 뿐이며 구현 원본을 대신하지 않는다. `output/qa`는 검수 근거라 함께 옮긴다.
+**원화·PDF·검수 자료까지 Git에 포함한다.** `artwork`, `sample`, `output/qa`, `public`, `src`, `scripts`, `docs`, 루트 문서와 설정 파일은 추적 대상이다. `.gitignore`는 설치 패키지·빌드 결과·캐시·비밀값·임시 파일·전달 ZIP을 제외한다. 현재 원화 파일 크기는 일반 Git으로 관리할 수 있어 Git LFS를 도입하지 않았다.
 
-전달용 ZIP은 `output/transfer/Cleaning-handoff.zip`이다. 압축을 풀고 안의 `Cleaning` 폴더를 프로젝트로 연다. 이 ZIP은 node_modules와 과거 전달 ZIP을 제외하고 소스·원화·PDF·검수 자료·현재 dist를 포함한다. 새 변경 뒤 다시 묶으려면 먼저 상태/검사를 갱신하고 `python scripts/package-handoff.py`를 실행한다.
+`.gitignore` 변경만으로 파일이 커밋되는 것은 아니다. 보내는 컴퓨터에서 새로 추적할 파일까지 커밋·푸시한 뒤, 받는 컴퓨터에서 저장소를 clone하거나 최신 커밋을 pull한다. 커밋·푸시는 사용자가 실행하거나 명시적으로 승인한 경우에 수행한다. 이후 `npm ci`로 패키지를 설치하고 위 재개 명령을 실행한다. `dist`는 `npm run build`로 다시 만든다.
+
+새 컴퓨터에서는 **먼저 `check:handoff`를 실행한 뒤 `handoff:sync`를 실행**한다. 검사 전에 목록을 재생성하면 누락된 원화가 미생성으로 바뀌어 전송 누락을 놓칠 수 있다. 별도 ZIP이나 이전 데스크톱 경로는 필요하지 않다. ZIP 제작 스크립트는 선택적인 보조 수단이며, 기존 `output/transfer` 내용은 Git 인계 대상에서 제외된다.
 
 원화 원본57개는 `artwork/*.png`에 있고 출처/프롬프트는 `artwork/receipts/*.json`에 있다. `originPath`는 과거 생성 위치 기록일 뿐, 실행에 필요한 경로가 아니다. 새 컴퓨터에서는 경로를 현재 프로젝트 루트 기준으로 해석한다.
 

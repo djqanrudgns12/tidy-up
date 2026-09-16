@@ -1,11 +1,26 @@
+# Dependencies and rebuildable output
 node_modules/
 dist/
 .vite/
 coverage/
+
+# Local configuration and secrets
 *.local
 .env*
 !.env.example
-sample/
-output/
+
+# Temporary files and local Python environments
 tmp/
-artwork/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+npm-debug.log*
+
+# Keep QA evidence in Git; transfer archives can be regenerated.
+/output/*
+!/output/qa/
+
+# artwork/, sample/, public/ and docs/ are intentionally tracked.
+# Originals, generation receipts and source PDFs are required for handoff.

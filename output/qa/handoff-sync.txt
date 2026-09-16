@@ -1,0 +1,19 @@
+
+> cleaning-lesson@1.0.0 handoff:sync
+> node scripts/sync-handoff.mjs
+
+{
+  "implementedMapIds": [
+    "school-desk"
+  ],
+  "requiredDeliveryFiles": 121,
+  "deliveredFiles": 32,
+  "missingDeliveryFiles": 89,
+  "requiredOriginals": 112,
+  "localOriginals": 57,
+  "notGeneratedOriginals": 55,
+  "generatedAwaitingReviewOrIntegration": 27,
+  "knownRevisions": 5,
+  "missingThumbnails": 7,
+  "draftThumbnailsToReplace": 1
+}

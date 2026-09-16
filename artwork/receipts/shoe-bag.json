@@ -1,0 +1,8 @@
+{
+  "id": "shoe-bag",
+  "source": "artwork/shoe-bag.png",
+  "target": "items/catalog/shoe-bag.webp",
+  "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 실내화 주머니. Distinctive construction: 손잡이 두 개와 조임끈. Use: 실내화를 따로 담을 때. Near-frontal view of an upright object, entire bottom contact visible. Square 1024x1024. Clean sage-brown outlines, restrained natural colours. Complete whole item with real alpha. Keep simple familiar mass-market construction appropriate to a Korean child, no ornamental luxury styling.",
+  "status": "generated-awaiting-visual-review",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-133f1618-4f79-4b44-aa15-026ecc85e34c.png"
+}

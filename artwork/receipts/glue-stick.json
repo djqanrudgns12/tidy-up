@@ -1,0 +1,8 @@
+{
+  "id": "glue-stick",
+  "source": "artwork/glue-stick.png",
+  "target": "items/catalog/glue-stick.webp",
+  "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One closed school glue stick, short white cylindrical body with a pale green cap and matching twist base, unbranded. Entire object vertical on canvas, view from directly above as it lies flat, 1:3 shape, no exposed glue. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-db850a73-9f04-472c-9db9-dac3b1411443.png",
+  "status": "integrated-source"
+}

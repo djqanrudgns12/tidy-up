@@ -1,0 +1,26 @@
+[
+  {
+    "id": "board-game",
+    "source": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e78ef927-f2ba-48a0-b579-aa1baa5e6edc.png",
+    "target": "items/catalog/board-game.webp",
+    "prompt": "Create one isolated closed board-game box sprite for a Korean grade-5 classroom tidying web activity. Refined semi-realistic hand-painted illustration, familiar inexpensive school board-game cardboard box, muted turquoise and warm mustard accents, board path and round playing-piece illustration on the lid, no readable letters, logos or text. Strict straight-down orthographic view of the closed lid, rectangular box about 4:3, no perspective baked in. Soft upper-left light, natural subtle cardboard surface, self-shading only, no cast shadow or ground. Entire silhouette centered with 12 percent clear padding. Square 1024x1024. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, no white backdrop. One box only. Runtime will apply support-plane perspective and contact shadow. This is an actual production asset for the existing Cleaning project."
+  },
+  {
+    "id": "puzzle-box",
+    "source": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-76742f84-153a-499b-82b4-6f187894469e.png",
+    "target": "items/catalog/puzzle-box.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 퍼즐 상자. Distinctive construction: 맞물린 조각 그림 표지. Use: 퍼즐 조각을 맞출 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity."
+  },
+  {
+    "id": "felt-pens",
+    "source": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-bae81664-661d-4bfe-8599-512b3628c27f.png",
+    "target": "items/catalog/felt-pens.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 사인펜 세트. Distinctive construction: 뚜껑 닫힌 펜들이 든 케이스. Use: 진한 색으로 그릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity."
+  },
+  {
+    "id": "origami-paper",
+    "source": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-3961e354-41ba-4034-a075-89ca95534aef.png",
+    "target": "items/catalog/origami-paper.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 색종이 묶음. Distinctive construction: 네모난 색종이가 겹친 묶음. Use: 종이를 접거나 오릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity."
+  }
+]

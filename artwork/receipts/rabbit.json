@@ -1,0 +1,8 @@
+{
+  "id": "rabbit",
+  "source": "artwork/rabbit.png",
+  "target": "characters/rabbit.webp",
+  "prompt": "Use case: scientific-educational. Create ONE isolated object sprite for a Korean elementary school tidying activity. High quality calm 2D illustration, near-frontal with a little top surface visible, soft clean sage-brown outlines, modest realistic proportions, gentle upper-left light, warm natural colours, minimal texture. A recognizable everyday object rather than a toy. Entire silhouette centered with 12% empty padding. Square 1024x1024. GENUINELY TRANSPARENT BACKGROUND with real alpha, no white background, no grey checkerboard drawn into pixels. No text, letters, numbers, logos, brands, watermark, hands, room or ground plane. No other separate objects. A gentle white rabbit classroom guide character, one small full body, rounded long ears, warm friendly natural face, small sage green neckerchief, no text or props; simple tasteful picture-book illustration appropriate for grade 5, not babyish.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e3df0fd5-4e1d-4d31-8b0d-871b6441a5e5.png",
+  "status": "integrated-source"
+}

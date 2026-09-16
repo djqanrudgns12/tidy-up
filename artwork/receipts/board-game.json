@@ -1,0 +1,8 @@
+{
+  "id": "board-game",
+  "source": "artwork/board-game.png",
+  "target": "items/catalog/board-game.webp",
+  "prompt": "Create one isolated closed board-game box sprite for a Korean grade-5 classroom tidying web activity. Refined semi-realistic hand-painted illustration, familiar inexpensive school board-game cardboard box, muted turquoise and warm mustard accents, board path and round playing-piece illustration on the lid, no readable letters, logos or text. Strict straight-down orthographic view of the closed lid, rectangular box about 4:3, no perspective baked in. Soft upper-left light, natural subtle cardboard surface, self-shading only, no cast shadow or ground. Entire silhouette centered with 12 percent clear padding. Square 1024x1024. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, no white backdrop. One box only. Runtime will apply support-plane perspective and contact shadow. This is an actual production asset for the existing Cleaning project.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e78ef927-f2ba-48a0-b579-aa1baa5e6edc.png",
+  "status": "integrated-source"
+}

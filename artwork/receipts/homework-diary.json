@@ -1,0 +1,8 @@
+{
+  "id": "homework-diary",
+  "source": "artwork/homework-diary.png",
+  "target": "items/catalog/homework-diary.webp",
+  "prompt": "Use case: scientific-educational. ONE isolated everyday Korean elementary school object. One small closed Korean elementary school homework planner, muted sage green cover, pale cream pages and simple binding, small cream label with one small grid-like icon but no writing. Direct orthographic top view of the full cover, vertical rectangle about 4:5. Refined hand-painted semi-realistic illustration with subtle real material texture and realistic proportions, soft upper-left illumination with shading on the object only. Matches muted teal fabric schoolbag and warm pale wood furniture. Genuine transparent alpha background, square canvas1024x1024, full object centered with padding. No room, floor, cast shadow, hands, other objects, text, logos or watermark. Flat art will be projected into the support plane by the application.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-ff769f72-bd60-4c50-b001-579d9de78024.png",
+  "status": "integrated-source"
+}

@@ -1,0 +1,10 @@
+
+> cleaning-lesson@1.0.0 check:handoff
+> node scripts/check-handoff.mjs
+
+{
+  "originalsChecked": 57,
+  "documentsChecked": 8,
+  "tasksChecked": 10,
+  "errors": []
+}

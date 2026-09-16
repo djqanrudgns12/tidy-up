@@ -1,0 +1,8 @@
+{
+  "id": "jump-rope",
+  "source": "artwork/jump-rope.png",
+  "target": "items/catalog/jump-rope.webp",
+  "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 줄넘기. Distinctive construction: 줄을 감고 두 손잡이를 모은 모습. Use: 줄넘기 운동을 할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024. Clean sage-brown outlines and restrained natural colours. No loose detached components. For spherical objects show round volume, not a flat circle.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e9f2655a-a7db-4453-8cae-d63b7cd603fd.png",
+  "status": "generated-awaiting-visual-review"
+}

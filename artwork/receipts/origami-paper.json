@@ -1,0 +1,8 @@
+{
+  "id": "origami-paper",
+  "source": "artwork/origami-paper.png",
+  "target": "items/catalog/origami-paper.webp",
+  "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 색종이 묶음. Distinctive construction: 네모난 색종이가 겹친 묶음. Use: 종이를 접거나 오릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-3961e354-41ba-4034-a075-89ca95534aef.png",
+  "status": "integrated-source"
+}

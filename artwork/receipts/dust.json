@@ -1,0 +1,8 @@
+{
+  "id": "dust",
+  "source": "artwork/dust.png",
+  "target": "effects/dust.webp",
+  "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. A single small subtle irregular patch of ordinary household dust: a sparse cluster of soft warm-grey lint specks and tiny beige crumbs, seen directly from above. Flat on a surface but NO background surface. Not a dust cloud, not smoke. Patch fits into horizontal oval silhouette, muted and believable. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-b3010386-e95f-47de-90e0-e2c3648be9b8.png",
+  "status": "integrated-source"
+}

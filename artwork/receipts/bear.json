@@ -1,0 +1,8 @@
+{
+  "id": "bear",
+  "source": "artwork/bear.png",
+  "target": "characters/bear.webp",
+  "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One friendly small brown bear guide character, standing upright, rounded natural bear ears and muzzle, short paws, wearing a simple muted sage neckerchief. Calm gentle smile, full body, approachable for grade 5, tasteful storybook illustration, no toy gloss. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-21635c31-4319-4cd0-8ed1-622d2c3ea20c.png",
+  "status": "integrated-source"
+}

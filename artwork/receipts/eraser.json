@@ -1,0 +1,8 @@
+{
+  "id": "eraser",
+  "source": "artwork/eraser.png",
+  "target": "items/catalog/eraser.webp",
+  "prompt": "Use case: scientific-educational. ONE isolated everyday Korean elementary school object. One ordinary white rectangular school eraser partly enclosed in a muted coral paper sleeve, no brand or text. Top down orthographic view, horizontal 1.7:1 rectangle, slightly worn rounded corners but clean and usable. Refined hand-painted semi-realistic illustration with subtle real material texture and realistic proportions, soft upper-left illumination with shading on the object only. Matches muted teal fabric schoolbag and warm pale wood furniture. Genuine transparent alpha background, square canvas1024x1024, full object centered with padding. No room, floor, cast shadow, hands, other objects, text, logos or watermark. Flat art will be projected into the support plane by the application.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-a2089fb8-f426-4ffd-b170-79f61e9d6a92.png",
+  "status": "integrated-source"
+}

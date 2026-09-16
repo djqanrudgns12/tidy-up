@@ -1,0 +1,8 @@
+{
+  "id": "pencil",
+  "source": "artwork/pencil.png",
+  "target": "items/catalog/pencil.webp",
+  "prompt": "Use case: scientific-educational. Single transparent object sprite for a Korean grade 5 practical-arts activity. One ordinary sharpened hexagonal wooden school pencil, ochre yellow lacquer, exposed pale wood and graphite point at the RIGHT end, plain pencil end on left, no eraser cap. Horizontal perfectly straight, direct orthographic top view, long thin realistic 12:1 proportion. No writing on the body. Calm refined hand-painted semi-realistic illustration, familiar inexpensive real school object, clear material texture kept subtle, matching warm ivory school furniture and muted teal schoolbag. Consistent soft upper-left illumination with realistic shading ON THE OBJECT ONLY. No cast shadow, ground surface, hands, scene, text, letters, numbers, logos, watermark, border, extra detached objects. Full silhouette centered in square 1024x1024 canvas with generous empty margin, GENUINELY TRANSPARENT BACKGROUND and real alpha. Runtime will project this top-view artwork into the desk plane and add ground/contact shadows; keep object unrotated.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-a5441726-05c0-4f3d-b17c-eac685e59b34.png",
+  "status": "integrated-source"
+}

@@ -1,0 +1,21 @@
+
+> cleaning-lesson@1.0.0 build
+> npm run typecheck && vite build
+
+
+> cleaning-lesson@1.0.0 typecheck
+> tsc --noEmit
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 109 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.63 kB │ gzip:  0.45 kB
+dist/assets/index-DNpamB2q.css   19.22 kB │ gzip:  4.64 kB
+dist/assets/export-CkrAxaK1.js    1.99 kB │ gzip:  1.15 kB
+dist/assets/Scene-DXmT4zkx.js   136.63 kB │ gzip: 43.29 kB
+dist/assets/paint-Bv4aBtR_.js   192.11 kB │ gzip: 59.33 kB
+dist/assets/index-CPYstDBT.js   301.87 kB │ gzip: 93.23 kB
+
+✓ built in 553ms

@@ -1,0 +1,442 @@
+[
+  {
+    "id": "school-desk",
+    "path": "public\\assets\\maps\\school-desk\\background.webp",
+    "bytes": 55454,
+    "size": [
+      1920,
+      1440
+    ],
+    "alphaBounds": null
+  },
+  {
+    "id": "textbook",
+    "path": "public\\assets\\items\\catalog\\textbook.webp",
+    "bytes": 20102,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      83,
+      34,
+      431,
+      474
+    ]
+  },
+  {
+    "id": "backpack",
+    "path": "public\\assets\\items\\catalog\\backpack.webp",
+    "bytes": 32658,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      84,
+      22,
+      429,
+      488
+    ]
+  },
+  {
+    "id": "rabbit",
+    "path": "public\\assets\\characters\\rabbit.webp",
+    "bytes": 26738,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      132,
+      20,
+      368,
+      494
+    ]
+  },
+  {
+    "id": "notebook",
+    "path": "public\\assets\\items\\catalog\\notebook.webp",
+    "bytes": 16322,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      76,
+      30,
+      438,
+      481
+    ]
+  },
+  {
+    "id": "pencil-case",
+    "path": "public\\assets\\items\\catalog\\pencil-case.webp",
+    "bytes": 22030,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      7,
+      187,
+      498,
+      324
+    ]
+  },
+  {
+    "id": "pencil",
+    "path": "public\\assets\\items\\catalog\\pencil.webp",
+    "bytes": 5140,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      25,
+      240,
+      487,
+      272
+    ]
+  },
+  {
+    "id": "homework-diary",
+    "path": "public\\assets\\items\\catalog\\homework-diary.webp",
+    "bytes": 16684,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      96,
+      55,
+      416,
+      463
+    ]
+  },
+  {
+    "id": "eraser",
+    "path": "public\\assets\\items\\catalog\\eraser.webp",
+    "bytes": 8992,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      78,
+      189,
+      434,
+      321
+    ]
+  },
+  {
+    "id": "paper-scrap",
+    "path": "public\\assets\\items\\catalog\\paper-scrap.webp",
+    "bytes": 20932,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      99,
+      96,
+      422,
+      417
+    ]
+  },
+  {
+    "id": "water-bottle",
+    "path": "public\\assets\\items\\catalog\\water-bottle.webp",
+    "bytes": 12380,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      184,
+      39,
+      352,
+      480
+    ]
+  },
+  {
+    "id": "ruler",
+    "path": "public\\assets\\items\\catalog\\ruler.webp",
+    "bytes": 6664,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      16,
+      228,
+      497,
+      283
+    ]
+  },
+  {
+    "id": "pencil-sharpener",
+    "path": "public\\assets\\items\\catalog\\pencil-sharpener.webp",
+    "bytes": 16324,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      100,
+      152,
+      413,
+      359
+    ]
+  },
+  {
+    "id": "document-folder",
+    "path": "public\\assets\\items\\catalog\\document-folder.webp",
+    "bytes": 16624,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      80,
+      30,
+      432,
+      482
+    ]
+  },
+  {
+    "id": "glue-stick",
+    "path": "public\\assets\\items\\catalog\\glue-stick.webp",
+    "bytes": 9520,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      208,
+      58,
+      304,
+      455
+    ]
+  },
+  {
+    "id": "scissors",
+    "path": "public\\assets\\items\\catalog\\scissors.webp",
+    "bytes": 20382,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      147,
+      20,
+      364,
+      487
+    ]
+  },
+  {
+    "id": "bear",
+    "path": "public\\assets\\characters\\bear.webp",
+    "bytes": 37124,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      127,
+      8,
+      381,
+      500
+    ]
+  },
+  {
+    "id": "cat",
+    "path": "public\\assets\\characters\\cat.webp",
+    "bytes": 52058,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      114,
+      9,
+      463,
+      495
+    ]
+  },
+  {
+    "id": "bird",
+    "path": "public\\assets\\characters\\bird.webp",
+    "bytes": 44002,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      114,
+      48,
+      456,
+      472
+    ]
+  },
+  {
+    "id": "duster",
+    "path": "public\\assets\\tools\\duster.webp",
+    "bytes": 75182,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      52,
+      58,
+      467,
+      454
+    ]
+  },
+  {
+    "id": "broom",
+    "path": "public\\assets\\tools\\broom.webp",
+    "bytes": 38100,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      38,
+      23,
+      476,
+      489
+    ]
+  },
+  {
+    "id": "cloth",
+    "path": "public\\assets\\tools\\cloth.webp",
+    "bytes": 55120,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      26,
+      129,
+      494,
+      393
+    ]
+  },
+  {
+    "id": "dust",
+    "path": "public\\assets\\effects\\dust.webp",
+    "bytes": 19650,
+    "size": [
+      256,
+      256
+    ],
+    "alphaBounds": [
+      31,
+      75,
+      231,
+      178
+    ]
+  },
+  {
+    "id": "stain",
+    "path": "public\\assets\\effects\\stain.webp",
+    "bytes": 11594,
+    "size": [
+      256,
+      256
+    ],
+    "alphaBounds": [
+      50,
+      44,
+      212,
+      209
+    ]
+  },
+  {
+    "id": "colored-pencils",
+    "path": "public\\assets\\items\\catalog\\colored-pencils.webp",
+    "bytes": 17872,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      46,
+      135,
+      467,
+      381
+    ]
+  },
+  {
+    "id": "classroom-cabinet",
+    "path": "public\\assets\\maps\\classroom-cabinet\\background.webp",
+    "bytes": 71380,
+    "size": [
+      1920,
+      1440
+    ],
+    "alphaBounds": null
+  },
+  {
+    "id": "board-game",
+    "path": "public\\assets\\items\\catalog\\board-game.webp",
+    "bytes": 31688,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      34,
+      94,
+      478,
+      419
+    ]
+  },
+  {
+    "id": "puzzle-box",
+    "path": "public\\assets\\items\\catalog\\puzzle-box.webp",
+    "bytes": 29568,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      41,
+      65,
+      471,
+      457
+    ]
+  },
+  {
+    "id": "felt-pens",
+    "path": "public\\assets\\items\\catalog\\felt-pens.webp",
+    "bytes": 28740,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      37,
+      60,
+      474,
+      453
+    ]
+  },
+  {
+    "id": "origami-paper",
+    "path": "public\\assets\\items\\catalog\\origami-paper.webp",
+    "bytes": 25964,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      50,
+      42,
+      474,
+      466
+    ]
+  }
+]

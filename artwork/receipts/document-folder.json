@@ -1,0 +1,8 @@
+{
+  "id": "document-folder",
+  "source": "artwork/document-folder.png",
+  "target": "items/catalog/document-folder.webp",
+  "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One closed thin translucent pale lilac A4 document folder, with one or two ivory papers contained inside, a small thumb cutout and open edge recognizable, no printing. Direct orthographic top view, vertical A4 proportions. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-9a195f27-a46d-45a0-9b6d-b125378ff4e2.png",
+  "status": "integrated-source"
+}

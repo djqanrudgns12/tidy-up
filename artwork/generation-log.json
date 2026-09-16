@@ -1,0 +1,239 @@
+[
+  {
+    "id": "school-desk",
+    "source": "artwork/school-desk.png",
+    "target": "maps/school-desk/background.webp",
+    "prompt": "Use case: scientific-educational. Asset type: static empty background for a Korean elementary grade 5 tidying lesson. Create a polished calm 2D illustrated Korean classroom student desk scene, landscape 4:3, ideally 1920x1440. Camera nearly frontal, looking gently down so both desk top and the open storage basket under the top are visible. Warm ivory wall, pale wood desk top, grey-green metal legs, a side bag hook on the right, clean pale beige floor filling the bottom third. Only fixed furniture, no small movable objects. DESIGNED INTERACTION LAYOUT on a 960x720 logical canvas: desk occupies x50..720 y80..460. Broad empty desktop from y90..295 with empty working space near its middle; an empty shallow tray along back x64..692 y88..200 and small side tray x576..692 y224..450. Two open UNDER-DESK storage compartments at x64..296,y304..450 and x316..548,y304..450, separated by a visible divider. Right side bag hook area x736..896,y180..468 attached to the desk frame, not a wall decoration. Four sturdy desk legs and floor below. Small empty cream waste paper bin at bottom right x808..912,y596..708. Furniture should look like a modest familiar school desk, not ornate home furniture. No chairs obstruct the desk. Soft tasteful flat colours, subtly hand-drawn consistent dark sage outlines, gentle upper-left light and very short shadows, minimal texture, crisp silhouettes. No books, pencils, schoolbag, dirt, clutter, plants, text, numbers, labels, arrows, UI, brands, watermark, characters. Do not add extra furniture or duplicate compartments. Empty usable storage surfaces are important; do not fill them with decorations.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-b3643603-771c-4b4b-a036-6fd9dc5d0fb3.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "textbook",
+    "source": "artwork/textbook.png",
+    "target": "items/catalog/textbook.webp",
+    "prompt": "Use case: scientific-educational. Create ONE isolated object sprite for a Korean elementary school tidying activity. High quality calm 2D illustration, near-frontal with a little top surface visible, soft clean sage-brown outlines, modest realistic proportions, gentle upper-left light, warm natural colours, minimal texture. A recognizable everyday object rather than a toy. Entire silhouette centered with 12% empty padding. Square 1024x1024. GENUINELY TRANSPARENT BACKGROUND with real alpha, no white background, no grey checkerboard drawn into pixels. No text, letters, numbers, logos, brands, watermark, hands, room or ground plane. No other separate objects. A closed upright Korean elementary school textbook with a simple muted coral cover, cream pages and visible solid spine on left, no printing on the cover; one small subtle geometric panel to distinguish it from notebooks. Cover faces viewer, vertical aspect approximately 4:5.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-8bf54688-4f93-4bab-b66a-34dd18178c2d.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "backpack",
+    "source": "artwork/backpack.png",
+    "target": "items/catalog/backpack.webp",
+    "prompt": "Use case: scientific-educational. Create ONE isolated object sprite for a Korean elementary school tidying activity. High quality calm 2D illustration, near-frontal with a little top surface visible, soft clean sage-brown outlines, modest realistic proportions, gentle upper-left light, warm natural colours, minimal texture. A recognizable everyday object rather than a toy. Entire silhouette centered with 12% empty padding. Square 1024x1024. GENUINELY TRANSPARENT BACKGROUND with real alpha, no white background, no grey checkerboard drawn into pixels. No text, letters, numbers, logos, brands, watermark, hands, room or ground plane. No other separate objects. A familiar soft fabric elementary school backpack in muted teal with front zip pocket, padded straps, carry handle, simple zipper pulls; complete whole backpack, upright, not on a child. Vertical 4:5 silhouette.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-16fa5f88-285e-48e0-b44d-05d446843244.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "rabbit",
+    "source": "artwork/rabbit.png",
+    "target": "characters/rabbit.webp",
+    "prompt": "Use case: scientific-educational. Create ONE isolated object sprite for a Korean elementary school tidying activity. High quality calm 2D illustration, near-frontal with a little top surface visible, soft clean sage-brown outlines, modest realistic proportions, gentle upper-left light, warm natural colours, minimal texture. A recognizable everyday object rather than a toy. Entire silhouette centered with 12% empty padding. Square 1024x1024. GENUINELY TRANSPARENT BACKGROUND with real alpha, no white background, no grey checkerboard drawn into pixels. No text, letters, numbers, logos, brands, watermark, hands, room or ground plane. No other separate objects. A gentle white rabbit classroom guide character, one small full body, rounded long ears, warm friendly natural face, small sage green neckerchief, no text or props; simple tasteful picture-book illustration appropriate for grade 5, not babyish.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e3df0fd5-4e1d-4d31-8b0d-871b6441a5e5.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "notebook",
+    "source": "artwork/notebook.png",
+    "target": "items/catalog/notebook.webp",
+    "prompt": "Use case: scientific-educational. Single transparent object sprite for a Korean grade 5 practical-arts activity. One closed thin school exercise notebook, muted mustard-yellow cover with a narrow cloth binding along the left edge, pale ruled-paper page edges, a small plain ivory label without writing. Direct orthographic view of the full cover, top down as if lying flat. Vertical rectangle about 4:5. No perspective baked into the cover. Calm refined hand-painted semi-realistic illustration, familiar inexpensive real school object, clear material texture kept subtle, matching warm ivory school furniture and muted teal schoolbag. Consistent soft upper-left illumination with realistic shading ON THE OBJECT ONLY. No cast shadow, ground surface, hands, scene, text, letters, numbers, logos, watermark, border, extra detached objects. Full silhouette centered in square 1024x1024 canvas with generous empty margin, GENUINELY TRANSPARENT BACKGROUND and real alpha. Runtime will project this top-view artwork into the desk plane and add ground/contact shadows; keep object unrotated.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-575a69cb-1eb1-4c49-81b8-5d80a2c7255e.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "pencil-case",
+    "source": "artwork/pencil-case.png",
+    "target": "items/catalog/pencil-case.webp",
+    "prompt": "Use case: scientific-educational. Single transparent object sprite for a Korean grade 5 practical-arts activity. One familiar Korean elementary pupil's soft zippered pencil pouch, muted dusty blue fabric, one closed zipper, horizontal long rounded rectangular pouch. Orthographic view from directly above, entire outline visible, horizontal aspect about 3:1, no items inside or beside it. Calm refined hand-painted semi-realistic illustration, familiar inexpensive real school object, clear material texture kept subtle, matching warm ivory school furniture and muted teal schoolbag. Consistent soft upper-left illumination with realistic shading ON THE OBJECT ONLY. No cast shadow, ground surface, hands, scene, text, letters, numbers, logos, watermark, border, extra detached objects. Full silhouette centered in square 1024x1024 canvas with generous empty margin, GENUINELY TRANSPARENT BACKGROUND and real alpha. Runtime will project this top-view artwork into the desk plane and add ground/contact shadows; keep object unrotated.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-02ccba7b-919d-4e0b-a256-0a4c3386ec84.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "pencil",
+    "source": "artwork/pencil.png",
+    "target": "items/catalog/pencil.webp",
+    "prompt": "Use case: scientific-educational. Single transparent object sprite for a Korean grade 5 practical-arts activity. One ordinary sharpened hexagonal wooden school pencil, ochre yellow lacquer, exposed pale wood and graphite point at the RIGHT end, plain pencil end on left, no eraser cap. Horizontal perfectly straight, direct orthographic top view, long thin realistic 12:1 proportion. No writing on the body. Calm refined hand-painted semi-realistic illustration, familiar inexpensive real school object, clear material texture kept subtle, matching warm ivory school furniture and muted teal schoolbag. Consistent soft upper-left illumination with realistic shading ON THE OBJECT ONLY. No cast shadow, ground surface, hands, scene, text, letters, numbers, logos, watermark, border, extra detached objects. Full silhouette centered in square 1024x1024 canvas with generous empty margin, GENUINELY TRANSPARENT BACKGROUND and real alpha. Runtime will project this top-view artwork into the desk plane and add ground/contact shadows; keep object unrotated.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-a5441726-05c0-4f3d-b17c-eac685e59b34.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "homework-diary",
+    "source": "artwork/homework-diary.png",
+    "target": "items/catalog/homework-diary.webp",
+    "prompt": "Use case: scientific-educational. ONE isolated everyday Korean elementary school object. One small closed Korean elementary school homework planner, muted sage green cover, pale cream pages and simple binding, small cream label with one small grid-like icon but no writing. Direct orthographic top view of the full cover, vertical rectangle about 4:5. Refined hand-painted semi-realistic illustration with subtle real material texture and realistic proportions, soft upper-left illumination with shading on the object only. Matches muted teal fabric schoolbag and warm pale wood furniture. Genuine transparent alpha background, square canvas1024x1024, full object centered with padding. No room, floor, cast shadow, hands, other objects, text, logos or watermark. Flat art will be projected into the support plane by the application.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-ff769f72-bd60-4c50-b001-579d9de78024.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "eraser",
+    "source": "artwork/eraser.png",
+    "target": "items/catalog/eraser.webp",
+    "prompt": "Use case: scientific-educational. ONE isolated everyday Korean elementary school object. One ordinary white rectangular school eraser partly enclosed in a muted coral paper sleeve, no brand or text. Top down orthographic view, horizontal 1.7:1 rectangle, slightly worn rounded corners but clean and usable. Refined hand-painted semi-realistic illustration with subtle real material texture and realistic proportions, soft upper-left illumination with shading on the object only. Matches muted teal fabric schoolbag and warm pale wood furniture. Genuine transparent alpha background, square canvas1024x1024, full object centered with padding. No room, floor, cast shadow, hands, other objects, text, logos or watermark. Flat art will be projected into the support plane by the application.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-a2089fb8-f426-4ffd-b170-79f61e9d6a92.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "paper-scrap",
+    "source": "artwork/paper-scrap.png",
+    "target": "items/catalog/paper-scrap.webp",
+    "prompt": "Use case: scientific-educational. ONE isolated everyday Korean elementary school object. One small irregular torn crumpled scrap of used unneeded pale ivory paper, light graphite scribbles without readable text, visibly unusable paper, not a whole usable notebook sheet. Top down view; paper creases and thickness visible. Refined hand-painted semi-realistic illustration with subtle real material texture and realistic proportions, soft upper-left illumination with shading on the object only. Matches muted teal fabric schoolbag and warm pale wood furniture. Genuine transparent alpha background, square canvas1024x1024, full object centered with padding. No room, floor, cast shadow, hands, other objects, text, logos or watermark. Flat art will be projected into the support plane by the application.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-924f5eb2-858b-4ab9-821d-9ce7bf1ed065.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "water-bottle",
+    "source": "artwork/water-bottle.png",
+    "target": "items/catalog/water-bottle.webp",
+    "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One closed reusable elementary school water bottle, pale blue opaque plastic, darker blue screw cap, small integrated carry loop, rounded cylindrical body and stable flat base. Entire bottle upright and vertical, almost frontal orthographic view with a small amount of its top visible. No separate cup. Approximately 1:3 width to height. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-08261e37-c255-4316-9971-069153f24308.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "ruler",
+    "source": "artwork/ruler.png",
+    "target": "items/catalog/ruler.webp",
+    "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One plain 15cm transparent pale mint plastic school ruler, horizontal slim rectangle, faint evenly spaced measurement ticks WITHOUT numerals or text. Direct orthographic top view, perfectly straight, long thin 8:1 proportions. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-6a8d1e79-b671-450c-b848-18855f3666e6.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "pencil-sharpener",
+    "source": "artwork/pencil-sharpener.png",
+    "target": "items/catalog/pencil-sharpener.webp",
+    "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One small manual pencil sharpener with a compact translucent muted teal shavings container, one visible pencil insertion hole and metal blade safely enclosed. No inserted pencil and no loose shavings. Orthographic view from above, subtly show the hole-side rim so pupils recognize it. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-5ecc8208-a3dc-413e-9155-64d31c9fe27a.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "document-folder",
+    "source": "artwork/document-folder.png",
+    "target": "items/catalog/document-folder.webp",
+    "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One closed thin translucent pale lilac A4 document folder, with one or two ivory papers contained inside, a small thumb cutout and open edge recognizable, no printing. Direct orthographic top view, vertical A4 proportions. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-9a195f27-a46d-45a0-9b6d-b125378ff4e2.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "glue-stick",
+    "source": "artwork/glue-stick.png",
+    "target": "items/catalog/glue-stick.webp",
+    "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One closed school glue stick, short white cylindrical body with a pale green cap and matching twist base, unbranded. Entire object vertical on canvas, view from directly above as it lies flat, 1:3 shape, no exposed glue. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-db850a73-9f04-472c-9db9-dac3b1411443.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "scissors",
+    "source": "artwork/scissors.png",
+    "target": "items/catalog/scissors.webp",
+    "prompt": "Use case: scientific-educational. One familiar Korean elementary school object sprite. One pair of safe elementary-school scissors, closed blunt round tipped stainless steel blades, muted coral comfortable plastic loop handles, realistic two-finger-loop construction. Entire object vertical with blade tips upward, orthographic top view as it lies flat. No sharp pointed tips. Refined hand-painted semi-realistic illustration, clean subtly textured real materials, modest natural colors, same art family as a teal school backpack and pale wood classroom desk. Soft upper-left lighting and object self-shading ONLY. Genuinely transparent background, real alpha, complete object centered with generous padding, square canvas. No room, furniture, ground plane, cast shadow, hands, other objects, readable text, letters, logos, numbers, watermark.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-4a5dce18-a649-4463-914e-84db6b623090.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "bear",
+    "source": "artwork/bear.png",
+    "target": "characters/bear.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One friendly small brown bear guide character, standing upright, rounded natural bear ears and muzzle, short paws, wearing a simple muted sage neckerchief. Calm gentle smile, full body, approachable for grade 5, tasteful storybook illustration, no toy gloss. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-21635c31-4319-4cd0-8ed1-622d2c3ea20c.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "cat",
+    "source": "artwork/cat.png",
+    "target": "characters/cat.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One friendly cream-and-ginger cat guide character, sitting upright, small triangular ears, whiskers and curved tail, wearing a simple muted sage neckerchief. Calm gentle smile, full body, tasteful storybook illustration. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-0745a91a-1fd6-4324-94d4-7746e5c3b0d9.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "bird",
+    "source": "artwork/bird.png",
+    "target": "characters/bird.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One friendly small sparrow guide character standing on two short feet, warm brown and cream feathers, small folded wings, wearing a simple muted sage neckerchief. Gentle expression, full body, tasteful storybook illustration. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-10d337a5-444e-4605-9fc1-846e6efc3850.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "duster",
+    "source": "artwork/duster.png",
+    "target": "tools/duster.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One folded soft mustard-yellow microfiber hand cleaning cloth, square folded in quarters, a slightly lifted soft corner showing cloth thickness, subtle terry fibers, clean. This is a cloth used to wipe dust from desks, NOT a feather duster. Direct top down view. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-a77f93e5-5740-431f-8aba-a0eb151cc390.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "broom",
+    "source": "artwork/broom.png",
+    "target": "tools/broom.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One matching small classroom broom and dustpan cleaning set presented together as ONE tool-set sprite: short wooden handle, pale natural bristles, grey-green plastic dustpan beside the broom, both fully visible and aligned diagonally. They are a familiar practical pair, no detached dust or dirt. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-d38263ba-99f9-4d1e-ad6a-f0b2f66bdc65.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "cloth",
+    "source": "artwork/cloth.png",
+    "target": "tools/cloth.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One folded pale blue cotton floor cleaning rag, wider rectangular folds and slightly worn weave, clean, no handle or bucket. Direct top down view. Clearly distinct blue color from a mustard yellow hand cloth. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-f8b1a82f-7f95-4add-941e-b9822859cf71.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "dust",
+    "source": "artwork/dust.png",
+    "target": "effects/dust.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. A single small subtle irregular patch of ordinary household dust: a sparse cluster of soft warm-grey lint specks and tiny beige crumbs, seen directly from above. Flat on a surface but NO background surface. Not a dust cloud, not smoke. Patch fits into horizontal oval silhouette, muted and believable. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-b3010386-e95f-47de-90e0-e2c3648be9b8.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "stain",
+    "source": "artwork/stain.png",
+    "target": "effects/stain.webp",
+    "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. A single small dry pale brown water stain with irregular thin ring and faded soft centre, seen directly from above. A familiar mild floor smudge, not mud puddle, no liquid highlights. Transparent within and outside the faded ring, neutral brown with low opacity. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+    "review": "Original transparent texture retained for multiply blending. Edited checkerboard RGB version rejected.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-980a4062-17c5-49ca-9d6b-dab656318433.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "colored-pencils",
+    "source": "artwork/colored-pencils.png",
+    "target": "items/catalog/colored-pencils.webp",
+    "prompt": "Use case: scientific-educational. Generate ONE clean isolated transparent object sprite of a familiar twelve-color colored-pencil set for Korean elementary school: twelve sharpened colored pencils in one shallow plain cream plastic storage case with a transparent closed lid. View directly from above, no baked perspective. Compact horizontal rectangular case, realistic solid rim, individual colored pencils visible through the clear lid. Refined hand-painted semi-realistic classroom art, soft light only ON THE OBJECT. CRITICAL: actual transparent alpha background everywhere outside the precise case outline. No cast shadow, no golden aura, no glow, no backdrop, no vignette, no painted checkerboard, no ground, no text or brands. Entire case centered inside square canvas with at least 15 percent truly empty transparent padding on all sides. The image will be composited on a desk; exterior must contain no color or shadow.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-01d3014a-469d-436d-b73f-01e06bda6975.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "classroom-cabinet",
+    "source": "artwork/classroom-cabinet.png",
+    "target": "maps/classroom-cabinet/background.webp",
+    "prompt": "Use case: scientific-educational. Empty background for a Korean elementary grade 5 classroom tidying activity. Landscape 4:3, exactly full scene, no close crop. A familiar modest low pale-wood classroom storage cabinet viewed nearly straight from the front with a gentle downward view so every shelf floor and tray base can be seen. Cabinet has EXACTLY FOUR broad open cubbies in a 2-by-2 layout: upper left empty shelf for board-game boxes; upper right a wide shallow empty sage-green art-supply tray in an open cubby; lower left a wide shallow empty cream tray for small craft tools; lower right a low open grey-green sports basket inside the cubby. The basket front is low enough to see the inside bottom. All containers empty. Clear thin front lips and shelves, realistic wood thickness, straight coherent furniture perspective, no warped lines. On logical 960x720: cabinet occupies approximately x55..855, y95..510; cubby centres left x250, right x655, upper floor around y300, lower floor around y485. Broad pale beige classroom floor fills y520..720. Small empty cream paper bin at lower right x855..935,y578..686, placed on the floor outside cabinet. Warm ivory wall behind, partial sunlit window at upper left if needed. Soft upper-left window illumination with natural contact shadows under cabinet and subtle interior shelf shading. Refined hand-painted semi-realistic illustration with muted sage outlines, gentle wood texture, matches a pale wood Korean student desk and teal schoolbag. Ordinary elementary classroom environment. NO movable items, books, balls, papers, stationery, decorations, chairs, plants, people, labels, text, numbers, UI, watermark. Do not add extra compartments or extra containers. The fixed surfaces must remain clearly visible and unoccupied.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-378acf2c-0b30-4ace-8a91-b7f771b268ff.png",
+    "status": "integrated-source"
+  },
+  {
+    "id": "board-game",
+    "source": "artwork/board-game.png",
+    "target": "items/catalog/board-game.webp",
+    "prompt": "Create one isolated closed board-game box sprite for a Korean grade-5 classroom tidying web activity. Refined semi-realistic hand-painted illustration, familiar inexpensive school board-game cardboard box, muted turquoise and warm mustard accents, board path and round playing-piece illustration on the lid, no readable letters, logos or text. Strict straight-down orthographic view of the closed lid, rectangular box about 4:3, no perspective baked in. Soft upper-left light, natural subtle cardboard surface, self-shading only, no cast shadow or ground. Entire silhouette centered with 12 percent clear padding. Square 1024x1024. GENUINELY TRANSPARENT RGBA background, no painted checkerboard, no white backdrop. One box only. Runtime will apply support-plane perspective and contact shadow. This is an actual production asset for the existing Cleaning project.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-e78ef927-f2ba-48a0-b579-aa1baa5e6edc.png"
+  },
+  {
+    "id": "puzzle-box",
+    "source": "artwork/puzzle-box.png",
+    "target": "items/catalog/puzzle-box.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 퍼즐 상자. Distinctive construction: 맞물린 조각 그림 표지. Use: 퍼즐 조각을 맞출 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-76742f84-153a-499b-82b4-6f187894469e.png"
+  },
+  {
+    "id": "felt-pens",
+    "source": "artwork/felt-pens.png",
+    "target": "items/catalog/felt-pens.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 사인펜 세트. Distinctive construction: 뚜껑 닫힌 펜들이 든 케이스. Use: 진한 색으로 그릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-bae81664-661d-4bfe-8599-512b3628c27f.png"
+  },
+  {
+    "id": "origami-paper",
+    "source": "artwork/origami-paper.png",
+    "target": "items/catalog/origami-paper.webp",
+    "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 색종이 묶음. Distinctive construction: 네모난 색종이가 겹친 묶음. Use: 종이를 접거나 오릴 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. Square 1024x1024 output. Clean sage-brown outlines, calm muted natural colours consistent with an elementary classroom activity.",
+    "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-3961e354-41ba-4034-a075-89ca95534aef.png"
+  }
+]

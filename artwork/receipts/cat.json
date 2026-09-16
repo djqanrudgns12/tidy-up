@@ -1,0 +1,8 @@
+{
+  "id": "cat",
+  "source": "artwork/cat.png",
+  "target": "characters/cat.webp",
+  "prompt": "Use case: scientific-educational. Single isolated raster asset for a calm Korean grade 5 practical-arts classroom activity. One friendly cream-and-ginger cat guide character, sitting upright, small triangular ears, whiskers and curved tail, wearing a simple muted sage neckerchief. Calm gentle smile, full body, tasteful storybook illustration. Refined soft hand-painted illustration with subtle paper/fabric texture and realistic material cues, muted warm natural palette, consistent soft light from upper left. Entire silhouette centered with empty padding. Genuine transparent background with real alpha. No cast ground shadow, room, labels, readable text, logos, numbers, watermark, borders or unrelated objects. Square canvas.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-0745a91a-1fd6-4324-94d4-7746e5c3b0d9.png",
+  "status": "integrated-source"
+}

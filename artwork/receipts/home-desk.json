@@ -1,0 +1,8 @@
+{
+  "id": "home-desk",
+  "source": "artwork/home-desk.png",
+  "target": "maps/home-desk/background.webp",
+  "prompt": "A complete empty everyday Korean primary-school or family-home environment for the activity 공부 책상. Scene: 작은 공부 책상, 한쪽 책꽂이, 앞이 보이는 서랍, 빈 필기 작업면과 뒤쪽 소품 받침. Functional furniture: 책꽂이; 공책·자료 받침; 열린 서랍; 자주 쓰는 물건 자리. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Reference image is STYLE AND LIGHTING ONLY, do not reuse its desk layout. Deliver a NEW home-desk environment. Keep lower 35 percent mostly unobstructed floor. Clear broad storage openings, no busy tiny compartments. Avoid chairs. No hanging or folded clothes or books already in furniture. One coherent camera.",
+  "status": "generated-awaiting-visual-review",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a503-e09b-7da0-91c1-15afea05957a\\exec-52707587-85c4-4ed3-bb7b-85cdc664c2f9.png"
+}
