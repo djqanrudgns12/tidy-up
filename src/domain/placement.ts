@@ -3,6 +3,45 @@ import artMetrics from "../data/art-metrics.json";
 import { hasShelfView, hasHangingView, hangingContact, sceneArtwork } from "../data/scene-art";
 
 export const WORLD = { width: 960, height: 720 };
+const HANGABLE = new Set(["backpack", "tote-bag", "shoe-bag", "hanger", "jacket", "cardigan", "umbrella", "umbrella-cover"]);
+
+/** Purpose restrictions are reserved for disposal and special physical supports. */
+export function acceptsAsset(asset: AssetDefinition, surface: Surface) {
+  if (surface.zone === 5 && asset.id !== "paper-scrap") return false;
+  if (surface.accepts && !surface.accepts.includes(asset.id)) return false;
+  if ((surface.anchor || surface.pose === "hanging") && !HANGABLE.has(asset.id)) return false;
+  return true;
+}
+
+export function placementAngles(asset: AssetDefinition, surface: Surface, mapId: string, angle: number) {
+  return poseOf(asset, surface, mapId) === "flat"
+    ? [...new Set([angle, 0, 90, -90])]
+    : [angle];
+}
+
+/** Static geometry only: an occupied place stays discoverable in the place picker. */
+const supportCache = new WeakMap<Surface, Map<string, boolean>>();
+export function canPlaceOnSurface(asset: AssetDefinition, surface: Surface, mapId: string) {
+  if (!acceptsAsset(asset, surface)) return false;
+  const key = `${mapId}:${asset.id}`;
+  const cache = supportCache.get(surface) ?? new Map<string, boolean>();
+  supportCache.set(surface, cache);
+  if (cache.has(key)) return cache.get(key)!;
+  const xs = surface.polygon.filter((_, i) => i % 2 === 0);
+  const ys = surface.polygon.filter((_, i) => i % 2 === 1);
+  const left = Math.min(...xs), right = Math.max(...xs), top = Math.min(...ys), bottom = Math.max(...ys);
+  for (const angle of placementAngles(asset, surface, mapId, 0))
+    for (let x = left; x <= right; x += 3)
+      for (let y = top; y <= bottom; y += 2) {
+        const p = normalizePlacement(asset, {x, y}, surface, angle, mapId);
+        if (fitsSurface(asset, p, surface, mapId)) {
+          cache.set(key, true);
+          return true;
+        }
+      }
+  cache.set(key, false);
+  return false;
+}
 export const schoolSizes: Record<string, [number, number]> = {
   textbook: [146, 184],
   notebook: [130, 164],
@@ -189,7 +228,7 @@ export function fitsSurface(
   surface: Surface,
   mapId: string,
 ) {
-  if (surface.accepts && !surface.accepts.includes(asset.id)) return false;
+  if (!acceptsAsset(asset, surface)) return false;
   if (surface.hangingBounds && poseOf(asset,surface,mapId)==="hanging") {
     const [w,h]=sizeOf(asset,mapId,surface),top=placement.y-h*hangingContact(asset,mapId);
     if(![{x:placement.x-w/2,y:top},{x:placement.x+w/2,y:top},{x:placement.x+w/2,y:top+h},{x:placement.x-w/2,y:top+h}].every(p=>pointInPolygon(p,surface.hangingBounds!)))return false;
@@ -213,6 +252,8 @@ export function fitsSurface(
     return false;
   const [width, height] = sizeOf(asset, mapId, surface);
   const pose = poseOf(asset, surface, mapId);
+  // Tall objects on a newly available top must still remain in the visible room.
+  if (pose === "upright" && placement.y - height < 0) return false;
   const angle = placement.angle * Math.PI / 180;
   const halfSpan = pose === "flat"
     ? (Math.abs(width * Math.cos(angle)) + Math.abs(height * Math.sin(angle))) / 2

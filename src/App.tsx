@@ -18,7 +18,7 @@ import {
   type Tool,
 } from "./domain/session";
 import { readSaved, saveSession, storageKey } from "./domain/storage";
-import { poseOf } from "./domain/placement";
+import { canPlaceOnSurface, poseOf } from "./domain/placement";
 import {
   createPageHistory,
   pageAtOffset,
@@ -884,7 +884,7 @@ export function App() {
                           setPlacing(false);
                         }}
                         onPoint={(point) => {
-                          if (placing && selected) place(selected, point);
+                          if (placing && selected) place(selected, point, highlight || undefined);
                         }}
                         onUnavailablePoint={(point) => {
                           const nearDirt = geometry.dirt.some(
@@ -1129,7 +1129,7 @@ export function App() {
                       </p>
                       <div className="surface-options">
                         {geometry.surfaces
-                          .filter((s) => chosen.zones.includes(s.zone))
+                          .filter((s) => canPlaceOnSurface(assetsById[chosen.asset], s, map.id))
                           .map((s) => (
                             <button
                               key={s.id}

@@ -130,7 +130,7 @@ describe("내 책상: 실제 면과 모든 추가 선택 조합", () => {
       initialPlacements("school-desk", ["e2", "e4", "e6"]),
     );
   });
-  it("가방은 걸이 접점에 고정하고 공중에 놓은 물건은 가까운 받침면에 내려놓는다", () => {
+  it("가방은 걸이 접점에 고정하고 받침면에서 먼 공중 드롭은 자동 정리하지 않는다", () => {
     const s = start();
     const atHook = tryPlacement(s, "b7", { x: 835, y: 316 }, "hook", 45);
     expect(atHook.placement).toEqual({
@@ -140,8 +140,7 @@ describe("내 책상: 실제 면과 모든 추가 선택 조합", () => {
       surface: "hook",
     });
     const dropped = tryPlacement(s, "b1", { x: 300, y: 70 }).placement;
-    expect(dropped).toBeDefined();
-    expect(dropped!.surface).not.toBe("hook");
+    expect(dropped).toBeUndefined();
     expect(
       tryPlacement(s, "b1", { x: 842, y: 299 }, "hook").placement,
     ).toBeUndefined();

@@ -2,11 +2,13 @@ import { assetsById } from "../data/catalog";
 import { mapsById } from "../data/maps";
 import { physicalMaps } from "../data/physical";
 import {
+  acceptsAsset,
   distanceToPolygon,
   fitsSurface,
   footprint,
   footprintsOverlap,
   normalizePlacement,
+  placementAngles,
   pointInPolygon,
   poseOf,
   settleOnSurface,
@@ -105,7 +107,7 @@ export function unfinished(state: Session) {
     return (
       invalid.has(item.id) ||
       !s ||
-      !item.zones.includes(s.zone) ||
+      (item.asset === "paper-scrap" ? s.zone !== 5 : s.id === "floor") ||
       !fitsSurface(assetsById[item.asset], p, s, state.mapId!)
     );
   });
@@ -256,66 +258,68 @@ export function tryPlacement(
       : undefined;
   const reach = (s: Surface) =>
     distanceToPolygon(point, s.entryPolygon ?? s.polygon);
-  // A rough drop counts for any support within reach; the item's own place wins over a nearer wrong one.
+  // A directly targeted support wins, even when it is not the item's suggested category.
+  // Do not escape a full/unsuitable shelf by silently sending the item to another shelf.
+  const direct = geometry.surfaces.filter((s) => reach(s) === 0);
   const matches = surfaceId
     ? geometry.surfaces.filter((s) => s.id === surfaceId)
     : hook
       ? [hook]
-      : geometry.surfaces
+      : (direct.length ? direct : geometry.surfaces)
           .map((s, order) => ({
             s,
             order,
-            rank: reach(s) - (item.zones.includes(s.zone) ? OWN_PLACE_BONUS : 0),
+            rank: reach(s),
           }))
           .filter(({ s }) => reach(s) <= SNAP_RADIUS)
           .sort((a, b) => a.rank - b.rank || b.order - a.order)
           .map(({ s }) => s);
   // Rotating keeps the item where it is; only a small shift is allowed to make room.
   const rotating = surfaceId !== undefined && angle !== undefined;
-  const angles = rotating ? [angle] : [...new Set([angle ?? old.angle, 0])];
   const done = (p: Placement, surface: Surface, note: string) => ({
     placement: p,
-    message: item.zones.includes(surface.zone)
-      ? `${note}놓은 곳: ${surface.label}`
-      : `놓을 수 있는 곳: ${item.zones.map((z) => (z === 5 ? "휴지통" : mapsById[state.mapId!].zones[z - 1])).join(", ")}`,
+    message: `${note}놓은 곳: ${surface.label}`,
   });
   let blocked = "";
   for (const surface of matches) {
-    if (surface.anchor && !HANGABLE.includes(item.asset)) continue;
-    const exact = placeAt(state, item, point, surface, angles[0]);
-    if (exact.placement)
-      return done(
-        exact.placement,
-        surface,
-        exact.nudged ? "다른 물건과 닿아서 조금 옆으로 놓았어요. " : "",
-      );
-    blocked ||= exact.message;
+    if (!acceptsAsset(asset, surface)) {
+      blocked ||= surface.zone === 5
+        ? "휴지통에는 필요 없어진 종이만 넣어요. 이 물건은 선반이나 다른 자리에 놓아 주세요."
+        : "이 물건은 이곳에 놓기 어려워요. 다른 받침면을 골라 주세요.";
+      continue;
+    }
+    const angles = rotating ? [angle] : placementAngles(asset, surface, state.mapId, angle ?? old.angle);
+    const origin = normalizePlacement(asset, supportPointFor(point, surface), surface, angles[0], state.mapId);
+    const maxShift = rotating ? 40 : 48;
+    for (const a of angles) {
+      const exact = placeAt(state, item, point, surface, a);
+      if (exact.placement && Math.hypot(exact.placement.x-origin.x, exact.placement.y-origin.y) <= maxShift)
+        return done(exact.placement, surface,
+          a !== angles[0] ? "선반에 맞게 방향을 돌려 놓았어요. " :
+          exact.nudged ? "다른 물건과 닿아서 조금 옆으로 놓았어요. " : "");
+      blocked ||= exact.message;
+    }
     if (surface.anchor) continue;
     for (const a of angles) {
-      const p = freeSpot(state, item, point, surface, a, rotating ? 40 : Infinity);
+      const p = freeSpot(state, item, origin, surface, a, maxShift);
       if (p) return done(p, surface, "가까운 빈자리에 맞춰 놓았어요. ");
     }
   }
   return {
     message:
       blocked ||
-      "물건을 넣을 칸이나 선반 가까이에 놓아 주세요.",
+      "이 자리에는 물건을 받칠 공간이 부족해요. 같은 선반의 넓은 곳이나 다른 자리를 골라 주세요.",
   };
 }
 
-const HANGABLE = [
-  "backpack",
-  "tote-bag",
-  "shoe-bag",
-  "hanger",
-  "jacket",
-  "cardigan",
-  "umbrella",
-  "umbrella-cover",
-];
 /** World pixels (960 × 720). Students drop roughly; the lesson is choosing the place, not aiming. */
-const SNAP_RADIUS = 120,
-  OWN_PLACE_BONUS = 80;
+const SNAP_RADIUS = 120;
+
+function supportPointFor(point: Point, surface: Surface): Point {
+  return surface.entryOffsetY && surface.entryPolygon &&
+    pointInPolygon(point, surface.entryPolygon) && !pointInPolygon(point, surface.polygon)
+    ? { ...point, y: point.y + surface.entryOffsetY } : point;
+}
 
 /** The drop exactly where it was released, with the small edge settle, book stack, and nudge. */
 function placeAt(
@@ -328,13 +332,7 @@ function placeAt(
   const mapId = state.mapId!,
     asset = assetsById[item.asset],
     id = item.id;
-  const supportPoint =
-    surface.entryOffsetY &&
-    surface.entryPolygon &&
-    pointInPolygon(point, surface.entryPolygon) &&
-    !pointInPolygon(point, surface.polygon)
-      ? { ...point, y: point.y + surface.entryOffsetY }
-      : point;
+  const supportPoint = supportPointFor(point, surface);
   let p = settleOnSurface(
     asset,
     normalizePlacement(asset, supportPoint, surface, angle, mapId),
