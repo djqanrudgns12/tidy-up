@@ -20,7 +20,7 @@ for(const id of Object.keys(finalMaps) as FinalMapId[]) it(`${id}: 42조합의 �
   }
   expect(unfinished(state)).toEqual([]);state=reducer(state,{type:"START_CLEAN"});state=reducer(state,{type:"VENTILATE"});
   geometry.dirt.forEach((d,spot)=>{state=reducer(state,{type:"CLEAN",spot,tool:d.tool});});
-  state=reducer(state,{type:"STORE_TOOLS"});expect(state.step).toBe("quiz");state=reducer(state,{type:"QUIZ_DONE"});
+  state=reducer(state,{type:"STORE_TOOLS"});expect(state.step).toBe("quiz");state=reducer(state,{type:"QUIZ_DONE",correctCount:2});
   expect(state.step).toBe("result");expect(validateSession(JSON.parse(JSON.stringify(state)))).toBe(true);
  }}finally{if(previous)physicalMaps[id]=previous;else delete physicalMaps[id];}
 });

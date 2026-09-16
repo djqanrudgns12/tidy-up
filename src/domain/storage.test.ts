@@ -115,3 +115,13 @@ it("접근 거부와 용량 부족은 상태를 바꾸지 않고 호출자에게
     "denied",
   );
 });
+
+it("이전 물건 선택 화면 저장도 선택을 보존한 채 정리 단계로 이어진다", () => {
+  const storage = new MemoryStorage();
+  const old = { ...activity(), step: "setup" as const, placements: {} };
+  saveSession(storage, href, old);
+  const restored = readSaved(storage, href).saved!;
+  expect(restored.step).toBe("organize");
+  expect(restored.extras).toEqual(old.extras);
+  expect(Object.keys(restored.placements)).toHaveLength(9);
+});

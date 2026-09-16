@@ -44,6 +44,7 @@ export type Session = {
   ventilated: boolean;
   cleaned: number[];
   toolsStored: boolean;
+  quizCorrectCount: number | null;
 };
 export const makeSession = (): Session => ({
   schemaVersion: 2,
@@ -62,6 +63,7 @@ export const makeSession = (): Session => ({
   ventilated: false,
   cleaned: [],
   toolsStored: false,
+  quizCorrectCount: null,
 });
 export function activeItems(mapId: string, extras: string[]): ItemDefinition[] {
   const map = mapsById[mapId];
@@ -475,6 +477,48 @@ function nudgeApart(
     }
   }
 }
+/** Add/remove one optional object without resetting any existing placement. */
+export function toggleExtra(state: Session, id: string): { state: Session; message: string } {
+  if (!state.mapId || !["setup", "organize"].includes(state.step))
+    return { state, message: "" };
+  const item = mapsById[state.mapId].extras.find((candidate) => candidate.id === id);
+  if (!item) return { state, message: "" };
+  const objectName = `${item.label}${(item.label.charCodeAt(item.label.length - 1) - 0xac00) % 28 === 0 ? "를" : "을"}`;
+  const removing = state.extras.includes(id);
+  if (!removing && state.extras.length >= 3)
+    return { state, message: "3개까지 꺼낼 수 있어요. 다른 물건을 꺼내려면 하나를 먼저 넣어 주세요." };
+  if (removing && Object.values(state.placements).some((p) => p.stackOn === id))
+    return { state, message: "이 물건 위에 다른 물건이 있어요. 위의 물건을 먼저 옮겨 주세요." };
+  const extras = removing ? state.extras.filter((value) => value !== id) : [...state.extras, id].sort();
+  if (state.step === "setup") return { state: { ...state, extras }, message: "" };
+  const placements = { ...state.placements };
+  if (removing) {
+    delete placements[id];
+    return { state: { ...state, extras, placements }, message: `${objectName} 다시 넣었어요.` };
+  }
+  const geometry = physicalMaps[state.mapId];
+  const candidate = { ...state, extras, placements };
+  for (const slot of geometry.slots) {
+    const surface = geometry.surfaces.find((s) => s.id === slot.surface)!;
+    const placement = normalizePlacement(assetsById[item.asset], slot, surface, slot.angle, state.mapId);
+    if (fitsSurface(assetsById[item.asset], placement, surface, state.mapId) &&
+        !collisionWith(candidate, item, placement, surface)) {
+      placements[id] = placement;
+      return { state: candidate, message: `${objectName} 꺼냈어요. 놓을 자리를 정해 주세요.` };
+    }
+  }
+  // Search only the existing arrival surface. Never move another object to make room.
+  for (const slot of geometry.slots) {
+    const surface = geometry.surfaces.find((s) => s.id === slot.surface)!;
+    const placement = freeSpot(candidate, item, slot, surface, slot.angle, 960);
+    if (placement) {
+      placements[id] = placement;
+      return { state: candidate, message: `${objectName} 빈자리에 꺼냈어요. 놓을 자리를 정해 주세요.` };
+    }
+  }
+  return { state, message: "물건을 꺼낼 빈자리가 부족해요. 바닥의 물건을 먼저 정리해 주세요." };
+}
+
 export function availableTool(state: Session): Tool | null {
   if (!state.ventilated) return null;
   if (!state.cleaned.includes(0) || !state.cleaned.includes(1)) return "duster";
@@ -494,7 +538,7 @@ export type Action =
   | { type: "VENTILATE" }
   | { type: "CLEAN"; spot: number; tool: Tool }
   | { type: "STORE_TOOLS" }
-  | { type: "QUIZ_DONE" }
+  | { type: "QUIZ_DONE"; correctCount: number }
   | { type: "RESET" }
   | { type: "CHANGE_ITEMS" }
   | { type: "CHANGE_MAP" }
@@ -541,28 +585,16 @@ export function reducer(state: Session, action: Action): Session {
           mapId: action.mapId,
           mapRevision: mapsById[action.mapId].revision,
           extras: [],
-          placements: {},
+          placements: initialPlacements(action.mapId, []),
           cleaned: [],
           ventilated: false,
           toolsStored: false,
-          step: "setup",
+          quizCorrectCount: null,
+          step: "organize",
         };
       break;
     case "EXTRA":
-      if (
-        state.step === "setup" &&
-        state.mapId &&
-        mapsById[state.mapId].extras.some((i) => i.id === action.id)
-      ) {
-        const has = state.extras.includes(action.id);
-        if (has || state.extras.length < 3)
-          next = {
-            ...state,
-            extras: has
-              ? state.extras.filter((id) => id !== action.id)
-              : [...state.extras, action.id].sort(),
-          };
-      }
+      next = toggleExtra(state, action.id).state;
       break;
     case "CONFIRM_SET":
       if (state.step === "setup" && state.mapId)
@@ -613,8 +645,18 @@ export function reducer(state: Session, action: Action): Session {
         next = { ...state, toolsStored: true, step: "quiz" };
       break;
     case "QUIZ_DONE":
-      if (state.step === "quiz" && state.toolsStored)
-        next = { ...state, step: "result" };
+      if (
+        state.step === "quiz" &&
+        state.toolsStored &&
+        Number.isInteger(action.correctCount) &&
+        action.correctCount >= 0 &&
+        action.correctCount <= 3
+      )
+        next = {
+          ...state,
+          quizCorrectCount: action.correctCount,
+          step: "result",
+        };
       break;
     case "RESET":
       if (
@@ -628,6 +670,7 @@ export function reducer(state: Session, action: Action): Session {
           ventilated: false,
           cleaned: [],
           toolsStored: false,
+          quizCorrectCount: null,
         };
       break;
     case "CHANGE_ITEMS":
@@ -639,6 +682,7 @@ export function reducer(state: Session, action: Action): Session {
           ventilated: false,
           cleaned: [],
           toolsStored: false,
+          quizCorrectCount: null,
         };
       break;
     case "CHANGE_MAP":
@@ -653,6 +697,7 @@ export function reducer(state: Session, action: Action): Session {
           ventilated: false,
           cleaned: [],
           toolsStored: false,
+          quizCorrectCount: null,
         };
       break;
     case "END":

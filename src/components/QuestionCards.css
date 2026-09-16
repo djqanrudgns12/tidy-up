@@ -10,7 +10,7 @@
   --qc-bad: #a33d35;
   --qc-bad-bg: #fdf0ee;
   --qc-bad-line: #e8b3ac;
-  max-width: 880px;
+  width: 100%;
   margin: 34px auto;
 }
 .question-card h1 {
@@ -309,6 +309,21 @@
 .qc-feedback.wrong p {
   color: #5f4744;
 }
+.qc-retry {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.qc-retry .button {
+  background: var(--qc-bad);
+  border-color: var(--qc-bad);
+}
+@media (hover: hover) {
+  .qc-retry .button:not(:disabled):hover {
+    background: #933730;
+    border-color: #933730;
+  }
+}
 .qc-feedback:focus-visible {
   outline: 3px solid #a56b20;
   outline-offset: 3px;
@@ -350,6 +365,10 @@
   font-size: 17px;
   line-height: 1.75;
   color: #3a4f45;
+}
+.qc-story strong {
+  color: #22362c;
+  font-weight: 700;
 }
 .qc-subheading {
   margin: 26px 0 12px;
@@ -459,7 +478,8 @@
     padding: 12px 14px;
     font-size: 16px;
   }
-  .qc-next .button {
+  .qc-next .button,
+  .qc-retry .button {
     width: 100%;
   }
 }

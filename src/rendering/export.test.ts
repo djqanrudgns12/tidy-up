@@ -33,18 +33,35 @@ import { exportResult, renderLogicalScene } from "./export";
 
 let canvases: HTMLCanvasElement[];
 let failComposition = false;
+let drawImage = vi.fn();
+let outputSizes: number[][];
+let fillText = vi.fn();
 function makeCanvas() {
   const canvas = {
     width: 960,
     height: 720,
     getContext: () => ({
+      beginPath() {},
+      moveTo() {},
+      lineTo() {},
+      quadraticCurveTo() {},
+      closePath() {},
+      arc() {},
+      fill() {},
+      save() {},
+      restore() {},
       fillRect() {},
-      fillText() {},
-      drawImage() {
+      fillText(...args: unknown[]) {
+        fillText(...args);
+      },
+      strokeRect() {},
+      drawImage(...args: unknown[]) {
+        drawImage(...args);
         if (failComposition) throw new Error("composite failed");
       },
     }),
     toBlob(callback: BlobCallback) {
+      outputSizes.push([canvas.width, canvas.height]);
       callback(new Blob(["test"], { type: "image/png" }));
     },
   } as unknown as HTMLCanvasElement;
@@ -57,6 +74,9 @@ beforeEach(() => {
   mock.toCanvas.mockImplementation(makeCanvas);
   mock.load.mockResolvedValue({});
   canvases = [];
+  outputSizes = [];
+  drawImage = vi.fn();
+  fillText = vi.fn();
   failComposition = false;
   vi.stubGlobal("document", {
     fonts: { ready: Promise.resolve() },
@@ -103,6 +123,36 @@ it.each([false, true])(
     ).toBe(true);
   },
 );
+
+it("저장 그림의 전후 장면을 960×720 원래 크기로 유지한다", async () => {
+  await exportResult(completed());
+  expect(drawImage).toHaveBeenNthCalledWith(1, canvases[0], 40, 202, 960, 720);
+  expect(drawImage).toHaveBeenNthCalledWith(2, canvases[1], 1048, 202, 960, 720);
+  expect(canvases[2].width).toBe(0);
+  expect(canvases[2].height).toBe(0);
+});
+
+it.each([
+  [390, 844, 3],
+  [768, 1024, 2],
+  [844, 390, 3],
+  [1920, 1080, 1],
+])("화면 %s×%s, DPR %s에서도 같은 가로 PNG를 저장한다", async (width, height, dpr) => {
+  vi.stubGlobal("window", { innerWidth: width, innerHeight: height, devicePixelRatio: dpr });
+  vi.stubGlobal("devicePixelRatio", dpr);
+  await exportResult(completed());
+  expect(outputSizes).toEqual([[2048, 1024]]);
+  expect(drawImage).toHaveBeenNthCalledWith(1, canvases[0], 40, 202, 960, 720);
+  expect(drawImage).toHaveBeenNthCalledWith(2, canvases[1], 1048, 202, 960, 720);
+});
+
+it("화면용 마무리 퀴즈 정답 수를 저장 이미지에 넣지 않는다", async () => {
+  await exportResult({ ...completed(), quizCorrectCount: 2 });
+  const text = fillText.mock.calls.flat().join(" ");
+  expect(text).not.toContain("마무리 퀴즈");
+  expect(text).not.toContain("맞혔어요");
+  expect(text).not.toContain("2 / 3");
+});
 
 it("그림을 기다리는 중 활동이 바뀌면 Stage나 PNG를 만들지 않는다", async () => {
   let finish!: (art: unknown) => void;

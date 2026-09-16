@@ -340,9 +340,25 @@ describe("활동 전이와 저장", () => {
     expect(s.step).toBe("quiz");
     expect(validateSession(s)).toBe(true);
     expect(reducer(s, { type: "CHANGE_ITEMS" })).toBe(s);
-    s = reducer(s, { type: "QUIZ_DONE" });
+    s = reducer(s, { type: "QUIZ_DONE", correctCount: 2 });
     expect(s.step).toBe("result");
+    expect(s.quizCorrectCount).toBe(2);
     expect(reducer(s, { type: "END" }).name).toBe("");
+  });
+  it("마무리 퀴즈 정답 수만 결과에 남기고 잘못된 수는 거부한다", () => {
+    const quiz = {
+      ...start(),
+      step: "quiz" as const,
+      ventilated: true,
+      cleaned: [0, 1, 2, 3],
+      toolsStored: true,
+    };
+    for (const correctCount of [-1, 4, 1.5])
+      expect(reducer(quiz, { type: "QUIZ_DONE", correctCount })).toBe(quiz);
+    const result = reducer(quiz, { type: "QUIZ_DONE", correctCount: 3 });
+    expect(result.step).toBe("result");
+    expect(result.quizCorrectCount).toBe(3);
+    expect(reducer(result, { type: "RESET" }).quizCorrectCount).toBeNull();
   });
   it("초기화는 선택 세트를 유지하고, 다시 고르기는 진행을 지운다", () => {
     let s = finishOrganizing(start(["e1", "e3", "e4"]));

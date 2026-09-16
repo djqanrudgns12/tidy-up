@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useReducer, useRef, useState } from "react";
 import { mapsById } from "./data/maps";
 import { assetsById } from "./data/catalog";
-import { characters, tools } from "./data/lesson";
+import { characters, quiz, tools } from "./data/lesson";
 import { physicalMaps } from "./data/physical";
 import {
   activeItems,
@@ -11,6 +11,7 @@ import {
   makeSession,
   reducer,
   tryPlacement,
+  toggleExtra,
   validName,
   type Action,
   type Session,
@@ -31,8 +32,10 @@ const Scene = lazy(() =>
   import("./components/Scene").then((module) => ({ default: module.Scene })),
 );
 import { QuestionCards } from "./components/QuestionCards";
+import { Key, NextStep } from "./components/Guide";
 import { MapSelection } from "./components/MapSelection";
 import { ConfirmDialog, type Confirmation } from "./components/ConfirmDialog";
+import { ResultImageDialog } from "./components/ResultImageDialog";
 
 function safeRead() {
   try {
@@ -66,12 +69,12 @@ export function App() {
   const [tool, setTool] = useState<Tool | null>(null),
     [art, setArt] = useState<{ key: string; value: ArtCollection }>();
   const [loadError, setLoadError] = useState(""),
-    [retry, setRetry] = useState(0),
-    [busy, setBusy] = useState(false);
+    [retry, setRetry] = useState(0);
   const [candidateFailures, setCandidateFailures] = useState<string[]>([]);
   const candidateRetryFocus = useRef<{ key: string; id: string } | null>(null);
   const [result, setResult] = useState<{ url: string; bytes: number }>(),
     [resultError, setResultError] = useState("");
+  const [resultPreviewOpen, setResultPreviewOpen] = useState(false);
   const stateRef = useRef(state);
   stateRef.current = state;
   const map = state.mapId ? mapsById[state.mapId] : null,
@@ -81,6 +84,16 @@ export function App() {
   const sceneArt = art?.key === key ? art.value : undefined;
   const activity = ["setup", "organize", "clean"].includes(state.step);
   const chosen = items.find((item) => item.id === selected);
+  const selectedPlacement = selected ? state.placements[selected] : undefined;
+  const selectedSurface = selectedPlacement
+    ? geometry?.surfaces.find((surface) => surface.id === selectedPlacement.surface)
+    : undefined;
+  const selectedCanRotate = Boolean(
+    chosen &&
+      map &&
+      selectedSurface &&
+      poseOf(assetsById[chosen.asset], selectedSurface, map.id) === "flat",
+  );
   const workingPlacements =
     state.step === "setup" && map
       ? initialPlacements(map.id, state.extras)
@@ -98,7 +111,8 @@ export function App() {
           art: sceneArt,
           selected,
           highlight,
-          showDirt: true,
+          showDirt: state.step === "clean",
+          cleanTool: state.step === "clean" ? tool ?? undefined : undefined,
           clean: state.cleaned.map(String),
         }
       : null;
@@ -120,7 +134,6 @@ export function App() {
     setPlacing(false);
     setHighlight("");
     setTool(null);
-    setBusy(false);
     window.scrollTo({ top: 0 });
     document.querySelector<HTMLElement>("h1")?.focus();
   }, [state.step, state.mapId]);
@@ -225,6 +238,7 @@ export function App() {
   }, [key, activity, retry, state.extras.join(","), state.character]);
   useEffect(() => {
     if (state.step !== "result") {
+      setResultPreviewOpen(false);
       setResult(undefined);
       setResultError("");
       return;
@@ -297,6 +311,7 @@ export function App() {
     if (checked.placement) {
       dispatch({ type: "MOVE", id, placement: checked.placement });
       setPlacing(false);
+      setHighlight("");
     }
     return checked.placement;
   }
@@ -305,10 +320,25 @@ export function App() {
   }
   function beginPlacing() {
     setPlacing(true);
-    setMessage("물건을 놓을 위치를 눌러 주세요.");
+    setMessage("");
     document
       .querySelector(".scene")
       ?.scrollIntoView({ block: "start", behavior: "instant" });
+  }
+  function rotateSelected(direction: -1 | 1) {
+    if (!selected || !selectedPlacement || !selectedCanRotate) return;
+    const angle =
+      ((Math.round(selectedPlacement.angle / 15) * 15 +
+        direction * 15 +
+        540) %
+        360) -
+      180;
+    place(
+      selected,
+      selectedPlacement,
+      selectedPlacement.surface,
+      angle,
+    );
   }
   function cleanSpot(index: number) {
     if (!state.ventilated) {
@@ -332,55 +362,75 @@ export function App() {
       index === 2
         ? "바닥의 먼지를 쓸었어요."
         : index === 3
-          ? "바닥의 얼룩을 닦았어요."
+          ? ""
           : "가구의 먼지를 닦았어요.",
     );
   }
-  function endActivityButton() {
-    return (
-      <button
-        className="button secondary"
-        onClick={() =>
-          confirm(
-            result
-              ? "이미지를 저장했나요? 활동을 끝내면 이 기기의 이름과 활동 내용을 지워요."
-              : "활동을 끝내면 이 기기의 이름과 활동 내용을 지워요.",
-            "활동 끝내기",
-            { type: "END" },
-          )
-        }
-      >
-        활동 끝내기
-      </button>
-    );
-  }
-  function resetButton() {
+  function homeButton() {
     return (
       <button
         className="text-button"
-        onClick={() =>
-          confirm(
-            "고른 물건은 그대로 두고, 정리와 청소를 처음부터 다시 할까요?",
-            "다시 시작",
-            { type: "RESET" },
-          )
-        }
+        aria-label="처음 화면으로 가기"
+        onClick={goHome}
       >
-        처음 상태로 되돌리기
+        처음 화면으로
       </button>
     );
   }
-  const phaseIndex =
-    state.step === "setup"
-      ? 0
-      : state.step === "organize"
-        ? 1
-        : state.step === "clean"
-          ? 2
-          : 3;
+  function activityProfile() {
+    return (
+      <section className="activity-profile" aria-label="오늘의 정리 주인공">
+        <div className="profile-portrait">
+          <img
+            src={assetUrl(`assets/characters/${state.character}.webp`)}
+            alt={`내가 고른 ${characters.find((c) => c.id === state.character)?.label ?? "캐릭터"}`}
+          />
+        </div>
+        <div className="activity-profile-name">
+          <p className="profile-eyebrow">오늘의 정리 주인공</p>
+          <h2>
+            <span>{state.name}</span>
+            <small>님</small>
+          </h2>
+          <dl className="profile-map-name">
+            <div>
+              <dt>정리할 공간</dt>
+              <dd>{map?.name}</dd>
+            </div>
+          </dl>
+        </div>
+        {activitySettings()}
+      </section>
+    );
+  }
+  function activitySettings() {
+    return (
+      <div className="activity-settings" aria-label="활동 설정">
+        <span className="activity-settings-label">활동 설정</span>
+        <div className="activity-settings-actions">
+          {state.step !== "setup" && homeButton()}
+          {activity && (
+            <button
+              className="text-button"
+              onClick={() =>
+                confirm(
+                  "다른 공간을 고르면 지금 공간의 활동이 지워져요.",
+                  "다른 공간 선택",
+                  { type: "CHANGE_MAP" },
+                )
+              }
+            >
+              다른 공간 선택
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+  const phaseIndex = state.step === "organize" || state.step === "setup" ? 0 : state.step === "clean" ? 1 : 2;
 
   return (
-    <main className={`app-shell ${activity ? "in-activity" : ""}`}>
+    <main className={`app-shell ${activity || state.step === "quiz" || state.step === "result" ? "in-activity" : ""}`}>
       <header className="topbar">
         <a
           className="brand"
@@ -441,10 +491,12 @@ export function App() {
               </span>
               <div>
                 <p className="hero-description">
-                  물건을 제자리에 두면 다시 찾기 쉽고, 쓸 자리도 넓어져요.
+                  물건을 <Key tone="space">제자리</Key>에 두면 다시 찾기 쉽고,
+                  쓸 자리도 넓어져요.
                 </p>
                 <p className="hero-instruction">
-                  공간을 하나 골라 물건을 정리하고 먼지를 닦아 주세요.
+                  공간을 하나 골라 물건을 <Key tone="space">정리</Key>하고{" "}
+                  <Key tone="clean">먼지</Key>를 닦아 주세요.
                 </p>
               </div>
             </div>
@@ -483,10 +535,9 @@ export function App() {
               </div>
             ) : (
               <div className="start-box">
-                <div>
-                  <small>활동 준비</small>
-                  <strong>정리할 공간을 만나 볼까요?</strong>
-                </div>
+                <NextStep label="활동 준비" compact>
+                  오늘 <Key tone="space">정리할 공간</Key>을 만나 볼까요?
+                </NextStep>
                 <button className="button hero-cta" onClick={startNew}>
                   활동 시작 <span aria-hidden="true">→</span>
                 </button>
@@ -519,14 +570,13 @@ export function App() {
             <header className="lesson-path-heading">
               <span className="section-kicker">활동 순서</span>
               <div>
-                <h2 id="lesson-path-title">네 단계로 차근차근 완성해요</h2>
+                <h2 id="lesson-path-title">세 단계로 차근차근 완성해요</h2>
                 <p>고른 공간을 직접 정리하고 깨끗하게 마무리해요.</p>
               </div>
             </header>
             <div className="lesson-path-grid">
               {[
-                ["물건 고르기", "필요한 물건을 골라요."],
-                ["정리 정돈", "쓸 자리를 생각해 놓아요."],
+                ["정리 정돈", "물건을 꺼내고 자리를 정해요."],
                 ["먼지와 얼룩 청소", "남은 먼지와 얼룩을 닦아요."],
                 ["전후 모습 살펴보기", "달라진 공간을 확인해요."],
               ].map(([title, description], i) => (
@@ -556,7 +606,10 @@ export function App() {
             </div>
             <aside className="profile-principles" aria-label="오늘 생각할 정리 기준">
               <span className="profile-principles-kicker">오늘 생각할 것</span>
-              <strong>물건의 쓰임을 보고 자리를 정해요.</strong>
+              <strong>
+                정리 정돈을 할 때는 물건의 <Key tone="sort">쓰임</Key>을 고려하여{" "}
+                <Key tone="space">보관 장소</Key>를 정해요.
+              </strong>
               <ul>
                 <li>다시 찾기 쉽게</li>
                 <li>자주 쓰면 꺼내기 쉽게</li>
@@ -632,7 +685,7 @@ export function App() {
                   2
                 </span>
                 <div>
-                  <h2 id="profile-character-title">안내 친구 고르기</h2>
+                  <h2 id="profile-character-title">공간 요정 선택하기</h2>
                   <p>고른 친구가 다음 화면부터 활동 순서를 함께 알려 줘요.</p>
                 </div>
               </header>
@@ -674,13 +727,10 @@ export function App() {
               </p>
             )}
             <footer className="profile-actions">
-              <div className="profile-next-step">
-                <span>다음에는</span>
-                <p>
-                  <strong>먼저 할 일을 네 가지로 나눠 본 뒤</strong>
-                  정리할 공간을 골라요.
-                </p>
-              </div>
+              <NextStep>
+                먼저 할 일을 <Key tone="sort">네 가지</Key>로 나눠 본 뒤{" "}
+                <Key tone="space">정리할 공간</Key>을 골라요.
+              </NextStep>
               <button className="button" type="submit">
                 다음 <span aria-hidden="true">→</span>
               </button>
@@ -699,33 +749,46 @@ export function App() {
         <MapSelection onSelect={(mapId) => dispatch({ type: "MAP", mapId })} />
       )}
 
+      {(activity || state.step === "quiz" || state.step === "result") && (
+          <section className="activity-heading">
+            <div className="activity-heading-main">
+              <div className="activity-space">
+                <span>정리할 공간</span>
+                <strong>{map?.name}</strong>
+              </div>
+              <div className="activity-heading-copy">
+                <span className="activity-heading-label">지금 할 일</span>
+                <h1 tabIndex={-1}>
+                  {state.step === "setup"
+                    ? "물건 고르기"
+                    : state.step === "organize"
+                      ? "물건 놓을 자리 정하기"
+                      : state.step === "clean" ? "남은 먼지와 얼룩 청소하기" : "활동 마무리"}
+                </h1>
+              </div>
+            </div>
+            <div className="activity-progress">
+              <span className="activity-progress-label">활동 단계</span>
+              <ol className="stepper" aria-label="활동 순서">
+                {["정리 정돈", "청소", "마무리"].map((text, i) => (
+                  <li
+                    key={text}
+                    className={i < phaseIndex ? "is-complete" : undefined}
+                    aria-current={phaseIndex === i ? "step" : undefined}
+                  >
+                    <span aria-hidden="true">{i < phaseIndex ? "✓" : i + 1}</span>
+                    <strong>{text}</strong>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+      )}
       {activity && map && geometry && (
         <>
-          <section className="activity-heading">
-            <div>
-              <span className="eyebrow">{map.name}</span>
-              <h1 tabIndex={-1}>
-                {state.step === "setup"
-                  ? "물건 고르기"
-                  : state.step === "organize"
-                    ? "물건 놓을 자리 정하기"
-                    : "남은 먼지와 얼룩 청소하기"}
-              </h1>
-            </div>
-            <ol className="stepper" aria-label="활동 순서">
-              {["물건 선택", "정리 정돈", "청소", "마무리"].map((text, i) => (
-                <li
-                  key={text}
-                  aria-current={phaseIndex === i ? "step" : undefined}
-                >
-                  <span>{i + 1}</span>
-                  {text}
-                </li>
-              ))}
-            </ol>
-          </section>
-          <div className={`activity-layout ${state.step === "setup" ? "setup-layout" : ""}`}>
-            <section className="scene-card">
+          <div className="activity-layout workspace-layout">
+            <div className="workspace-main">
+              <section className="scene-card">
               <div className="scene-wrap">
                 {model ? (
                   <>
@@ -746,6 +809,17 @@ export function App() {
                         onPoint={(point) => {
                           if (placing && selected) place(selected, point);
                         }}
+                        onUnavailablePoint={(point) => {
+                          const nearDirt = geometry.dirt.some(
+                            (spot) =>
+                              Math.hypot(point.x - spot.x, point.y - spot.y) < 38,
+                          );
+                          const unavailableMessage = nearDirt
+                            ? "먼지는 정리를 마친 뒤 청소해요."
+                            : "이곳은 옮기는 물건이 아니에요. 물건을 눌러 골라 주세요.";
+                          setMessage(unavailableMessage);
+                          return unavailableMessage;
+                        }}
                         tapPlacement={placing}
                         locked={state.step !== "organize"}
                       />
@@ -753,10 +827,12 @@ export function App() {
                     {state.step === "clean" &&
                       geometry.dirt.map(
                         (spot, i) =>
-                          !state.cleaned.includes(i) && (
+                          !state.cleaned.includes(i) &&
+                          tool === spot.tool &&
+                          spot.tool === availableTool(state) && (
                             <button
                               key={i}
-                              className="dirt-hit"
+                              className="dirt-hit is-current is-ready"
                               style={{
                                 left: `${spot.x / 9.6}%`,
                                 top: `${spot.y / 7.2}%`,
@@ -764,7 +840,7 @@ export function App() {
                               onClick={() => cleanSpot(i)}
                               aria-label={`${i < 2 ? "가구 먼지" : i === 2 ? "바닥 먼지" : "바닥 얼룩"} ${i + 1} 청소하기`}
                             >
-                              {i + 1}
+                              <span aria-hidden="true">✦</span>
                             </button>
                           ),
                       )}
@@ -785,23 +861,71 @@ export function App() {
                   </div>
                 )}
               </div>
+              {state.step === "organize" && chosen && (
+                <div
+                  className="scene-action-bar"
+                  role="group"
+                  aria-label={`${chosen.label} 조작`}
+                >
+                  <div className="scene-action-selection">
+                    <span>선택한 물건</span>
+                    <strong>{chosen.label}</strong>
+                  </div>
+                  {selectedCanRotate ? (
+                    <div className="scene-rotate-control">
+                      <span className="scene-action-label">방향 바꾸기</span>
+                      <div className="scene-rotate-buttons">
+                        <button
+                          type="button"
+                          onClick={() => rotateSelected(-1)}
+                          aria-label={`${chosen.label} 왼쪽으로 돌리기`}
+                        >
+                          <span aria-hidden="true">↶</span>
+                          왼쪽 돌리기
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => rotateSelected(1)}
+                          aria-label={`${chosen.label} 오른쪽으로 돌리기`}
+                        >
+                          <span aria-hidden="true">↷</span>
+                          오른쪽 돌리기
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="scene-action-note">
+                      이 물건은 방향을 바꾸지 않고 옮겨요.
+                    </p>
+                  )}
+                </div>
+              )}
               <div className="scene-caption">
                 {state.step === "setup"
                   ? "더 고르지 않아도 바로 시작할 수 있어요."
                   : state.step === "organize"
-                    ? "물건을 골라 놓을 자리를 정해 주세요."
+                    ? map.copy
                     : "먼지 표시를 눌러 청소해 주세요."}
               </div>
-            </section>
-            {state.step === "setup" && (
+              </section>
+              {state.step === "organize" && (
                 <section className="extras-tray" aria-labelledby="extras-title">
                   <div className="panel-heading">
-                    <div>
-                      <h2 id="extras-title">더 꺼낼 물건</h2>
-                      <p>필요한 물건이 있다면 3개까지 골라요.</p>
+                    <div className="extras-heading-copy">
+                      <div className="extras-title-row">
+                        <span className="extras-title-icon" aria-hidden="true">+</span>
+                        <div>
+                          <h2 id="extras-title">추가로 꺼낼 물건</h2>
+                          <p>
+                            클릭하면 물건이 나타나고, 다시 클릭하면 물건이 사라져요
+                          </p>
+                        </div>
+                      </div>
                     </div>
                     <span className="selection-count" role="status" aria-label={`3개 중 ${state.extras.length}개 선택`}>
-                      <strong>{state.extras.length}</strong> / 3
+                      <span>선택</span>
+                      <strong>{state.extras.length}</strong>
+                      <span>/ 3</span>
                     </span>
                   </div>
                   <div className="extra-list">
@@ -812,21 +936,17 @@ export function App() {
                         className={`extra-card ${state.extras.includes(item.id) ? "selected" : ""}`}
                         aria-pressed={state.extras.includes(item.id)}
                         disabled={
-                          busy ||
                           (!sceneArt?.items[item.asset] &&
                             !state.extras.includes(item.id))
                         }
                         onClick={() => {
-                          if (
-                            !state.extras.includes(item.id) &&
-                            state.extras.length === 3
-                          )
-                            setMessage(
-                              "3개를 골랐어요. 바꾸려면 고른 물건을 먼저 눌러 주세요.",
-                            );
-                          else {
+                          const changed = toggleExtra(state, item.id);
+                          setMessage(changed.message);
+                          if (changed.state !== state) {
                             dispatch({ type: "EXTRA", id: item.id });
-                            setMessage("");
+                            setSelected(changed.state.extras.includes(item.id) ? item.id : selected === item.id ? "" : selected);
+                            setHighlight("");
+                            setPlacing(false);
                           }
                         }}
                       >
@@ -841,13 +961,19 @@ export function App() {
                           </span>
                         )}
                         <strong>{item.label}</strong>
-                        <span className="extra-state" aria-hidden="true">
-                          {candidateFailures.includes(item.asset)
-                            ? "그림 준비 실패"
-                            : !sceneArt?.items[item.asset]
-                              ? "불러오는 중"
-                              : state.extras.includes(item.id) ? "✓ 선택됨" : "선택"}
-                        </span>
+                        {state.extras.includes(item.id) && (
+                          <span className="extra-card-check" aria-hidden="true">
+                            ✓
+                          </span>
+                        )}
+                        {(candidateFailures.includes(item.asset) ||
+                          !sceneArt?.items[item.asset]) && (
+                          <span className="extra-load-state" aria-hidden="true">
+                            {candidateFailures.includes(item.asset)
+                              ? "그림 준비 실패"
+                              : "불러오는 중"}
+                          </span>
+                        )}
                       </button>
                     ))}
                   </div>
@@ -876,66 +1002,16 @@ export function App() {
                       </button>
                     </div>
                   )}
-                  <div className="extras-actions">
-                  <p>다시 누르면 선택이 취소돼요.</p>
-                  <button
-                    className="button primary-action"
-                    disabled={!model || busy}
-                    onClick={async () => {
-                      if (!model) return;
-                      const revision = state.revision;
-                      setBusy(true);
-                      try {
-                        const { renderLogicalScene } = await import(
-                          "./rendering/export"
-                        );
-                        const before = renderLogicalScene(model);
-                        before.width = 0;
-                        before.height = 0;
-                        if (
-                          stateRef.current.revision === revision &&
-                          stateRef.current.step === "setup"
-                        )
-                          dispatch({ type: "CONFIRM_SET" });
-                      } catch {
-                        setMessage(
-                          "정리 전 모습을 준비하지 못했어요. 다시 눌러 주세요.",
-                        );
-                        setBusy(false);
-                      }
-                      setBusy(false);
-                    }}
-                  >
-                    {busy
-                      ? "정리 전 모습을 준비하고 있어요."
-                      : "이 물건으로 정리 시작"}
-                  </button>
-                  </div>
-                  {message && <p className="feedback" role="status">{message}</p>}
                 </section>
               )}
+            </div>
             <aside className="activity-sidebar" aria-label="내 활동">
-              <section className="activity-profile">
-                <div className="profile-portrait">
-                  <img
-                    src={assetUrl(`assets/characters/${state.character}.webp`)}
-                    alt={`내가 고른 ${characters.find((c) => c.id === state.character)?.label ?? "캐릭터"}`}
-                  />
-                </div>
-                <div className="activity-profile-name">
-                  <span>오늘의 정리 주인공</span>
-                  <h2>{state.name}</h2>
-                </div>
-                <div className="profile-space">
-                  <span>내가 가꾸는 공간</span>
-                  <strong>{map.name}</strong>
-                  <p>{map.copy}</p>
-                </div>
-              </section>
+              {activityProfile()}
               {state.step !== "setup" && (
               <div className="side-panel activity-panel">
               {state.step === "organize" && (
                 <>
+                  <div className="organize-inventory">
                   <div className="panel-heading">
                     <h2>옮길 물건</h2>
                     <span className="count-chip">{items.length}개</span>
@@ -958,17 +1034,21 @@ export function App() {
                           alt=""
                         />
                         <span>{item.label}</span>
+                        {selected === item.id && (
+                          <span className="compact-item-check" aria-hidden="true">
+                            ✓
+                          </span>
+                        )}
                       </button>
                     ))}
+                  </div>
                   </div>
                   {chosen ? (
                     <div className="selected-tools">
                       <strong>선택한 물건: {chosen.label}</strong>
                       <p>
-                        놓을 수 있는 곳:{" "}
-                        {chosen.zones
-                          .map((z) => (z === 5 ? "휴지통" : map.zones[z - 1]))
-                          .join(", ")}
+                        물건을 끌어 옮기거나, 아래에서 놓을 곳을 고른 뒤 장면의
+                        자리를 눌러 주세요.
                       </p>
                       <div className="surface-options">
                         {geometry.surfaces
@@ -976,75 +1056,40 @@ export function App() {
                           .map((s) => (
                             <button
                               key={s.id}
-                              className={highlight === s.id ? "active" : ""}
+                              className={
+                                placing && highlight === s.id ? "active" : ""
+                              }
+                              aria-pressed={placing && highlight === s.id}
                               onClick={() => {
-                                setHighlight(highlight === s.id ? "" : s.id);
-                                beginPlacing();
+                                if (placing && highlight === s.id) {
+                                  setHighlight("");
+                                  setPlacing(false);
+                                  setMessage("");
+                                } else {
+                                  setHighlight(s.id);
+                                  beginPlacing();
+                                }
                               }}
                             >
                               {s.label}
                             </button>
                           ))}
                       </div>
-                      <button
-                        className="button secondary"
-                        onClick={() => {
-                          if (placing) {
-                            setPlacing(false);
-                            setMessage("");
-                          } else beginPlacing();
-                        }}
-                      >
-                        {placing ? "취소" : "여기에 놓기"}
-                      </button>
-                      {poseOf(
-                        assetsById[chosen.asset],
-                        geometry.surfaces.find(
-                          (s) => s.id === state.placements[selected].surface,
-                        )!,
-                        map.id,
-                      ) === "flat" ? (
-                        <div className="rotate-actions">
-                          {[-1, 1].map((direction) => (
-                            <button
-                              key={direction}
-                              onClick={() => {
-                                const p = state.placements[selected];
-                                const angle =
-                                  ((Math.round(p.angle / 15) * 15 +
-                                    direction * 15 +
-                                    540) %
-                                    360) -
-                                  180;
-                                place(selected, p, p.surface, angle);
-                              }}
-                              aria-label={
-                                direction === -1
-                                  ? "왼쪽으로 돌리기"
-                                  : "오른쪽으로 돌리기"
-                              }
-                            >
-                              {direction === -1 ? "↶" : "↷"} 돌리기
-                            </button>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="small-note">
-                          이 물건은 방향을 바꾸지 않고 옮겨요.
-                        </p>
-                      )}
                     </div>
                   ) : (
                     <p className="panel-intro">
-                      끌기 어렵다면 목록에서 물건을 고른 뒤 ‘여기에 놓기’를 눌러
-                      주세요.
+                      장면이나 목록에서 옮길 물건을 먼저 골라 주세요.
                     </p>
                   )}
+                  <NextStep compact>
+                    <Key tone="clean">남은 먼지와 얼룩</Key>을 청소해요.
+                  </NextStep>
                   <button
                     className="button primary-action"
+                    disabled={!model}
                     onClick={checkOrganizing}
                   >
-                    정리 확인하기 →
+                    정리를 마치고 청소하기
                   </button>
                 </>
               )}
@@ -1062,15 +1107,32 @@ export function App() {
                             : "바닥의 얼룩 닦기"}
                   </h2>
                   <p className="panel-intro">
-                    {!state.ventilated
-                      ? "청소 도구를 준비하고 창문을 열어 환기해요."
-                      : state.cleaned.length === 4
-                        ? "사용한 청소 도구를 제자리에 놓아 주세요."
-                        : availableTool(state) === "duster"
-                          ? "손걸레를 고른 뒤 가구의 먼지 표시를 눌러 주세요."
-                          : availableTool(state) === "broom"
-                            ? "빗자루를 고른 뒤 바닥의 먼지 표시를 눌러 주세요."
-                            : "바닥걸레를 고른 뒤 바닥의 얼룩 표시를 눌러 주세요."}
+                    {!state.ventilated ? (
+                      <>
+                        청소 도구를 준비하고 창문을 열어{" "}
+                        <Key tone="clean">환기</Key>해요.
+                      </>
+                    ) : state.cleaned.length === 4 ? (
+                      <>
+                        사용한 청소 도구를 <Key tone="space">제자리</Key>에
+                        놓아 주세요.
+                      </>
+                    ) : availableTool(state) === "duster" ? (
+                      <>
+                        <Key tone="clean">손걸레</Key>를 고른 뒤{" "}
+                        <Key tone="space">가구</Key>의 먼지 표시를 눌러 주세요.
+                      </>
+                    ) : availableTool(state) === "broom" ? (
+                      <>
+                        <Key tone="clean">빗자루</Key>를 고른 뒤{" "}
+                        <Key tone="space">바닥</Key>의 먼지 표시를 눌러 주세요.
+                      </>
+                    ) : (
+                      <>
+                        <Key tone="clean">바닥걸레</Key>를 고른 뒤{" "}
+                        <Key tone="space">바닥</Key>의 얼룩 표시를 눌러 주세요.
+                      </>
+                    )}
                   </p>
                   <button
                     className={`ventilate ${state.ventilated ? "done" : ""}`}
@@ -1116,12 +1178,19 @@ export function App() {
                     실제로 사용한 걸레는 깨끗이 빨아 햇볕에 말린 뒤 보관해요.
                   </p>
                   {state.cleaned.length === 4 && (
-                    <button
-                      className="button primary-action"
-                      onClick={() => dispatch({ type: "STORE_TOOLS" })}
-                    >
-                      도구 정리하기 →
-                    </button>
+                    <>
+                      <NextStep compact>
+                        <span className="quiz-next-copy">
+                          <Key tone="result">마무리 퀴즈</Key>를 해봐요.
+                        </span>
+                      </NextStep>
+                      <button
+                        className="button primary-action"
+                        onClick={() => dispatch({ type: "STORE_TOOLS" })}
+                      >
+                        도구 정리하기 →
+                      </button>
+                    </>
                   )}
                 </>
               )}
@@ -1136,101 +1205,126 @@ export function App() {
           </div>
           <div className="activity-footer">
             {state.step === "organize" && (
-              <p>화면에서는 물건 정리를 먼저 연습해요. 실제 청소는 도구와 옷차림을 준비하고 환기한 뒤 시작해요.</p>
+              <p>
+                화면에서는 <Key tone="space">물건 정리</Key>를 먼저 연습해요.
+                실제 청소는 도구와 옷차림을 준비하고{" "}
+                <Key tone="clean">환기</Key>한 뒤 시작해요.
+              </p>
             )}
-            <div className="footer-actions">
-              {state.step !== "setup" && resetButton()}
-              {state.step === "organize" && (
-                <button
-                  className="text-button"
-                  onClick={() =>
-                    confirm(
-                      "물건을 다시 고르면 정리한 물건이 처음 자리로 돌아가요. 다시 고를까요?",
-                      "다시 고르기",
-                      { type: "CHANGE_ITEMS" },
-                    )
-                  }
-                >
-                  물건 다시 고르기
-                </button>
-              )}
-              <button
-                className="text-button"
-                onClick={() =>
-                  confirm(
-                    "다른 공간을 고르면 지금 공간의 활동이 지워져요.",
-                    "다른 공간 선택",
-                    { type: "CHANGE_MAP" },
-                  )
-                }
-              >
-                다른 공간 선택
-              </button>
-            </div>
+
           </div>
         </>
       )}
 
       {state.step === "quiz" && (
-        <>
+        <div className="activity-layout finish-layout">
           <QuestionCards
             kind="quiz"
-            onDone={() => dispatch({ type: "QUIZ_DONE" })}
+            onDone={({ correctCount }) =>
+              dispatch({ type: "QUIZ_DONE", correctCount })
+            }
           />
-          <div className="center-actions">{resetButton()}</div>
-        </>
+          <aside className="activity-sidebar" aria-label="내 활동">
+            {activityProfile()}
+          </aside>
+        </div>
       )}
       {state.step === "result" && (
-        <section className="result-page">
-          <div className="page-heading">
-            <div>
-              <span className="eyebrow">활동 마무리</span>
-              <h1 tabIndex={-1}>달라진 모습을 살펴봐요</h1>
+        <div className="activity-layout finish-layout">
+        <section className="result-page" aria-labelledby="result-title">
+          <header className="result-summary">
+            <div className="result-summary-copy">
+              <span className="result-summary-badge">
+                <span aria-hidden="true">✓</span>
+                활동을 모두 마쳤어요
+              </span>
+              <h1 id="result-title" tabIndex={-1}>
+                {state.name}님의 공간이 이렇게 달라졌어요
+              </h1>
               <p>
-                {result
-                  ? "정리 전 모습과 청소 후 모습을 한 장에 담았어요."
-                  : resultError || "결과 이미지를 만들고 있어요."}
+                {result ? (
+                  <>
+                    <strong>{map?.name}</strong>의 <Key tone="space">정리 전</Key>과{" "}
+                    <Key tone="clean">청소 후</Key> 모습을 나란히 살펴봐요.
+                  </>
+                ) : (
+                  resultError || "결과 이미지를 만들고 있어요."
+                )}
               </p>
             </div>
-          </div>
+            <div className="result-summary-side">
+              <section
+                className="result-quiz-summary"
+                aria-label={`마무리 퀴즈 ${quiz.length}문제 중 ${state.quizCorrectCount ?? 0}문제를 맞혔어요`}
+                data-result-screen-only="true"
+              >
+                <span className="result-quiz-icon" aria-hidden="true">✓</span>
+                <div className="result-quiz-copy">
+                  <span>마무리 퀴즈</span>
+                  <p>
+                    <strong>{state.quizCorrectCount ?? 0}</strong>
+                    <b>/ {quiz.length}문제</b>
+                    <small>맞혔어요</small>
+                  </p>
+                </div>
+                <span className="result-screen-only-note">
+                  화면에서만 확인
+                </span>
+              </section>
+            </div>
+          </header>
           {result ? (
             <>
-              <div className="result-preview">
+              <figure className="result-preview">
+                <figcaption className="result-preview-heading">
+                  <span className="result-preview-icon" aria-hidden="true">↔</span>
+                  <span>
+                    <small>BEFORE · AFTER</small>
+                    <strong>정리 전과 청소 후를 한눈에 비교해요</strong>
+                  </span>
+                  <span className="result-preview-map">{map?.name}</span>
+                </figcaption>
                 <img
                   src={result.url}
                   alt="정리 전 모습과 청소 후 모습을 비교한 결과 이미지"
                 />
+              </figure>
+              <div className="result-completion">
+                <div className="result-instructions">
+                  <div className="result-next">
+                    <NextStep>
+                      <Key tone="result">이미지를 저장</Key>한 뒤 선생님이 안내한{" "}
+                      <Key tone="space">패들렛</Key>에 올려 주세요.
+                    </NextStep>
+                  </div>
+                  <p className="result-guidance">
+                    저장 버튼이 작동하지 않으면 크게 보기를 연 뒤 이미지를 길게 눌러
+                    저장해 주세요.
+                  </p>
+                </div>
+                <div className="result-actions" aria-label="결과 이미지">
+                  <a
+                    className="button"
+                    href={result.url}
+                    download={`정리와청소_${state.name}_${map?.name}.png`}
+                    onClick={() =>
+                      setMessage(
+                        "이미지 저장을 요청했어요. 내려받은 파일을 확인해 주세요.",
+                      )
+                    }
+                  >
+                    다했어요!
+                  </a>
+                  <button
+                    className="button secondary"
+                    type="button"
+                    onClick={() => setResultPreviewOpen(true)}
+                  >
+                    <span aria-hidden="true">⛶</span>
+                    이미지 보기
+                  </button>
+                </div>
               </div>
-              <div className="result-actions">
-                <a
-                  className="button"
-                  href={result.url}
-                  download={`정리와청소_${state.name}_${map?.name}.png`}
-                  onClick={() =>
-                    setMessage(
-                      "이미지 저장을 요청했어요. 내려받은 파일을 확인해 주세요.",
-                    )
-                  }
-                >
-                  이미지 저장 ↓
-                </a>
-                <a
-                  className="button secondary"
-                  href={result.url}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  이미지 크게 보기 ↗
-                </a>
-                {endActivityButton()}
-              </div>
-              <p className="result-guidance">
-                저장 버튼이 작동하지 않으면 이미지를 크게 열고 길게 눌러 저장해
-                주세요.
-              </p>
-              <p className="result-guidance">
-                이미지를 저장한 뒤 선생님이 안내한 패들렛에 올려 주세요.
-              </p>
             </>
           ) : resultError ? (
             <button className="button" onClick={() => setRetry(retry + 1)}>
@@ -1241,22 +1335,31 @@ export function App() {
               결과 이미지를 만들고 있어요.
             </div>
           )}
-          {!result && (
-            <div className="result-actions">{endActivityButton()}</div>
-          )}
           {message && (
             <p className="feedback" role="status">
               {message}
             </p>
           )}
-          <div className="center-actions">{resetButton()}</div>
         </section>
+        <aside className="activity-sidebar" aria-label="내 활동">
+          {activityProfile()}
+        </aside>
+        </div>
       )}
+      <ResultImageDialog
+        open={resultPreviewOpen}
+        src={result?.url}
+        alt="정리 전 모습과 청소 후 모습을 비교한 결과 이미지"
+        onClose={() => setResultPreviewOpen(false)}
+      />
       {state.step === "end" && (
         <section className="end-card panel">
           <img src={assetUrl("assets/characters/rabbit.webp")} alt="" />
           <h1 tabIndex={-1}>정리와 청소 연습을 마쳤어요</h1>
-          <p>교실이나 집에서도 사용한 물건을 제자리에 놓아 보세요.</p>
+          <p>
+            교실이나 집에서도 사용한 물건을 <Key tone="space">제자리</Key>에
+            놓아 보세요.
+          </p>
           <button className="button" onClick={startNew}>
             새 활동 시작 →
           </button>

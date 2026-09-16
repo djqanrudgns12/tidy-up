@@ -815,7 +815,7 @@ export const catalog = [
   },
   {
     id: "board-game",
-    label: "보드게임 상자",
+    label: "보드게임",
     art: "말판과 둥근 말 그림 표지",
     shape: "X",
     purpose: "여럿이 보드게임을 할 때",
@@ -843,7 +843,7 @@ export const catalog = [
   },
   {
     id: "block-box",
-    label: "조립 블록 상자",
+    label: "조립 블록",
     art: "뚜껑 있는 상자와 큰 블록 무늬",
     shape: "X",
     purpose: "조립 블록으로 만들 때",
@@ -857,7 +857,7 @@ export const catalog = [
   },
   {
     id: "card-game",
-    label: "카드 놀이 상자",
+    label: "카드 상자",
     art: "동그라미·세모·네모·별 무늬의 닫힌 상자",
     shape: "S",
     purpose: "같은 모양의 카드를 찾을 때",
@@ -997,7 +997,7 @@ export const catalog = [
   },
   {
     id: "paper-scrap",
-    label: "다 쓴 종이 조각",
+    label: "휴지 더미",
     art: "찢어져 다시 쓰기 어려운 종이",
     shape: "S",
     purpose: "찢어졌고 내용도 필요 없어진 종이",

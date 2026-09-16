@@ -3,6 +3,7 @@ import { physicalMaps } from "../data/physical";
 
 import {
   activeItems,
+  reducer,
   placementIssues,
   validName,
   type Session,
@@ -51,7 +52,14 @@ export function validateSession(
   if (
     typeof s.tutorialDone !== "boolean" ||
     typeof s.ventilated !== "boolean" ||
-    typeof s.toolsStored !== "boolean"
+    typeof s.toolsStored !== "boolean" ||
+    !(
+      s.quizCorrectCount === undefined ||
+      s.quizCorrectCount === null ||
+      (Number.isInteger(s.quizCorrectCount) &&
+        s.quizCorrectCount >= 0 &&
+        s.quizCorrectCount <= 3)
+    )
   )
     return false;
   if (
@@ -139,7 +147,18 @@ export function readSaved(
       storage.removeItem(key);
       return { notice: "저장된 활동을 이어 갈 수 없어 새로 시작해요." };
     }
-    if (validateSession(parsed)) return { saved: parsed };
+    if (validateSession(parsed)) {
+      const restored = {
+        ...parsed,
+        quizCorrectCount: parsed.quizCorrectCount ?? null,
+      };
+      return {
+        saved:
+          restored.step === "setup"
+            ? reducer(restored, { type: "CONFIRM_SET" })
+            : restored,
+      };
+    }
     storage.removeItem(key);
     return { notice: "저장된 활동을 이어 갈 수 없어 새로 시작해요." };
   } catch {

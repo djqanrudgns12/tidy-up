@@ -24,6 +24,7 @@ export function Scene({
   onSelect,
   onDrop,
   onPoint,
+  onUnavailablePoint,
   locked = false,
   tapPlacement = false,
 }: {
@@ -35,6 +36,7 @@ export function Scene({
     surfaceId?: string,
   ) => Placement | undefined | void;
   onPoint?: (point: Point) => void;
+  onUnavailablePoint?: (point: Point) => string | undefined;
   locked?: boolean;
   tapPlacement?: boolean;
 }) {
@@ -49,7 +51,13 @@ export function Scene({
     [preview, setPreview] = useState<{
       id: string;
       placement: Placement;
+    } | null>(null),
+    [blocked, setBlocked] = useState<{
+      key: number;
+      point: Point;
+      message: string;
     } | null>(null);
+  const blockedKey = useRef(0);
   const cancel = () => {
     const pointerId = drag.current?.pointerId;
     drag.current = null;
@@ -153,6 +161,45 @@ export function Scene({
         carried: preview,
       }
     : { ...model, motion: motion ?? model.motion };
+  const selectedItem = model.selected
+    ? model.items.find((item) => item.id === model.selected)
+    : undefined;
+  const selectedPlacement = selectedItem
+    ? model.placements[selectedItem.id]
+    : undefined;
+  const selectedSurface = selectedPlacement
+    ? model.geometry.surfaces.find(
+        (surface) => surface.id === selectedPlacement.surface,
+      )
+    : undefined;
+  const selectedBox =
+    selectedItem && selectedPlacement && selectedSurface && !display.motion && !display.carried
+      ? visualBounds(
+          selectedItem,
+          selectedPlacement,
+          selectedSurface,
+          model.mapId,
+        )
+      : undefined;
+  const selectionMarker = selectedBox
+    ? (() => {
+        const padding = 9 / scale;
+        const minimumWidth = 42 / scale;
+        const minimumHeight = 38 / scale;
+        const contentWidth = selectedBox.right - selectedBox.left + padding * 2;
+        const contentHeight = selectedBox.bottom - selectedBox.top + padding * 2;
+        const markerWidth = Math.min(952, Math.max(minimumWidth, contentWidth));
+        const markerHeight = Math.min(712, Math.max(minimumHeight, contentHeight));
+        const centerX = (selectedBox.left + selectedBox.right) / 2;
+        const centerY = (selectedBox.top + selectedBox.bottom) / 2;
+        return {
+          left: Math.max(4, Math.min(956 - markerWidth, centerX - markerWidth / 2)),
+          top: Math.max(4, Math.min(716 - markerHeight, centerY - markerHeight / 2)),
+          width: markerWidth,
+          height: markerHeight,
+        };
+      })()
+    : undefined;
   return (
     <div
       ref={host}
@@ -206,7 +253,10 @@ export function Scene({
                   : a.distance - b.distance,
           );
         if (!candidates.length) {
-          onPoint?.(p);
+          const message = onUnavailablePoint?.(p);
+          if (message)
+            setBlocked({ key: ++blockedKey.current, point: p, message });
+          else onPoint?.(p);
           return;
         }
         const { item, placement } = candidates[0];
@@ -277,6 +327,35 @@ export function Scene({
           />
         </Layer>
       </Stage>
+      {selectionMarker && (
+        <div
+          key={model.selected}
+          className="scene-selection-marker"
+          style={{
+            left: `${selectionMarker.left / 9.6}%`,
+            top: `${selectionMarker.top / 7.2}%`,
+            width: `${selectionMarker.width / 9.6}%`,
+            height: `${selectionMarker.height / 7.2}%`,
+          }}
+          aria-hidden="true"
+        >
+          <span>✓</span>
+        </div>
+      )}
+      {blocked && (
+        <div
+          key={blocked.key}
+          className={`scene-blocked-feedback ${blocked.point.y < 150 ? "is-below" : ""}`}
+          style={{
+            left: `${Math.max(230, Math.min(730, blocked.point.x)) / 9.6}%`,
+            top: `${Math.max(36, Math.min(684, blocked.point.y)) / 7.2}%`,
+          }}
+          aria-hidden="true"
+        >
+          <span className="scene-blocked-icon">✋</span>
+          <strong>{blocked.message}</strong>
+        </div>
+      )}
     </div>
   );
 }

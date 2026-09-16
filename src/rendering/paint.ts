@@ -17,6 +17,7 @@ import type {
   Surface,
 } from "../domain/types";
 import { motionFrame, type BookTurn, type HangingTurn, type PlacementMotion } from "./motion";
+import type { Tool } from "../domain/session";
 
 type Context = CanvasRenderingContext2D;
 export type SceneModel = {
@@ -29,6 +30,7 @@ export type SceneModel = {
   highlight?: string;
   clean?: string[];
   showDirt?: boolean;
+  cleanTool?: Tool;
   motion?: PlacementMotion;
   carried?: { id: string; placement: Placement };
 };
@@ -187,14 +189,16 @@ export function paintScene(ctx: Context, model: SceneModel, overlays = true) {
         ctx.save();
         ctx.translate(spot.x, spot.y);
         const art = model.art.effects[i === 3 ? "stain" : "dust"];
-        const width = i === 3 ? 65 : 55,
-          height = ((width * art.height) / art.width) * 0.5;
-        ctx.globalAlpha = i === 3 ? 0.48 : 0.58;
+        const width = i === 3 ? 68 : 60,
+          height = ((width * art.height) / art.width) * 0.56;
+        ctx.globalAlpha = i === 3 ? 0.58 : 0.72;
+        ctx.filter = "contrast(1.18) saturate(.82)";
         // Multiply blends the residue with the existing wood/floor colour; it must not look like a paper disk.
         ctx.globalCompositeOperation = "multiply";
         ctx.drawImage(art.image, -width / 2, -height / 2, width, height);
+        ctx.filter = "none";
         ctx.globalCompositeOperation = "source-over";
-        if (overlays) {
+        if (overlays && model.cleanTool === spot.tool) {
           ctx.globalAlpha = 1;
           ctx.strokeStyle = "#826842";
           ctx.lineWidth = 1.5;

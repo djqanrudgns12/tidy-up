@@ -75,7 +75,7 @@ it("공부 책상 42조합 모두 실제 이동 검증·복원·정리·청소·
       for(const [spot,dirt] of homeDesk.dirt.entries())state=reducer(state,{type:"CLEAN",spot,tool:dirt.tool});
       state=reducer(state,{type:"STORE_TOOLS"});
       expect(state.step).toBe("quiz");
-      state=reducer(state,{type:"QUIZ_DONE"});
+      state=reducer(state,{type:"QUIZ_DONE",correctCount:2});
       expect(state.step).toBe("result");
       expect(validateSession(JSON.parse(JSON.stringify(state)))).toBe(true);
     }

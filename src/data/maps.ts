@@ -61,7 +61,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -193,7 +193,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -322,7 +322,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -414,7 +414,7 @@ export const maps = [
       {
         id: "b1",
         asset: "board-game",
-        label: "보드게임 상자",
+        label: "보드게임",
         zones: [1],
       },
       {
@@ -456,7 +456,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -494,7 +494,7 @@ export const maps = [
       {
         id: "e6",
         asset: "card-game",
-        label: "카드 놀이 상자",
+        label: "카드 상자",
         zones: [1],
       },
     ],
@@ -585,7 +585,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -719,7 +719,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -849,7 +849,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -948,7 +948,7 @@ export const maps = [
       {
         id: "b3",
         asset: "board-game",
-        label: "보드게임 상자",
+        label: "보드게임",
         zones: [2],
       },
       {
@@ -978,7 +978,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],
@@ -986,13 +986,13 @@ export const maps = [
       {
         id: "e1",
         asset: "block-box",
-        label: "조립 블록 상자",
+        label: "조립 블록",
         zones: [2],
       },
       {
         id: "e2",
         asset: "card-game",
-        label: "카드 놀이 상자",
+        label: "카드 상자",
         zones: [2],
       },
       {
@@ -1112,7 +1112,7 @@ export const maps = [
       {
         id: "b8",
         asset: "paper-scrap",
-        label: "다 쓴 종이 조각",
+        label: "휴지 더미",
         zones: [5],
       },
     ],

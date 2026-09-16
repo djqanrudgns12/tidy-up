@@ -2,6 +2,7 @@ import { useState } from "react";
 import { maps } from "../data/maps";
 import { physicalMaps } from "../data/physical";
 import { assetUrl } from "../rendering/art";
+import { Key } from "./Guide";
 
 const categories = [
   { id: "all", label: "전체" },
@@ -29,7 +30,7 @@ export function MapSelection({ onSelect }: { onSelect: (id: string) => void }) {
           <div>
             <span className="section-kicker">공간 고르기</span>
             <h1 id="map-selection-title" tabIndex={-1}>어느 공간을 정리할까요?</h1>
-            <p>내가 정리하고 싶은 공간을 선택해봅시다.</p>
+            <p>내가 정리하고 싶은 <Key tone="space">공간</Key>을 선택해 봅시다.</p>
           </div>
         </div>
         <div className="map-filter-bar">
@@ -41,7 +42,7 @@ export function MapSelection({ onSelect }: { onSelect: (id: string) => void }) {
               </button>
             ))}
           </div>
-          <span className="map-filter-hint">마음에 드는 곳을 한 곳 골라 주세요.</span>
+          <span className="map-filter-hint">마음에 드는 곳을 <Key tone="sort">한 곳</Key> 골라 주세요.</span>
         </div>
       </header>
 

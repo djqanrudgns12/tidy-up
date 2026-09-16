@@ -36,7 +36,7 @@ it("옷장 42조합의 실제 지지면, 충돌, 이동, 복원 및 전체 활�
     state=reducer(state,{type:"START_CLEAN"});state=reducer(state,{type:"VENTILATE"});
     for(const [spot,dirt] of wardrobe.dirt.entries())state=reducer(state,{type:"CLEAN",spot,tool:dirt.tool});
     state=reducer(state,{type:"STORE_TOOLS"});expect(state.step).toBe("quiz");
-    state=reducer(state,{type:"QUIZ_DONE"});expect(state.step).toBe("result");
+    state=reducer(state,{type:"QUIZ_DONE",correctCount:2});expect(state.step).toBe("result");
     expect(validateSession(JSON.parse(JSON.stringify(state)))).toBe(true);
   }
 }));

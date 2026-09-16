@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { categories, eisenhower, quiz, tutorialPool } from "../data/lesson";
 import "./QuestionCards.css";
+import { Key, NextStep, type KeyTone } from "./Guide";
 
 function shuffle<T>(list: readonly T[]) {
   const copy = [...list];
@@ -36,6 +37,27 @@ const icons: Record<(typeof categories)[number]["icon"], ReactNode> = {
     <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 7.5V12l3 2" />
   ),
 };
+// "**굵게**"와 "==강조==" 표시를 글자 스타일로 바꾼다.
+function Emphasis({
+  text,
+  tones = [],
+}: {
+  text: string;
+  tones?: readonly KeyTone[];
+}) {
+  let toneIndex = 0;
+  return text.split(/(\*\*.+?\*\*|==.+?==)/).map((part, i) =>
+    part.startsWith("**") ? (
+      <strong key={i}>{part.slice(2, -2)}</strong>
+    ) : part.startsWith("==") ? (
+      <Key key={i} tone={tones[toneIndex++] ?? "sort"}>
+        {part.slice(2, -2)}
+      </Key>
+    ) : (
+      part
+    ),
+  );
+}
 function CategoryIcon({ icon }: { icon: keyof typeof icons }) {
   return (
     <span className={`qc-icon qc-icon-${icon}`} aria-hidden="true">
@@ -79,13 +101,15 @@ function Progress({
   );
 }
 
-export function QuestionCards({
-  kind,
-  onDone,
-}: {
-  kind: "tutorial" | "quiz";
-  onDone: () => void;
-}) {
+type QuestionCardsProps =
+  | { kind: "tutorial"; onDone: () => void }
+  | {
+      kind: "quiz";
+      onDone: (result: { correctCount: number; total: number }) => void;
+    };
+
+export function QuestionCards(props: QuestionCardsProps) {
+  const { kind } = props;
   const isTutorial = kind === "tutorial";
   const [tutorialCards] = useState(pickTutorial);
   const [optionOrders] = useState(() =>
@@ -93,10 +117,11 @@ export function QuestionCards({
   );
   // 튜토리얼은 -1(아이젠하워 법칙 설명)부터 시작한다.
   const [index, setIndex] = useState(isTutorial ? -1 : 0);
-  const [tried, setTried] = useState<number[]>([]);
   const [answer, setAnswer] = useState<number | null>(null);
+  const [correctCount, setCorrectCount] = useState(0);
   const heading = useRef<HTMLHeadingElement>(null);
   const feedback = useRef<HTMLDivElement>(null);
+  const board = useRef<HTMLDivElement>(null);
   const total = isTutorial ? tutorialCards.length : quiz.length;
   const last = index + 1 === total;
   const correctIndex = isTutorial
@@ -110,18 +135,41 @@ export function QuestionCards({
   }, [index, kind]);
   useEffect(() => {
     if (answer !== null) feedback.current?.focus();
-  }, [answer, tried.length]);
+  }, [answer]);
+  // 틀린 표시와 안내를 모두 지우고 네 칸을 다시 고를 수 있게 한다.
+  const retry = () => {
+    setAnswer(null);
+    requestAnimationFrame(() =>
+      board.current?.querySelector<HTMLButtonElement>("button")?.focus(),
+    );
+  };
 
   const next = () => {
-    if (last) onDone();
-    else {
+    const nextCorrectCount = correctCount + Number(!isTutorial && solved);
+    if (last) {
+      if (props.kind === "tutorial") props.onDone();
+      else props.onDone({ correctCount: nextCorrectCount, total });
+    } else {
+      if (!isTutorial) setCorrectCount(nextCorrectCount);
       setIndex(index + 1);
       setAnswer(null);
-      setTried([]);
     }
   };
   const nextButton = canContinue && (
-    <div className="qc-next">
+    <div className={`qc-next${last ? " step-footer" : ""}`}>
+      {last && (
+        <NextStep>
+          {isTutorial ? (
+            <>
+              이제 <Key tone="space">정리할 공간</Key>을 골라요.
+            </>
+          ) : (
+            <>
+              <Key tone="result">결과 이미지</Key>로 달라진 모습을 확인해요.
+            </>
+          )}
+        </NextStep>
+      )}
       <button className="button" onClick={next}>
         {last
           ? isTutorial
@@ -144,7 +192,9 @@ export function QuestionCards({
         </h1>
         <div className="qc-story">
           {eisenhower.story.map((line) => (
-            <p key={line}>{line}</p>
+            <p key={line}>
+              <Emphasis text={line} />
+            </p>
           ))}
         </div>
         <h2 className="qc-subheading">이렇게 정리해요</h2>
@@ -173,7 +223,11 @@ export function QuestionCards({
         </ul>
         <p className="qc-closing">{eisenhower.closing}</p>
         <p className="qc-source">{eisenhower.source}</p>
-        <div className="qc-next">
+        <div className="qc-next step-footer">
+          <NextStep>
+            상황 카드 {total}장을 보고 <Key tone="sort">네 칸</Key> 중 하나를
+            골라요.
+          </NextStep>
           <button className="button" onClick={() => setIndex(0)}>
             상황 카드로 연습하기 <span aria-hidden="true">→</span>
           </button>
@@ -190,24 +244,20 @@ export function QuestionCards({
         <h1 ref={heading} tabIndex={-1}>
           어느 칸에 놓을까요?
         </h1>
-        <p className="qc-intro">상황을 읽고 알맞은 칸을 눌러 주세요.</p>
+        <p className="qc-intro">
+          상황을 읽고 알맞은 <Key tone="sort">칸</Key>을 눌러 주세요.
+        </p>
         <div className="qc-question">{card.story}</div>
-        <div className="qc-board">
+        <div className="qc-board" ref={board}>
           {categories.map((category, i) => {
-            const state = solved && i === answer
-              ? "correct"
-              : tried.includes(i)
-                ? "wrong"
-                : "";
+            // 고른 칸 하나만 표시한다. 틀리면 '다시 풀기'로 표시를 지운 뒤 다시 고른다.
+            const state = i !== answer ? "" : solved ? "correct" : "wrong";
             return (
               <button
                 key={category.label}
                 className={`qc-tile ${state}`}
-                disabled={solved || tried.includes(i)}
-                onClick={() => {
-                  setAnswer(i);
-                  if (i !== card.answer) setTried([...tried, i]);
-                }}
+                disabled={answer !== null}
+                onClick={() => setAnswer(i)}
               >
                 <CategoryIcon icon={category.icon} />
                 <span>
@@ -242,14 +292,14 @@ export function QuestionCards({
                   ‘{wrong!.label}’은 {wrong!.hint}
                   {copula(wrong!.hint)}. {card.hint}
                 </p>
+                <div className="qc-retry">
+                  <button className="button" onClick={retry}>
+                    <span aria-hidden="true">↻</span> 다시 풀기
+                  </button>
+                </div>
               </>
             )}
           </div>
-        )}
-        {solved && last && (
-          <p className="small-note">
-            물건을 어떻게 처리할지 나누면 정리를 시작하기 쉬워요.
-          </p>
         )}
         {nextButton}
       </section>
@@ -263,8 +313,13 @@ export function QuestionCards({
       <h1 ref={heading} tabIndex={-1}>
         {question.title}
       </h1>
-      <p className="qc-intro">정리 정돈과 청소 방법을 확인해요.</p>
-      <div className="qc-question">{question.question}</div>
+      <p className="qc-intro">
+        <Key tone="space">정리 정돈</Key>과 <Key tone="clean">청소</Key> 방법을
+        확인해요.
+      </p>
+      <div className="qc-question">
+        <Emphasis text={question.question} tones={["space", "clean"]} />
+      </div>
       <div className="qc-options">
         {optionOrders[index].map((i) => {
           const state =
