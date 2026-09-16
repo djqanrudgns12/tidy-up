@@ -1,5 +1,7 @@
 # 에셋 제작과 인계
 
+최신 오후 상태: 원화118개 통합, 추가 시점28개, 배포127개, 미생성·검수 대기·누락0. 접은 옷4종/이불/걸린 우산 커버6시점을 추가했다. 현재 생성 큐는 비어 있다. [최종 검수](FINAL_REVIEW_2026-09-16.md)와 [파일 목록](asset-state.json)이 기준이며 아래 과거 수치는 재생성 요청이 아니다.
+
 ## 상태를 읽는 법
 
 정확한 전체 목록과 SHA-256은 [asset-state.json](asset-state.json), 생성 프롬프트는 [ASSET_PROMPTS.json](../ASSET_PROMPTS.json)이다.

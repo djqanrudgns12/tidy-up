@@ -4,6 +4,9 @@ import { locker } from "./locker.ts";
 import { library } from "./library.ts";
 import { homeDesk } from "./home-desk.ts";
 import { bedroom } from "./bedroom.ts";
+import {wardrobe} from "./wardrobe.ts";
+import {livingRoom} from "./living-room.ts";
+import {shoeCabinet} from "./shoe-cabinet.ts";
 
 // Coordinates measured from the delivered 1920 × 1440 background, divided by two.
 // Surface polygons describe the usable plane, not a bounding box around the furniture.
@@ -150,6 +153,9 @@ export const physicalMaps: Record<string, PhysicalMap> = {
   library,
   "home-desk": homeDesk,
   bedroom,
+  wardrobe,
+  "living-room":livingRoom,
+  "shoe-cabinet":shoeCabinet,
 };
 
 // Intersecting the measured left and right tabletop depth edges gives this point.

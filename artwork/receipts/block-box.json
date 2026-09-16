@@ -5,6 +5,7 @@
   "kind": "primary-object",
   "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 조립 블록 상자. Distinctive construction: 뚜껑 있는 상자와 큰 블록 무늬. Use: 조립 블록으로 만들 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One closed low rectangular storage box for toy building blocks, muted blue plastic base and cream flush-fitting closed lid with a simple illustration of three chunky coloured blocks on top. No loose blocks; one box only.",
   "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-e8d2d9b8-aa9c-435c-9e4a-7b8195a87017.png",
-  "status": "pending-review",
-  "date": "2026-09-16"
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "2026-09-16: inspected originals and light/dark composites; silhouettes and alpha approved. Jacket checker removed with preserved RGB and traced open metal hook (jacket-local-review). Backgrounds contain fixed empty furniture; placement approval remains separate."
 }

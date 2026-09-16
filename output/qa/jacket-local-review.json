@@ -1,0 +1,21 @@
+[
+  {
+    "id": "revisions/jacket--alternate-support-local",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      111,
+      25,
+      1143,
+      1150
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

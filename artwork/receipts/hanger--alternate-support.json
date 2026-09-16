@@ -5,6 +5,7 @@
   "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT hanger in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. The same wooden hanger, slightly elevated front camera, its metal hook ready to wrap over a rail. Visible bottom bar and empty interior. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object.",
   "reference": "artwork/hanger.png",
   "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-e09400f5-ae7c-4fd0-b79f-80b2301006bc.png",
-  "status": "pending-review",
-  "date": "2026-09-16"
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "2026-09-16: inspected originals and light/dark composites; silhouettes and alpha approved. Jacket checker removed with preserved RGB and traced open metal hook (jacket-local-review). Backgrounds contain fixed empty furniture; placement approval remains separate."
 }

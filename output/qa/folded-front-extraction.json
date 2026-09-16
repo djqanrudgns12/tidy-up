@@ -1,0 +1,54 @@
+[
+  {
+    "id": "t-shirt--folded-front",
+    "original": "artwork\\revisions\\t-shirt--folded-front-v1.png",
+    "rgbUnchanged": true,
+    "alphaBounds": [
+      74,
+      182,
+      1867,
+      681
+    ],
+    "method": "column-traced coloured cloth silhouette, including concave collar; RGB unchanged",
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "long-sleeve--folded-front",
+    "original": "artwork\\revisions\\long-sleeve--folded-front-v1.png",
+    "rgbUnchanged": true,
+    "alphaBounds": [
+      45,
+      205,
+      1727,
+      739
+    ],
+    "method": "column-traced coloured cloth silhouette, including concave collar; RGB unchanged",
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "trousers--folded-front",
+    "original": "artwork\\revisions\\trousers--folded-front-v1.png",
+    "rgbUnchanged": true,
+    "alphaBounds": [
+      95,
+      171,
+      1851,
+      714
+    ],
+    "method": "column-traced coloured cloth silhouette, including concave collar; RGB unchanged",
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "shorts--folded-front",
+    "original": "artwork\\revisions\\shorts--folded-front-v1.png",
+    "rgbUnchanged": true,
+    "alphaBounds": [
+      76,
+      162,
+      1876,
+      709
+    ],
+    "method": "column-traced coloured cloth silhouette, including concave collar; RGB unchanged",
+    "status": "awaiting-visual-review"
+  }
+]

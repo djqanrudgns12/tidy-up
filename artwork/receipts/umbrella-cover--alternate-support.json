@@ -1,0 +1,11 @@
+{
+  "id": "umbrella-cover--alternate-support",
+  "source": "artwork/umbrella-cover--alternate-support.png",
+  "target": "items/views/umbrella-cover--alternate-support.webp",
+  "reference": "artwork/umbrella-cover.png",
+  "prompt": "Create the SAME teal fabric empty umbrella sleeve from reference, now naturally HANGING VERTICALLY FROM ITS DRAWSTRING LOOP on an invisible wall hook. One empty soft narrow long sleeve, closed rounded bottom, open slightly puckered top, small toggle on drawstring, a clear open loop centered at the very top above the sleeve for the hook contact. Gravity makes the fabric hang straight downward, slim width about 1/5 of full height. It must be empty and softly collapsed, not stuffed, no umbrella inside. Near-frontal camera, soft realistic illustration matching original fabric color, upper-left light. True transparent RGBA background, no wall, hooks, other objects, cast shadow, checkerboard or text. Entire object with generous margin. Do not simply rotate the diagonal original: redraw fabric folds and suspended cord.",
+  "originPath": "C:/Users/rudgn/.codex/generated_images/01a0a8be-d978-7c02-9782-80c0bba80d9d/exec-af47cd45-5cc3-49e1-9f94-7e45a3a2ba49.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "Native transparent image, open drawstring loop and empty hanging sleeve inspected on light/dark backgrounds. Actual hook scene separately verified."
+}

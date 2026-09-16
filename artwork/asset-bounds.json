@@ -1343,5 +1343,385 @@
       495,
       393
     ]
+  },
+  {
+    "id": "sneakers",
+    "path": "public\\assets\\items\\catalog\\sneakers.webp",
+    "bytes": 51150,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      61,
+      46,
+      452,
+      467
+    ]
+  },
+  {
+    "id": "indoor-shoes",
+    "path": "public\\assets\\items\\catalog\\indoor-shoes.webp",
+    "bytes": 31566,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      64,
+      35,
+      447,
+      477
+    ]
+  },
+  {
+    "id": "sandals",
+    "path": "public\\assets\\items\\catalog\\sandals.webp",
+    "bytes": 42002,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      72,
+      62,
+      440,
+      451
+    ]
+  },
+  {
+    "id": "rain-boots",
+    "path": "public\\assets\\items\\catalog\\rain-boots.webp",
+    "bytes": 33418,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      101,
+      21,
+      411,
+      481
+    ]
+  },
+  {
+    "id": "shoe-brush",
+    "path": "public\\assets\\items\\catalog\\shoe-brush.webp",
+    "bytes": 25730,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      191,
+      26,
+      321,
+      486
+    ]
+  },
+  {
+    "id": "shoehorn",
+    "path": "public\\assets\\items\\catalog\\shoehorn.webp",
+    "bytes": 18682,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      69,
+      48,
+      492,
+      469
+    ]
+  },
+  {
+    "id": "jacket--alternate-support",
+    "path": "public\\assets\\items\\views\\jacket--alternate-support.webp",
+    "bytes": 28088,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      45,
+      10,
+      467,
+      470
+    ]
+  },
+  {
+    "id": "cardigan--alternate-support",
+    "path": "public\\assets\\items\\views\\cardigan--alternate-support.webp",
+    "bytes": 36900,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      54,
+      15,
+      458,
+      477
+    ]
+  },
+  {
+    "id": "hanger--alternate-support",
+    "path": "public\\assets\\items\\views\\hanger--alternate-support.webp",
+    "bytes": 21572,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      13,
+      75,
+      499,
+      402
+    ]
+  },
+  {
+    "id": "umbrella-cover",
+    "path": "public\\assets\\items\\catalog\\umbrella-cover.webp",
+    "bytes": 18548,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      42,
+      34,
+      477,
+      480
+    ]
+  },
+  {
+    "id": "remote",
+    "path": "public\\assets\\items\\catalog\\remote.webp",
+    "bytes": 12214,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      180,
+      33,
+      331,
+      479
+    ]
+  },
+  {
+    "id": "block-box",
+    "path": "public\\assets\\items\\catalog\\block-box.webp",
+    "bytes": 13612,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      59,
+      128,
+      453,
+      382
+    ]
+  },
+  {
+    "id": "book-stand",
+    "path": "public\\assets\\items\\catalog\\book-stand.webp",
+    "bytes": 24136,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      22,
+      81,
+      498,
+      436
+    ]
+  },
+  {
+    "id": "living-room",
+    "path": "public\\assets\\maps\\living-room\\background.webp",
+    "bytes": 88566,
+    "size": [
+      1920,
+      1440
+    ],
+    "alphaBounds": null
+  },
+  {
+    "id": "shoe-cabinet",
+    "path": "public\\assets\\maps\\shoe-cabinet\\background.webp",
+    "bytes": 99204,
+    "size": [
+      1920,
+      1440
+    ],
+    "alphaBounds": null
+  },
+  {
+    "id": "t-shirt--folded-front",
+    "path": "public\\assets\\items\\views\\t-shirt--folded-front.webp",
+    "bytes": 12752,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      20,
+      197,
+      492,
+      329
+    ]
+  },
+  {
+    "id": "long-sleeve--folded-front",
+    "path": "public\\assets\\items\\views\\long-sleeve--folded-front.webp",
+    "bytes": 15450,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      13,
+      188,
+      498,
+      341
+    ]
+  },
+  {
+    "id": "trousers--folded-front",
+    "path": "public\\assets\\items\\views\\trousers--folded-front.webp",
+    "bytes": 10422,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      25,
+      194,
+      487,
+      337
+    ]
+  },
+  {
+    "id": "shorts--folded-front",
+    "path": "public\\assets\\items\\views\\shorts--folded-front.webp",
+    "bytes": 15298,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      20,
+      195,
+      488,
+      336
+    ]
+  },
+  {
+    "id": "sneakers--shelf-front",
+    "path": "public\\assets\\items\\views\\sneakers--shelf-front.webp",
+    "bytes": 41782,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      26,
+      98,
+      487,
+      405
+    ]
+  },
+  {
+    "id": "indoor-shoes--shelf-front",
+    "path": "public\\assets\\items\\views\\indoor-shoes--shelf-front.webp",
+    "bytes": 24014,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      25,
+      90,
+      487,
+      408
+    ]
+  },
+  {
+    "id": "sandals--shelf-front",
+    "path": "public\\assets\\items\\views\\sandals--shelf-front.webp",
+    "bytes": 43600,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      25,
+      91,
+      487,
+      417
+    ]
+  },
+  {
+    "id": "rain-boots--shelf-front",
+    "path": "public\\assets\\items\\views\\rain-boots--shelf-front.webp",
+    "bytes": 31204,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      77,
+      25,
+      435,
+      467
+    ]
+  },
+  {
+    "id": "block-box--low-front",
+    "path": "public\\assets\\items\\views\\block-box--low-front.webp",
+    "bytes": 9532,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      16,
+      177,
+      496,
+      352
+    ]
+  },
+  {
+    "id": "blanket--folded-front",
+    "path": "public\\assets\\items\\views\\blanket--folded-front.webp",
+    "bytes": 17638,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      20,
+      191,
+      494,
+      368
+    ]
+  },
+  {
+    "id": "umbrella-cover--alternate-support",
+    "path": "public\\assets\\items\\views\\umbrella-cover--alternate-support.webp",
+    "bytes": 11114,
+    "size": [
+      512,
+      512
+    ],
+    "alphaBounds": [
+      223,
+      14,
+      294,
+      481
+    ]
   }
 ]

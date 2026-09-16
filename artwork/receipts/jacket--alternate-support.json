@@ -5,6 +5,7 @@
   "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT jacket in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. Hanger supports the shoulders and sleeves fall DOWN naturally alongside the body under gravity, narrower drape than the spread flat-lay. Keep its length and coherent collar, cuffs and closure. No bending or squeezing to fake drape. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object.",
   "reference": "artwork/jacket.png",
   "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-c9c7c7c2-8109-4357-a2dd-e7966c5b4d42.png",
-  "status": "pending-review",
-  "date": "2026-09-16"
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "2026-09-16: inspected originals and light/dark composites; silhouettes and alpha approved. Jacket checker removed with preserved RGB and traced open metal hook (jacket-local-review). Backgrounds contain fixed empty furniture; placement approval remains separate."
 }

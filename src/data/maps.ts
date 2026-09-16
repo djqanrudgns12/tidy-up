@@ -921,7 +921,7 @@ export const maps = [
     risk: "겉옷은 이미 옷걸이에 걸린 그림. 접기·걸기 동작을 수행했다고 표시하지 않음.",
     hours: "0.75~1h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "home",
   },
   {
@@ -1050,7 +1050,7 @@ export const maps = [
     risk: "쿠션과 베개·이불을 실루엣으로 구분. 물병은 닫힌 상태로 탁자에 둠.",
     hours: "1~1.5h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "home",
   },
   {
@@ -1185,7 +1185,7 @@ export const maps = [
     risk: "좁은 관리용품 칸 높이는 최대물건과 실제 아트로 우선 검수. 우산·신발은 마르고 흙이 없는 보관 상태.",
     hours: "1.25~1.75h",
     phase: "P4",
-    revision: 3,
+    revision: 4,
     category: "home",
   },
 ] satisfies MapDefinition[];

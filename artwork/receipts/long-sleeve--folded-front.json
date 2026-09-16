@@ -1,0 +1,11 @@
+{
+  "id": "long-sleeve--folded-front",
+  "source": "artwork/long-sleeve--folded-front.png",
+  "target": "items/views/long-sleeve--folded-front.webp",
+  "reference": "artwork/long-sleeve.png",
+  "prompt": "Use case: scientific-educational. Image 1 identity reference. Draw ONE long-sleeve from the reference folded neatly in a compact low stack, seen almost horizontally from the FRONT at about 8 degrees above its resting surface, for a HIGH wardrobe shelf. Preserve exact garment color, fabric, seams and fasteners. Camera must show the folded cloth thickness at the FRONT and only a shallow sliver of top; wide, low silhouette, height roughly one quarter of width. Garment is laid on its folded base, NOT hanging or standing upright. One garment only, not a pile of separate clothes. Complete silhouette with margins; true RGBA transparent background, no checkerboard, no floor or shelf, no outer shadow or glow, no text. Soft illustrated realism, upper-left light. This is a separately drawn support view, not a distorted top view.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a8be-d978-7c02-9782-80c0bba80d9d\\exec-9902ae8f-377b-4cdb-a9df-7b766144c957.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "2026-09-16 folded-front-finished: separate low frontal folded fabric, correct colours and construction; column-traced alpha retains RGB and collar contour, light/dark composites approved."
+}

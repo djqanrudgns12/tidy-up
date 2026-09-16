@@ -1,0 +1,78 @@
+[
+  {
+    "id": "t-shirt--folded-front",
+    "mode": "RGBA",
+    "size": [
+      1942,
+      810
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      77,
+      185,
+      1865,
+      679
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "long-sleeve--folded-front",
+    "mode": "RGBA",
+    "size": [
+      1774,
+      887
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      48,
+      208,
+      1725,
+      737
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "trousers--folded-front",
+    "mode": "RGBA",
+    "size": [
+      1944,
+      809
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      98,
+      174,
+      1849,
+      712
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "shorts--folded-front",
+    "mode": "RGBA",
+    "size": [
+      1969,
+      799
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      79,
+      165,
+      1874,
+      707
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

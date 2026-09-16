@@ -1,5 +1,9 @@
 /** Required additional drawings. They are counted separately from the 72 kinds of object. */
 export const assetViews = [
+  ...["t-shirt", "long-sleeve", "trousers", "shorts", "blanket"].map((asset) => ({
+    asset, view: "folded-front", purpose: "높은 선반에 접어 둔 옷의 두께와 앞면",
+    direction: "Same garment folded on its base, low frontal shelf camera, visible fabric thickness and shallow top. Preserve colour and material; transparent background.",
+  })),
   ...[
     "textbook",
     "notebook",
@@ -26,7 +30,7 @@ export const assetViews = [
     direction:
       "Closed box resting on its base, low near-frontal camera with a shallow top face visible. Preserve the exact construction, lid design and dimensions of the reference object; no open or detached parts.",
   })),
-  ...["jacket", "cardigan", "hanger"].map((asset) => ({
+  ...["jacket", "cardigan", "hanger", "umbrella-cover"].map((asset) => ({
     asset,
     view: "alternate-support",
     purpose: "눕혀 둔 모습과 걸어 둔 모습의 구별",

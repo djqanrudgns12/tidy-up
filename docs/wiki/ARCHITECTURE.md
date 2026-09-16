@@ -1,5 +1,9 @@
 # 구현 구조와 변경 위치
 
+## 2026-09-16 오후 추가
+
+physical.ts에 wardrobe.ts/living-room.ts/shoe-cabinet.ts를 연결하여9공간을 활성화했다. 신규 fixture와 wardrobe.test.ts/final-maps.test.ts가42조합씩 검증한다. scene-art.ts는 접힌 옷·이불/신발 밑창/우산 커버 걸이를 구분한다. 걸이는 전체 몸체의 가구 내부 경계를 검사한 후 실제 고리 접점을 봉에 맞춘다. 개발용 ?wardrobe-layout 및 ?final-layout=living-room 또는 shoe-cabinet에서 조합·모션·PNG를 검수한다. [최신 검수](FINAL_REVIEW_2026-09-16.md).
+
 React19 / TypeScript7 / Vite8 / Konva10. 고정 카메라 **2.5D** 장면이다. 회전 가능한3D 공간이 아니다. 소스는 [src](../../src)에 있다.
 
 ## 어디를 고칠까

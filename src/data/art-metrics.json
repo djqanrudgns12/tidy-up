@@ -338,5 +338,101 @@
   "hanger": {
     "width": 478,
     "height": 301
+  },
+  "sneakers": {
+    "width": 391,
+    "height": 421
+  },
+  "indoor-shoes": {
+    "width": 383,
+    "height": 442
+  },
+  "sandals": {
+    "width": 368,
+    "height": 389
+  },
+  "rain-boots": {
+    "width": 310,
+    "height": 460
+  },
+  "shoe-brush": {
+    "width": 130,
+    "height": 460
+  },
+  "shoehorn": {
+    "width": 423,
+    "height": 421
+  },
+  "jacket--alternate-support": {
+    "width": 422,
+    "height": 460
+  },
+  "cardigan--alternate-support": {
+    "width": 404,
+    "height": 462
+  },
+  "hanger--alternate-support": {
+    "width": 486,
+    "height": 327
+  },
+  "umbrella-cover": {
+    "width": 435,
+    "height": 446
+  },
+  "remote": {
+    "width": 151,
+    "height": 446
+  },
+  "block-box": {
+    "width": 394,
+    "height": 254
+  },
+  "book-stand": {
+    "width": 476,
+    "height": 355
+  },
+  "t-shirt--folded-front": {
+    "width": 472,
+    "height": 132
+  },
+  "long-sleeve--folded-front": {
+    "width": 485,
+    "height": 153
+  },
+  "trousers--folded-front": {
+    "width": 462,
+    "height": 143
+  },
+  "shorts--folded-front": {
+    "width": 468,
+    "height": 141
+  },
+  "sneakers--shelf-front": {
+    "width": 461,
+    "height": 307
+  },
+  "indoor-shoes--shelf-front": {
+    "width": 462,
+    "height": 318
+  },
+  "sandals--shelf-front": {
+    "width": 462,
+    "height": 326
+  },
+  "rain-boots--shelf-front": {
+    "width": 358,
+    "height": 442
+  },
+  "block-box--low-front": {
+    "width": 480,
+    "height": 175
+  },
+  "blanket--folded-front": {
+    "width": 474,
+    "height": 177
+  },
+  "umbrella-cover--alternate-support": {
+    "width": 71,
+    "height": 467
   }
 }

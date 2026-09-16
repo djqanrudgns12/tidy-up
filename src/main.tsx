@@ -50,13 +50,23 @@ const HomeDeskLayoutReview = import.meta.env.DEV
 const BedroomLayoutReview = import.meta.env.DEV
   ? React.lazy(() => import("./proof/BedroomLayoutReview").then(module=>({default:module.BedroomLayoutReview})))
   : () => null;
+const WardrobeLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/WardrobeLayoutReview").then(module=>({default:module.WardrobeLayoutReview})))
+  : () => null;
+const FinalLayoutReview = import.meta.env.DEV
+  ? React.lazy(() => import("./proof/FinalLayoutReview").then(module=>({default:module.FinalLayoutReview})))
+  : () => null;
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ErrorBoundary>
       <React.Suspense
         fallback={<p className="loading">공간을 준비하고 있어요.</p>}
       >
-        {import.meta.env.DEV && new URLSearchParams(location.search).has("bedroom-layout") ? (
+        {import.meta.env.DEV && new URLSearchParams(location.search).has("final-layout") ? (
+          <FinalLayoutReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("wardrobe-layout") ? (
+          <WardrobeLayoutReview />
+        ) : import.meta.env.DEV && new URLSearchParams(location.search).has("bedroom-layout") ? (
           <BedroomLayoutReview />
         ) : import.meta.env.DEV && new URLSearchParams(location.search).has("home-desk-layout") ? (
           <HomeDeskLayoutReview />

@@ -58,6 +58,7 @@ export function dragPlacement(
       "jacket",
       "cardigan",
       "umbrella",
+      "umbrella-cover",
     ].includes(asset.id)
   )
     return normalizePlacement(asset, handle, hook, 0, mapId);

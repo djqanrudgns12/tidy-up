@@ -49,12 +49,25 @@ const bedroomSizes:Record<string,[number,number]>={
  pillow:[128,58],blanket:[112,88],"story-book":[43,53],"paper-scrap":[31,33],
  "bed-sheet":[68,65],cushion:[66,66],backpack:[58,72],comb:[48,16],"small-pouch":[45,32],"pocket-tissue":[46,30],
 };
+const wardrobeSizes: Record<string,[number,number]> = {
+  "t-shirt":[70,57],"long-sleeve":[70,57],trousers:[67,65],shorts:[64,54],
+  jacket:[124,106],cardigan:[124,106],hanger:[57,39],socks:[30,35],
+  cap:[44,38],"sun-hat":[53,42],scarf:[50,38],gloves:[33,35],"tote-bag":[44,52],"paper-scrap":[37,38],
+};
+const livingRoomSizes:Record<string,[number,number]>={
+ "story-book":[32,35],magazine:[29,35],"board-game":[43,35],"puzzle-box":[43,35],"block-box":[43,35],"card-game":[40,35],
+ remote:[18,43],cushion:[74,68],blanket:[99,77],headphones:[49,53],"pocket-tissue":[35,25],"water-bottle":[22,57],"book-stand":[38,31],"paper-scrap":[29,30],
+};
+const shoeCabinetSizes:Record<string,[number,number]>={
+ sneakers:[76,55],"indoor-shoes":[72,51],"rain-boots":[73,77],sandals:[72,45],"shoe-brush":[35,40],shoehorn:[65,40],
+ umbrella:[44,175],"shoe-bag":[58,90],"umbrella-cover":[104,112],"tote-bag":[53,73],towel:[37,26],cap:[36,30],gloves:[31,30],"paper-scrap":[33,34],
+};
 export function sizeOf(
   asset: AssetDefinition,
   mapId: string,
   surface?: Surface,
 ): [number, number] {
-  const box = (mapId === "school-desk" ? schoolSizes[asset.id] : mapId === "classroom-cabinet" ? cabinetSizes[asset.id] : mapId === "locker" ? lockerSizes[asset.id] : mapId === "library" ? librarySizes[asset.id] : mapId === "home-desk" ? homeDeskSizes[asset.id] : mapId === "bedroom" ? bedroomSizes[asset.id] : undefined) ?? [
+  const box = (mapId === "living-room" ? livingRoomSizes[asset.id] : mapId === "shoe-cabinet" ? shoeCabinetSizes[asset.id] : mapId === "wardrobe" ? wardrobeSizes[asset.id] : mapId === "school-desk" ? schoolSizes[asset.id] : mapId === "classroom-cabinet" ? cabinetSizes[asset.id] : mapId === "locker" ? lockerSizes[asset.id] : mapId === "library" ? librarySizes[asset.id] : mapId === "home-desk" ? homeDeskSizes[asset.id] : mapId === "bedroom" ? bedroomSizes[asset.id] : undefined) ?? [
     asset.width,
     asset.height,
   ];
@@ -180,6 +193,9 @@ export function fitsSurface(
   if (surface.hangingBounds && poseOf(asset,surface,mapId)==="hanging") {
     const [w,h]=sizeOf(asset,mapId,surface),top=placement.y-h*hangingContact(asset,mapId);
     if(![{x:placement.x-w/2,y:top},{x:placement.x+w/2,y:top},{x:placement.x+w/2,y:top+h},{x:placement.x-w/2,y:top+h}].every(p=>pointInPolygon(p,surface.hangingBounds!)))return false;
+    // Only the hook rests on the rail; shoulders are constrained by the cabinet interior.
+    return pointInPolygon(placement,surface.polygon) &&
+      (surface.baseline === undefined || Math.abs(placement.y-surface.baseline)<.01);
   }
   if (surface.tiltedPanel && poseOf(asset,surface,mapId)!=="flat") return false;
   if (surface.anchor)

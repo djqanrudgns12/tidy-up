@@ -1,0 +1,8 @@
+{
+  "id": "shoe-cabinet--thumbnail",
+  "source": "output/qa/shoe-cabinet-base-thumbnail-source.png",
+  "target": "maps/shoe-cabinet/thumbnail.webp",
+  "status": "reviewed-composition",
+  "date": "2026-09-16",
+  "review": "Actual base-eight soles/shelves/umbrella support rendered and inspected; 42 combinations, hanging sleeve, full browser activity, retrieval, PNG and resume verified."
+}

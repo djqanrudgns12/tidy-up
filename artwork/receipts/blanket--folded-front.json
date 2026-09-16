@@ -1,0 +1,18 @@
+{
+  "id": "blanket--folded-front",
+  "source": "artwork/blanket--folded-front.png",
+  "target": "items/views/blanket--folded-front.webp",
+  "reference": "artwork/blanket.png",
+  "prompt": "Create a new LOW FRONT view of the same blue folded quilt/blanket in reference for an illustrated Korean home organizing game. One neatly folded pale denim-blue quilt, exact matching horizontal stitched padded fabric, folded twice into a compact rectangular stack. Camera 10 degrees above horizontal: the soft folded front edges and two-three fabric layers visible, thin top plane, natural thickness, width about 3.5 times total height. No arbitrary stretching. Bottom straight but softly rounded resting naturally on a sofa seat or floor. Soft realistic illustration and upper-left light matching reference. Entire object isolated on TRUE transparent RGBA background, no furniture, floor, background, cast shadow, letters, checkerboard or other objects.",
+  "originPath": "C:/Users/rudgn/.codex/generated_images/01a0a8be-d978-7c02-9782-80c0bba80d9d/exec-aed29b3b-5466-4601-bd7e-7fcebd42569f.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "revision": "artwork/revisions/blanket--folded-front-local.png",
+  "localFinishing": {
+    "rgbUnchanged": true,
+    "changedAlphaPixels": 74776,
+    "method": "remove tiny edge fringe and jagged alpha only",
+    "status": "awaiting-visual-review"
+  },
+  "review": "Folded front layers, matching blue quilt and alpha edges inspected on light/dark backgrounds; physical scene tested separately."
+}

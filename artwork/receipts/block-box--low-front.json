@@ -1,0 +1,14 @@
+{
+  "id": "block-box--low-front",
+  "source": "artwork/block-box--low-front.png",
+  "target": "items/views/block-box--low-front.webp",
+  "reference": "artwork/block-box.png",
+  "prompt": "Use case: scientific-educational. Asset: one movable sprite for Korean grade 5 home-organizing lesson. Image 1 is identity reference of the approved closed block storage box. Create the SAME blue rectangular plastic storage box with cream fitted closed lid, blue clips on short left/right sides, and red/yellow/blue three-block PRINTED motif on lid. New viewpoint: LOW NEAR-FRONTAL shelf view, camera about 10 degrees above horizontal, long front edge horizontal, only a narrow top plane visible. Front blue wall dominant; bottom straight horizontal for resting on shelf. Maintain closed solid structure and original colours/material proportions. One box only, no loose blocks, no floor, furniture, glow, cast shadow, text, labels. Soft illustrated realism matching reference, light upper left. Entire silhouette and 12 percent margin. TRUE transparent RGBA background, not drawn checkerboard.",
+  "revisionSource": "artwork/revisions/block-box--low-front-v2.png",
+  "originPath": "C:/Users/rudgn/.codex/generated_images/01a0a8be-d978-7c02-9782-80c0bba80d9d/exec-f74997a7-d028-4283-81ce-802a77db07a9.png",
+  "revisionPrompt": "Low frontal camera, narrow cream lid top, dominant blue front wall; preserve closed box and printed motif, transparent background.",
+  "localProcessing": "scripts/finish-block-front.py preserves RGB and traces the reviewed exterior; v1 and v2 retained.",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "v2 low frontal perspective and unchanged RGB alpha extraction inspected on light and dark backgrounds; shelf scene review remains separate."
+}

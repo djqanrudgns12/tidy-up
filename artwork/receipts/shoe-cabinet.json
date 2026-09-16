@@ -5,6 +5,7 @@
   "kind": "background",
   "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 신발장. Scene: 낮고 열린 신발 선반, 관리용품 칸, 옆 우산꽂이와 현관 걸이, 문 앞 바닥. Functional furniture: 바깥 신발 선반; 실내화 선반; 관리용품칸; 우산꽂이·현관 걸이. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. A familiar Korean entryway with one large open LOW shoe cabinet occupying rear left/centre; two wide shoe shelves with plenty of height for child rain boots; separate low care-supply shelf and side vertical umbrella holder on right. One small waste bin at far right. Entire room floor level visible without a step blocking movement. Cabinet empty, no shoes, umbrellas, coats or any small movable object, no wall posters, rugs or plants. All furniture in rear half with broad empty tiled foreground floor.",
   "originPath": "C:/Users/User/.codex/generated_images/01a0a77c-9319-7642-b878-39b076cd950e/exec-b565e0e7-ed9d-4f3a-9474-e8b437e42506.png",
-  "status": "pending-review",
-  "date": "2026-09-16"
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "2026-09-16: inspected originals and light/dark composites; silhouettes and alpha approved. Jacket checker removed with preserved RGB and traced open metal hook (jacket-local-review). Backgrounds contain fixed empty furniture; placement approval remains separate."
 }

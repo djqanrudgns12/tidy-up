@@ -1,0 +1,11 @@
+{
+  "id": "rain-boots--shelf-front",
+  "source": "artwork/rain-boots--shelf-front.png",
+  "target": "items/views/rain-boots--shelf-front.webp",
+  "reference": "artwork/rain-boots.png",
+  "prompt": "Use case: scientific-educational. Image 1 identity reference, preserve the exact rain-boots pair colours, materials, fastenings, details and size proportions. Create ONE game sprite of the matching LEFT AND RIGHT PAIR resting on their flat soles, both shoes facing viewer toes first. Camera LOW NEAR-FRONTAL, about 5 degrees looking down, for a shoe cabinet shelf. Both soles share the SAME horizontal support line. Only a tiny hint of upper openings visible, front toes and sole sides dominate (boots: tall front shafts, not large openings). A genuine new viewpoint, not squashed top view. Full silhouette with margin and a narrow gap between shoes; no brand/text/logo, no separate objects, floor, surface or cast shadow. Soft illustrated realism matching reference, light upper left. Truly transparent RGBA alpha background, not a checkerboard picture.",
+  "originPath": "C:\\Users\\rudgn\\.codex\\generated_images\\01a0a8be-d978-7c02-9782-80c0bba80d9d\\exec-98ec4efa-ad5d-41e4-ba9b-60127a450c37.png",
+  "status": "integrated-source",
+  "date": "2026-09-16",
+  "review": "2026-09-16 shoe-shelf-review light/dark composites: true alpha, matching left/right pairs and colours, common level soles, lowered camera; shelf placement still pending."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "living-room--thumbnail",
+  "source": "output/qa/living-room-base-thumbnail-source.png",
+  "target": "maps/living-room/thumbnail.webp",
+  "status": "reviewed-composition",
+  "date": "2026-09-16",
+  "review": "Base-eight common renderer composition; 42 combinations, box draw views, cushion/blanket support, browser activity, PNG and resume inspected."
+}

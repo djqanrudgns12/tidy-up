@@ -26,13 +26,13 @@ describe("전체 제작 목록", () => {
     }
     expect(used).toEqual(ids);
   });
-  it("시점 추가22개는 기존 물건을 참조하고 배포 목록은121개다", () => {
-    expect(assetViews).toHaveLength(22);
-    expect(new Set(assetViews.map((v) => v.path)).size).toBe(22);
+  it("기본22시점과 추가6시점은 기존 물건을 참조하고 배포 목록은127개다", () => {
+    expect(assetViews).toHaveLength(28);
+    expect(new Set(assetViews.map((v) => v.path)).size).toBe(28);
     for (const v of assetViews)
       expect(catalog.some((a) => a.id === v.asset)).toBe(true);
     expect(
       catalog.length + assetViews.length + maps.length * 2 + 4 + 3 + 2,
-    ).toBe(121);
+    ).toBe(127);
   });
 });

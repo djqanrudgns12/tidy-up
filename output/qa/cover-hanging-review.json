@@ -1,0 +1,21 @@
+[
+  {
+    "id": "umbrella-cover--alternate-support",
+    "mode": "RGBA",
+    "size": [
+      1024,
+      1536
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      415,
+      44,
+      627,
+      1443
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "id": "wardrobe--thumbnail",
+  "source": "output/qa/wardrobe-base-thumbnail-source.png",
+  "target": "maps/wardrobe/thumbnail.webp",
+  "status": "reviewed-composition",
+  "date": "2026-09-16",
+  "review": "Base-eight common renderer composition; 42 combinations, hanging support, browser activity, PNG and resume inspected."
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "block-box--low-front",
+    "mode": "RGBA",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      48,
+      279,
+      1489,
+      801
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

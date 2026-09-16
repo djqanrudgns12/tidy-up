@@ -1,0 +1,21 @@
+[
+  {
+    "id": "blanket--folded-front",
+    "mode": "RGBA",
+    "size": [
+      1658,
+      949
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      65,
+      268,
+      1600,
+      837
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

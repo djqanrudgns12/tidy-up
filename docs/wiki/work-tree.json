@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-09-16",
-  "currentTask": "A3",
+  "currentTask": "Q1",
   "scope": {
     "maps": 9,
     "objectKinds": 72,
-    "additionalViews": 22,
-    "deliveryImages": 121
+    "additionalViews": 28,
+    "deliveryImages": 127
   },
   "tasks": [
     {
@@ -54,64 +54,60 @@
     },
     {
       "id": "A3",
-      "status": "in-progress",
+      "status": "completed",
       "dependsOn": [
         "A1"
       ],
-      "action": "107 originals preserved; review/integrate 15 existing files before generating 5 missing views",
+      "action": "118 required local source PNGs reviewed and integrated, including six additional natural-support views",
       "guide": "docs/wiki/asset-state.json"
     },
     {
       "id": "M2",
-      "status": "in-progress",
+      "status": "completed",
       "dependsOn": [
         "V1",
         "A3"
       ],
-      "action": "Six spaces enabled; implement wardrobe, living-room and shoe-cabinet, wardrobe next",
-      "guide": "docs/wiki/DESKTOP_HANDOFF_2026-09-16.md"
+      "action": "All nine maps connected; 42 combinations per map and browser full activity verified",
+      "guide": "docs/wiki/FINAL_REVIEW_2026-09-16.md"
     },
     {
       "id": "T1",
-      "status": "pending",
+      "status": "completed",
       "dependsOn": [
         "M1",
         "M2"
       ],
-      "action": "Compose three remaining thumbnails from verified base-eight scenes",
+      "action": "Nine thumbnails composed from verified base-eight scenes",
       "guide": "docs/wiki/ASSETS.md"
     },
     {
       "id": "Q1",
-      "status": "pending",
+      "status": "local-verification-complete-manual-checks-pending",
       "dependsOn": [
         "T1"
       ],
-      "action": "Verify full scope, devices, export and classroom rehearsal",
+      "action": "Local tests/build/assets passed; real student devices, projector, teacher rehearsal and actual sharing still need verification",
       "guide": "docs/wiki/VERIFICATION.md"
     },
     {
       "id": "D1",
-      "status": "pending",
+      "status": "local-handoff-ready-no-deployment",
       "dependsOn": [
-        "Q1"
+        "T1"
       ],
-      "action": "Prepare final build and usage handoff within authorized scope",
+      "action": "Source and local build instructions prepared; no commit, push or deployment authorized",
       "guide": "README.md"
     }
   ],
   "handoff": {
-    "status": "paused-for-desktop-transfer",
+    "status": "local-implementation-ready-manual-rehearsal-pending",
     "date": "2026-09-16",
-    "guide": "docs/wiki/DESKTOP_HANDOFF_2026-09-16.md",
+    "guide": "docs/wiki/FINAL_REVIEW_2026-09-16.md",
     "resumeOrder": [
-      "A3: review 15 local pending originals, including jacket alpha fix",
-      "M2: finish wardrobe hanging mechanics and measured map",
-      "A3: generate 5 missing support views",
-      "M2: living-room and shoe-cabinet",
-      "T1",
-      "Q1",
-      "D1"
+      "Q1: test target student devices and real PNG saving",
+      "Q1: teacher/projector rehearsal and sharing destination",
+      "D1: publish only after explicit request"
     ]
   }
 }

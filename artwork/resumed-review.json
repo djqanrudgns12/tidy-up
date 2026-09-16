@@ -29,8 +29,6 @@
     "notebook--shelf",
     "homework-diary--shelf"
   ],
-  "needsRevision": {
-    "jacket--alternate-support": "RGB에 격자 배경이 구워져 있음. 사용자 승인된 로컬 배경 제거로 옷과 금속 고리를 보존하고 밝고 어두운 배경에서 재검수. 미수정/미반영."
-  },
-  "integrationStatus": "All 27 restored pending originals source-reviewed and ingested; five original defects corrected plus calculator/paint-set refinements. Three low-front box sources locally alpha-finished after explicit user authorization and ingested. Source integration is not support-plane, animation, or map approval."
+  "needsRevision": {},
+  "integrationStatus": "2026-09-16: all 118 required source PNGs reviewed and integrated. Previous 15 pending assets accepted; jacket alpha corrected preserving hook and RGB. Five missing support views generated, plus six required natural-support views (four garments, folded quilt, hanging umbrella sleeve). Original/revision sources and receipts retained. Source review is separate from scene and real-device approval."
 }

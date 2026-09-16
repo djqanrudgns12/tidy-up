@@ -547,175 +547,164 @@
       "target": "assets/items/catalog/hanger.webp",
       "original": "artwork/hanger.png",
       "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 옷걸이. Distinctive construction: 모서리가 둥근 삼각 옷걸이. Use: 옷을 걸어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple natural wood triangular clothes hanger with one metal hook, complete hanger laid flat and viewed straight down, visible empty interior, no clothes. Square canvas. True transparent alpha; no colour glow or stray edge pixels."
-    }
-  ],
-  "generatedAwaitingReview": [
-    {
-      "id": "block-box",
-      "target": "assets/items/catalog/block-box.webp",
-      "original": "artwork/block-box.png",
-      "receipt": "artwork/receipts/block-box.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 조립 블록 상자. Distinctive construction: 뚜껑 있는 상자와 큰 블록 무늬. Use: 조립 블록으로 만들 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One closed low rectangular storage box for toy building blocks, muted blue plastic base and cream flush-fitting closed lid with a simple illustration of three chunky coloured blocks on top. No loose blocks; one box only.",
-      "revision": null
-    },
-    {
-      "id": "book-stand",
-      "target": "assets/items/catalog/book-stand.webp",
-      "original": "artwork/book-stand.png",
-      "receipt": "artwork/receipts/book-stand.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접이식 독서대. Distinctive construction: 받침턱이 있는 펼친 독서대. Use: 책을 세워 놓고 읽을 때.  One compact wooden folding desktop book stand standing OPEN in its natural usable angled position, near-frontal slightly elevated view, empty reading panel with a small lower ledge and a credible visible rear support. No book, text or decorations.",
-      "revision": null
-    },
-    {
-      "id": "cardigan--alternate-support",
-      "target": "assets/items/views/cardigan--alternate-support.webp",
-      "original": "artwork/cardigan--alternate-support.png",
-      "receipt": "artwork/receipts/cardigan--alternate-support.json",
-      "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT cardigan in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. Hanger supports the shoulders and sleeves fall DOWN naturally alongside the body under gravity, narrower drape than the spread flat-lay. Keep its length and coherent collar, cuffs and closure. No bending or squeezing to fake drape. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object.",
-      "revision": null
-    },
-    {
-      "id": "hanger--alternate-support",
-      "target": "assets/items/views/hanger--alternate-support.webp",
-      "original": "artwork/hanger--alternate-support.png",
-      "receipt": "artwork/receipts/hanger--alternate-support.json",
-      "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT hanger in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. The same wooden hanger, slightly elevated front camera, its metal hook ready to wrap over a rail. Visible bottom bar and empty interior. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object.",
-      "revision": null
-    },
-    {
-      "id": "indoor-shoes",
-      "target": "assets/items/catalog/indoor-shoes.webp",
-      "original": "artwork/indoor-shoes.png",
-      "receipt": "artwork/receipts/indoor-shoes.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 실내화 한 켤레. Distinctive construction: 둥근 앞코와 뒤꿈치를 감싸는 학교 실내화. Use: 학교 실내에서 신을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
-      "revision": null
-    },
-    {
-      "id": "jacket--alternate-support",
-      "target": "assets/items/views/jacket--alternate-support.webp",
-      "original": "artwork/jacket--alternate-support.png",
-      "receipt": "artwork/receipts/jacket--alternate-support.json",
-      "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT jacket in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. Hanger supports the shoulders and sleeves fall DOWN naturally alongside the body under gravity, narrower drape than the spread flat-lay. Keep its length and coherent collar, cuffs and closure. No bending or squeezing to fake drape. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object.",
-      "revision": "RGB에 격자 배경이 구워져 있음. 사용자 승인된 로컬 배경 제거로 옷과 금속 고리를 보존하고 밝고 어두운 배경에서 재검수. 미수정/미반영."
-    },
-    {
-      "id": "living-room",
-      "target": "assets/maps/living-room/background.webp",
-      "original": "artwork/living-room.png",
-      "receipt": "artwork/receipts/living-room.json",
-      "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 거실. Scene: 낮은 책장, 공동 놀이 상자 수납함, 작은 소파와 이불 자리, 리모컨을 두는 탁자. Functional furniture: 낮은 책장; 공용 놀이 수납함; 소파·이불 자리; 작은 탁자. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Arrange a low three-seat sofa at back-left with a CLEAR EMPTY seat and no cushions, a large simple low coffee table at centre-left, an open low bookcase at back centre-right, a low open toy-box shelf to its right, and one small waste bin at far right. All furniture against back half of room, broad empty floor in foreground. No television required. Do not include pillows, books, remote controls, toys, tissue packets, plants, rugs or any movable object. Sofa and tables have enough usable support area for real objects. Entire furnishings within frame, no cut-off sofa. Avoid tiny storage holes.",
-      "revision": null
-    },
-    {
-      "id": "rain-boots",
-      "target": "assets/items/catalog/rain-boots.webp",
-      "original": "artwork/rain-boots.png",
-      "receipt": "artwork/receipts/rain-boots.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 장화 한 켤레. Distinctive construction: 장화 두 짝과 낮은 굽. Use: 비 오는 날 신을 때. Near-frontal view of an upright object, entire bottom contact visible. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
-      "revision": null
-    },
-    {
-      "id": "remote",
-      "target": "assets/items/catalog/remote.webp",
-      "original": "artwork/remote.png",
-      "receipt": "artwork/receipts/remote.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 리모컨. Distinctive construction: 큰 전원 버튼과 방향 버튼. Use: 함께 보는 기기를 조작할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple dark-grey television remote control, flat top-down view, one red power button and a few plain rounded buttons with small unlabelled shapes; no text, numbers or logo.",
-      "revision": null
-    },
-    {
-      "id": "sandals",
-      "target": "assets/items/catalog/sandals.webp",
-      "original": "artwork/sandals.png",
-      "receipt": "artwork/receipts/sandals.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 샌들 한 켤레. Distinctive construction: 앞과 뒤 끈이 보이는 두 짝. Use: 더운 날 밖에서 신을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
-      "revision": null
-    },
-    {
-      "id": "shoe-brush",
-      "target": "assets/items/catalog/shoe-brush.webp",
-      "original": "artwork/shoe-brush.png",
-      "receipt": "artwork/receipts/shoe-brush.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 신발솔. Distinctive construction: 손잡이와 짧은 솔털. Use: 신발에 묻은 흙을 털 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
-      "revision": null
-    },
-    {
-      "id": "shoe-cabinet",
-      "target": "assets/maps/shoe-cabinet/background.webp",
-      "original": "artwork/shoe-cabinet.png",
-      "receipt": "artwork/receipts/shoe-cabinet.json",
-      "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 신발장. Scene: 낮고 열린 신발 선반, 관리용품 칸, 옆 우산꽂이와 현관 걸이, 문 앞 바닥. Functional furniture: 바깥 신발 선반; 실내화 선반; 관리용품칸; 우산꽂이·현관 걸이. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. A familiar Korean entryway with one large open LOW shoe cabinet occupying rear left/centre; two wide shoe shelves with plenty of height for child rain boots; separate low care-supply shelf and side vertical umbrella holder on right. One small waste bin at far right. Entire room floor level visible without a step blocking movement. Cabinet empty, no shoes, umbrellas, coats or any small movable object, no wall posters, rugs or plants. All furniture in rear half with broad empty tiled foreground floor.",
-      "revision": null
-    },
-    {
-      "id": "shoehorn",
-      "target": "assets/items/catalog/shoehorn.webp",
-      "original": "artwork/shoehorn.png",
-      "receipt": "artwork/receipts/shoehorn.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 구두주걱. Distinctive construction: 휘어진 끝과 걸이 구멍. Use: 뒤꿈치가 접히지 않게 신발을 신을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
-      "revision": null
     },
     {
       "id": "sneakers",
       "target": "assets/items/catalog/sneakers.webp",
       "original": "artwork/sneakers.png",
-      "receipt": "artwork/receipts/sneakers.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 운동화 한 켤레. Distinctive construction: 운동화 두 짝을 나란히 배치. Use: 밖에서 걷거나 운동할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas.",
-      "revision": null
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 운동화 한 켤레. Distinctive construction: 운동화 두 짝을 나란히 배치. Use: 밖에서 걷거나 운동할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas."
+    },
+    {
+      "id": "indoor-shoes",
+      "target": "assets/items/catalog/indoor-shoes.webp",
+      "original": "artwork/indoor-shoes.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 실내화 한 켤레. Distinctive construction: 둥근 앞코와 뒤꿈치를 감싸는 학교 실내화. Use: 학교 실내에서 신을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas."
+    },
+    {
+      "id": "sandals",
+      "target": "assets/items/catalog/sandals.webp",
+      "original": "artwork/sandals.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 샌들 한 켤레. Distinctive construction: 앞과 뒤 끈이 보이는 두 짝. Use: 더운 날 밖에서 신을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas."
+    },
+    {
+      "id": "rain-boots",
+      "target": "assets/items/catalog/rain-boots.webp",
+      "original": "artwork/rain-boots.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 장화 한 켤레. Distinctive construction: 장화 두 짝과 낮은 굽. Use: 비 오는 날 신을 때. Near-frontal view of an upright object, entire bottom contact visible. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas."
+    },
+    {
+      "id": "shoe-brush",
+      "target": "assets/items/catalog/shoe-brush.webp",
+      "original": "artwork/shoe-brush.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 신발솔. Distinctive construction: 손잡이와 짧은 솔털. Use: 신발에 묻은 흙을 털 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas."
+    },
+    {
+      "id": "shoehorn",
+      "target": "assets/items/catalog/shoehorn.webp",
+      "original": "artwork/shoehorn.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 구두주걱. Distinctive construction: 휘어진 끝과 걸이 구멍. Use: 뒤꿈치가 접히지 않게 신발을 신을 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. For footwear draw exactly ONE MATCHING LEFT AND RIGHT PAIR side by side, entire pair complete, toes pointing up in a strict top-down plan view. Credible sole construction, no duplicate shoes. Child size. Sneakers muted teal laces and cream rubber sole. Indoor shoes simple white Korean school slip-ons with small blue elastic accents. Sandals muted sage with two adjustable straps and heel straps. Rain boots cheerful muted yellow, both whole. No text, logos or fluorescent edge. Square canvas."
+    },
+    {
+      "id": "jacket--alternate-support",
+      "target": "assets/items/views/jacket--alternate-support.webp",
+      "original": "artwork/jacket--alternate-support.png",
+      "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT jacket in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. Hanger supports the shoulders and sleeves fall DOWN naturally alongside the body under gravity, narrower drape than the spread flat-lay. Keep its length and coherent collar, cuffs and closure. No bending or squeezing to fake drape. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object."
+    },
+    {
+      "id": "cardigan--alternate-support",
+      "target": "assets/items/views/cardigan--alternate-support.webp",
+      "original": "artwork/cardigan--alternate-support.png",
+      "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT cardigan in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. Hanger supports the shoulders and sleeves fall DOWN naturally alongside the body under gravity, narrower drape than the spread flat-lay. Keep its length and coherent collar, cuffs and closure. No bending or squeezing to fake drape. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object."
+    },
+    {
+      "id": "hanger--alternate-support",
+      "target": "assets/items/views/hanger--alternate-support.webp",
+      "original": "artwork/hanger--alternate-support.png",
+      "prompt": "Use case: scientific-educational. Draw ONE complementary support-view sprite of the EXACT hanger in the reference, preserving its material, colour, fasteners, hanger and child-size construction. Reference is the flat-lay primary; create the naturally VERTICALLY HANGING front view for a wardrobe rail. The same wooden hanger, slightly elevated front camera, its metal hook ready to wrap over a rail. Visible bottom bar and empty interior. Near-frontal camera, tiny hint of upper surfaces only. Complete metal hook above the collar, open hook with its upper inner arc clearly visible. Entire silhouette with 12% clear margin; TRUE transparent RGBA alpha background, no rail, no room, no shadow, no glow. No labels, text or extra object."
     },
     {
       "id": "umbrella-cover",
       "target": "assets/items/catalog/umbrella-cover.webp",
       "original": "artwork/umbrella-cover.png",
-      "receipt": "artwork/receipts/umbrella-cover.json",
-      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 우산 커버. Distinctive construction: 말린 우산을 넣는 긴 주머니. Use: 마른 우산을 넣어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One empty long muted teal nylon umbrella sleeve, no umbrella inside, a small open mouth and short drawstring at one end. Flat top-down, complete silhouette.",
-      "revision": null
-    }
-  ],
-  "pending": [
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 우산 커버. Distinctive construction: 말린 우산을 넣는 긴 주머니. Use: 마른 우산을 넣어 둘 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One empty long muted teal nylon umbrella sleeve, no umbrella inside, a small open mouth and short drawstring at one end. Flat top-down, complete silhouette."
+    },
     {
-      "id": "block-box--low-front",
-      "target": "assets/items/views/block-box--low-front.webp",
-      "kind": "support-view",
-      "phase": "P1-expansion",
-      "reference": "public/assets/items/catalog/block-box.webp",
-      "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Use the approved primary object as a reference. Closed box resting on its base, low near-frontal camera with a shallow top face visible. Preserve the exact construction, lid design and dimensions of the reference object; no open or detached parts.",
-      "review": "낮은 선반에서 상자 앞면과 얕은 윗면이 함께 보이는 모습"
+      "id": "remote",
+      "target": "assets/items/catalog/remote.webp",
+      "original": "artwork/remote.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 리모컨. Distinctive construction: 큰 전원 버튼과 방향 버튼. Use: 함께 보는 기기를 조작할 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One simple dark-grey television remote control, flat top-down view, one red power button and a few plain rounded buttons with small unlabelled shapes; no text, numbers or logo."
+    },
+    {
+      "id": "block-box",
+      "target": "assets/items/catalog/block-box.webp",
+      "original": "artwork/block-box.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 조립 블록 상자. Distinctive construction: 뚜껑 있는 상자와 큰 블록 무늬. Use: 조립 블록으로 만들 때. Straight-down orthographic view of the object lying on its support plane. The runtime projects this onto its measured horizontal plane. One closed low rectangular storage box for toy building blocks, muted blue plastic base and cream flush-fitting closed lid with a simple illustration of three chunky coloured blocks on top. No loose blocks; one box only."
+    },
+    {
+      "id": "book-stand",
+      "target": "assets/items/catalog/book-stand.webp",
+      "original": "artwork/book-stand.png",
+      "prompt": "Use case: scientific-educational. Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Subject: 접이식 독서대. Distinctive construction: 받침턱이 있는 펼친 독서대. Use: 책을 세워 놓고 읽을 때.  One compact wooden folding desktop book stand standing OPEN in its natural usable angled position, near-frontal slightly elevated view, empty reading panel with a small lower ledge and a credible visible rear support. No book, text or decorations."
+    },
+    {
+      "id": "living-room",
+      "target": "assets/maps/living-room/background.webp",
+      "original": "artwork/living-room.png",
+      "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 거실. Scene: 낮은 책장, 공동 놀이 상자 수납함, 작은 소파와 이불 자리, 리모컨을 두는 탁자. Functional furniture: 낮은 책장; 공용 놀이 수납함; 소파·이불 자리; 작은 탁자. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. Arrange a low three-seat sofa at back-left with a CLEAR EMPTY seat and no cushions, a large simple low coffee table at centre-left, an open low bookcase at back centre-right, a low open toy-box shelf to its right, and one small waste bin at far right. All furniture against back half of room, broad empty floor in foreground. No television required. Do not include pillows, books, remote controls, toys, tissue packets, plants, rugs or any movable object. Sofa and tables have enough usable support area for real objects. Entire furnishings within frame, no cut-off sofa. Avoid tiny storage holes."
+    },
+    {
+      "id": "shoe-cabinet",
+      "target": "assets/maps/shoe-cabinet/background.webp",
+      "original": "artwork/shoe-cabinet.png",
+      "prompt": "Use case: scientific-educational. A complete empty everyday Korean primary-school or family-home environment for the activity 신발장. Scene: 낮고 열린 신발 선반, 관리용품 칸, 옆 우산꽂이와 현관 걸이, 문 앞 바닥. Functional furniture: 바깥 신발 선반; 실내화 선반; 관리용품칸; 우산꽂이·현관 걸이. Low student-height furniture, one consistent near-frontal camera with visible horizontal support planes and credible depth. Warm light from upper left, realistic fixed furniture contact and cast shadows. Restrained hand-painted semi-realistic style consistent with the approved school-desk background. No movable objects, dirt, people, text, labels or overlays. Each storage opening must be large and clear enough for the actual required objects without scaling them down on entry. Empty foreground floor for up to eleven distinct starting objects. Entire furniture and separate waste bin inside frame. 4:3 landscape, 1920 by 1440 delivery. A familiar Korean entryway with one large open LOW shoe cabinet occupying rear left/centre; two wide shoe shelves with plenty of height for child rain boots; separate low care-supply shelf and side vertical umbrella holder on right. One small waste bin at far right. Entire room floor level visible without a step blocking movement. Cabinet empty, no shoes, umbrellas, coats or any small movable object, no wall posters, rugs or plants. All furniture in rear half with broad empty tiled foreground floor."
+    },
+    {
+      "id": "t-shirt--folded-front",
+      "target": "assets/items/views/t-shirt--folded-front.webp",
+      "original": "artwork/t-shirt--folded-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference. Draw ONE t-shirt from the reference folded neatly in a compact low stack, seen almost horizontally from the FRONT at about 8 degrees above its resting surface, for a HIGH wardrobe shelf. Preserve exact garment color, fabric, seams and fasteners. Camera must show the folded cloth thickness at the FRONT and only a shallow sliver of top; wide, low silhouette, height roughly one quarter of width. Garment is laid on its folded base, NOT hanging or standing upright. One garment only, not a pile of separate clothes. Complete silhouette with margins; true RGBA transparent background, no checkerboard, no floor or shelf, no outer shadow or glow, no text. Soft illustrated realism, upper-left light. This is a separately drawn support view, not a distorted top view."
+    },
+    {
+      "id": "long-sleeve--folded-front",
+      "target": "assets/items/views/long-sleeve--folded-front.webp",
+      "original": "artwork/long-sleeve--folded-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference. Draw ONE long-sleeve from the reference folded neatly in a compact low stack, seen almost horizontally from the FRONT at about 8 degrees above its resting surface, for a HIGH wardrobe shelf. Preserve exact garment color, fabric, seams and fasteners. Camera must show the folded cloth thickness at the FRONT and only a shallow sliver of top; wide, low silhouette, height roughly one quarter of width. Garment is laid on its folded base, NOT hanging or standing upright. One garment only, not a pile of separate clothes. Complete silhouette with margins; true RGBA transparent background, no checkerboard, no floor or shelf, no outer shadow or glow, no text. Soft illustrated realism, upper-left light. This is a separately drawn support view, not a distorted top view."
+    },
+    {
+      "id": "trousers--folded-front",
+      "target": "assets/items/views/trousers--folded-front.webp",
+      "original": "artwork/trousers--folded-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference. Draw ONE trousers from the reference folded neatly in a compact low stack, seen almost horizontally from the FRONT at about 8 degrees above its resting surface, for a HIGH wardrobe shelf. Preserve exact garment color, fabric, seams and fasteners. Camera must show the folded cloth thickness at the FRONT and only a shallow sliver of top; wide, low silhouette, height roughly one quarter of width. Garment is laid on its folded base, NOT hanging or standing upright. One garment only, not a pile of separate clothes. Complete silhouette with margins; true RGBA transparent background, no checkerboard, no floor or shelf, no outer shadow or glow, no text. Soft illustrated realism, upper-left light. This is a separately drawn support view, not a distorted top view."
+    },
+    {
+      "id": "shorts--folded-front",
+      "target": "assets/items/views/shorts--folded-front.webp",
+      "original": "artwork/shorts--folded-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference. Draw ONE shorts from the reference folded neatly in a compact low stack, seen almost horizontally from the FRONT at about 8 degrees above its resting surface, for a HIGH wardrobe shelf. Preserve exact garment color, fabric, seams and fasteners. Camera must show the folded cloth thickness at the FRONT and only a shallow sliver of top; wide, low silhouette, height roughly one quarter of width. Garment is laid on its folded base, NOT hanging or standing upright. One garment only, not a pile of separate clothes. Complete silhouette with margins; true RGBA transparent background, no checkerboard, no floor or shelf, no outer shadow or glow, no text. Soft illustrated realism, upper-left light. This is a separately drawn support view, not a distorted top view."
     },
     {
       "id": "sneakers--shelf-front",
       "target": "assets/items/views/sneakers--shelf-front.webp",
-      "kind": "support-view",
-      "phase": "P1-expansion",
-      "reference": "public/assets/items/catalog/sneakers.webp",
-      "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Use the approved primary object as a reference. A matching left and right pair resting flat on their soles, near-front shelf view with only a small amount of the upper openings visible. Preserve left/right construction, material and proportions of the primary reference. Both soles share one level support plane.",
-      "review": "신발장 선반에 두었을 때 앞코와 밑창이 보이는 모습"
+      "original": "artwork/sneakers--shelf-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference, preserve the exact sneakers pair colours, materials, fastenings, details and size proportions. Create ONE game sprite of the matching LEFT AND RIGHT PAIR resting on their flat soles, both shoes facing viewer toes first. Camera LOW NEAR-FRONTAL, about 5 degrees looking down, for a shoe cabinet shelf. Both soles share the SAME horizontal support line. Only a tiny hint of upper openings visible, front toes and sole sides dominate (boots: tall front shafts, not large openings). A genuine new viewpoint, not squashed top view. Full silhouette with margin and a narrow gap between shoes; no brand/text/logo, no separate objects, floor, surface or cast shadow. Soft illustrated realism matching reference, light upper left. Truly transparent RGBA alpha background, not a checkerboard picture."
     },
     {
       "id": "indoor-shoes--shelf-front",
       "target": "assets/items/views/indoor-shoes--shelf-front.webp",
-      "kind": "support-view",
-      "phase": "P1-expansion",
-      "reference": "public/assets/items/catalog/indoor-shoes.webp",
-      "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Use the approved primary object as a reference. A matching left and right pair resting flat on their soles, near-front shelf view with only a small amount of the upper openings visible. Preserve left/right construction, material and proportions of the primary reference. Both soles share one level support plane.",
-      "review": "신발장 선반에 두었을 때 앞코와 밑창이 보이는 모습"
+      "original": "artwork/indoor-shoes--shelf-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference, preserve the exact indoor-shoes pair colours, materials, fastenings, details and size proportions. Create ONE game sprite of the matching LEFT AND RIGHT PAIR resting on their flat soles, both shoes facing viewer toes first. Camera LOW NEAR-FRONTAL, about 5 degrees looking down, for a shoe cabinet shelf. Both soles share the SAME horizontal support line. Only a tiny hint of upper openings visible, front toes and sole sides dominate (boots: tall front shafts, not large openings). A genuine new viewpoint, not squashed top view. Full silhouette with margin and a narrow gap between shoes; no brand/text/logo, no separate objects, floor, surface or cast shadow. Soft illustrated realism matching reference, light upper left. Truly transparent RGBA alpha background, not a checkerboard picture."
     },
     {
       "id": "sandals--shelf-front",
       "target": "assets/items/views/sandals--shelf-front.webp",
-      "kind": "support-view",
-      "phase": "P1-expansion",
-      "reference": "public/assets/items/catalog/sandals.webp",
-      "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Use the approved primary object as a reference. A matching left and right pair resting flat on their soles, near-front shelf view with only a small amount of the upper openings visible. Preserve left/right construction, material and proportions of the primary reference. Both soles share one level support plane.",
-      "review": "신발장 선반에 두었을 때 앞코와 밑창이 보이는 모습"
+      "original": "artwork/sandals--shelf-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference, preserve the exact sandals pair colours, materials, fastenings, details and size proportions. Create ONE game sprite of the matching LEFT AND RIGHT PAIR resting on their flat soles, both shoes facing viewer toes first. Camera LOW NEAR-FRONTAL, about 5 degrees looking down, for a shoe cabinet shelf. Both soles share the SAME horizontal support line. Only a tiny hint of upper openings visible, front toes and sole sides dominate (boots: tall front shafts, not large openings). A genuine new viewpoint, not squashed top view. Full silhouette with margin and a narrow gap between shoes; no brand/text/logo, no separate objects, floor, surface or cast shadow. Soft illustrated realism matching reference, light upper left. Truly transparent RGBA alpha background, not a checkerboard picture."
     },
     {
       "id": "rain-boots--shelf-front",
       "target": "assets/items/views/rain-boots--shelf-front.webp",
-      "kind": "support-view",
-      "phase": "P1-expansion",
-      "reference": "public/assets/items/catalog/rain-boots.webp",
-      "prompt": "Refined semi-realistic hand-painted classroom illustration. Familiar everyday Korean primary-school or home object, natural proportions and credible material. Soft upper-left illumination, self-shading only, no cast shadow or ground. Entire silhouette with 12 percent clear padding, true transparent RGBA alpha, no painted checkerboard. No readable text, logos, people or decorative border. One independent object sprite; natural pairs or closed sets remain one object. Use a separate generation call for each drawing. Use the approved primary object as a reference. A matching left and right pair resting flat on their soles, near-front shelf view with only a small amount of the upper openings visible. Preserve left/right construction, material and proportions of the primary reference. Both soles share one level support plane.",
-      "review": "신발장 선반에 두었을 때 앞코와 밑창이 보이는 모습"
+      "original": "artwork/rain-boots--shelf-front.png",
+      "prompt": "Use case: scientific-educational. Image 1 identity reference, preserve the exact rain-boots pair colours, materials, fastenings, details and size proportions. Create ONE game sprite of the matching LEFT AND RIGHT PAIR resting on their flat soles, both shoes facing viewer toes first. Camera LOW NEAR-FRONTAL, about 5 degrees looking down, for a shoe cabinet shelf. Both soles share the SAME horizontal support line. Only a tiny hint of upper openings visible, front toes and sole sides dominate (boots: tall front shafts, not large openings). A genuine new viewpoint, not squashed top view. Full silhouette with margin and a narrow gap between shoes; no brand/text/logo, no separate objects, floor, surface or cast shadow. Soft illustrated realism matching reference, light upper left. Truly transparent RGBA alpha background, not a checkerboard picture."
+    },
+    {
+      "id": "block-box--low-front",
+      "target": "assets/items/views/block-box--low-front.webp",
+      "original": "artwork/block-box--low-front.png",
+      "prompt": "Use case: scientific-educational. Asset: one movable sprite for Korean grade 5 home-organizing lesson. Image 1 is identity reference of the approved closed block storage box. Create the SAME blue rectangular plastic storage box with cream fitted closed lid, blue clips on short left/right sides, and red/yellow/blue three-block PRINTED motif on lid. New viewpoint: LOW NEAR-FRONTAL shelf view, camera about 10 degrees above horizontal, long front edge horizontal, only a narrow top plane visible. Front blue wall dominant; bottom straight horizontal for resting on shelf. Maintain closed solid structure and original colours/material proportions. One box only, no loose blocks, no floor, furniture, glow, cast shadow, text, labels. Soft illustrated realism matching reference, light upper left. Entire silhouette and 12 percent margin. TRUE transparent RGBA background, not drawn checkerboard."
+    },
+    {
+      "id": "blanket--folded-front",
+      "target": "assets/items/views/blanket--folded-front.webp",
+      "original": "artwork/blanket--folded-front.png",
+      "prompt": "Create a new LOW FRONT view of the same blue folded quilt/blanket in reference for an illustrated Korean home organizing game. One neatly folded pale denim-blue quilt, exact matching horizontal stitched padded fabric, folded twice into a compact rectangular stack. Camera 10 degrees above horizontal: the soft folded front edges and two-three fabric layers visible, thin top plane, natural thickness, width about 3.5 times total height. No arbitrary stretching. Bottom straight but softly rounded resting naturally on a sofa seat or floor. Soft realistic illustration and upper-left light matching reference. Entire object isolated on TRUE transparent RGBA background, no furniture, floor, background, cast shadow, letters, checkerboard or other objects."
+    },
+    {
+      "id": "umbrella-cover--alternate-support",
+      "target": "assets/items/views/umbrella-cover--alternate-support.webp",
+      "original": "artwork/umbrella-cover--alternate-support.png",
+      "prompt": "Create the SAME teal fabric empty umbrella sleeve from reference, now naturally HANGING VERTICALLY FROM ITS DRAWSTRING LOOP on an invisible wall hook. One empty soft narrow long sleeve, closed rounded bottom, open slightly puckered top, small toggle on drawstring, a clear open loop centered at the very top above the sleeve for the hook contact. Gravity makes the fabric hang straight downward, slim width about 1/5 of full height. It must be empty and softly collapsed, not stuffed, no umbrella inside. Near-frontal camera, soft realistic illustration matching original fabric color, upper-left light. True transparent RGBA background, no wall, hooks, other objects, cast shadow, checkerboard or text. Entire object with generous margin. Do not simply rotate the diagonal original: redraw fabric folds and suspended cord."
     }
-  ]
+  ],
+  "generatedAwaitingReview": [],
+  "pending": []
 }

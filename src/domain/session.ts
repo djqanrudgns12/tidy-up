@@ -277,6 +277,7 @@ export function tryPlacement(
         "jacket",
         "cardigan",
         "umbrella",
+        "umbrella-cover",
       ].includes(item.asset)
     )
       continue;

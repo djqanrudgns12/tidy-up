@@ -1,0 +1,78 @@
+[
+  {
+    "id": "umbrella-cover",
+    "mode": "RGBA",
+    "size": [
+      1240,
+      1269
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      89,
+      85,
+      1167,
+      1189
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "remote",
+    "mode": "RGBA",
+    "size": [
+      1024,
+      1536
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      285,
+      99,
+      737,
+      1436
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "block-box",
+    "mode": "RGBA",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      177,
+      131,
+      1359,
+      892
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "book-stand",
+    "mode": "RGBA",
+    "size": [
+      1374,
+      1145
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      61,
+      106,
+      1336,
+      1056
+    ],
+    "status": "awaiting-visual-review"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "sneakers--shelf-front",
+    "mode": "RGBA",
+    "size": [
+      1424,
+      1105
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      72,
+      115,
+      1354,
+      968
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "indoor-shoes--shelf-front",
+    "mode": "RGBA",
+    "size": [
+      1312,
+      1199
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      65,
+      174,
+      1248,
+      987
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "sandals--shelf-front",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      61,
+      223,
+      1193,
+      1021
+    ],
+    "status": "awaiting-visual-review"
+  },
+  {
+    "id": "rain-boots--shelf-front",
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      190,
+      62,
+      1066,
+      1144
+    ],
+    "status": "awaiting-visual-review"
+  }
+]
